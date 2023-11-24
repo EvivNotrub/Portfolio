@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "yarn run lint -- --fix",
+    "lint:fix": "yarn run lint --fix",
     "preview": "vite preview",
     "prettier": "prettier ./src --check",
-    "prettier:fix": "yarn run prettier -- --write",
+    "prettier:fix": "yarn run prettier --write",
     "format": "yarn run prettier:fix && yarn run lint:fix"
   },
   "dependencies": {

@@ -1,14 +1,17 @@
 {
   "name": "portfolio",
+  "homepage": "https://EvivNotrub.github.io/Portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "yarn run lint --fix",
-    "preview": "vite preview",
     "prettier": "prettier ./src --check",
     "prettier:fix": "yarn run prettier --write",
     "format": "yarn run prettier:fix && yarn run lint:fix"
@@ -30,6 +33,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "gh-pages": "^6.1.0",
     "prettier": "3.1.0",
     "sass": "^1.69.5",
     "vite": "^5.0.0"

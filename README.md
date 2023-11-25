@@ -2,13 +2,10 @@
 Portfolio made at the end of the Open Classrooms program.
 
 
-# gh-pages Deployment & Caveats:
+# gh-pages dependency, Deployment & Caveats:
 
-used this tutorial: 
-https://github.com/gitname/react-gh-pages
-and this one:
-https://blog.devgenius.io/how-to-deploy-your-vite-react-app-to-github-pages-with-and-without-react-router-b060d912b10e
-To simplify github pages deployment, but it means local build and preview (and deployment on other platforms) my pose a problem.
-Solutions for other deployments:
- - revert the changes from commit 762f7b7c15f7b7fe920f452c37b4a76e1985a339. 
- - OR simply change vite.config.js to have a path "/" when command === "build" and delete/change basename={import.meta.env.DEV ? '/' : '/Portfolio/'} for the react-router
+commit 762f7b7c15f7b7fe920f452c37b4a76e1985a339 had an older version with readme indications and tutorial followed.
+
+Changes made after some reading of vite documentation, different script in package.json indicate now the base required, and "basename" for Router gets the value import.meta.env.BASE_URL => it works in both development and two build options: local and gh-pages.
+
+

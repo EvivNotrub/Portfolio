@@ -1,17 +1,22 @@
 import logo from "../../assets/react.svg";
 import { Link } from "react-router-dom";
 import "./header.scss";
+import Navigation from "../navigation/navigation";
 
 function Header() {
   return (
-    <header className="header-kasa">
-      <Link className="logo-kasa__link" to="/">
-        <img src={logo} alt="logo Kasa" className="logo-kasa__link__img" />
-      </Link>
-      <nav className="header-kasa__nav">
-        <Link to="/">Accueil</Link>
-        <Link to="/about">A propos</Link>
-      </nav>
+    <header className="main-header">
+      <div className="main-logo">
+        <Link className="main-logo__link" to="/">
+          <img
+            src={logo}
+            alt="logo Portfolio"
+            className="main-logo__link__img"
+          />
+          <div className="myName">Werlé Barthélémy</div>
+        </Link>
+      </div>
+      <Navigation />
     </header>
   );
 }

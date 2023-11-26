@@ -6,7 +6,7 @@ import sass from "sass";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 4562,
   },
   css: {
     preprocessorOptions: {

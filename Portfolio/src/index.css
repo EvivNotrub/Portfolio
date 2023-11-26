@@ -1,27 +1,41 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "./src/assets/styles/__variables.scss";
 
+:root {
+  font-family: "Roboto Mono", monospace, "Poppins", sans-serif, "Bungee Inline",
+    sans-serif, "Bungee", sans-serif, "Bungee Hairline", sans-serif,
+    "Bungee Outline", sans-serif, "Bungee Shade", sans-serif;
+  /* TODO: line heigt?
+   line-height: 1.5; */
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  /* TODO: manage dark/light mode */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
+  background-color: hsl(220, 82%, 13%);
+  /* TODO:  research on lines below  */
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
+/* TODO: style a:hover
 a:hover {
-  color: #535bf2;
+  text-decoration: underline;
 }
-
+*/
+/*TODO: style for body
+ */
 body {
   margin: 0;
   display: flex;
@@ -30,14 +44,14 @@ body {
   min-height: 100vh;
 }
 
+/* TODO: style for headers */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+/* TODO: style for buttons and links */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -46,14 +60,16 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+/* TODO: global button:hover
+ */
 button:hover {
-  border-color: #646cff;
+  opacity: 0.8;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+/* TODO: style for dark mode */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

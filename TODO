@@ -1,0 +1,221 @@
++ Portfolio
+  Todo:
+    Environnement:
+      ✔ install vite @done(23-11-25 21:52)
+      ☐ configure @started(23-11-25 21:55)
+        ☐ install dependencies @started(23-11-25 22:04)
+          ☐	Add & configure axe-core-npm 
+          ☐ Add & configure eslint-plugin-jsx-a11y
+          ☐ Add & configure testing libraries ? @critical
+            ☐ Add & configure @testing-library/jest-dom
+            ☐ Add & configure @testing-library/react
+            ☐ Add & configure @testing-library/user-event
+      ☐ test prettier && EsLint conflict? @started(23-11-26 00:57)
+      ☐ need redux? @tag(8)
+        ☐ install redux with toolkit @tag(tuto redux toolkit)
+
+    Tech, structure and base of project: @critical
+      ☐ create structure @started(23-11-25 21:55)
+      ☐ configure router @id(1)
+      ☐ choose a state management librairy ? @critical @tag(8)
+      ☐ choose a testing librairy ?
+      ☐ choose a style structure management @critical
+    Style:
+      ✔ add  fonts @done(23-11-25 22:12)
+      ☐ color palette @critical
+        ☐ chose colors theme dark and light
+        ☐ choose color structure management @critical
+        ☐ add colors variables @critical
+      ☐ add a theme provider ? @low
+        ☐ TODO: Research about theme provider
+      ☐ configure a global style @high
+        ☐ structure sass? @critical @tag(old project OhMyfood)
+        ☐ add global style mixins ? @low @tag(old project OhMyfood)
+      ☐ Which animations @high
+        Inspiration:
+          ☐ existing animations @tag(old project OhMyfood)
+          ☐ codePen
+          ☐ Kevin Powell
+          ☐  other Portfolios
+        ☐ list some animations with priority [
+          ☐ hover
+          ☐ click
+          ☐ scroll
+          ☐ page transition
+          ☐ page load
+          ☐ page unload
+          ☐ page resize
+          ☐ page orientation change
+          ☐ page zoom
+          ☐ page error
+          ☐ page visibility
+          ☐ page fullscreen
+        ]
+        ☐ add animations from list @high
+      ☐ add a css reset ? what is it ? @low
+    Meta: @low
+      ☐ add meta
+      ☐ add title
+      ☐ add description
+      ☐ add keywords
+      ☐ SEO with shema.org
+      ☐ add favicon / page icon
+      ☐ add social media meta
+        ☐ add open graph meta
+        ☐ add twitter card meta
+      ☐ add robots.txt ? @low
+    Accessibility: @midle
+      ☐ add tab navigation > see old project
+      ☐ add aria
+      ☐ add lang attribute
+      ☐ more ?
+    Assets: @high
+      ☐ add icons
+      ☐ add pictures
+    Content:
+      ☐ Skills
+        ☐ main skills
+        ☐ used technologies
+        ☐ experience
+      ☐ *Linkedin* to be created
+      ☐ CodePen add from works.
+      ☐ Gihutb => need cleanup!
+
+    Code: @MOBILE FIRST !!! @critical
+      Vorrangehensweise:
+        ☐ Mobile first !!!
+        ☐ Think about the structure of the project
+        ☐ and responsive design
+        ☐ create pages
+          ☐ create sections ?
+        ☐ create layouts
+        ☐ create containers
+        ☐ create components
+        ☐ create molecules
+        ☐ create atoms
+      MyComponents:
+        Welcome: @tag(7) @critical
+          ☐ content ??
+          ☐ create test
+          ☐ create component
+            ☐ becomes About component
+          ☐ style component
+          ☐ add animation
+        About: @id(7)
+          ☐ content ??
+          ☐ create test
+          ☐ create component
+          ☐ style component
+        Skills:
+          ☐ create test
+          ☐ create component
+          ☐ style component after adding content ?
+          ☐ Rename by looking at other portfolios
+          MainSkills:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+          UsedTechnologies:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+          Experience:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+        ContactForm:
+          ☐ create test
+          ☐ create component @id(3)
+          ☐ functionnalities
+            ☐ add form validation
+            ☐ add form submission
+            ☐ add message confirmation or error @tag(old project Sophie Bluel)
+            ☐ add form reset ??
+          ☐ style component
+        Header:
+          ☐ create test
+          ☐ create component
+          ☐  style component
+          Navigation:
+            ☐ create test
+            ☐ create component
+            ☐ add navigation links @tag(1)
+            ☐ style component
+        Buttons:
+          WelcomeButton:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+          ContactButton:
+            ☐ create test
+            ☐ create component @tag(3)
+            ☐ style component
+          FilterButton: @id(4) @critical
+            ☐ create test
+            ☐ create component
+            ☐ create function to filter projects @tag(5) @tag(old project Sophie Bluel)
+            ☐ style component
+        Accordeon:
+          ☐ need which kind of accordeon ?
+          Acoordéon simple:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+          Accordeon that closes when another one opens:
+            ☐ create test
+            ☐ create component
+            ☐ style component
+        Projects:
+          ☐ create test
+          ☐ create global view component @tag(4) @id(5)
+            ☐ pagination @tag(old project Debuggez...724Events)
+            ☐ filter options @tag(old project Debuggez...724Events && Sophie Bluel)
+            ☐ style component
+            ☐ sort options ?
+            ☐ search bar ?
+
+          ☐ create data strucure @tag(2) @id(6)
+            ☐ choose structure
+            ☐ add in data folder
+          ☐ create slider component @tag(6)
+            ☐ create test
+            ☐ create component @tag(old project Kasa OC_p8 && Print-it && 724Events)
+            ☐ style component
+          ☐ add projects @id(2)
+            ☐ choose projects
+            ☐ rework projects
+              ☐ add readme
+            ☐ wich are featured projects ?
+            ☐ add projects list in data structure
+            ☐ create project component
+              ☐ create test
+              ☐ create component
+                ☐ structure
+                ☐ functionnalities like flipcard or other
+              ☐ style component
+    Performance:
+      ☐ analyze with lighthouse
+      ☐ analyze with wave
+      ☐ image optimization
+        ☐ sharp? see last in argentBank @low
+        ☐ js script to change image path after sharp optimization with the JSON file
+          -> see old project on SEO 
+      ☐ CDN
+      ☐ add lazy loading
+      ☐ add code splitting
+      ☐ add preloading
+      ☐ add prefetching?
+      ☐ add caching?
+    Testing: @high
+      ☐ add unit testing
+      ☐ add integration testing
+      ☐ add e2e testing @medium
+    Deploy: @critical
+      ☐ client side rendering or server side ?
+      https://openclassrooms.com/fr/courses/5922626-optimisez-le-referencement-de-votre-site-seo-en-ameliorant-ses-performances-techniques/6055261-decidez-entre-client-side-et-server-side-rendering
+      ☐ Nom de domaine ?
+      ✘ hébergement autre que github pages ? @cancelled(23-11-26 00:49)
+      ✘ banque de données ? Pas pour ce projet @cancelled(23-11-26 00:49)
+      ☐ deploy on github pages
+      ☐ check for path issues
+Archive:

@@ -1,4 +1,4 @@
-import Navigation from "../../components/navigation/navigation.jsx";
+import Navigation from "../../components/navigations/navigation.jsx";
 import logo from "../../assets/react.svg";
 import { Link } from "react-router-dom";
 import "./header.scss";

@@ -39,7 +39,7 @@ function MainContent() {
         />
       )}
       <aside className="homeContent__aside">
-        <HomeNavigation />
+        <HomeNavigation setChecked={setchecked} />
       </aside>
       {/* Bellow is were the content will be rendered */}
       <Outlet context={outletClass} />

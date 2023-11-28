@@ -1,10 +1,13 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./homeNavigation.scss";
 
-function HomeNavigation() {
+function HomeNavigation({ setChecked }) {
+  // TODO: treat as a modal ?? => usePortal
+  // TODO: close when clicked outside !
   return (
     <>
-      <nav className="home-nav">
+      <nav onClick={() => setChecked(false)} className="home-nav">
         <ul>
           <li>
             <Link to="/about">A propos</Link>
@@ -23,5 +26,9 @@ function HomeNavigation() {
     </>
   );
 }
+
+HomeNavigation.propTypes = {
+  setChecked: PropTypes.func,
+};
 
 export default HomeNavigation;

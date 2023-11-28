@@ -1,8 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Error from "./pages/Error/Error.jsx";
+import Home from "./pages/Home/home.jsx";
+import Error from "./pages/Error/error.jsx";
 import Header from "./containers/header/header.jsx";
-import "./App.css";
 import Footer from "./containers/footer/footer.jsx";
+import Portfolio from "./pages/Portfolio/portfolio.jsx";
+import ProjectPage from "./pages/Project/projectPage.jsx";
+import Resume from "./pages/Resume/resume.jsx";
+import "./App.css";
+// import Contact from "./containers/contact/contact.jsx";
 
 // TODO: manage Rooter properly
 function App() {
@@ -21,14 +26,17 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<h1 className="Home">Home</h1>} />
-          <Route path="/about" element={<h1>About</h1>} />
-          <Route path="/contact" element={<h1>Contact</h1>} />
-          <Route path="/projects" element={<h1>Projects</h1>} />
-          <Route path="/projects/:id" element={<h1>Project Details</h1>} />
+          <Route path="/" element={<Home />}>
+            {/* <Route path="contact" element={<Contact />} /> */}
+          </Route>
+          {/*TODO: use Redirect to redirect to / ? OR/AND Route without path? */}
+          {/* TODO: how to manage contact in other pages? arriving on home but doesn't scroll down?*/}
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:projectID" element={<ProjectPage />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

@@ -1,7 +1,7 @@
+import Navigation from "../../components/navigation/navigation.jsx";
 import logo from "../../assets/react.svg";
 import { Link } from "react-router-dom";
 import "./header.scss";
-import Navigation from "../navigation/navigation";
 
 function Header() {
   return (

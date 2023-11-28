@@ -2,6 +2,11 @@
   Todo:
     Environnement:
       ✔ install vite @done(23-11-25 21:52)
+      ☐ install Path Intellisense extension ?@critical
+      ☐ React extension ? @important
+        ☐ React Developer Tools extension needed? @low
+        ☐ React Snippets extension @medium
+        https://www.youtube.com/watch?v=UolaGb7tR38
       ☐ configure @started(23-11-25 21:55)
         ☐ install dependencies @started(23-11-25 22:04)
           ☐	Add & configure axe-core-npm 

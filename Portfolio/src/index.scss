@@ -28,6 +28,7 @@
 
 a {
   text-decoration: inherit;
+  color: inherit;
 }
 /* TODO: style a:hover
 a:hover {
@@ -42,6 +43,22 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+textarea {
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  margin: 0;
 }
 
 /* TODO: style for headers */

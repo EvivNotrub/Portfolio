@@ -1,8 +1,11 @@
+import { useOutletContext } from "react-router-dom";
 import "./skills.scss";
 
 function Skills() {
+  const outletClass = useOutletContext();
+
   return (
-    <div className="skills">
+    <div className={"skills" + " " + outletClass}>
       <h2>Compétences et autres</h2>
       <p>Skills en cours de construction</p>
     </div>

@@ -4,7 +4,7 @@ import "./projectPage.scss";
 function ProjectPage() {
   const { projectID } = useParams();
   return (
-    <div className="about">
+    <div data-testid="projectpage-testid" className="about">
       <h1>Project {projectID}</h1>
       <p>En cours de construction</p>
     </div>

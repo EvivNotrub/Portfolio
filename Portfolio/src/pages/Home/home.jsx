@@ -12,7 +12,9 @@ function Home() {
 
   return (
     <main className="home__main">
-      <h1 className="home__main__title">Accueil</h1>
+      <h1 data-testid="home-testid" className="home__main__title">
+        Accueil
+      </h1>
       <p className="home__main__message">
         Accueil en cours de construction
         <br />

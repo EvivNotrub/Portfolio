@@ -7,7 +7,7 @@ function Contact() {
   const outletClass = useOutletContext();
 
   return (
-    <div className={"contact" + " " + outletClass}>
+    <div data-testid="contact-testid" className={"contact" + " " + outletClass}>
       <h2>Contact</h2>
       <p>Contact en cours de construction</p>
       <ContactForm />

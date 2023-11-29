@@ -9,7 +9,9 @@ function Navigation() {
           <Link to="/">Accueil</Link>
           <ul>
             <li>
-              <Link to="/about">A propos</Link>
+              <Link data-testid="aboutLink" to="/about">
+                A propos
+              </Link>
             </li>
             <li>
               <Link to="/skills">Compétences</Link>

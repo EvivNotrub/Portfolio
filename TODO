@@ -11,19 +11,19 @@
         ☐ install dependencies @started(23-11-25 22:04)
           ☐	Add & configure axe-core-npm 
           ☐ Add & configure eslint-plugin-jsx-a11y
-          ☐ Add & configure testing libraries ? @critical
-            ☐ Add & configure @testing-library/jest-dom
-            ☐ Add & configure @testing-library/react
-            ☐ Add & configure @testing-library/user-event
+          ✔ Add & configure testing libraries ? @critical @started(23-11-29 19:43) @done(23-11-29 22:13) @lasted(2h30m14s)
+            ✔ Add & configure @testing-library/jest-dom @done(23-11-29 19:31)
+            ✔ Add & configure @testing-library/react @done(23-11-29 19:31)
+            ✔ Add & configure @testing-library/user-event @done(23-11-29 22:12)
       ☐ test prettier && EsLint conflict? @started(23-11-26 00:57)
       ☐ need redux? @tag(8)
         ☐ install redux with toolkit @tag(tuto redux toolkit)
 
     Tech, structure and base of project: @critical
       ☐ create structure @started(23-11-25 21:55)
-      ☐ configure router @id(1)
+      ✔ configure router @id(1) @done(23-11-29 22:13)
       ☐ choose a state management librairy ? @critical @tag(8)
-      ☐ choose a testing librairy ?
+      ✔ choose a testing librairy ? @done(23-11-29 22:13)
       ☐ choose a style structure management @critical
     Style:
       ✔ add  fonts @done(23-11-25 22:12)

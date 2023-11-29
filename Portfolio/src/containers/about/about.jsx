@@ -5,7 +5,7 @@ function About() {
   const outletClass = useOutletContext();
 
   return (
-    <div className={"about" + " " + outletClass}>
+    <div data-testid="about-testid" className={"about" + " " + outletClass}>
       <h2>À propos</h2>
       <p>À propos en cours de construction</p>
       <p>

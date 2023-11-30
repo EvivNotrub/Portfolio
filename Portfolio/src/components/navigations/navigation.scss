@@ -1,12 +1,18 @@
 .nav {
+  --list-item-padding: 5px 10px;
   display: flex;
   align-items: center;
+  //   &__mutton {
+  //     width: 5rem;
+  //     height: 4rem;
+  //     padding: var(--list-item-padding);
+  //   }
   &__list {
     display: flex;
     gap: 1rem;
     &__item {
       position: relative;
-      padding: 5px 10px;
+      padding: var(--list-item-padding);
       &:hover {
         // TODO: manage for mobile
         & .sub-nav {

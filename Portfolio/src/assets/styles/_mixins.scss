@@ -1,0 +1,24 @@
+@mixin showCenter {
+  // ADD lines below:
+  // :root {
+  //   --x-origin: 85.36%;
+  //   --y-origin: 85.36%;
+  // }
+  .y-axis {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    transform-origin: inherit;
+    transform: translate(0%, var(--y-origin)) rotate3d(0, 1, 0, 89.4deg);
+    background: rgba(255, 128, 128, 0.75);
+  }
+
+  .x-axis {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    transform-origin: inherit;
+    background: rgba(128, 128, 255, 0.75);
+    transform: translate(var(--x-origin), 0%) rotate3d(1, 0, 0, 89.4deg);
+  }
+}

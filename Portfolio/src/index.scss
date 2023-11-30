@@ -1,4 +1,4 @@
-@import "./src/assets/styles/__variables.scss";
+@import "./src/assets/styles/_variables.scss";
 
 :root {
   font-family: "Roboto Mono", monospace, "Poppins", sans-serif, "Bungee Inline",
@@ -68,6 +68,20 @@ body {
   min-height: 100vh;
 }
 
+button,
+input[type="button"],
+input[type="checkbox"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+/* TODO: global button:hover
+ */
+button:hover {
+  opacity: 0.8;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -89,22 +103,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-/* TODO: style for buttons and links */
-button {
-  border: none;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-/* TODO: global button:hover
- */
-button:hover {
-  opacity: 0.8;
-}
+
 button:focus,
 button:focus-visible {
   border: 4px auto -webkit-focus-ring-color;

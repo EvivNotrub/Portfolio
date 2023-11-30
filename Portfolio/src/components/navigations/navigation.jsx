@@ -4,11 +4,11 @@ import Mutton from "../buttons/mutton";
 
 function Navigation() {
   return (
-    <nav className="nav">
+    <nav data-testid="nav-testid" className="nav">
       <ul className="nav__list">
         <li className="nav__list__item">
           <Link to="/">Accueil</Link>
-          <div className="sub-nav">
+          <div data-testid="sub-nav-testid" className="sub-nav">
             <ul className="sub-nav__list">
               <li className="sub-nav__item">
                 <Link data-testid="aboutLink" to="/about">
@@ -35,6 +35,7 @@ function Navigation() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
+      <Mutton />
     </nav>
   );
 }

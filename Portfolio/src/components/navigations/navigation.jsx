@@ -5,6 +5,8 @@ import Mutton from "../buttons/mutton";
 function Navigation() {
   return (
     <nav data-testid="nav-testid" className="nav">
+      <Mutton addClass={"nav__mutton"} />
+
       <ul className="nav__list">
         <li className="nav__list__item">
           <Link to="/">Accueil</Link>
@@ -35,7 +37,6 @@ function Navigation() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
-      <Mutton />
     </nav>
   );
 }

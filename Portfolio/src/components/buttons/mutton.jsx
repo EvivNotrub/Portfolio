@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import "./mutton.scss";
 
-function Mutton() {
+function Mutton({ addClass }) {
   return (
-    <div className="mutton">
+    <div className={"mutton" + " " + addClass}>
       <input className="lines--sibling" type="checkbox" />
       <button className="lines">
         <div className="lines__center">
@@ -16,5 +17,9 @@ function Mutton() {
     </div>
   );
 }
+
+Mutton.propTypes = {
+  addClass: PropTypes.string,
+};
 
 export default Mutton;

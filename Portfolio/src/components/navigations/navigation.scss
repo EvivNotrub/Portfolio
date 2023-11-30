@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  align-items: center;
+  &__list {
+    display: flex;
+    gap: 1rem;
+    &__item {
+      position: relative;
+      padding: 5px 10px;
+      &:hover {
+        // TODO: manage for mobile
+        & .sub-nav {
+          transform: translate(0, 0) scale(1, 1);
+          opacity: 1;
+        }
+      }
+      & .sub-nav {
+        position: absolute;
+        text-align: left;
+        top: 100%;
+        left: 0;
+        padding: 0.5rem 0.7rem;
+        background-color: var(--background-dark);
+        color: var(--text-color-dark);
+        transform-origin: top;
+        transform: translate(0, 0) scale(1, 0);
+        opacity: 0;
+        // TODO: work on transition
+        transition:
+          transform 0.18s ease-in-out 0.085s,
+          opacity 0.15s ease-in-out;
+        & .sub-nav__list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          & .sub-nav__item {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}

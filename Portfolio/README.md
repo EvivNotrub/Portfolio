@@ -26,8 +26,9 @@ Info: use `screen.debug()` in test will print the state of the DOM tree, pass a 
 ## Build and deploy for github pages:
 
 This will add /Portfolio/ to the base path when build
+/!\ ----> run build after that for / basepath and be able to use preview or other deployment <------- /!\
 
-- `yarn deploy`
+- `yarn deploy` // validate ssh // -`yarn build`
 
 ## Normal/Local Build & Serve:
 

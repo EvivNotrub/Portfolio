@@ -24,7 +24,33 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  // outline: #747bff 2px solid;
 }
+
+// * > * {
+//   outline-color: #ff747b;
+//   & > * {
+//     outline-color: #ffda79;
+//     & > * {
+//       outline-color: #74ffda;
+//       & > * {
+//         outline-color: #ff74ff;
+//         & > * {
+//           outline-color: #747bff;
+//           & > * {
+//             outline-color: #ff747b;
+//             & > * {
+//               outline-color: #ffda79;
+//               & > * {
+//                 outline-color: #74ffda;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 a {
   text-decoration: inherit;
@@ -39,9 +65,6 @@ a:hover {
  */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -84,7 +107,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 4px auto -webkit-focus-ring-color;
 }
 /* TODO: style for dark mode */
 @media (prefers-color-scheme: light) {

@@ -6,7 +6,22 @@ TODO: best practice is to use CSS modules?
   /* TODO: max-width?? */
   /* max-width: 1280px; */
   margin: 0 auto;
-  text-align: center;
+  // min-height: 100vh;
+  // min-height: 100dvh;
+  overflow: auto;
+}
+
+.App {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 320px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  & > main {
+    flex: 1;
+  }
 }
 
 /* .logo {

@@ -14,18 +14,6 @@ import ProjectsPreview from "./containers/projects/projectsPreview.jsx";
 
 // TODO: manage Rooter properly
 function App() {
-  console.log(
-    "import.meta.env.DEV  :>> ",
-    import.meta.env.DEV,
-    "\nimport.meta.env.BASE_URL :>> ",
-    import.meta.env.BASE_URL,
-    "\nimport.meta.env.PROD :",
-    import.meta.env.PROD,
-    "\nimport.meta.env.MODE :>> ",
-    import.meta.env.MODE,
-    "\nimport.meta.env.SSR :>> ",
-    import.meta.env.SSR,
-  );
   // TODO: find a proper title
   document.title = "Portfolio";
   return (

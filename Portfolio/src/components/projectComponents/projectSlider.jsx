@@ -4,7 +4,7 @@ import "./projectSlider.scss";
 function ProjectSlider() {
   return (
     <div className="projectSlider">
-      <h1>ProjectSlider</h1>
+      <h3>ProjectSlider</h3>
       <p>En cours de construction</p>
     </div>
   );

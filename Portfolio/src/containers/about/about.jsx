@@ -1,11 +1,8 @@
-import { useOutletContext } from "react-router-dom";
 import "./about.scss";
 
 function About() {
-  const outletClass = useOutletContext();
-
   return (
-    <div data-testid="about-testid" className={"about" + " " + outletClass}>
+    <div data-testid="about-testid" className="about">
       <h2>À propos</h2>
       <p>À propos en cours de construction</p>
       <p>

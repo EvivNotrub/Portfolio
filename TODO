@@ -25,6 +25,9 @@
       ☐ choose a state management librairy ? @critical @tag(8)
       ✔ choose a testing librairy ? @done(23-11-29 22:13)
       ☐ choose a style structure management @critical
+      ☐ on home new simple version => remove useless components
+        ☐ homeNavi => remove ? 
+        ☐ mainContent => remove ?
     Style:
       ✔ add  fonts @done(23-11-25 22:12)
       ☐ color palette @critical
@@ -61,6 +64,7 @@
     Meta: @low
       ☐ add meta
       ☐ add title
+        ☐ change title per page?
       ☐ add description
       ☐ add keywords
       ☐ SEO with shema.org

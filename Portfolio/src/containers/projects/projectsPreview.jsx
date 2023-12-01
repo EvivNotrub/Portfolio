@@ -1,18 +1,12 @@
-import { useOutletContext } from "react-router-dom";
-import ProjectCard from "./projectCard.jsx";
+import ProjectSlider from "../../components/projectComponents/projectSlider";
 import "./projectsPreview.scss";
 
 function ProjectsPreview() {
-  const outletClass = useOutletContext();
-
   return (
-    <div
-      data-testid="projectsPreview-testid"
-      className={"projectPreview" + " " + outletClass}
-    >
+    <div data-testid="projectsPreview-testid" className="projectPreview">
       <h2>Projets Preview</h2>
       <p>Projets Preview en cours de construction</p>
-      <ProjectCard />
+      <ProjectSlider />
     </div>
   );
 }

@@ -7,10 +7,7 @@ import Portfolio from "./pages/Portfolio/portfolio.jsx";
 import ProjectPage from "./pages/Project/projectPage.jsx";
 import Resume from "./pages/Resume/resume.jsx";
 import "./App.scss";
-import Contact from "./containers/contact/contact.jsx";
-import About from "./containers/about/about.jsx";
-import Skills from "./containers/skills/skills.jsx";
-import ProjectsPreview from "./containers/projects/projectsPreview.jsx";
+import Contact from "./pages/Contact/contact.jsx";
 
 // TODO: manage Rooter properly
 function App() {
@@ -22,17 +19,13 @@ function App() {
       {/* <Router basename={import.meta.env.BASE_URL}> */}
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
-          {/* TODO: how do I render one of them already at the beginning ? */}
-          <Route path="about" element={<About />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="projectsPreview" element={<ProjectsPreview />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        {/* TODO: how do I render one of them already at the beginning ? */}
+        <Route path="/contact" element={<Contact />} />
         {/*TODO: use Redirect to redirect to / ? OR/AND Route without path? */}
         {/* TODO: how to manage contact in other pages? arriving on home but doesn't scroll down?*/}
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/portfolio/:projectID" element={<ProjectPage />} />
+        <Route path="/projects" element={<Portfolio />} />
+        <Route path="/projects/:projectID" element={<ProjectPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<Error />} />
       </Routes>

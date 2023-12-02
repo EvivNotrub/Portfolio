@@ -1,11 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import About from "../../containers/about/about";
 import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
 import "./home.scss";
 
-function Home() {
+function Home({ pPreviewRef, aboutRef, skillsRef }) {
   const location = useLocation();
 
   useEffect(() => {
@@ -33,17 +34,38 @@ function Home() {
           magnam, enim eos quaerat quasi necessitatibus magni nam?
         </p>
       </section>
-      <section id="projectsPreview" className="section-projects section">
+      <section
+        id="projectsPreview"
+        className="section-projects section"
+        ref={pPreviewRef}
+        tabIndex="-1"
+      >
         <ProjectsPreview />
       </section>
-      <section id="about" className="section-about section">
+      <section
+        id="about"
+        className="section-about section"
+        ref={aboutRef}
+        tabIndex="-1"
+      >
         <About />
       </section>
-      <section id="skills" className="section-skills section">
+      <section
+        id="skills"
+        className="section-skills section"
+        ref={skillsRef}
+        tabIndex="-1"
+      >
         <Skills />
       </section>
     </main>
   );
 }
+
+Home.propTypes = {
+  pPreviewRef: PropTypes.object,
+  aboutRef: PropTypes.object,
+  skillsRef: PropTypes.object,
+};
 
 export default Home;

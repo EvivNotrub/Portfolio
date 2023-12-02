@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useRef } from "react";
 import Home from "./pages/Home/home.jsx";
 import Error from "./pages/Error/error.jsx";
 import Header from "./containers/header/header.jsx";
@@ -11,15 +12,32 @@ import Contact from "./pages/Contact/contact.jsx";
 
 // TODO: manage Rooter properly
 function App() {
+  const pPreviewRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+
   // TODO: find a proper title
   document.title = "Portfolio";
   return (
     <div className="App" data-testid="app-testid">
       {/* TODO_REMOVE: If Mentors confirm, remove and keep only the Router in main.jsx */}
       {/* <Router basename={import.meta.env.BASE_URL}> */}
-      <Header />
+      <Header
+        pPreviewRef={pPreviewRef}
+        aboutRef={aboutRef}
+        skillsRef={skillsRef}
+      />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              pPreviewRef={pPreviewRef}
+              aboutRef={aboutRef}
+              skillsRef={skillsRef}
+            />
+          }
+        />
         {/* TODO: how do I render one of them already at the beginning ? */}
         <Route path="/contact" element={<Contact />} />
         {/*TODO: use Redirect to redirect to / ? OR/AND Route without path? */}

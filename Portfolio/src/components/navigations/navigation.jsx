@@ -1,42 +1,51 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
 import Mutton from "../buttons/mutton";
 
-function Navigation() {
+function Navigation({ ...props }) {
+  const { pPreviewRef, skillsRef, aboutRef } = props;
   const [checked, setChecked] = useState(false);
   // on focus can be manged from line 8 to 13 in nav.scss
   const [isFocused, setIsFocused] = useState(false);
   const [subNav, setSubNav] = useState(false);
+  const focusOnRef = (ref) => {
+    ref.current.focus();
+  };
+
+  const closeNav = () => {
+    // TODO: is there not a way like this to focus on the element instead ofthis shit ref prop drilling?
+    // let elem = document.getElementById(e.target.hash.slice(1));
+    // if (elem) {
+    //   elem.current.focus();
+    // }
+    // line below: a simple alternative without focus:
+    // document.activeElement.blur();
+
+    setChecked(false);
+    setIsFocused(false);
+    setSubNav(false);
+  };
 
   // closes the nav & sub-nav when the user clicks outside of the nav
   // stopPropagation on Home link and inside Mutton component
+  //AND closes the nav & sub-nav when the user hits the ENTER key or the ESC key
   useEffect(() => {
-    const closeNav = () => {
-      setChecked(false);
-      setIsFocused(false);
-      setSubNav(false);
-    };
-    window.addEventListener("click", closeNav);
-    return () => {
-      window.removeEventListener("click", closeNav);
-    };
-  }, []);
-
-  // closes the nav & sub-nav when the user hits the ENTER key or the ESC key
-  useEffect(() => {
-    const closeNav = (e) => {
-      if (e.keyCode === 13 || e.keyCode === 27) {
-        setChecked(false);
-        setIsFocused(false);
-        setSubNav(false);
-      }
-    };
-    window.addEventListener("keydown", closeNav);
-    return () => {
-      window.removeEventListener("keydown", closeNav);
-    };
-  }, []);
+    if (isFocused || checked || subNav) {
+      window.addEventListener("click", closeNav);
+      const closeWithKey = (e) => {
+        if (e.keyCode === 13 || e.keyCode === 27) {
+          closeNav();
+        }
+      };
+      window.addEventListener("keydown", closeWithKey);
+      return () => {
+        window.removeEventListener("click", closeNav);
+        window.removeEventListener("keydown", closeWithKey);
+      };
+    }
+  }, [checked, isFocused, subNav]);
 
   return (
     <nav
@@ -68,15 +77,31 @@ function Navigation() {
           >
             <ul className="sub-nav__list">
               <li className="sub-nav__item">
-                <Link data-testid="aboutLink" to="/#about">
+                <Link
+                  data-testid="aboutLink"
+                  to="/#about"
+                  onClick={() => focusOnRef(aboutRef)}
+                >
                   A propos
                 </Link>
               </li>
               <li className="sub-nav__item">
-                <Link to="/#skills">Compétences</Link>
+                <Link
+                  data-testid="skillsLink"
+                  to="/#skills"
+                  onClick={() => focusOnRef(skillsRef)}
+                >
+                  Compétences
+                </Link>
               </li>
               <li className="sub-nav__item">
-                <Link to="/#projectsPreview">Projets Preview</Link>
+                <Link
+                  data-testid="pPreviewLink"
+                  to="/#projectsPreview"
+                  onClick={() => focusOnRef(pPreviewRef)}
+                >
+                  Projets Preview
+                </Link>
               </li>
             </ul>
           </nav>
@@ -94,5 +119,11 @@ function Navigation() {
     </nav>
   );
 }
+
+Navigation.propTypes = {
+  pPreviewRef: PropTypes.object,
+  skillsRef: PropTypes.object,
+  aboutRef: PropTypes.object,
+};
 
 export default Navigation;

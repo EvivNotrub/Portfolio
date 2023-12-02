@@ -34,7 +34,7 @@
     transform: translate(0, 0) scale(1, 0);
     opacity: 0;
     transition: all 0.2s ease-in-out;
-    @media (min-width: 990px) {
+    @media (min-width: 1280px) {
       width: auto;
       flex-direction: row;
       transform-origin: right;
@@ -46,7 +46,7 @@
     &__item {
       position: relative;
       padding: var(--list-item-padding);
-      @media (min-width: 990px) {
+      @media (min-width: 1280px) {
         &:hover {
           & .sub-nav {
             transform: translate(0, 0) scale(1, 1);
@@ -65,7 +65,7 @@
         transform-origin: right;
         transform: translate(0, 0) scale(0, 1);
         opacity: 0;
-        // @media (max-width: 989.99px) {
+        // @media (max-width: 1279.99px) {
         &.show-sub {
           transform: translate(0, 0) scale(1, 1);
           opacity: 1;
@@ -75,7 +75,7 @@
         transition:
           transform 0.18s ease-in-out 0.085s,
           opacity 0.15s ease-in-out;
-        @media (min-width: 990px) {
+        @media (min-width: 1280px) {
           transform-origin: top;
           top: 100%;
           right: inherit;

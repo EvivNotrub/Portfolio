@@ -1,9 +1,10 @@
 import Navigation from "../../components/navigations/navigation.jsx";
-// import logo from "../../assets/react.svg";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./header.scss";
 
-function Header() {
+function Header({ ...props }) {
+  const { pPreviewRef, aboutRef, skillsRef } = props;
   return (
     <header data-testid="header-testid" className="main-header">
       <div className="main-header__logo">
@@ -18,9 +19,19 @@ function Header() {
           <div className="myName">Werlé Barthélémy</div>
         </Link>
       </div>
-      <Navigation />
+      <Navigation
+        pPreviewRef={pPreviewRef}
+        aboutRef={aboutRef}
+        skillsRef={skillsRef}
+      />
     </header>
   );
 }
+
+Header.propTypes = {
+  pPreviewRef: PropTypes.object,
+  aboutRef: PropTypes.object,
+  skillsRef: PropTypes.object,
+};
 
 export default Header;

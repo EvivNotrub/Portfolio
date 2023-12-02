@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./mutton.scss";
 
 function Mutton({ addClass, checked, setChecked }) {
+  // here we remove focus when checked is false
+  useEffect(() => {
+    if (!checked) {
+      document.activeElement.blur();
+    }
+  }, [checked]);
+
   return (
     <div
       className={"mutton" + " " + addClass}

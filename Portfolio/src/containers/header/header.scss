@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .main-header {
   position: fixed;
   width: 100%;
@@ -9,9 +11,10 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1rem;
+  height: $header-hght-M;
   @media (min-width: 1280px) {
     padding: 1rem 2rem;
-    height: 9rem;
+    height: $header-hght-D;
     // TODO: add width to navigation for hover effect
     // add .mutton without space to increase **specificity** if changes don't apply
     &:hover {

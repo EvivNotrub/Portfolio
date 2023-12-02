@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
+import "./App.scss";
 import Home from "./pages/Home/home.jsx";
 import Error from "./pages/Error/error.jsx";
 import Header from "./containers/header/header.jsx";
@@ -7,7 +8,6 @@ import Footer from "./containers/footer/footer.jsx";
 import Portfolio from "./pages/Portfolio/portfolio.jsx";
 import ProjectPage from "./pages/Project/projectPage.jsx";
 import Resume from "./pages/Resume/resume.jsx";
-import "./App.scss";
 import Contact from "./pages/Contact/contact.jsx";
 
 // TODO: manage Rooter properly

@@ -1,6 +1,4 @@
-@import "./src/assets/styles/_variables.scss";
-@import "./src/assets/styles/_mixins.scss";
-@import "./src/assets/styles/_keyframes.scss";
+@import "./assets/styles/variables.scss";
 
 :root {
   font-family: "Roboto Mono", monospace, "Poppins", sans-serif, "Bungee Inline",
@@ -13,11 +11,11 @@
   text-align: center;
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
-  color: black;
-  background-color: white;
+  color: $text-lm;
+  background-color: $third-light-color-20;
   @media (prefers-color-scheme: dark) {
-    color: white;
-    background-color: var(--background-dark);
+    color: $text-dm;
+    background-color: $background-dm;
   }
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
@@ -61,6 +59,9 @@
 a {
   text-decoration: inherit;
   color: inherit;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 /* TODO: style a:hover
 a:hover {
@@ -117,13 +118,10 @@ button:focus-visible {
 /* TODO: style for dark mode */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: $text-lm2;
+    background-color: $very-dim-bg-color-25;
   }
   a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    color: $palette8;
   }
 }

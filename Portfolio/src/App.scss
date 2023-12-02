@@ -1,3 +1,7 @@
+@import "./src/assets/styles/_variables.scss";
+@import "./src/assets/styles/_mixins.scss";
+@import "./src/assets/styles/_keyframes.scss";
+
 /*TODO: work on CSS for the App component
 TODO: best practice is to use CSS modules?
 */
@@ -22,9 +26,9 @@ TODO: best practice is to use CSS modules?
   flex-direction: column;
   & > main {
     flex: 1;
-    margin-top: 6rem;
+    margin-top: $header-hght-M;
     @media (min-width: 1280px) {
-      margin-top: 9rem;
+      margin-top: $header-hght-D;
     }
   }
 }

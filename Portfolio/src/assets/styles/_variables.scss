@@ -3,35 +3,62 @@ TODO: change name to global?
 TODO: look at project about SASS !!!
 TODO: add mixins and functions
 */
+/*********COLORS*********/
 
-:root {
-  --text-color: #2c3e50;
-  --text-color-dark: #fff;
-  --background: #ffffff;
-  --background-dark: #12002b;
-  --primary: #005834;
-  --primary-dimm: #48b386c7;
-  --primary-very-dimm: #78e3b7c7;
-  --primary-light: #00bc77;
-  --secondary: #ccc;
+// Text colors OR Background colors for light and dark mode (lm & dm)
+// TODO: choose either or, but not both
+$text-lm: #213547; // not me some kind of black blue
+$text-lm2: #2c3e50; //not me same
+$text-dm: white;
+$text-dm2: rgba(226, 233, 212);
+$text-dm3: rgba(217, 237, 146, 1);
 
-  --home-loading-time: 5s;
+$background-dm: rgb(39, 38, 64);
+$background-dm2: rgb(33, 47, 69);
 
-  //menu button variables:
-  // for Navigation and Mutton components
-  --mutton-width: 5rem;
-  --mutton-height: 4rem;
-  --mutton-lines-height: 1.15rem;
-  --mutton-lines-width: 100%;
-  --mutton-line-height: 0.25rem;
-  --mutton-line-shadow: var(--neutral) 1.5px 1.5px 3px;
+// filters, buttons, headers, etc.
+$secondary-light-color-35: rgba(217, 237, 146, 0.35);
+$third-light-color: #ecffa7;
+$third-light-color-20: rgba(236, 255, 167, 0.2);
+$very-dim-bg-color-25: rgba(204, 225, 145, 0.25);
 
-  --primary: #9198e5;
-  --secondary: #e66465;
-  --neutral: grey;
-  --palette-1: var(--primary);
-  --palette-2: purple;
-  --palette-3: black;
-  --palette-4: var(--secondary);
-  --palette-5: #3535a5;
-}
+$neutral: grey;
+$neutral-violet: #9198e5;
+
+// Theme for color gradients
+$palette1: rgb(0, 100, 102);
+$palette1-2: rgba(0, 100, 102, 0.9);
+$palette2: rgb(6, 90, 96);
+$palette3: rgb(11, 82, 91);
+$palette4: rgb(20, 69, 82);
+$palette5: rgb(27, 58, 75);
+$palette6: rgb(33, 47, 69);
+$palette7: rgb(39, 38, 64);
+$palette8: rgb(49, 34, 68);
+$palette9: rgb(62, 31, 71);
+$palette10: rgb(77, 25, 77);
+$palette10-2: rgba(77, 25, 77, 0.7);
+$combined-gradient: linear-gradient(91deg, $palette1-2 -10%, $palette10-2 80%),
+  radial-gradient(circle, $palette1-2, $palette10-2 30%),
+  linear-gradient(to left, $palette1, $palette10);
+
+/*********LAYOUT*********/
+// M = mobile / T = tablet / D = desktop
+// Header variables:
+$header-hght-D: 9rem;
+$header-hght-M: 6rem;
+//menu button variables:
+// for Navigation and Mutton components
+$mutton-width: 5rem;
+$mutton-height: 4rem;
+$mutton-lines-height: 1.15rem;
+$mutton-lines-width: 100%;
+$mutton-line-height: 0.25rem;
+$mutton-line-shadow: $neutral 1.5px 1.5px 3px;
+
+// Navigation component
+$list-item-padding: 5px 10px;
+$nav-list-width: 160px;
+
+// TODO: need this?
+$home-loading-time: 5s;

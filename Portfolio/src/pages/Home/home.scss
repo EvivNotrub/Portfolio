@@ -1,12 +1,4 @@
-@use "../../assets/styles/_variables.scss";
-
-$color1: #006466;
-$color1-2: rgba(0, 100, 102, 0.9);
-$color10: #4d194d;
-$color10-2: rgba(77, 25, 77, 0.7);
-$combined-gradient: linear-gradient(91deg, $color1-2 -10%, $color10-2 80%),
-  radial-gradient(circle, $color1-2, $color10-2 30%),
-  linear-gradient(to left, $color1, $color10);
+@import "../../assets/styles/variables.scss";
 
 .home__main {
   display: flex;

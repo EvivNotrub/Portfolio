@@ -1,12 +1,3 @@
-:root {
-  --mutton-width: 5rem;
-  --mutton-height: 4rem;
-  --mutton-lines-height: 1.15rem;
-  --mutton-lines-width: 100%;
-  --mutton-line-height: 0.25rem;
-  --mutton-line-shadow: var(--neutral) 1.5px 1.5px 3px;
-}
-
 .mutton {
   width: var(--mutton-width);
   height: var(--mutton-height);
@@ -19,6 +10,7 @@
   justify-content: center;
   position: relative;
   background-color: var(--primary-very-dimm, white);
+  transition: opacity 0.2s cubic-bezier(0.71, 0.05, 0.25, 0.87) 0.08s;
   //   TODO: box-shadow here and others
   // box-shadow: var(--primary-very-dimm) 2px 2px 2px 5px;
   & .lines--sibling {
@@ -29,7 +21,9 @@
     z-index: 5;
     width: var(--mutton-width);
     height: var(--mutton-height);
-    opacity: 0;
+    // here we have appearance: none; in the root style,
+    // and can use opacity: 1; in order to see the outline when focused
+    opacity: 1;
     &:checked + .lines__center__square {
       transform: rotate(45deg) scale(1, 1);
       opacity: 1;
@@ -80,7 +74,8 @@
         }
       }
     }
-    &:hover + .lines {
+    &:hover + .lines,
+    &:focus + .lines {
       & > .lines__line {
         rotate: 180deg;
       }

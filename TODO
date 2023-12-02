@@ -25,6 +25,12 @@
       ☐ choose a state management librairy ? @critical @tag(8)
       ✔ choose a testing librairy ? @done(23-11-29 22:13)
       ☐ choose a style structure management @critical
+      ☐ manage and create scss data @critical
+        ☐ create scss import structure
+        ☐ mixins
+        ☐ keyframes
+        ☐ variables
+        ☐ functions
       ☐ on home new simple version => remove useless components
         ☐ homeNavi => remove ? 
         ☐ mainContent => remove ?

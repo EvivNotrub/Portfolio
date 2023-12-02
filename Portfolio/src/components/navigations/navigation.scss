@@ -5,17 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  &__mutton {
-    // add .mutton without space to increase **specificity** if changes don't apply
-    &:hover {
-      & + .nav__list {
-        transform: translate(0, 0) scale(1, 1);
-        opacity: 1;
-      }
-    }
-  }
-  // TODO: check for browser support
-  &:has(.nav__mutton .lines--sibling:checked) .nav__list {
+  // &:focus-within {
+  //   & .nav__list {
+  //     transform: translate(0, 0) scale(1, 1);
+  //     opacity: 1;
+  //   }
+  // }
+  // &:has(.nav__mutton .lines--sibling:checked) .nav__list {
+  // check for browser support later, now not working on mozilla
+  // workaround with JSX state [checked, ..] in Navigation.jsx and toogle className
+  & .show {
     transform: translate(0, 0) scale(1, 1);
     opacity: 1;
   }
@@ -35,7 +34,7 @@
     transform: translate(0, 0) scale(1, 0);
     opacity: 0;
     transition: all 0.2s ease-in-out;
-    @media (min-width: 1280px) {
+    @media (min-width: 990px) {
       width: auto;
       flex-direction: row;
       transform-origin: right;
@@ -47,11 +46,12 @@
     &__item {
       position: relative;
       padding: var(--list-item-padding);
-      &:hover {
-        // TODO: manage for mobile
-        & .sub-nav {
-          transform: translate(0, 0) scale(1, 1);
-          opacity: 1;
+      @media (min-width: 990px) {
+        &:hover {
+          & .sub-nav {
+            transform: translate(0, 0) scale(1, 1);
+            opacity: 1;
+          }
         }
       }
       & .sub-nav {
@@ -65,11 +65,17 @@
         transform-origin: right;
         transform: translate(0, 0) scale(0, 1);
         opacity: 0;
+        // @media (max-width: 989.99px) {
+        &.show-sub {
+          transform: translate(0, 0) scale(1, 1);
+          opacity: 1;
+        }
+        // }
         // TODO: work on transition
         transition:
           transform 0.18s ease-in-out 0.085s,
           opacity 0.15s ease-in-out;
-        @media (min-width: 1280px) {
+        @media (min-width: 990px) {
           transform-origin: top;
           top: 100%;
           right: inherit;

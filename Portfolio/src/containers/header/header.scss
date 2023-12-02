@@ -6,9 +6,21 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1rem;
-  @media (min-width: 1280px) {
+  @media (min-width: 990px) {
     padding: 1rem 2rem;
     height: 9rem;
+    // TODO: add width to navigation for hover effect
+    // add .mutton without space to increase **specificity** if changes don't apply
+    &:hover {
+      & .mutton {
+        animation: shake-it 0.04s alternate 8;
+        opacity: 0.835;
+      }
+      & .nav__list {
+        transform: translate(0, 0) scale(1, 1);
+        opacity: 1;
+      }
+    }
   }
   & .myName {
     font-family: "Bungee Inline";

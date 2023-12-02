@@ -1,0 +1,10 @@
+@keyframes shake-it {
+  from {
+    transform: translate(0%, 0%);
+    animation-timing-function: cubic-bezier(0.56, 0.05, 0.49, 0.6);
+  }
+  to {
+    transform: translate(0.8%, 1.8%);
+    animation-timing-function: cubic-bezier(0.4, 0.56, 1, 0.57);
+  }
+}

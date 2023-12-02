@@ -1,9 +1,11 @@
+@use "./_variables.scss";
+
 @mixin showCenter {
   // ADD lines below:
-  // :root {
-  //   --x-origin: 85.36%;
-  //   --y-origin: 85.36%;
-  // }
+  :root {
+    --x-origin: 85.36%;
+    --y-origin: 85.36%;
+  }
   .y-axis {
     position: absolute;
     width: inherit;

@@ -1,6 +1,62 @@
+@use "../../assets/styles/_variables.scss";
+
+$color1: #006466;
+$color1-2: rgba(0, 100, 102, 0.9);
+$color10: #4d194d;
+$color10-2: rgba(77, 25, 77, 0.7);
+$combined-gradient: linear-gradient(91deg, $color1-2 -10%, $color10-2 80%),
+  radial-gradient(circle, $color1-2, $color10-2 30%),
+  linear-gradient(to left, $color1, $color10);
+
 .home__main {
   display: flex;
   flex-direction: column;
   place-items: center;
   width: 100%;
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 170%;
+      height: 100%;
+      background: $combined-gradient;
+      transform: rotate(180deg);
+      opacity: 0.27;
+      @media (prefers-color-scheme: dark) {
+        opacity: 0.8;
+        transform: rotate(180deg);
+      }
+    }
+    &__img {
+      object-fit: cover;
+      width: 100%;
+      opacity: 0.6;
+      filter: contrast(0.7) blur(1px) brightness(1.3);
+      @media (prefers-color-scheme: dark) {
+        opacity: 0.35;
+        filter: brightness(0.8);
+      }
+    }
+  }
+  &__section {
+  }
+}
+
+.welcome {
+  height: 100vh;
+  position: relative;
+  // &__img {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   object-fit: cover repeat;
+  //   object-position: center;
+  // }
 }

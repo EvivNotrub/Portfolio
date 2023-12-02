@@ -13,8 +13,12 @@
   text-align: center;
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: hsl(220, 82%, 13%);
+  color: black;
+  background-color: white;
+  @media (prefers-color-scheme: dark) {
+    color: white;
+    background-color: var(--background-dark);
+  }
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;

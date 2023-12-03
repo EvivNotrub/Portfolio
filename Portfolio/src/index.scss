@@ -1,5 +1,11 @@
 @import "./assets/styles/variables.scss";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  // outline: #747bff 2px solid;
+}
 :root {
   font-family: "Roboto Mono", monospace, "Poppins", sans-serif, "Bungee Inline",
     sans-serif, "Bungee", sans-serif, "Bungee Hairline", sans-serif,
@@ -13,6 +19,7 @@
   color-scheme: light dark;
   color: $text-lm2;
   background-color: $very-dim-bg-color-25;
+
   @media (prefers-color-scheme: dark) {
     color: $text-dm;
     background-color: $background-dm;
@@ -29,12 +36,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  // outline: #747bff 2px solid;
+a {
+  text-decoration: inherit;
+  color: inherit;
+  &:hover {
+    color: $palette8;
+    opacity: 0.8;
+  }
 }
 
 // * > * {
@@ -62,14 +70,6 @@
 //   }
 // }
 
-a {
-  text-decoration: inherit;
-  color: inherit;
-  &:hover {
-    color: $palette8;
-    opacity: 0.8;
-  }
-}
 /* TODO: style a:hover
 a:hover {
   text-decoration: underline;

@@ -10,13 +10,25 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  padding: 1rem;
+  padding: $header-padd-M;
   height: $header-hght-M;
+  & .myName {
+    font-family: "Bungee Inline";
+    font-size: $header-title-M;
+    text-align: start;
+    line-height: 1.2;
+  }
+  & nav {
+    flex: 1;
+  }
   @media (min-width: 1280px) {
-    padding: 1rem 2rem;
+    padding: $header-padd-D;
     height: $header-hght-D;
     // TODO: add width to navigation for hover effect
     // add .mutton without space to increase **specificity** if changes don't apply
+    & .myName {
+      font-size: $header-title-D;
+    }
     &:hover {
       & .mutton {
         animation: shake-it 0.04s alternate 8;
@@ -28,12 +40,6 @@
       }
     }
   }
-  & .myName {
-    font-family: "Bungee Inline";
-  }
-  & nav {
-    flex: 1;
-  }
   // &__social {
   //   display: flex;
   //   justify-content: center;
@@ -43,4 +49,15 @@
   //     margin: 0 0.5em;
   //   }
   // }
+}
+@media (prefers-color-scheme: light) {
+  .main-header {
+    // background-color: $background-dm;
+    & .myName {
+      color: $palette9;
+      &:hover {
+        color: $palette9;
+      }
+    }
+  }
 }

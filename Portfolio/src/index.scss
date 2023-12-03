@@ -1,3 +1,4 @@
+@import "./assets/styles/mixins.scss";
 @import "./assets/styles/variables.scss";
 
 *,
@@ -17,32 +18,18 @@
   text-align: center;
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
-  color: $text-lm2;
-  background-color: $very-dim-bg-color;
+  @include color-mode($root-scheme...);
 
-  @media (prefers-color-scheme: dark) {
-    color: $text-dm;
-    background-color: $background-dm;
-  }
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
+
 a {
   text-decoration: inherit;
-  color: inherit;
-  &:hover {
-    color: $palette8;
-    opacity: 0.8;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: $text-dm3;
-    &:hover {
-      color: $third-light-color;
-    }
-  }
+  @include color-mode($link-scheme...);
 }
 
 // * > * {
@@ -70,11 +57,6 @@ a {
 //   }
 // }
 
-/* TODO: style a:hover
-a:hover {
-  text-decoration: underline;
-}
-*/
 /*TODO: style for body
  */
 body {

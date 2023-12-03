@@ -5,6 +5,19 @@ TODO: add mixins and functions
 */
 @use "sass:color";
 
+/****INFO****/
+// for color schemes , look at the src/assets/style/MIXINS under COLORS
+
+/*********BREAKPOINTS*********/
+// m = mobile / t = tablet / d = desktop
+
+$breakpoint-m: 320px;
+$breakpoint-m-min: 319.99px;
+$breakpoint-t: 768px;
+$breakpoint-t-min: 767.99px;
+$breakpoint-d: 1280px;
+$breakpoint-d-min: 1279.99px;
+
 /*********COLORS*********/
 
 // Text colors OR Background colors for light and dark mode (lm & dm)
@@ -28,7 +41,8 @@ $very-dim-bg-color: rgba(204, 225, 145, 0.103);
 $neutral: grey;
 $neutral-violet: #9198e5;
 
-// Theme for color gradients
+// Theme for color gradients & more
+// Range of colors bewteen $palette1 and $palette10
 $palette1: rgb(0, 100, 102);
 $palette1-2: rgba(0, 100, 102, 0.9);
 $palette2: rgb(6, 90, 96);
@@ -56,8 +70,28 @@ $dim-gradient-lm: linear-gradient(
   rgba(181, 228, 140, 0.45) 140%
 );
 
+/********************COLOR SCHEMES********************/
+// in order below: & when 'none' = not declared
+// text, bg, textHover, bgHover, opacity, opacityHover
+
+$scheme-txt-accent-lm: $palette9; //can add a background
+$scheme-txt-accent-dm: $text-dm3; // can add a background
+$link-scheme-lm: inherit, none, $palette8, none, none, 0.8;
+$link-scheme-dm: $text-dm3, none, $third-light-color;
 /*********LAYOUT*********/
 // M = mobile / T = tablet / D = desktop
+
+//index.scss
+
+$root-txt-lm: $text-lm2;
+$root-txt-dm: $text-dm;
+$root-bg-lm: $very-dim-bg-color;
+$root-bg-dm: $background-dm;
+$scheme-root-lm: $root-txt-lm, $root-bg-lm;
+$scheme-root-dm: $root-txt-dm, $root-bg-dm;
+$root-scheme: $scheme-root-lm, $scheme-root-dm;
+$link-scheme: $link-scheme-lm, $link-scheme-dm;
+
 // Header variables:
 $header-hght-D: 9rem;
 $header-hght-M: 6rem;
@@ -95,3 +129,7 @@ $sub-nav-list-width-D: 34rem;
 $nav-ft-weight: 700;
 // TODO: need this?
 $home-loading-time: 5s;
+
+// HOME component
+
+$h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;

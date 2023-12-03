@@ -1,3 +1,4 @@
+@import "../../assets/styles/mixins.scss";
 @import "../../assets/styles/variables.scss";
 
 .home__main {
@@ -38,13 +39,14 @@
       }
     }
   }
-  &__section {
-  }
 }
 
 .welcome {
   height: 100vh;
   position: relative;
+  &__title {
+    @include color-mode($h1-mode-scheme...);
+  }
   // &__img {
   //   position: absolute;
   //   top: 0;

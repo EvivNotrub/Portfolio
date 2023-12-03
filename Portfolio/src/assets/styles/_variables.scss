@@ -99,9 +99,9 @@ $header-padd-D: 1rem 2rem;
 $header-padd-M: 0.8rem;
 $header-ft-M: 1.7rem;
 $header-ft-D: 1.8rem;
-$header-ft-weight: 500;
+$header-ft-weight: 500; // Nav font weight overwrites this
 $header-title-M: 1.8rem;
-$header-title-D: 2.1rem;
+$header-title-D: 2.4rem;
 
 //menu button variables:
 // for Navigation and Mutton components
@@ -119,6 +119,7 @@ $mutton-bg-lm: color.scale($background-lm, $alpha: -50%);
 $list-item-padding: 5px 10px;
 $nav-list-width: 160px;
 $nav-list-radius: $mutton-radius;
+$nav-default-bg: $mutton-bg-dm;
 $nav-list-bg-dm: $very-dim-bg-color;
 $nav-list-bg-lm: color.scale($background-lm, $alpha: -35%);
 $nav-link-color-dm: $text-dm2;
@@ -126,7 +127,7 @@ $nav-link-color-lm: $text-lm2; // TODO: change ?
 $sub-nav-list-width-D: 34rem;
 // $nav-ft-s-D: 1.5rem; SEE HEADER VARIABLES
 // $nav-ft-s-M: 1.2rem; SEE HEADER VARIABLES
-$nav-ft-weight: 700;
+$nav-ft-weight: 500;
 // TODO: need this?
 $home-loading-time: 5s;
 

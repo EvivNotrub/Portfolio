@@ -1,4 +1,4 @@
-@import "../../assets/styles/variables.scss";
+@use "../../assets/styles/variables.scss" as *;
 
 .nav {
   position: relative;
@@ -23,7 +23,7 @@
     & a {
       color: $nav-link-color-dm;
     }
-    background-color: $mutton-bg-dm;
+    background-color: $nav-default-bg;
     border-radius: $nav-list-radius;
     // TODO: color & bg
     text-align: end;
@@ -61,7 +61,7 @@
         }
       }
       & .sub-nav {
-        background-color: $mutton-bg-dm;
+        background-color: $nav-default-bg;
         border-radius: $nav-list-radius;
         position: absolute;
         text-align: left;

@@ -1,7 +1,7 @@
-@import "./src/assets/styles/_variables.scss";
-@import "./src/assets/styles/_functions.scss";
-@import "./src/assets/styles/_mixins.scss";
-@import "./src/assets/styles/_keyframes.scss";
+@use "./src/assets/styles/_variables" as *;
+@use "./src/assets/styles/_functions" as *;
+@use "./src/assets/styles/_mixins" as *;
+@use "./src/assets/styles/_keyframes" as *;
 
 /*TODO: work on CSS for the App component
 TODO: best practice is to use CSS modules?

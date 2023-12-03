@@ -1,5 +1,5 @@
 @use "sass:color";
-@import "../../assets/styles/variables.scss";
+@use "../../assets/styles/variables" as *;
 
 .mutton {
   border-radius: $mutton-radius;

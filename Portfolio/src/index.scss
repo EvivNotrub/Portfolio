@@ -11,11 +11,17 @@
   text-align: center;
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
-  color: $text-lm;
-  background-color: $third-light-color-20;
+  color: $text-lm2;
+  background-color: $very-dim-bg-color-25;
   @media (prefers-color-scheme: dark) {
     color: $text-dm;
     background-color: $background-dm;
+    a {
+      color: $text-dm3;
+      &:hover {
+        color: $third-light-color;
+      }
+    }
   }
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
@@ -60,6 +66,7 @@ a {
   text-decoration: inherit;
   color: inherit;
   &:hover {
+    color: $palette8;
     opacity: 0.8;
   }
 }
@@ -114,14 +121,4 @@ h1 {
 button:focus,
 button:focus-visible {
   border: 4px auto -webkit-focus-ring-color;
-}
-/* TODO: style for dark mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: $text-lm2;
-    background-color: $very-dim-bg-color-25;
-  }
-  a:hover {
-    color: $palette8;
-  }
 }

@@ -1,6 +1,8 @@
+@use "sass:color";
 @import "../../assets/styles/variables.scss";
 
 .mutton {
+  border-radius: $mutton-radius;
   width: $mutton-width;
   height: $mutton-height;
   padding: $list-item-padding; // var from navigation.scss for items of nav>list
@@ -89,7 +91,7 @@
       z-index: 2;
       &__square {
         box-sizing: border-box;
-        background-color: $text-dm3;
+        background-color: $palette9;
         width: $mutton-line-height;
         height: $mutton-line-height;
         transform-origin: center;
@@ -133,6 +135,36 @@
         border-color: $text-dm3;
         background-color: $text-dm3;
         transform-origin: left;
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: light) {
+  .mutton {
+    background-color: color.scale($background-lm, $alpha: -50%);
+    .lines {
+      &__center {
+        &__square {
+          background-color: $palette9;
+        }
+      }
+      &__line {
+        &.--one {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--two {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--three {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--four {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
       }
     }
   }

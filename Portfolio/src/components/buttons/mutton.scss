@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: $background-dm;
+  background-color: $mutton-bg-dm;
   transition: opacity 0.2s cubic-bezier(0.71, 0.05, 0.25, 0.87) 0.08s;
   //   TODO: box-shadow here and others
   // box-shadow: $ 2px 2px 2px 5px;
@@ -91,7 +91,7 @@
       z-index: 2;
       &__square {
         box-sizing: border-box;
-        background-color: $palette9;
+        background-color: $text-dm3;
         width: $mutton-line-height;
         height: $mutton-line-height;
         transform-origin: center;
@@ -141,7 +141,7 @@
 }
 @media (prefers-color-scheme: light) {
   .mutton {
-    background-color: color.scale($background-lm, $alpha: -50%);
+    background-color: $mutton-bg-lm;
     .lines {
       &__center {
         &__square {

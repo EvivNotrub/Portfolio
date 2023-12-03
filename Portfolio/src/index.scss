@@ -18,17 +18,11 @@
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
   color: $text-lm2;
-  background-color: $very-dim-bg-color-25;
+  background-color: $very-dim-bg-color;
 
   @media (prefers-color-scheme: dark) {
     color: $text-dm;
     background-color: $background-dm;
-    a {
-      color: $text-dm3;
-      &:hover {
-        color: $third-light-color;
-      }
-    }
   }
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
@@ -42,6 +36,12 @@ a {
   &:hover {
     color: $palette8;
     opacity: 0.8;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: $text-dm3;
+    &:hover {
+      color: $third-light-color;
+    }
   }
 }
 

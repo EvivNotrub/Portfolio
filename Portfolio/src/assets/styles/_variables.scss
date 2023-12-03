@@ -3,6 +3,8 @@ TODO: change name to global?
 TODO: look at project about SASS !!!
 TODO: add mixins and functions
 */
+@use "sass:color";
+
 /*********COLORS*********/
 
 // Text colors OR Background colors for light and dark mode (lm & dm)
@@ -21,7 +23,7 @@ $background-lm: rgb(181, 228, 140);
 $secondary-light-color-35: rgba(217, 237, 146, 0.35);
 $third-light-color: #ecffa7;
 $third-light-color-20: rgba(236, 255, 167, 0.2);
-$very-dim-bg-color-25: rgba(204, 225, 145, 0.25);
+$very-dim-bg-color: rgba(204, 225, 145, 0.103);
 
 $neutral: grey;
 $neutral-violet: #9198e5;
@@ -43,6 +45,17 @@ $combined-gradient: linear-gradient(91deg, $palette1-2 -10%, $palette10-2 80%),
   radial-gradient(circle, $palette1-2, $palette10-2 30%),
   linear-gradient(to left, $palette1, $palette10);
 
+$dim-gradient-dm: linear-gradient(
+  0deg,
+  rgba(255, 255, 255, 0) 5%,
+  rgba(39, 38, 64, 0.8) 110%
+);
+$dim-gradient-lm: linear-gradient(
+  0deg,
+  rgba(255, 255, 255, 0) 5%,
+  rgba(181, 228, 140, 0.45) 140%
+);
+
 /*********LAYOUT*********/
 // M = mobile / T = tablet / D = desktop
 // Header variables:
@@ -50,10 +63,11 @@ $header-hght-D: 9rem;
 $header-hght-M: 6rem;
 $header-padd-D: 1rem 2rem;
 $header-padd-M: 0.8rem;
-$header-ft-M: 3rem;
-$header-ft-D: 4rem;
+$header-ft-M: 1.7rem;
+$header-ft-D: 1.8rem;
+$header-ft-weight: 500;
 $header-title-M: 1.8rem;
-$header-title-D: 1.9rem;
+$header-title-D: 2.1rem;
 
 //menu button variables:
 // for Navigation and Mutton components
@@ -64,10 +78,20 @@ $mutton-lines-height: 1.15rem;
 $mutton-lines-width: 100%;
 $mutton-line-height: 0.25rem;
 $mutton-line-shadow: $neutral 1.5px 1.5px 3px;
+$mutton-bg-dm: $background-dm;
+$mutton-bg-lm: color.scale($background-lm, $alpha: -50%);
 
 // Navigation component
 $list-item-padding: 5px 10px;
 $nav-list-width: 160px;
-
+$nav-list-radius: $mutton-radius;
+$nav-list-bg-dm: $very-dim-bg-color;
+$nav-list-bg-lm: color.scale($background-lm, $alpha: -35%);
+$nav-link-color-dm: $text-dm2;
+$nav-link-color-lm: $text-lm2; // TODO: change ?
+$sub-nav-list-width-D: 34rem;
+// $nav-ft-s-D: 1.5rem; SEE HEADER VARIABLES
+// $nav-ft-s-M: 1.2rem; SEE HEADER VARIABLES
+$nav-ft-weight: 700;
 // TODO: need this?
 $home-loading-time: 5s;

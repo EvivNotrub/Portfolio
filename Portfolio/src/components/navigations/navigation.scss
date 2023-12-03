@@ -2,10 +2,10 @@
 
 .nav {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: end;
+  font-weight: $nav-ft-weight;
   // &:focus-within {
   //   & .nav__list {
   //     transform: translate(0, 0) scale(1, 1);
@@ -20,6 +20,11 @@
     opacity: 1;
   }
   &__list {
+    & a {
+      color: $nav-link-color-dm;
+    }
+    background-color: $mutton-bg-dm;
+    border-radius: $nav-list-radius;
     // TODO: color & bg
     text-align: end;
     width: $nav-list-width;
@@ -35,6 +40,7 @@
     opacity: 0;
     transition: all 0.2s ease-in-out;
     @media (min-width: 1280px) {
+      background-color: $nav-list-bg-dm;
       width: auto;
       flex-direction: row;
       transform-origin: right;
@@ -55,6 +61,8 @@
         }
       }
       & .sub-nav {
+        background-color: $mutton-bg-dm;
+        border-radius: $nav-list-radius;
         position: absolute;
         text-align: left;
         top: -1rem; // nav padding top
@@ -74,13 +82,7 @@
         transition:
           transform 0.18s ease-in-out 0.085s,
           opacity 0.15s ease-in-out;
-        @media (min-width: 1280px) {
-          transform-origin: top;
-          top: 100%;
-          right: inherit;
-          left: 0;
-          transform: translate(0, 0) scale(1, 0);
-        }
+
         & .sub-nav__list {
           display: flex;
           flex-direction: column;
@@ -88,6 +90,38 @@
           & .sub-nav__item {
             font-size: 0.8em;
           }
+        }
+        @media (min-width: 1280px) {
+          background-color: $nav-list-bg-dm;
+          transform-origin: top;
+          top: 140%;
+          right: inherit;
+          left: 0;
+
+          transform: translate(0, 0) scale(1, 0);
+          & .sub-nav__list {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 0.8rem;
+            width: $sub-nav-list-width-D;
+          }
+        }
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: light) {
+  .nav {
+    &__list {
+      & a {
+        color: $nav-link-color-lm;
+      }
+      // TODO:
+      background-color: $nav-list-bg-lm;
+      &__item {
+        & .sub-nav {
+          background-color: $nav-list-bg-lm;
         }
       }
     }

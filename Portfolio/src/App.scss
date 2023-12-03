@@ -28,7 +28,7 @@ TODO: best practice is to use CSS modules?
   & > main {
     flex: 1;
     margin-top: $header-hght-M;
-    @media (min-width: 1280px) {
+    @include desktop-only {
       margin-top: $header-hght-D;
     }
   }

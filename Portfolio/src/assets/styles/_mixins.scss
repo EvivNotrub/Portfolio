@@ -115,51 +115,6 @@
 }
 
 /************COLORS*************/
-@mixin color($color, $colorHover: none) {
-  color: $color;
-  @if $colorHover != none {
-    &:hover {
-      color: $colorHover;
-    }
-  }
-}
-
-@mixin background($bg, $bgHover: none) {
-  background: $bg;
-  @if $bgHover != none {
-    &:hover {
-      background: $bgHover;
-    }
-  }
-}
-//takes arguments in order below and can use only one:
-// text, bg, textHover, bgHover, opacity, opacityHover
-@mixin color-scheme(
-  $text,
-  $bg: none,
-  $txtHover: $text,
-  $bgHover: $bg,
-  $opacity: none,
-  $opacityHover: $opacity
-) {
-  color: $text;
-  @if $opacity != none {
-    opacity: $opacity;
-  }
-  @if $bg != none {
-    background: $bg;
-  }
-  &:hover {
-    color: $txtHover;
-    @if $opacityHover != none {
-      opacity: $opacityHover;
-    }
-    @if $bg != none {
-      background: $bgHover;
-    }
-  }
-}
-//simple versions of color-scheme mixin above:
 // for text only
 @mixin color-scheme-txt($text, $textHover: none) {
   color: $text;
@@ -179,15 +134,43 @@
   }
 }
 // for text and background
-
-@mixin color-scheme-txt-bg($text, $bg, $textHover: none, $bgHover: none) {
+@mixin color-scheme-txt-bg($text, $bg: none, $textHover: none, $bgHover: none) {
   color: $text;
   background: $bg;
   &:hover {
+    @content;
     @if $textHover != none {
       color: $textHover;
     }
     @if $bgHover != none {
+      background: $bgHover;
+    }
+  }
+}
+//for text, background, opacity
+@mixin color-scheme(
+  $text: none,
+  $bg: none,
+  $txtHover: $text,
+  $bgHover: $bg,
+  $opacity: none,
+  $opacityHover: $opacity
+) {
+  @if $text != none {
+    color: $text;
+  }
+  @if $opacity != none {
+    opacity: $opacity;
+  }
+  @if $bg != none {
+    background: $bg;
+  }
+  &:hover {
+    color: $txtHover;
+    @if $opacityHover != none {
+      opacity: $opacityHover;
+    }
+    @if $bg != none {
       background: $bgHover;
     }
   }
@@ -197,39 +180,63 @@
 //for light mode and dark mode and they **EACH** include :
 // text, bg, textHover, bgHover, opacity, opacityHover
 //See color-scheme mixin above.
-@mixin color-mode($light, $dark: none) {
-  @include color-scheme($light...);
+@mixin color-mode($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme($light...);
+  }
   @if ($dark != none) {
     @media (prefers-color-scheme: dark) {
       @include color-scheme($dark...);
+      @content;
     }
   }
 }
 // simple version of color-mode mixin above:
 // for text only
-@mixin color-mode-txt($light, $dark: none) {
-  @include color-mode-txt($light...);
+@mixin color-mode-txt($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-txt($light...);
+  }
   @if ($dark != none) {
     @media (prefers-color-scheme: dark) {
-      @include color-mode-txt($dark...);
+      @include color-scheme-txt($dark...);
+      @content;
     }
   }
 }
 // for background only
-@mixin color-mode-bg($light, $dark: none) {
-  @include color-mode-bg($light...);
+@mixin color-mode-bg($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-bg($light...);
+  }
   @if ($dark != none) {
     @media (prefers-color-scheme: dark) {
-      @include color-mode-bg($dark...);
+      @include color-scheme-bg($dark...);
+      @content;
     }
   }
 }
 // for text and background
-@mixin color-mode-txt-bg($light, $dark: none) {
-  @include color-mode-txt-bg($light...);
+@mixin color-mode-txt-bg($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-txt-bg($light...);
+  }
   @if ($dark != none) {
     @media (prefers-color-scheme: dark) {
-      @include color-mode-txt-bg($dark...);
+      @include color-scheme-txt-bg($dark...);
+      @content;
+    }
+  }
+}
+
+@mixin mode($mode: dark) {
+  @if $mode == dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  } @else if $mode == light {
+    @media (prefers-color-scheme: light) {
+      @content;
     }
   }
 }

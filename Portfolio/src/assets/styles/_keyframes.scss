@@ -9,7 +9,7 @@
   }
 }
 
-// fade out animation
+// fade animation
 
 @keyframes fade-out {
   from {
@@ -17,5 +17,35 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes subterfuge {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// TODO: typewriter animation
+
+@keyframes typewriter {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
   }
 }

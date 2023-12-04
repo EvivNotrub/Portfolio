@@ -6,6 +6,7 @@ import About from "../../containers/about/about";
 import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
 import "./home.scss";
+import Welcome from "../../containers/welcome/welcome";
 
 function Home({ pPreviewRef, aboutRef, skillsRef }) {
   const location = useLocation();
@@ -33,17 +34,7 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
       </div>
 
       <section id="welcome" className="greet home__main__section">
-        <div className="greet__div">
-          <p className="greet__div__welcome">Welcome,</p>
-          <h1 className="greet__div__title">
-            I'm a Junior <span>Front End Developer</span>,
-            <br />
-            my name is <span>Barthélémy Werlé</span>.
-          </h1>
-          <p className="greet__div__message">
-            Make yourself at home and feel free to browse.
-          </p>
-        </div>
+        <Welcome />
       </section>
       <section
         id="projectsPreview"

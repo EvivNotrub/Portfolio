@@ -37,20 +37,20 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
         <Welcome />
       </section>
       <section
-        id="projectsPreview"
-        className="projects home__main__section"
-        ref={pPreviewRef}
-        tabIndex="-1"
-      >
-        <ProjectsPreview />
-      </section>
-      <section
         id="about"
         className="about home__main__section"
         ref={aboutRef}
         tabIndex="-1"
       >
         <About />
+      </section>
+      <section
+        id="projectsPreview"
+        className="projects home__main__section"
+        ref={pPreviewRef}
+        tabIndex="-1"
+      >
+        <ProjectsPreview />
       </section>
       <section
         id="skills"

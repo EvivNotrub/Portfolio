@@ -1,3 +1,5 @@
+// for hover effects
+
 @keyframes shake-it {
   from {
     transform: translate(0%, 0%);
@@ -29,10 +31,23 @@
   }
 }
 
-@keyframes fadeInUp {
+// y-axis animation
+
+@keyframes descent {
+  from {
+    transform: translateY(-20vh);
+  }
   to {
-    opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes ascent {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-30vh);
   }
 }
 
@@ -47,5 +62,31 @@
 @keyframes blink {
   to {
     background: transparent;
+  }
+}
+// loader animation
+
+@keyframes loader-fade-out {
+  from {
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+  90% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.68, 0, 0.59, 1.04);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

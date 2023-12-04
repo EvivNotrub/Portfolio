@@ -1,15 +1,41 @@
+import { useEffect, useState } from "react";
 import "./welcome.scss";
+import Typewriter from "../../components/typing/typing";
 
 function Welcome() {
+  const [job, setJob] = useState("Front End Developer");
+  const [fullName, setFullName] = useState("Barthélémy Werlé");
+  const [typingJob, setTypingJob] = useState(false);
+  const [typingFullName, setTypingFullName] = useState(false);
+
+  function delay(setState, value, ms) {
+    const timeout = setTimeout(() => {
+      setState(value);
+    }, ms);
+    return () => clearTimeout(timeout);
+  }
+
+  useEffect(() => {
+    if (!typingJob) {
+      delay(setTypingJob, true, 1000);
+    }
+    if (!typingFullName) {
+      delay(setTypingFullName, true, 3000);
+    }
+  }, [typingFullName, typingJob]);
+
   return (
     <div className="welcome">
       <p className="welcome__welcome">Welcome,</p>
-      <h1 className="welcome__title">
-        I'm a Junior <span className="typing">Front End Developer</span>,
+      <h1 className="welcome__title typing">
+        I'm a Junior {typingJob ? <Typewriter text={job} speed={80} /> : ""}
+        {/*<span className="typing">{job}</span>*/},
         <br />
-        my name is <span className="typing">Barthélémy Werlé</span>.
+        my name is{" "}
+        {typingFullName ? <Typewriter text={fullName} speed={80} /> : ""}
+        {/*<span className="typing">{fullName}</span>*/}.
       </h1>
-      <p className="welcome__message">
+      <p className="welcome__message typing">
         Make yourself at home and feel free to browse.
       </p>
     </div>

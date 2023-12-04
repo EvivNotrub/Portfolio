@@ -44,14 +44,16 @@ $palette8: rgb(49, 34, 68);
 $palette9: rgb(62, 31, 71);
 $palette10: rgb(77, 25, 77);
 $palette10-2: rgba(77, 25, 77, 0.7);
-$palette10-3: rgba(25, 77, 41, 0.7);
-$palette10-4: rgba(25, 77, 77, 0.7);
+$palette13: rgba(25, 77, 41, 0.7);
+$palette12: rgba(25, 77, 77, 0.7);
 
-$palette11: #fd815e;
-$palette12: #33ca2ed7;
-$palette13: #4356ffcb;
+// $palette11: #fd815e;
+// $palette12: #33ca2ed7;
+// $palette13: #4356ffcb;
 $palette14: #ff4356b0;
 $palette15: #ff6060d0;
+$palette16: #ff6060e7;
+
 $combined-gradient: linear-gradient(91deg, $palette1-2 -10%, $palette10-2 80%),
   radial-gradient(circle, $palette1-2, $palette10-2 30%),
   linear-gradient(to left, $palette1, $palette10);
@@ -87,10 +89,10 @@ $bg-super-light-lm: color.scale($background-lm, $alpha: -90%);
 // in order below:   ( when 'none' = not declared)
 // text, bg, textHover, bgHover, opacity, opacityHover
 
-$link-accent-scheme-lm: $palette15, none, $palette10;
+$link-accent-scheme-lm: $palette16, none, $palette10;
 $link-accent-scheme-dm: $text-dm3, none, $third-light-color;
 $link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
-$scheme-txt-accent-lm: $palette15; //can add a background
+$scheme-txt-accent-lm: $palette16; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
 $link-scheme-lm: inherit, none, $palette9, none, none, 0.8;
 $link-scheme-dm: $text-dm3, none, $third-light-color;
@@ -163,5 +165,8 @@ $h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;
 $section-padd-M: 1.3rem;
 $section-padd-D: 2rem;
 $home-div-bg-dm: none, $very-dim-bg-color;
-$home-div-bg-lm: none, $mutton-bg-lm; // or $mutton-bg-dm;
+// $home-div-bg-lm: $text-dm, $mutton-bg-dm; // remove text-shadow in home -> div
+// OR
+$home-div-bg-lm: none, $mutton-bg-lm;
 $home-div-bg-mode: $home-div-bg-lm, $home-div-bg-dm;
+$fade-out-time: 0.4s ease-in 5s forwards;

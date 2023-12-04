@@ -8,3 +8,14 @@
     animation-timing-function: cubic-bezier(0.4, 0.56, 1, 0.57);
   }
 }
+
+// fade out animation
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
 import "./typing.scss";
 
@@ -16,6 +17,14 @@ const Typewriter = ({ text, speed, className }) => {
     }
   }, [currentIndex, speed, text]);
   return <span className={className}>{currentText}</span>;
+};
+
+Typewriter.propTypes = {
+  speed: PropTypes.number,
+  className: PropTypes.string,
+  text: PropTypes.shape({
+    length: PropTypes.number,
+  }).isRequired,
 };
 
 export default Typewriter;

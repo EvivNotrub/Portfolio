@@ -3,8 +3,8 @@ import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
 function Welcome() {
-  const [job, setJob] = useState("Front End Developer");
-  const [fullName, setFullName] = useState("Barthélémy Werlé");
+  const job = "Front End Developer";
+  const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
   const [typingFullName, setTypingFullName] = useState(false);
 
@@ -28,8 +28,10 @@ function Welcome() {
     <div className="welcome">
       <p className="welcome__welcome">Welcome,</p>
       <h1 className="welcome__title typing">
-        I'm a Junior {typingJob ? <Typewriter text={job} speed={80} /> : ""}
-        {/*<span className="typing">{job}</span>*/},
+        I&apos;m a Junior{" "}
+        {typingJob ? <Typewriter text={job} speed={80} /> : ""}
+        {/*TODO: find a more efficient way.<span className="typing">{job}</span>*/}
+        ,
         <br />
         my name is{" "}
         {typingFullName ? <Typewriter text={fullName} speed={80} /> : ""}
@@ -41,5 +43,12 @@ function Welcome() {
     </div>
   );
 }
+
+Welcome.propTypes = {
+  job: Typewriter.propTypes.text,
+  fullName: Typewriter.propTypes.text,
+  typingJob: Typewriter.propTypes.text,
+  typingFullName: Typewriter.propTypes.text,
+};
 
 export default Welcome;

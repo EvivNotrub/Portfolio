@@ -27,7 +27,7 @@
   -moz-osx-font-smoothing: grayscale; */
 }
 
-a {
+a:not(.myName) {
   text-decoration: inherit;
   @include color-mode($link-scheme...);
 }
@@ -96,8 +96,10 @@ textarea {
 
 /* TODO: style for headers */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  @include font-sz-wght-f-lh($headings-ft-M...);
+  @include desktop-only {
+    @include font-sz-wght-f-lh($headings-ft-D...);
+  }
 }
 
 button:focus,

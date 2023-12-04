@@ -103,18 +103,28 @@
     @content;
   }
 }
+@mixin from-xl-mobile-up {
+  @media (min-width: $breakpoint-xl-m) {
+    @content;
+  }
+}
+@mixin untill-xl-mobile {
+  @media (max-width: $breakpoint-xl-m-min) {
+    @content;
+  }
+}
 @mixin from-mobile-up {
   @media (min-width: $breakpoint-m) {
     @content;
   }
 }
-@mixin untill-mobile {
+@mixin mobile-only {
   @media (max-width: $breakpoint-m-min) {
     @content;
   }
 }
 
-/************COLORS*************/
+/************COLORS & SCHEMES*************/
 // for text only
 @mixin color-scheme-txt($text, $textHover: none) {
   color: $text;
@@ -243,10 +253,24 @@
 
 /************TYPOGRAPHY*************/
 
-@mixin font($size: 1rem, $weight: 400, $line-height: 1.5) {
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height;
+@mixin font-sz-wght-f-lh(
+  $size: none,
+  $weight: none,
+  $family: none,
+  $line-height: none
+) {
+  @if $size != none {
+    font-size: $size;
+  }
+  @if $weight != none {
+    font-weight: $weight;
+  }
+  @if $family != none {
+    font-family: unquote($family);
+  }
+  @if $line-height != none {
+    line-height: $line-height;
+  }
 }
 
 /****TOOLS****/

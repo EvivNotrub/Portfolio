@@ -1,4 +1,5 @@
 @use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
 
 .main-header {
   position: fixed;
@@ -12,12 +13,13 @@
   gap: 1.5rem;
   padding: $header-padd-M;
   height: $header-hght-M;
-  background: $dim-gradient-dm;
+  @include color-mode-bg($header-bg-mode...);
   & .myName {
     font-family: "Bungee Inline";
     font-size: $header-title-M;
     text-align: start;
     line-height: 1.2;
+    @include color-mode($header-title-mode...);
   }
   & nav {
     flex: 1;
@@ -51,15 +53,4 @@
   //     margin: 0 0.5em;
   //   }
   // }
-}
-@media (prefers-color-scheme: light) {
-  .main-header {
-    background: $dim-gradient-lm;
-    & .myName {
-      color: $palette9;
-      &:hover {
-        color: $palette9;
-      }
-    }
-  }
 }

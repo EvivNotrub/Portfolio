@@ -11,8 +11,10 @@ TODO: add mixins and functions
 /*********BREAKPOINTS*********/
 // m = mobile / t = tablet / d = desktop
 
-$breakpoint-m: 320px;
-$breakpoint-m-min: 319.99px;
+$breakpoint-m: 430px;
+$breakpoint-m-min: 429.99px;
+$breakpoint-xl-m: 540px;
+$breakpoint-xl-m-min: 539.99px;
 $breakpoint-t: 768px;
 $breakpoint-t-min: 767.99px;
 $breakpoint-d: 1280px;
@@ -20,19 +22,6 @@ $breakpoint-d-min: 1279.99px;
 
 /*********COLORS*********/
 
-// Text colors OR Background colors for light and dark mode (lm & dm)
-// TODO: choose either or, but not both
-$text-lm: #213547; // not me some kind of black blue
-$text-lm2: #2c3e50; //not me same
-$text-dm: white;
-$text-dm2: rgba(226, 233, 212);
-$text-dm3: rgba(217, 237, 146, 1);
-
-$background-dm: rgb(39, 38, 64);
-$background-dm2: rgb(33, 47, 69);
-$background-lm: rgb(181, 228, 140);
-
-// filters, buttons, headers, etc.
 $secondary-light-color-35: rgba(217, 237, 146, 0.35);
 $third-light-color: #ecffa7;
 $third-light-color-20: rgba(236, 255, 167, 0.2);
@@ -55,6 +44,14 @@ $palette8: rgb(49, 34, 68);
 $palette9: rgb(62, 31, 71);
 $palette10: rgb(77, 25, 77);
 $palette10-2: rgba(77, 25, 77, 0.7);
+$palette10-3: rgba(25, 77, 41, 0.7);
+$palette10-4: rgba(25, 77, 77, 0.7);
+
+$palette11: #fd815e;
+$palette12: #33ca2ed7;
+$palette13: #4356ffcb;
+$palette14: #ff4356b0;
+$palette15: #ff6060d0;
 $combined-gradient: linear-gradient(91deg, $palette1-2 -10%, $palette10-2 80%),
   radial-gradient(circle, $palette1-2, $palette10-2 30%),
   linear-gradient(to left, $palette1, $palette10);
@@ -67,25 +64,48 @@ $dim-gradient-dm: linear-gradient(
 $dim-gradient-lm: linear-gradient(
   0deg,
   rgba(255, 255, 255, 0) 5%,
-  rgba(181, 228, 140, 0.45) 140%
+  rgba(204, 225, 145, 0.5) 120%
 );
 
+// Text colors OR Background colors for light and dark mode (lm & dm)
+// TODO: choose either or, but not both
+$text-lm: #213547; //  some kind of black blue
+$text-lm2: #2c3e50; // same
+$text-lm3: black;
+$text-dm: rgb(241, 245, 233);
+$text-dm2: rgba(226, 233, 212);
+$text-dm3: rgba(217, 237, 146, 1);
+
+$background-dm: rgb(39, 38, 64);
+$background-dm2: rgb(33, 47, 69);
+$background-lm: rgb(181, 228, 140);
+$bg-super-light-lm: color.scale($background-lm, $alpha: -90%);
+
+// filters, buttons, headers, etc.
+
 /********************COLOR SCHEMES********************/
-// in order below: & when 'none' = not declared
+// in order below:   ( when 'none' = not declared)
 // text, bg, textHover, bgHover, opacity, opacityHover
 
-$scheme-txt-accent-lm: $palette9; //can add a background
+$link-accent-scheme-lm: $palette15, none, $palette10;
+$link-accent-scheme-dm: $text-dm3, none, $third-light-color;
+$link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
+$scheme-txt-accent-lm: $palette15; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
-$link-scheme-lm: inherit, none, $palette8, none, none, 0.8;
+$link-scheme-lm: inherit, none, $palette9, none, none, 0.8;
 $link-scheme-dm: $text-dm3, none, $third-light-color;
+
 /*********LAYOUT*********/
 // M = mobile / T = tablet / D = desktop
+// lm = light-mode  / dm = dark-mode
 
 //index.scss
 
-$root-txt-lm: $text-lm2;
+$headings-ft-M: 2.3rem, 600, '"Poopins", sans-serif', 1.3;
+$headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
+$root-txt-lm: $text-lm;
 $root-txt-dm: $text-dm;
-$root-bg-lm: $very-dim-bg-color;
+$root-bg-lm: none; //$very-dim-bg-color;
 $root-bg-dm: $background-dm;
 $scheme-root-lm: $root-txt-lm, $root-bg-lm;
 $scheme-root-dm: $root-txt-dm, $root-bg-dm;
@@ -102,6 +122,10 @@ $header-ft-D: 1.8rem;
 $header-ft-weight: 500; // Nav font weight overwrites this
 $header-title-M: 1.8rem;
 $header-title-D: 2.4rem;
+$header-bg-dm: $dim-gradient-dm; // TODO: add a color for hover
+$header-bg-lm: $dim-gradient-lm; //, $dim-gradient-dm;
+$header-bg-mode: $header-bg-lm, $header-bg-dm;
+$header-title-mode: $link-accent-mode;
 
 //menu button variables:
 // for Navigation and Mutton components
@@ -133,4 +157,11 @@ $home-loading-time: 5s;
 
 // HOME component
 
+$home-ft-M: 1.9rem, 500, '"Poopins", sans-serif', 1.5;
+$home-ft-D: 2.7rem, 500, '"Poopins", sans-serif', 1.6;
 $h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;
+$section-padd-M: 1.3rem;
+$section-padd-D: 2rem;
+$home-div-bg-dm: none, $very-dim-bg-color;
+$home-div-bg-lm: none, $mutton-bg-lm; // or $mutton-bg-dm;
+$home-div-bg-mode: $home-div-bg-lm, $home-div-bg-dm;

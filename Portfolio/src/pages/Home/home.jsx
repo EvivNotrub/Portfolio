@@ -12,9 +12,10 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
 
   useEffect(() => {
     if (location.hash) {
+      console.log(location);
       let elem = document.getElementById(location.hash.slice(1));
       if (elem) {
-        elem.scrollIntoView({ behavior: "smooth" });
+        elem.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -22,27 +23,27 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
   }, [location]);
 
   return (
-    <main className="home__main">
+    <main data-testid="home-testid" className="home__main">
       <div className="home__main__background">
         <img
           className="home__main__background__img"
           src={backgroundImage}
-          alt=""
+          alt="Jigar Panchal's 3d abstract art from Unsplash"
         />
       </div>
 
-      <section id="welcome" className="welcome home__main__section">
-        {/* TODO: add alt*/}
-        <h1 data-testid="home-testid" className="welcome__title">
-          Welcome to the jungle
-        </h1>
-        <p className="welcome__message">
-          Accueil en cours de construction
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo
-          a sunt et in voluptate magni libero. Dicta, in dolores quos ratione
-          magnam, enim eos quaerat quasi necessitatibus magni nam?
-        </p>
+      <section id="welcome" className="greet home__main__section">
+        <div className="greet__div">
+          <p className="greet__div__welcome">Welcome,</p>
+          <h1 className="greet__div__title">
+            I'm a Junior <span>Front End Developer</span>,
+            <br />
+            my name is <span>Barthélémy Werlé</span>.
+          </h1>
+          <p className="greet__div__message">
+            Make yourself at home and feel free to browse.
+          </p>
+        </div>
       </section>
       <section
         id="projectsPreview"

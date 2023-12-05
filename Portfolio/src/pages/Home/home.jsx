@@ -7,6 +7,7 @@ import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
 import "./home.scss";
 import Welcome from "../../containers/welcome/welcome";
+import ScrollPage from "../../components/buttons/scrollPage";
 
 function Home({ pPreviewRef, aboutRef, skillsRef }) {
   const location = useLocation();
@@ -16,7 +17,7 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
       console.log(location);
       let elem = document.getElementById(location.hash.slice(1));
       if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "center" });
+        elem.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -32,9 +33,15 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
           alt="Jigar Panchal's 3d abstract art from Unsplash"
         />
       </div>
-
-      <section id="welcome" className="greet home__main__section">
+      {/* TODO: implement hide class on scroll ?*/}
+      <section
+        id="welcome"
+        className={
+          "greet home__main__section" + " " + (location.hash && "hide")
+        }
+      >
         <Welcome />
+        <ScrollPage path="/#about" />
       </section>
       <section
         id="about"

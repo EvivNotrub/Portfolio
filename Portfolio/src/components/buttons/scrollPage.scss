@@ -1,0 +1,25 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/keyframes" as *;
+
+.down {
+  // TODO: adjust layout for mobile paysage mode
+  //   @include absolute-bottom-right(10vh, 10px);
+  //   @include from-tablet-up {
+  //   @include absolute-bottom-left(11vh, 50%);
+  //   transform: translateX(-50%);
+  //   }
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 2.5rem;
+  @include desktop-only {
+    width: 2rem;
+    height: 3rem;
+  }
+  border-radius: $mutton-radius $mutton-radius 50px 50px;
+  @include color-mode($down-btn-mode...);
+  @include flex-all-center;
+
+  //   &__arrow {
+  //   }
+}

@@ -82,12 +82,13 @@ $background-dm: rgb(39, 38, 64);
 $background-dm2: rgb(33, 47, 69);
 $background-lm: rgb(181, 228, 140);
 $bg-super-light-lm: color.scale($background-lm, $alpha: -90%);
+$bg-light: color.scale($background-lm, $alpha: -50%);
 
 // filters, buttons, headers, etc.
 
 /********************COLOR SCHEMES********************/
 // in order below:   ( when 'none' = not declared)
-// text, bg, textHover, bgHover, opacity, opacityHover
+// TEXT, BG, TeXtHOVER, BgHOVER, OPACITY, OpacityHOVER
 
 $link-accent-scheme-lm: $palette16, none, $palette10;
 $link-accent-scheme-dm: $text-dm3, none, $third-light-color;
@@ -96,6 +97,11 @@ $scheme-txt-accent-lm: $palette16; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
 $link-scheme-lm: inherit, none, $palette9, none, none, 0.8;
 $link-scheme-dm: $text-dm3, none, $third-light-color;
+$link-scheme: $link-scheme-lm, $link-scheme-dm;
+$button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
+$button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,
+  0.9;
+$button-scheme: $button-scheme-lm, $button-scheme-dm;
 
 /*********LAYOUT*********/
 // M = mobile / T = tablet / D = desktop
@@ -103,16 +109,18 @@ $link-scheme-dm: $text-dm3, none, $third-light-color;
 
 //index.scss
 
-$headings-ft-M: 2.3rem, 600, '"Poopins", sans-serif', 1.3;
+$headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
+
 $root-txt-lm: $text-lm;
 $root-txt-dm: $text-dm;
+
 $root-bg-lm: none; //$very-dim-bg-color;
 $root-bg-dm: $background-dm;
+
 $scheme-root-lm: $root-txt-lm, $root-bg-lm;
 $scheme-root-dm: $root-txt-dm, $root-bg-dm;
 $root-scheme: $scheme-root-lm, $scheme-root-dm;
-$link-scheme: $link-scheme-lm, $link-scheme-dm;
 
 // Header variables:
 $header-hght-D: 9rem;
@@ -139,7 +147,7 @@ $mutton-lines-width: 100%;
 $mutton-line-height: 0.25rem;
 $mutton-line-shadow: $neutral 1.5px 1.5px 3px;
 $mutton-bg-dm: $background-dm;
-$mutton-bg-lm: color.scale($background-lm, $alpha: -50%);
+$mutton-bg-lm: $bg-light;
 
 // Navigation component
 $list-item-padding: 5px 10px;
@@ -159,7 +167,7 @@ $home-loading-time: 5s;
 
 // HOME component
 
-$home-ft-M: 1.9rem, 500, '"Poopins", sans-serif', 1.5;
+$home-ft-M: 1.7rem, 500, '"Poopins", sans-serif', 1.5;
 $home-ft-D: 2.7rem, 500, '"Poopins", sans-serif', 1.6;
 $h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;
 $section-padd-M: 1.3rem;
@@ -170,3 +178,7 @@ $home-div-bg-dm: none, $very-dim-bg-color;
 $home-div-bg-lm: none, $mutton-bg-lm;
 $home-div-bg-mode: $home-div-bg-lm, $home-div-bg-dm;
 $fade-out-time: 0.4s ease-in 6s forwards;
+/*down button*/
+
+$down-btn-bottom: 2rem;
+$down-btn-mode: $button-scheme;

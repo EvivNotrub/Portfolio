@@ -82,6 +82,17 @@
   top: $abs-top;
   left: $abs-left;
 }
+@mixin absolute-bottom-left($abs-bottom: 0, $abs-left: 0) {
+  position: absolute;
+  bottom: $abs-bottom;
+  left: $abs-left;
+}
+@mixin absolute-bottom-right($abs-bottom: 0, $abs-right: 0) {
+  position: absolute;
+  bottom: $abs-bottom;
+  right: $abs-right;
+}
+
 /*******BREAKPOINTS*******/
 @mixin desktop-only {
   @media (min-width: $breakpoint-d) {
@@ -176,11 +187,13 @@
     background: $bg;
   }
   &:hover {
-    color: $txtHover;
+    @if $txtHover != none {
+      color: $txtHover;
+    }
     @if $opacityHover != none {
       opacity: $opacityHover;
     }
-    @if $bg != none {
+    @if $bgHover != none {
       background: $bgHover;
     }
   }

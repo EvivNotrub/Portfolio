@@ -24,7 +24,7 @@
   & nav {
     flex: 1;
   }
-  @media (min-width: 1280px) {
+  @include from-tablet-up {
     padding: $header-padd-D;
     height: $header-hght-D;
     font-size: $header-ft-D;

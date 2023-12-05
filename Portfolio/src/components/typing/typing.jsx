@@ -22,9 +22,7 @@ const Typewriter = ({ text, speed, className }) => {
 Typewriter.propTypes = {
   speed: PropTypes.number,
   className: PropTypes.string,
-  text: PropTypes.shape({
-    length: PropTypes.number,
-  }).isRequired,
+  text: PropTypes.string,
 };
 
 export default Typewriter;

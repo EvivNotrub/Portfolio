@@ -81,9 +81,10 @@ $text-dm3: rgba(217, 237, 146, 1);
 
 $background-dm: rgb(39, 38, 64);
 $background-dm2: rgb(33, 47, 69);
-$background-lm: rgb(181, 228, 140);
-$bg-super-light-lm: color.scale($background-lm, $alpha: -90%);
-$bg-light: color.scale($background-lm, $alpha: -50%);
+$bg-lm: white;
+$bg-lm2: rgb(181, 228, 140);
+$bg-super-light-lm: color.scale($bg-lm2, $alpha: -90%);
+$bg-light: color.scale($bg-lm2, $alpha: -50%);
 
 // filters, buttons, headers, etc.
 
@@ -112,8 +113,8 @@ $button-scheme: $button-scheme-lm, $button-scheme-dm;
 
 $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
-$text-ft-M: 1rem, 400, none, 1.4;
-$text-ft-D: 1.35rem, 400, none, 1.8;
+$text-ft-M: 1rem, 500, none, 1.4;
+$text-ft-D: 1.35rem, 500, none, 1.8;
 
 $root-txt-lm: $text-lm;
 $root-txt-dm: $text-dm;
@@ -158,7 +159,7 @@ $nav-list-width: 160px;
 $nav-list-radius: $mutton-radius;
 $nav-default-bg: $mutton-bg-dm;
 $nav-list-bg-dm: $very-dim-bg-color;
-$nav-list-bg-lm: color.scale($background-lm, $alpha: -35%);
+$nav-list-bg-lm: color.scale($bg-lm2, $alpha: -35%);
 $nav-link-color-dm: $text-dm2;
 $nav-link-color-lm: $text-lm2; // TODO: change ?
 $sub-nav-list-width-D: 34rem;

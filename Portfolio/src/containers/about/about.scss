@@ -1,7 +1,16 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
 .about {
   &__title {
-    margin-bottom: 2rem;
+    margin-bottom: 5vh;
   }
-  //   &__text {
+  &__text {
+    max-width: 1040px;
+  }
+  //   @include desktop-only {
+  //     &__title {
+  //       margin-bottom: 6rem;
+  //     }
   //   }
 }

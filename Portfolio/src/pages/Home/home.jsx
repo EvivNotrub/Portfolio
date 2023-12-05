@@ -45,7 +45,7 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
       </section>
       <section
         id="about"
-        className="about home__main__section"
+        className="about-section home__main__section"
         ref={aboutRef}
         tabIndex="-1"
       >

@@ -52,6 +52,15 @@
     @include from-tablet-up {
       padding-top: $header-hght-D;
     }
+    &:before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 60%;
+      margin: 0 auto;
+      transform: translateY(-10px);
+      background: $neutral;
+    }
   }
 }
 

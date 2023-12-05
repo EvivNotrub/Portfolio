@@ -19,11 +19,12 @@
   border-radius: $mutton-radius $mutton-radius 50px 50px;
   @include color-mode($down-btn-mode...);
   @include flex-all-center;
-  &:hover > .down__arrow {
-    animation: roll-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33);
-  }
+
   &__arrow {
-    animation: roll-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33)
+    animation: vibrate 0.25s cubic-bezier(0.32, -0.63, 0.58, 1.33) alternate 4
       $down-btn-delay;
+  }
+  &:hover > .down__arrow {
+    animation: rolls-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33);
   }
 }

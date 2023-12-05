@@ -98,7 +98,7 @@ $link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
 $scheme-txt-accent-lm: $palette16; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
 $link-scheme-lm: inherit, none, $palette9, none, none, 0.8;
-$link-scheme-dm: $text-dm3, none, $third-light-color;
+$link-scheme-dm: $text-dm2, none, $third-light-color;
 $link-scheme: $link-scheme-lm, $link-scheme-dm;
 $button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
 $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,

@@ -11,7 +11,15 @@
   }
 }
 
-@keyframes roll-down {
+@keyframes vibrate {
+  25% {
+    transform: translateY(-10%);
+  }
+  75% {
+    transform: translateY(10%);
+  }
+}
+@keyframes rolls-down {
   45% {
     transform: translateY(110px);
     opacity: 0;

@@ -54,7 +54,7 @@
     @include from-tablet-up {
       padding-top: $header-hght-D;
     }
-    & div {
+    & > div {
       position: relative;
       margin: auto;
       width: fit-content;

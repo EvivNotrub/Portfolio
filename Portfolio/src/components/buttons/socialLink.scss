@@ -1,0 +1,15 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/keyframes" as *;
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  @include color-mode($button-scheme...);
+  &:hover {
+    animation: shake-it 0.04s alternate 8;
+  }
+}

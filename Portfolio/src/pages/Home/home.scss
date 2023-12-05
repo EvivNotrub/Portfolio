@@ -83,6 +83,12 @@
     & p {
       @include font-sz-wght-f-lh($home-ft-D...);
     }
-    // &.hide {}
   }
+  @media (max-width: $breakpoint-d-min) and (orientation: landscape) {
+    padding: 1.5rem 0.8rem 0rem 0.8rem;
+    & p {
+      @include font-sz-wght-f-lh($home-ft-M...);
+    }
+  }
+  // &.hide {}
 }

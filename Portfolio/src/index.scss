@@ -113,6 +113,9 @@ h6 {
   @include from-tablet-up {
     @include font-sz-wght-f-lh($headings-ft-D...);
   }
+  @media (max-width: $breakpoint-d-min) and (orientation: landscape) {
+    @include font-sz-wght-f-lh($headings-ft-M...);
+  }
   margin: 0.45em 0;
 }
 

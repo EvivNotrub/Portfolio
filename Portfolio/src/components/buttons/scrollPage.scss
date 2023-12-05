@@ -12,14 +12,18 @@
   flex-shrink: 0;
   width: 1.5rem;
   height: 2.5rem;
-  @include desktop-only {
+  @include from-tablet-up {
     width: 2rem;
-    height: 3rem;
+    height: 3.2rem;
   }
   border-radius: $mutton-radius $mutton-radius 50px 50px;
   @include color-mode($down-btn-mode...);
   @include flex-all-center;
-
-  //   &__arrow {
-  //   }
+  &:hover > .down__arrow {
+    animation: roll-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33);
+  }
+  &__arrow {
+    animation: roll-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33)
+      $down-btn-delay;
+  }
 }

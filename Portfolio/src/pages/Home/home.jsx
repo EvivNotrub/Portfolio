@@ -33,7 +33,8 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
           alt="Jigar Panchal's 3d abstract art from Unsplash"
         />
       </div>
-      {/* TODO: implement hide class on scroll ?*/}
+      {/* TODO: implement hide class on scroll ?
+          TODO: layout for smartphone landscape mode*/}
       <section
         id="welcome"
         className={

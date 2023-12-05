@@ -8,7 +8,8 @@ function About() {
         This website is a showcase of the projects, skills and technologies I
         worked on, they already provide a good deal of tools to create or
         improve a website.
-        <br />
+      </p>
+      <p className="about__text">
         This is just the beginning, more projects will come very soon, and
         learning is part of everyday life.
       </p>

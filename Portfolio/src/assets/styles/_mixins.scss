@@ -56,6 +56,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@mixin pseudo-elmt-center {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 @mixin pseudo-elmt-full {
   content: "";
   position: absolute;
@@ -68,7 +75,7 @@
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
+  left: 0;
 }
 @mixin absolute-fill {
   position: absolute;
@@ -81,6 +88,11 @@
   position: absolute;
   top: $abs-top;
   left: $abs-left;
+}
+@mixin absolute-top-right($abs-top: 0, $abs-right: 0) {
+  position: absolute;
+  top: $abs-top;
+  right: $abs-right;
 }
 @mixin absolute-bottom-left($abs-bottom: 0, $abs-left: 0) {
   position: absolute;

@@ -24,7 +24,7 @@
       @include color-mode($h1-mode-scheme...);
     }
   }
-  &__message {
+  &__message span {
     font-size: 0.9em;
   }
 }

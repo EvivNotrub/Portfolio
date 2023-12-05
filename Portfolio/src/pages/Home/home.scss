@@ -57,7 +57,7 @@
 
 .greet {
   box-sizing: border-box;
-  @include font-sz-wght-f-lh($home-ft-M...);
+
   text-align: start;
   height: 85vh;
   padding: 1.5rem 0.8rem 0rem 0.8rem;
@@ -66,12 +66,14 @@
   justify-content: space-evenly;
   align-items: center;
   position: relative;
+  & p {
+    @include font-sz-wght-f-lh($home-ft-M...);
+  }
   @include from-tablet-up {
     padding: 2rem 1.5rem 0rem 1.5rem;
-    // }
-    // @include desktop-only {
-    @include font-sz-wght-f-lh($home-ft-D...);
+    & p {
+      @include font-sz-wght-f-lh($home-ft-D...);
+    }
+    // &.hide {}
   }
-  // &.hide {
-  // }
 }

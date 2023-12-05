@@ -37,8 +37,8 @@ function Welcome() {
         {typingFullName ? <Typewriter text={fullName} speed={80} /> : ""}
         {/*<span className="typing">{fullName}</span>*/}.
       </h1>
-      <p className="welcome__message typing">
-        Make yourself at home and feel free to browse.
+      <p className="welcome__message typing --size">
+        <span>Make yourself at home and feel free to browse.</span>
       </p>
     </div>
   );

@@ -118,6 +118,11 @@ h6 {
 
 p {
   margin: 0;
+  text-align: start;
+  @include font-sz-wght-f-lh($text-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($text-ft-D...);
+  }
 }
 
 button:focus,

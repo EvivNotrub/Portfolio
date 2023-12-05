@@ -111,6 +111,8 @@ $button-scheme: $button-scheme-lm, $button-scheme-dm;
 
 $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
+$text-ft-M: 1.2rem, 400, none, 1.3;
+$text-ft-D: 1.5rem, 400, none, 1.5;
 
 $root-txt-lm: $text-lm;
 $root-txt-dm: $text-dm;
@@ -166,7 +168,7 @@ $nav-ft-weight: 500;
 $home-loading-time: 5s;
 
 // HOME component
-
+//TODO: font spec only for welcome section > change name
 $home-ft-M: 1.7rem, 500, '"Poopins", sans-serif', 1.5;
 $home-ft-D: 2.7rem, 500, '"Poopins", sans-serif', 1.6;
 $h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;

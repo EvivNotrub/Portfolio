@@ -1,0 +1,28 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.accordion2__content {
+  &__data {
+    margin: 0;
+    padding: $accorion-content-padd-M;
+    @include from-tablet-up {
+      padding: $accorion-content-padd-D;
+    }
+    &.--acc-list {
+      text-align: left;
+      list-style: circle;
+      padding-left: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+      gap: 5px;
+      margin: auto;
+    }
+    &.--img {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+}

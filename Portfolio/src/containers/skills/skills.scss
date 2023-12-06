@@ -1,0 +1,19 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.skills {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem 0;
+    margin: 0 auto 2rem auto;
+    // max-width: 95%;
+    // @include from-tablet-up {
+    //   max-width: 80%;
+    // }
+    // TODO: min height to avoid jumping
+  }
+}

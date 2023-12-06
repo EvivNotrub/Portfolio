@@ -35,6 +35,10 @@
   ],
   "usedTech": [
     {
+      "name": "Swagger Editor",
+      "path": "./src/assets/images/icons/swagger-logo.png"
+    },
+    {
       "name": "Node.js",
       "path": "./src/assets/images/icons/icons8-node-js.png"
     },
@@ -43,20 +47,17 @@
       "path": "./src/assets/images/icons/vite.png"
     },
     {
-      "name": "GitHub Copilot",
-      "path": "./src/assets/images/icons/icons8-github.png"
+      "name": "Figma",
+      "path": "./src/assets/images/icons/figma.png"
     },
     {
       "name": "VsCode",
       "path": "./src/assets/images/icons/vs_code.png"
     },
+
     {
-      "name": "Figma",
-      "path": "./src/assets/images/icons/figma.png"
-    },
-    {
-      "name": "Swagger Editor",
-      "path": "./src/assets/images/icons/swagger-logo.png"
+      "name": "GitHub Copilot",
+      "path": "./src/assets/images/icons/icons8-github.png"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import LabeledImage from "../tech/labeledImage";
+import "./AccordionContent.scss";
 
 function AccordionContent({ type, datum }) {
   // TODO: this has to be removed or adjusted
@@ -16,7 +17,7 @@ function AccordionContent({ type, datum }) {
       return <p className="accordion2__content__data">{datum}</p>;
     case "LabeledImages":
       return (
-        <ul className="accordion2__content__data --acc-img-list">
+        <ul className="accordion2__content__data --img">
           {datum.map((skill, index) => (
             <LabeledImage
               key={skill.name + index}

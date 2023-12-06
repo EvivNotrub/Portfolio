@@ -4,11 +4,11 @@ import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import arrow from "../../assets/images/arrow.png";
 
-function Accordion({ title, datum, type, children }) {
+function Accordion({ title, datum, type, children, className }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="accordion2-container">
+    <div className={"accordion2-container" + " " + className}>
       <div className="accordion2">
         <div className="accordion2__header">
           <h3 className="accordion2__header__title">{title}</h3>
@@ -42,6 +42,7 @@ Accordion.propTypes = {
   title: PropTypes.string,
   datum: PropTypes.string,
   type: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

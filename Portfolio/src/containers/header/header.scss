@@ -24,10 +24,11 @@
   & nav {
     flex: 1;
   }
-  &:focus-within + main {
-    opacity: 0.4;
-  }
-  @include desktop-only {
+  // TODO: problem with hover effect that is active on focus
+  // &:focus-within + main {
+  //   opacity: 0.4;
+  // }
+  @media (hover: hover) {
     &:hover + main {
       opacity: 0.5;
     }

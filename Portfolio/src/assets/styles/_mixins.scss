@@ -298,6 +298,15 @@
   }
 }
 
+/**********READY STYLES**********/
+
+@mixin button-shadow {
+  box-shadow: $shadow;
+  @include mode() {
+    box-shadow: none;
+  }
+}
+
 /****TOOLS****/
 @mixin filter-svg-white {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(18deg)

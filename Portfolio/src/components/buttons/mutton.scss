@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
 
 .mutton {
   border-radius: $mutton-radius;
@@ -13,8 +14,7 @@
   position: relative;
   background-color: $mutton-bg-dm;
   transition: opacity 0.2s cubic-bezier(0.71, 0.05, 0.25, 0.87) 0.08s;
-  //   TODO: box-shadow here and others
-  // box-shadow: $ 2px 2px 2px 5px;
+  @include button-shadow;
   & .lines--sibling {
     position: absolute;
     top: 50%;

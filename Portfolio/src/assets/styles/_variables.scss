@@ -105,7 +105,8 @@ $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none
   0.9;
 $button-scheme: $button-scheme-lm, $button-scheme-dm;
 
-/*********LAYOUT*********/
+/***********GLOBAL***********/
+
 // M = mobile / T = tablet / D = desktop
 // lm = light-mode  / dm = dark-mode
 // order for font scheme: size, weight, family, line-height
@@ -129,6 +130,16 @@ $root-bg-dm: $background-dm;
 $scheme-root-lm: $root-txt-lm, $root-bg-lm;
 $scheme-root-dm: $root-txt-dm, $root-bg-dm;
 $root-scheme: $scheme-root-lm, $scheme-root-dm;
+
+// buttons
+
+$shadow-sz: 1.5px;
+$shadow-blur: 3px;
+$shadow-spread: 0;
+$shadow-color: $neutral;
+$shadow: $shadow-sz $shadow-sz $shadow-blur $shadow-spread $shadow-color;
+
+/*********LAYOUT*********/
 
 // Header variables:
 $header-hght-D: 9rem;

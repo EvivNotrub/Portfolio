@@ -8,6 +8,10 @@
     @include from-tablet-up {
       padding: $accorion-content-padd-D;
     }
+    font-size: $acc-ft-M;
+    @include from-tablet-up {
+      font-size: $acc-ft-D;
+    }
     &.--acc-list {
       text-align: left;
       list-style: circle;

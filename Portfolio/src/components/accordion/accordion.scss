@@ -5,15 +5,15 @@
   &-container {
     width: 100%;
   }
-  margin-bottom: -$acc-height-D; // to compensate for the content padding added to the top
+  margin-bottom: -$acc-height-M; // to compensate for the content padding added to the top
   // and moved with position relative + top: -52px;
   position: relative;
   &__header {
     position: relative;
     box-sizing: border-box;
-    height: $acc-height-D;
+    height: $acc-height-M;
     border-radius: $button-radius;
-    padding: $accordion-padd;
+    padding: $accordion-padd-M;
     @include color-mode($button-scheme...);
     @include button-shadow;
     position: relative;
@@ -24,8 +24,8 @@
     &__title {
       margin: 0;
     }
-    @media (max-width: 599px) {
-      height: $acc-height-M;
+    @include from-mobile-up {
+      height: $acc-height-D;
     }
     &__button {
       position: absolute;
@@ -47,7 +47,7 @@
         content: "";
         margin-right: 12px;
         transition: all 0.28s ease-in-out;
-        @media (max-width: 599px) {
+        @include from-mobile-up {
           margin-right: 0px;
           width: 16px;
           height: 10px;
@@ -60,9 +60,8 @@
   }
   &__content {
     position: relative;
-    top: -$acc-height-D;
-    padding: $acc-height-D 0 0 0;
-    // background-color: $very-dim-bg-color;
+    top: -$acc-height-M;
+    padding: $acc-height-M 0 0 0;
     @include color-mode-bg($accorion-content-bg-scheme...);
     border-radius: $button-radius;
     transform: scaleY(0);
@@ -73,9 +72,9 @@
       transform 0.28s ease-in-out,
       opacity 0.1s ease-in,
       height 0.3s;
-    @media (max-width: 599px) {
-      padding: $acc-height-M 0 0 0;
-      top: -$acc-height-M;
+    @include from-mobile-up {
+      padding: $acc-height-D 0 0 0;
+      top: -$acc-height-D;
     }
     &[aria-expanded="true"] {
       transform: scaleY(1);

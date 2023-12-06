@@ -57,6 +57,13 @@ p {
     @include font-sz-wght-f-lh($text-ft-D...);
   }
 }
+// TODO but still this issues with nav
+// li {
+//   @include font-sz-wght-f-lh($text-ft-M...);
+//   @include from-tablet-up {
+//     @include font-sz-wght-f-lh($text-ft-D...);
+//   }
+// }
 // @media (prefers-reduced-motion: no-preference) {
 //   a:nth-of-type(2) .logo {
 //     animation: logo-spin infinite 20s linear;

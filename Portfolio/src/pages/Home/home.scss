@@ -57,7 +57,7 @@
     & > div {
       position: relative;
       margin: auto;
-      width: fit-content;
+      max-width: 1040px;
       &:before {
         content: "";
         display: block;

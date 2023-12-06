@@ -15,9 +15,11 @@
       padding-bottom: 1rem;
     }
   }
-  // &__links {
-
-  // }
+  &__links {
+    @include from-tablet-up {
+      align-self: flex-start;
+    }
+  }
   & .down {
     margin: 2rem auto 0 auto;
   }

@@ -97,8 +97,8 @@ $link-accent-scheme-dm: $text-dm3, none, $third-light-color;
 $link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
 $scheme-txt-accent-lm: $palette16; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
-$link-scheme-lm: inherit, none, $palette9, none, none, 0.8;
-$link-scheme-dm: $text-dm2, none, $third-light-color;
+$link-scheme-lm: $text-lm2, none, $palette9, none, none, 0.8;
+$link-scheme-dm: $text-dm3, none, $third-light-color;
 $link-scheme: $link-scheme-lm, $link-scheme-dm;
 $button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
 $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,
@@ -108,13 +108,17 @@ $button-scheme: $button-scheme-lm, $button-scheme-dm;
 /*********LAYOUT*********/
 // M = mobile / T = tablet / D = desktop
 // lm = light-mode  / dm = dark-mode
+// order for font scheme: size, weight, family, line-height
 
-//index.scss
+//index.scss and app.scss
 
 $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
 $text-ft-M: 1rem, 500, none, 1.4;
 $text-ft-D: 1.35rem, 500, none, 1.8;
+$link-ft-M: 1.2rem, 500;
+$link-ft-D: 1.4rem, 500;
+$link-svg-size: 1.5rem;
 
 $root-txt-lm: $text-lm;
 $root-txt-dm: $text-dm;

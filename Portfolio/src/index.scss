@@ -35,11 +35,6 @@
     "opsz" 24;
 }
 
-a:not(.myName) {
-  text-decoration: inherit;
-  @include color-mode($link-scheme...);
-}
-
 // * > * {
 //   outline-color: #ff747b;
 //   & > * {
@@ -117,15 +112,6 @@ h6 {
     @include font-sz-wght-f-lh($headings-ft-M...);
   }
   margin: 0.45em 0;
-}
-
-p {
-  margin: 0;
-  text-align: start;
-  @include font-sz-wght-f-lh($text-ft-M...);
-  @include from-tablet-up {
-    @include font-sz-wght-f-lh($text-ft-D...);
-  }
 }
 
 button:focus,

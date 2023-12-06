@@ -4,7 +4,7 @@ import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import arrow from "../../assets/images/arrow.png";
 
-function Accordion({ title, datum }) {
+function Accordion({ title, datum, type, children }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -30,7 +30,8 @@ function Accordion({ title, datum }) {
           className="accordion2__content"
           aria-expanded={isExpanded ? "true" : "false"}
         >
-          {<AccordionContent title={title} datum={datum} />}
+          {<AccordionContent type={type} datum={datum} />}
+          {children}
         </div>
       </div>
     </div>
@@ -40,6 +41,11 @@ function Accordion({ title, datum }) {
 Accordion.propTypes = {
   title: PropTypes.string,
   datum: PropTypes.string,
+  type: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 export default Accordion;

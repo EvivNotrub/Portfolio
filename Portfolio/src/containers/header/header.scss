@@ -24,6 +24,14 @@
   & nav {
     flex: 1;
   }
+  &:focus-within + main {
+    opacity: 0.4;
+  }
+  @include desktop-only {
+    &:hover + main {
+      opacity: 0.5;
+    }
+  }
   @include from-tablet-up {
     padding: $header-padd-D;
     height: $header-hght-D;

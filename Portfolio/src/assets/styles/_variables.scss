@@ -28,6 +28,7 @@ $third-light-color-20: rgba(236, 255, 167, 0.2);
 $very-dim-bg-color: rgba(204, 225, 145, 0.103);
 
 $neutral: grey;
+$neutral-light: #f6f6f6e3;
 $neutral-violet: #9198e5;
 
 // Theme for color gradients & more
@@ -104,6 +105,7 @@ $button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
 $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,
   0.9;
 $button-scheme: $button-scheme-lm, $button-scheme-dm;
+$accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
 
 /***********GLOBAL***********/
 
@@ -115,6 +117,8 @@ $button-scheme: $button-scheme-lm, $button-scheme-dm;
 
 $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
+$small-headings-ft-M: 1.2rem, 600, '"Poopins", sans-serif', 1.2;
+$small-headings-ft-D: 1.5rem, 600, '"Poopins", sans-serif', 1.4;
 $text-ft-M: 1rem, 500, none, 1.4;
 $text-ft-D: 1.35rem, 500, none, 1.8;
 $link-ft-M: 1.2rem, 500;
@@ -131,7 +135,15 @@ $scheme-root-lm: $root-txt-lm, $root-bg-lm;
 $scheme-root-dm: $root-txt-dm, $root-bg-dm;
 $root-scheme: $scheme-root-lm, $scheme-root-dm;
 
-// buttons
+// clickabels
+
+$button-radius: 0.25rem;
+$button-padd: 0.5rem 1rem;
+$accordion-padd: 1.3rem 0.5rem;
+$accorion-content-padd-D: 1.25rem 1rem;
+$accorion-content-padd-M: 1rem 0.5rem;
+$acc-height-M: 30px;
+$acc-height-D: 52px;
 
 $shadow-sz: 1.5px;
 $shadow-blur: 3px;
@@ -160,7 +172,7 @@ $header-title-mode: $link-accent-mode;
 // for Navigation and Mutton components
 $mutton-width: 5rem;
 $mutton-height: 4rem;
-$mutton-radius: 0.25rem;
+$mutton-radius: $button-radius;
 $mutton-lines-height: 1.15rem;
 $mutton-lines-width: 100%;
 $mutton-line-height: 0.25rem;
@@ -171,7 +183,7 @@ $mutton-bg-lm: $bg-light;
 // Navigation component
 $list-item-padding: 5px 10px;
 $nav-list-width: 160px;
-$nav-list-radius: $mutton-radius;
+$nav-list-radius: $button-radius;
 $nav-default-bg: $mutton-bg-dm;
 $nav-list-bg-dm: $very-dim-bg-color;
 $nav-list-bg-lm: color.scale($bg-lm2, $alpha: -35%);

@@ -17,7 +17,7 @@
     height: 3.2rem;
   }
   @include button-shadow;
-  border-radius: $mutton-radius $mutton-radius 50px 50px;
+  border-radius: $button-radius $button-radius 50px 50px;
   @include color-mode($down-btn-mode...);
   @include flex-all-center;
 

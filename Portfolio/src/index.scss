@@ -99,17 +99,28 @@ textarea {
 
 /* TODO: style for headers */
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   @include font-sz-wght-f-lh($headings-ft-M...);
   @include from-tablet-up {
     @include font-sz-wght-f-lh($headings-ft-D...);
   }
+  //TODO: replace with -t- and fix issue with .greet section
   @media (max-width: $breakpoint-d-min) and (orientation: landscape) {
     @include font-sz-wght-f-lh($headings-ft-M...);
+  }
+  margin: 0.45em 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @include font-sz-wght-f-lh($small-headings-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($small-headings-ft-D...);
+  }
+  @media (max-width: $breakpoint-t-min) and (orientation: landscape) {
+    @include font-sz-wght-f-lh($small-headings-ft-M...);
   }
   margin: 0.45em 0;
 }

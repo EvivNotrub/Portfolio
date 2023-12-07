@@ -16,7 +16,7 @@
         "FR": "Dynamisez une page web avec des animations",
         "EN": "Make a web page more dynamic with animations"
       },
-      "tags": ["Animations", "SASS", "HTML", "CSS"],
+      "tags": ["Animations", "SASS"],
       "links": {
         "github": "https://github.com/EvivNotrub/ohMyFood",
         "demo": "https://evivnotrub.github.io/ohMyFood/"
@@ -67,7 +67,7 @@
         "FR": "Implémenter des fonctionnalités avec JavaScript",
         "EN": "Implement dynamic with JavaScript"
       },
-      "tags": ["JavaScript", "HTML", "CSS", "Modale"],
+      "tags": ["JavaScript", "Accessible Modale"],
       "links": {
         "github": "https://github.com/EvivNotrub/Portfolio-architecte-sophie-bluel"
       },
@@ -156,7 +156,7 @@
         "FR": "Débuggez une application React",
         "EN": "Debug a React application"
       },
-      "tags": ["Unit Testing", "React", "Jest"],
+      "tags": ["Unit Testing", "React-testing", "Jest"],
       "links": {
         "github": "https://github.com/EvivNotrub/Debuggez-une-application-React.JS",
         "demo": "https://evivnotrub.github.io/Debuggez-une-application-React.JS/"

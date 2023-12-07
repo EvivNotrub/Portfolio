@@ -17,12 +17,6 @@ function ProjectFilters() {
 
   return (
     <div className="filters">
-      <button
-        className={`filters__filter ${activeFilter === "all" ? "active" : ""}`}
-        onClick={() => handleFilter("all")}
-      >
-        All
-      </button>
       {filters &&
         filters.map((filter, index) => (
           <button
@@ -35,6 +29,12 @@ function ProjectFilters() {
             {filter}
           </button>
         ))}
+      <button
+        className={`filters__filter ${activeFilter === "all" ? "active" : ""}`}
+        onClick={() => handleFilter("all")}
+      >
+        All
+      </button>
     </div>
   );
 }

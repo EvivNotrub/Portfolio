@@ -34,6 +34,7 @@
   @include from-tablet-up {
     &__banner {
       margin-top: 2.4rem;
+      margin-bottom: 1rem;
       &:after {
         font-size: 5rem;
         transform: translate(-50%, -60%) scaleY(1.1);
@@ -52,13 +53,34 @@
 }
 
 .projects {
-  padding: 0 0.5rem;
+  & > * {
+    padding: 0 0.5rem;
+  }
   &__title {
+    text-align: start;
     @include font-sz-wght-f-lh($small-headings-ft-M...);
     @include from-tablet-up {
       @include font-sz-wght-f-lh($small-headings-ft-D...);
     }
-    padding: 1.2rem;
+    margin: 1.2rem 0;
+    width: fit-content;
+    position: relative;
+    &:before {
+      @include pseudo-elmt-full;
+      width: 100%;
+      transform: scale(1) translateY(-0.6rem);
+      height: 3px;
+      background-color: $neutral;
+      @include from-tablet-up {
+        transform: scale(0.9) translateY(-0.8rem);
+      }
+    }
+    @include desktop-only {
+      margin: 2.5rem 0;
+      &::before {
+        transform: scale(1) translateY(-1.2rem);
+      }
+    }
   }
   &__filters {
     // padding: 1rem;
@@ -76,7 +98,9 @@
     gap: 1.7rem;
   }
   @include from-xl-mobile-up {
-    padding: 0 1.5rem;
+    & > * {
+      padding: 0 1.5rem;
+    }
     &__portfolio {
       grid-template-columns: repeat(2, minmax(14rem, 1fr));
       gap: 2.2rem;
@@ -84,12 +108,13 @@
     }
   }
   @include desktop-only {
-    padding: 0;
+    & > * {
+      padding: 0;
+    }
     &__portfolio {
       margin-top: 3rem;
       grid-template-columns: repeat(2, minmax(34rem, 1fr));
       gap: 5rem;
-      padding: 2rem;
     }
   }
 }

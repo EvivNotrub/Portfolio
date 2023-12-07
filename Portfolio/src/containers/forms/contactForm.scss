@@ -48,7 +48,6 @@
   border-radius: $button-radius;
   width: fit-content;
   font-family: "poppins", sans-serif;
-  font-weight: 500;
   @include mode(light) {
     box-shadow: $shadow;
   }

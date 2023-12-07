@@ -1,16 +1,24 @@
+@use "../../assets/styles/variables" as *;
+
 .container {
   width: 100%;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  //   TODO:
   justify-content: space-evenly;
+  align-items: center;
 }
 .contact {
   &-title {
     margin: 1.5rem 0;
   }
   &-wrapper {
+    width: 100%;
     padding: 0 1rem;
+    min-width: 320px;
+    max-width: 1040px;
+    @media (orientation: landscape) and (max-width: 1000px) {
+      max-width: 750px;
+    }
   }
 }

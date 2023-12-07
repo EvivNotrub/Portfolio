@@ -33,6 +33,14 @@
     border-radius: $button-radius;
     background-color: $bg-super-light-lm;
     font-weight: 500;
+    transition: all 0.1s ease-in-out;
+    @include mode(light) {
+      box-shadow: $shadow;
+    }
+    &:hover {
+      opacity: 0.85;
+      transform: perspective(400px) translate3d(1px, 1px, 2px);
+    }
   }
 }
 .submit {
@@ -41,4 +49,11 @@
   width: fit-content;
   font-family: "poppins", sans-serif;
   font-weight: 500;
+  @include mode(light) {
+    box-shadow: $shadow;
+  }
+  &:hover {
+    opacity: 0.85;
+    animation: shake-it 0.08s alternate 6;
+  }
 }

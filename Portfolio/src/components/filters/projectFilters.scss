@@ -1,0 +1,17 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 0.3rem 0.5rem;
+    border-radius: $button-radius;
+  }
+}

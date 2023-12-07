@@ -85,7 +85,7 @@ $background-dm: rgb(39, 38, 64);
 $background-dm2: rgb(33, 47, 69);
 $bg-lm: white;
 $bg-lm2: rgb(181, 228, 140);
-$bg-super-light-lm: color.scale($bg-lm2, $alpha: -90%);
+$bg-super-light-lm: color.scale($bg-lm2, $alpha: -85%);
 $bg-light: color.scale($bg-lm2, $alpha: -50%);
 
 // filters, buttons, headers, etc.
@@ -127,6 +127,9 @@ $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none
   0.9;
 $button-scheme: $button-scheme-lm, $button-scheme-dm;
 
+$button-scheme-dm2: $text-dm, $bg-light, $third-light-color, none, 1.2, 0.9;
+$button-scheme2: $button-scheme-lm, $button-scheme-dm2;
+
 $accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
 
 /***********GLOBAL***********/
@@ -165,6 +168,8 @@ $tag-ft-M: 0.9rem, 400, none;
 $tag-ft-D: 1.1rem, 400;
 $tag-padd: 0.1rem 0.4rem;
 $tag-radius: 0.3rem;
+
+$filter-padd-D: 0.3rem 0.5rem;
 
 $shadow-sz: 1.5px;
 $shadow-blur: 3px;

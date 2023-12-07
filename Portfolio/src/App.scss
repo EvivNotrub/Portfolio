@@ -58,6 +58,14 @@ p {
     @include font-sz-wght-f-lh($text-ft-D...);
   }
 }
+
+button {
+  @include color-mode($button-scheme2...);
+  @include font-sz-wght-f-lh($link-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($link-ft-D...);
+  }
+}
 // TODO but still this issues with nav
 // li {
 //   @include font-sz-wght-f-lh($text-ft-M...);

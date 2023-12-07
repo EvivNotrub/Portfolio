@@ -1,0 +1,44 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.contactForm {
+  margin: 1rem auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.1rem;
+}
+.fields {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  @include font-sz-wght-f-lh($text-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($text-ft-D...);
+  }
+  & label {
+    font-weight: 600;
+  }
+  & input,
+  & textarea {
+    padding: $button-padd;
+    border-radius: $button-radius;
+    background-color: $bg-super-light-lm;
+    font-weight: 500;
+  }
+}
+.submit {
+  padding: $button-padd;
+  border-radius: $button-radius;
+  width: fit-content;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+}

@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  //   TODO:
+  justify-content: space-evenly;
+}
+.contact {
+  &-title {
+    margin: 1.5rem 0;
+  }
+  &-wrapper {
+    padding: 0 1rem;
+  }
+}

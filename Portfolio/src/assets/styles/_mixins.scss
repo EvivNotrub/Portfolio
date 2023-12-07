@@ -1,9 +1,324 @@
+@use "./variables" as *;
+
+/************LAYOUT*************/
+@mixin img-full-cover {
+  width: 100%;
+  object-fit: cover;
+}
+@mixin flex-all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-r {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-r-jc-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@mixin flex-r-ai-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@mixin flex-r-all-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-clm {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-clm-ai-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin flex-clm-jc-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin flex-clm-all-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin center-all-50 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin pseudo-elmt-center {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin pseudo-elmt-full {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@mixin pseudo-elmt-abs-TL {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin absolute-fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+@mixin absolute-top-left($abs-top: 0, $abs-left: 0) {
+  position: absolute;
+  top: $abs-top;
+  left: $abs-left;
+}
+@mixin absolute-top-right($abs-top: 0, $abs-right: 0) {
+  position: absolute;
+  top: $abs-top;
+  right: $abs-right;
+}
+@mixin absolute-bottom-left($abs-bottom: 0, $abs-left: 0) {
+  position: absolute;
+  bottom: $abs-bottom;
+  left: $abs-left;
+}
+@mixin absolute-bottom-right($abs-bottom: 0, $abs-right: 0) {
+  position: absolute;
+  bottom: $abs-bottom;
+  right: $abs-right;
+}
+
+/*******BREAKPOINTS*******/
+@mixin desktop-only {
+  @media (min-width: $breakpoint-d) {
+    @content;
+  }
+}
+@mixin untill-desktop {
+  @media (max-width: $breakpoint-d-min) {
+    @content;
+  }
+}
+@mixin from-tablet-up {
+  @media (min-width: $breakpoint-t) {
+    @content;
+  }
+}
+@mixin untill-tablet {
+  @media (max-width: $breakpoint-t-min) {
+    @content;
+  }
+}
+@mixin from-xl-mobile-up {
+  @media (min-width: $breakpoint-xl-m) {
+    @content;
+  }
+}
+@mixin untill-xl-mobile {
+  @media (max-width: $breakpoint-xl-m-min) {
+    @content;
+  }
+}
+@mixin from-mobile-up {
+  @media (min-width: $breakpoint-m) {
+    @content;
+  }
+}
+@mixin mobile-only {
+  @media (max-width: $breakpoint-m-min) {
+    @content;
+  }
+}
+
+/************COLORS & SCHEMES*************/
+// for text only
+@mixin color-scheme-txt($text, $textHover: none) {
+  color: $text;
+  @if $textHover != none {
+    &:hover {
+      color: $textHover;
+    }
+  }
+}
+// for background only
+@mixin color-scheme-bg($bg, $bgHover: none) {
+  background: $bg;
+  @if $bgHover != none {
+    &:hover {
+      background: $bgHover;
+    }
+  }
+}
+// for text and background
+@mixin color-scheme-txt-bg($text, $bg: none, $textHover: none, $bgHover: none) {
+  color: $text;
+  background: $bg;
+  &:hover {
+    @content;
+    @if $textHover != none {
+      color: $textHover;
+    }
+    @if $bgHover != none {
+      background: $bgHover;
+    }
+  }
+}
+//for text, background, opacity
+@mixin color-scheme(
+  $text: none,
+  $bg: none,
+  $txtHover: $text,
+  $bgHover: $bg,
+  $opacity: none,
+  $opacityHover: $opacity
+) {
+  @if $text != none {
+    color: $text;
+  }
+  @if $opacity != none {
+    opacity: $opacity;
+  }
+  @if $bg != none {
+    background: $bg;
+  }
+  &:hover {
+    @if $txtHover != none {
+      color: $txtHover;
+    }
+    @if $opacityHover != none {
+      opacity: $opacityHover;
+    }
+    @if $bgHover != none {
+      background: $bgHover;
+    }
+  }
+}
+
+//below , $light and $dark are both lists of colors!!!
+//for light mode and dark mode and they **EACH** include :
+// text, bg, textHover, bgHover, opacity, opacityHover
+//See color-scheme mixin above.
+@mixin color-mode($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme($light...);
+  }
+  @if ($dark != none) {
+    @media (prefers-color-scheme: dark) {
+      @include color-scheme($dark...);
+      @content;
+    }
+  }
+}
+// simple version of color-mode mixin above:
+// for text only
+@mixin color-mode-txt($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-txt($light...);
+  }
+  @if ($dark != none) {
+    @media (prefers-color-scheme: dark) {
+      @include color-scheme-txt($dark...);
+      @content;
+    }
+  }
+}
+// for background only
+@mixin color-mode-bg($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-bg($light...);
+  }
+  @if ($dark != none) {
+    @media (prefers-color-scheme: dark) {
+      @include color-scheme-bg($dark...);
+      @content;
+    }
+  }
+}
+// for text and background
+@mixin color-mode-txt-bg($light: none, $dark: none) {
+  @if ($light != none) {
+    @include color-scheme-txt-bg($light...);
+  }
+  @if ($dark != none) {
+    @media (prefers-color-scheme: dark) {
+      @include color-scheme-txt-bg($dark...);
+      @content;
+    }
+  }
+}
+
+@mixin mode($mode: dark) {
+  @if $mode == dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  } @else if $mode == light {
+    @media (prefers-color-scheme: light) {
+      @content;
+    }
+  }
+}
+
+/************TYPOGRAPHY*************/
+
+@mixin font-sz-wght-f-lh(
+  $size: none,
+  $weight: none,
+  $family: none,
+  $line-height: none
+) {
+  @if $size != none {
+    font-size: $size;
+  }
+  @if $weight != none {
+    font-weight: $weight;
+  }
+  @if $family != none {
+    font-family: unquote($family);
+  }
+  @if $line-height != none {
+    line-height: $line-height;
+  }
+}
+
+/**********READY STYLES**********/
+
+@mixin button-shadow {
+  box-shadow: $shadow;
+  @include mode() {
+    box-shadow: none;
+  }
+}
+
+/****TOOLS****/
+@mixin filter-svg-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(18deg)
+    brightness(105%) contrast(103%);
+}
+
 @mixin showCenter {
   // ADD lines below:
-  // :root {
-  //   --x-origin: 85.36%;
-  //   --y-origin: 85.36%;
-  // }
+  :root {
+    --x-origin: 85.36%;
+    --y-origin: 85.36%;
+  }
   .y-axis {
     position: absolute;
     width: inherit;

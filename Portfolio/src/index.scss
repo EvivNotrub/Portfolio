@@ -1,7 +1,12 @@
-@import "./src/assets/styles/_variables.scss";
-@import "./src/assets/styles/_mixins.scss";
-@import "./src/assets/styles/_keyframes.scss";
+@use "./assets/styles/mixins" as *;
+@use "./assets/styles/variables" as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  // outline: #747bff 2px solid;
+}
 :root {
   font-family: "Roboto Mono", monospace, "Poppins", sans-serif, "Bungee Inline",
     sans-serif, "Bungee", sans-serif, "Bungee Hairline", sans-serif,
@@ -13,8 +18,8 @@
   text-align: center;
   /* TODO: manage dark/light mode */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: hsl(220, 82%, 13%);
+  @include color-mode($root-scheme...);
+
   /* TODO:  research on lines below  */
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,11 +27,12 @@
   -moz-osx-font-smoothing: grayscale; */
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  // outline: #747bff 2px solid;
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 // * > * {
@@ -54,20 +60,11 @@
 //   }
 // }
 
-a {
-  text-decoration: inherit;
-  color: inherit;
-}
-/* TODO: style a:hover
-a:hover {
-  text-decoration: underline;
-}
-*/
 /*TODO: style for body
  */
 body {
   margin: 0;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 button,
@@ -101,25 +98,34 @@ textarea {
 }
 
 /* TODO: style for headers */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1,
+h2 {
+  @include font-sz-wght-f-lh($headings-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($headings-ft-D...);
+  }
+  //TODO: replace with -t- and fix issue with .greet section
+  @media (max-width: $breakpoint-d-min) and (orientation: landscape) {
+    @include font-sz-wght-f-lh($headings-ft-M...);
+  }
+  margin: 0.45em 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @include font-sz-wght-f-lh($small-headings-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($small-headings-ft-D...);
+  }
+  @media (max-width: $breakpoint-t-min) and (orientation: landscape) {
+    @include font-sz-wght-f-lh($small-headings-ft-M...);
+  }
+  margin: 0.45em 0;
 }
 
 button:focus,
 button:focus-visible {
   border: 4px auto -webkit-focus-ring-color;
-}
-/* TODO: style for dark mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

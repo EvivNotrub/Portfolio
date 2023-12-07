@@ -1,0 +1,36 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.accordion2__content {
+  &__data {
+    margin: 0;
+    padding: $accorion-content-padd-M;
+    @include from-tablet-up {
+      padding: $accorion-content-padd-D;
+    }
+    font-size: $acc-ft-M;
+    @include from-tablet-up {
+      font-size: $acc-ft-D;
+    }
+    &.--acc-list {
+      text-align: left;
+      list-style: circle;
+      padding-left: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 0.3rem;
+      margin: auto;
+    }
+    &.--img {
+      // TODO: better layout like grid auto
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(3.5rem, 1fr));
+      // grid-template-rows: masonry;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+}

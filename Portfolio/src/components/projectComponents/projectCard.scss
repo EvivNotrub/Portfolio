@@ -1,0 +1,26 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.project-card {
+  &__link {
+    display: block;
+    &__img {
+      width: 100%;
+      height: 15.25rem;
+      object-fit: cover;
+      border-radius: $button-radius;
+      @include mode(light) {
+        box-shadow: $shadow;
+      }
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__label {
+    @include font-sz-wght-f-lh($link-ft-M...);
+    @include from-tablet-up {
+      @include font-sz-wght-f-lh($link-ft-D...);
+    }
+    margin-top: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+}

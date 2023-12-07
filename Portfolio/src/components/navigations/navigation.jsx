@@ -14,6 +14,9 @@ function Navigation({ ...props }) {
     ref.current.focus();
   };
 
+  const blur = () => {
+    document.activeElement.blur();
+  };
   const closeNav = () => {
     // TODO: is there not a way like this to focus on the element instead ofthis shit ref prop drilling?
     // let elem = document.getElementById(e.target.hash.slice(1));
@@ -107,13 +110,19 @@ function Navigation({ ...props }) {
           </nav>
         </li>
         <li className="nav__list__item">
-          <Link to="/projects">Mes Projets</Link>
+          <Link to="/projects" onClick={blur}>
+            Mes Projets
+          </Link>
         </li>
         <li className="nav__list__item">
-          <Link to="/resume">CV</Link>
+          <Link to="/resume" onClick={blur}>
+            CV
+          </Link>
         </li>
         <li className="nav__list__item">
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" onClick={blur}>
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

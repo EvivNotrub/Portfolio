@@ -2,6 +2,7 @@ import "./social.scss";
 
 function Social() {
   return (
+    // TODO:
     <div className="social-links">
       <a href="/">CodePen</a>
       <a href="/">Github</a>

@@ -1,16 +1,47 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
 .main-header {
-  font-size: 1.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  font-size: $header-ft-M;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  padding: 1rem;
-  @media (min-width: 1280px) {
-    padding: 1rem 2rem;
-    height: 9rem;
+  padding: $header-padd-M;
+  height: $header-hght-M;
+  @include color-mode-bg($header-bg-mode...);
+  & .myName {
+    font-family: "Bungee Inline";
+    font-size: $header-title-M;
+    text-align: start;
+    line-height: 1.2;
+    @include color-mode($header-title-mode...);
+  }
+  & nav {
+    flex: 1;
+  }
+  // TODO: problem with hover effect that is active on focus
+  // &:focus-within + main {
+  //   opacity: 0.4;
+  // }
+  @media (hover: hover) {
+    &:hover + main {
+      opacity: 0.5;
+    }
+  }
+  @include from-tablet-up {
+    padding: $header-padd-D;
+    height: $header-hght-D;
+    font-size: $header-ft-D;
     // TODO: add width to navigation for hover effect
     // add .mutton without space to increase **specificity** if changes don't apply
+    & .myName {
+      font-size: $header-title-D;
+    }
     &:hover {
       & .mutton {
         animation: shake-it 0.04s alternate 8;
@@ -21,12 +52,6 @@
         opacity: 1;
       }
     }
-  }
-  & .myName {
-    font-family: "Bungee Inline";
-  }
-  & nav {
-    flex: 1;
   }
   // &__social {
   //   display: flex;

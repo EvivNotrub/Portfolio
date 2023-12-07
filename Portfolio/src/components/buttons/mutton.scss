@@ -1,26 +1,28 @@
+@use "sass:color";
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
 .mutton {
-  width: var(--mutton-width);
-  height: var(--mutton-height);
-  padding: var(
-    --list-item-padding
-  ); // var from navigation.scss for items of nav>list
+  border-radius: $mutton-radius;
+  width: $mutton-width;
+  height: $mutton-height;
+  padding: $list-item-padding; // var from navigation.scss for items of nav>list
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: var(--primary-very-dimm, white);
+  background-color: $mutton-bg-dm;
   transition: opacity 0.2s cubic-bezier(0.71, 0.05, 0.25, 0.87) 0.08s;
-  //   TODO: box-shadow here and others
-  // box-shadow: var(--primary-very-dimm) 2px 2px 2px 5px;
+  @include button-shadow;
   & .lines--sibling {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
-    width: var(--mutton-width);
-    height: var(--mutton-height);
+    width: $mutton-width;
+    height: $mutton-height;
     // here we have appearance: none; in the root style,
     // and can use opacity: 1; in order to see the outline when focused
     opacity: 1;
@@ -37,37 +39,25 @@
         & > .lines__line {
           &.--one {
             transform: translateY(
-                calc(
-                  var(--mutton-lines-height) / 2 - var(--mutton-line-height) / 2
-                )
+                calc($mutton-lines-height / 2 - $mutton-line-height / 2)
               )
               rotate(45deg);
           }
           &.--two {
             transform: translateY(
-                calc(
-                  var(--mutton-lines-height) / 2 - var(--mutton-line-height) / 2
-                )
+                calc($mutton-lines-height / 2 - $mutton-line-height / 2)
               )
               rotate(-45deg);
           }
           &.--three {
             transform: translateY(
-                calc(
-                  -1 * (var(--mutton-lines-height) / 2 - var(
-                          --mutton-line-height
-                        ) / 2)
-                )
+                calc(-1 * ($mutton-lines-height / 2 - $mutton-line-height / 2))
               )
               rotate(-45deg);
           }
           &.--four {
             transform: translateY(
-                calc(
-                  -1 * (var(--mutton-lines-height) / 2 - var(
-                          --mutton-line-height
-                        ) / 2)
-                )
+                calc(-1 * ($mutton-lines-height / 2 - $mutton-line-height / 2))
               )
               rotate(45deg);
           }
@@ -89,8 +79,8 @@
   .lines {
     box-sizing: border-box;
     position: relative;
-    width: var(--mutton-lines-width);
-    height: var(--mutton-lines-height);
+    width: $mutton-lines-width;
+    height: $mutton-lines-height;
     background-color: transparent;
     /*   box-shadow: black 3px 3px 3px 4px; */
     &__center {
@@ -101,9 +91,9 @@
       z-index: 2;
       &__square {
         box-sizing: border-box;
-        background-color: black;
-        width: var(--mutton-line-height);
-        height: var(--mutton-line-height);
+        background-color: $text-dm3;
+        width: $mutton-line-height;
+        height: $mutton-line-height;
         transform-origin: center;
         opacity: 0;
         transform: rotate(360deg) scale(0, 0);
@@ -115,39 +105,66 @@
       position: absolute;
       box-sizing: border-box;
       width: 50%;
-      height: var(--mutton-line-height);
+      height: $mutton-line-height;
       //   TODO: box-shadow here and others
-      box-shadow: var(--mutton-line-shadow);
+      box-shadow: $mutton-line-shadow;
+      transition: all 0.5s ease-in-out;
 
       &.--one {
         top: 0;
-        border-color: var(--palette-1);
-        background-color: var(--palette-1);
-        transition: all 0.5s ease-in-out;
+        border-color: $text-dm3;
+        background-color: $text-dm3;
         transform-origin: right;
       }
       &.--two {
         top: 0;
         right: 0;
-        border-color: var(--palette-2);
-        background-color: var(--palette-2);
-        transition: all 0.5s ease-in-out;
+        border-color: $text-dm3;
+        background-color: $text-dm3;
         transform-origin: left;
       }
       &.--three {
         bottom: 0;
-        border-color: var(--palette-3);
-        background-color: var(--palette-3);
-        transition: all 0.5s ease-in-out;
+        border-color: $text-dm3;
+        background-color: $text-dm3;
         transform-origin: right;
       }
       &.--four {
         bottom: 0;
         right: 0;
-        border-color: var(--palette-4);
-        background-color: var(--palette-4);
-        transition: all 0.5s ease-in-out;
+        border-color: $text-dm3;
+        background-color: $text-dm3;
         transform-origin: left;
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: light) {
+  .mutton {
+    background-color: $mutton-bg-lm;
+    .lines {
+      &__center {
+        &__square {
+          background-color: $palette9;
+        }
+      }
+      &__line {
+        &.--one {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--two {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--three {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
+        &.--four {
+          border-color: $palette9;
+          background-color: $palette9;
+        }
       }
     }
   }

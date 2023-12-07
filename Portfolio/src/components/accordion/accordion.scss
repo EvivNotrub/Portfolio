@@ -1,0 +1,89 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.accordion2 {
+  &-container {
+    width: 100%;
+  }
+  margin-bottom: -$acc-height-M; // to compensate for the content padding added to the top
+  // and moved with position relative + top: -52px;
+  position: relative;
+  &__header {
+    position: relative;
+    box-sizing: border-box;
+    height: $acc-height-M;
+    border-radius: $button-radius;
+    padding: $accordion-padd-M;
+    @include color-mode($button-scheme...);
+    @include button-shadow;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    &__title {
+      margin: 0;
+    }
+    @include from-mobile-up {
+      height: $acc-height-D;
+    }
+    &__button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      z-index: 2;
+      &__arrow {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: rotate(360deg) translate(0%, -50%);
+        display: block;
+        content: "";
+        margin-right: 12px;
+        transition: all 0.28s ease-in-out;
+        @include from-mobile-up {
+          margin-right: 0px;
+          width: 16px;
+          height: 10px;
+        }
+      }
+      &[aria-expanded="true"] img {
+        transform: rotate(180deg) translate(0%, 25%);
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    top: -$acc-height-M;
+    padding: $acc-height-M 0 0 0;
+    @include color-mode-bg($accorion-content-bg-scheme...);
+    border-radius: $button-radius;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+    height: 0;
+    transition:
+      transform 0.28s ease-in-out,
+      opacity 0.1s ease-in,
+      height 0.3s;
+    @include from-mobile-up {
+      padding: $acc-height-D 0 0 0;
+      top: -$acc-height-D;
+    }
+    &[aria-expanded="true"] {
+      transform: scaleY(1);
+      opacity: 1;
+      height: 100%;
+      transition:
+        transform 0.28s ease-in-out,
+        opacity 0.18s ease-in 0.1s,
+        height 0.3s;
+    }
+  }
+}

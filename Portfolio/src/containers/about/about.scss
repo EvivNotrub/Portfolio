@@ -1,0 +1,30 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  @include desktop-only {
+    gap: 2rem;
+  }
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__article {
+    &__text {
+      padding-bottom: 1rem;
+    }
+  }
+  &__links {
+    @include from-tablet-up {
+      align-self: flex-start;
+    }
+  }
+  & .down {
+    // margin: 2rem auto 0 auto;
+    transform: translateY(2.5rem);
+  }
+}

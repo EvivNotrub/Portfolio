@@ -1,6 +1,12 @@
+@use "./src/assets/styles/_variables" as *;
+@use "./src/assets/styles/_functions" as *;
+@use "./src/assets/styles/_mixins" as *;
+@use "./src/assets/styles/_keyframes" as *;
+
 /*TODO: work on CSS for the App component
 TODO: best practice is to use CSS modules?
 */
+
 #root {
   /* TODO: add CSS for the root element */
   /* TODO: max-width?? */
@@ -19,35 +25,48 @@ TODO: best practice is to use CSS modules?
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   & > main {
     flex: 1;
+    margin-top: $header-hght-M;
+    @include desktop-only {
+      margin-top: $header-hght-D;
+    }
   }
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+a:not(.myName) {
+  text-decoration: inherit;
+  @include color-mode($link-scheme...);
+  @include font-sz-wght-f-lh($link-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($link-ft-D...);
   }
-  to {
-    transform: rotate(360deg);
+  @media (max-width: $breakpoint-d-min) and (orientation: landscape) {
+    @include font-sz-wght-f-lh($link-ft-M...);
+  }
+  & svg {
+    height: $link-svg-size;
+    width: $link-svg-size;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+p {
+  margin: 0;
+  text-align: start;
+  @include font-sz-wght-f-lh($text-ft-M...);
+  @include from-tablet-up {
+    @include font-sz-wght-f-lh($text-ft-D...);
   }
-} */
+}
+// TODO but still this issues with nav
+// li {
+//   @include font-sz-wght-f-lh($text-ft-M...);
+//   @include from-tablet-up {
+//     @include font-sz-wght-f-lh($text-ft-D...);
+//   }
+// }
+// @media (prefers-reduced-motion: no-preference) {
+//   a:nth-of-type(2) .logo {
+//     animation: logo-spin infinite 20s linear;
+//   }
+// }

@@ -3,34 +3,237 @@ TODO: change name to global?
 TODO: look at project about SASS !!!
 TODO: add mixins and functions
 */
-:root {
-  --text-color: #2c3e50;
-  --text-color-dark: #fff;
-  --background: #ffffff;
-  --background-dark: #12002b;
-  --primary: #005834;
-  --primary-dimm: #48b386c7;
-  --primary-very-dimm: #78e3b7c7;
-  --primary-light: #00bc77;
-  --secondary: #ccc;
+@use "sass:color";
 
-  --home-loading-time: 5s;
+/****INFO****/
+// for color schemes , look at the src/assets/style/MIXINS under COLORS
 
-  //menu button variables:
-  // for Navigation and Mutton components
-  --mutton-width: 5rem;
-  --mutton-height: 4rem;
-  --mutton-lines-height: 1.15rem;
-  --mutton-lines-width: 100%;
-  --mutton-line-height: 0.25rem;
-  --mutton-line-shadow: var(--neutral) 1.5px 1.5px 3px;
+/*********BREAKPOINTS*********/
+// m = mobile / t = tablet / d = desktop
 
-  --primary: #9198e5;
-  --secondary: #e66465;
-  --neutral: grey;
-  --palette-1: var(--primary);
-  --palette-2: purple;
-  --palette-3: black;
-  --palette-4: var(--secondary);
-  --palette-5: #3535a5;
-}
+$breakpoint-m: 430px;
+$breakpoint-m-min: 429.99px;
+$breakpoint-xl-m: 540px;
+$breakpoint-xl-m-min: 539.99px;
+$breakpoint-t: 768px;
+$breakpoint-t-min: 767.99px;
+$breakpoint-d: 1280px;
+$breakpoint-d-min: 1279.99px;
+
+/*********COLORS*********/
+
+$secondary-light-color-35: rgba(217, 237, 146, 0.35);
+$third-light-color: #ecffa7;
+$third-light-color-20: rgba(236, 255, 167, 0.2);
+$very-dim-bg-color: rgba(204, 225, 145, 0.103);
+
+$neutral: grey;
+$neutral-light: #f6f6f6e3;
+$neutral-violet: #9198e5;
+
+// Theme for color gradients & more
+// Range of colors bewteen $palette1 and $palette10
+$palette1: rgb(0, 100, 102);
+$palette1-2: rgba(0, 100, 102, 0.9);
+$palette2: rgb(6, 90, 96);
+$palette3: rgb(11, 82, 91);
+$palette4: rgb(20, 69, 82);
+$palette5: rgb(27, 58, 75);
+$palette6: rgb(33, 47, 69);
+$palette7: rgb(39, 38, 64);
+$palette8: rgb(49, 34, 68);
+$palette9: rgb(62, 31, 71);
+$palette10: rgb(77, 25, 77);
+$palette10-2: rgba(77, 25, 77, 0.7);
+$palette12-2: rgba(25, 77, 41, 0.7);
+$palette1-3: rgba(25, 77, 77, 0.7);
+
+$palette11: #fd815e;
+$palette11-2: rgba(252, 128, 94, 0.678);
+$palette12: #33ca2ed7;
+$palette13: #4356ffcb;
+$palette14: #ff4356b0;
+$palette15: #ff6060d0;
+$palette16: #ff6060e7;
+
+$combined-gradient: linear-gradient(91deg, $palette1-2 -10%, $palette10-2 80%),
+  radial-gradient(circle, $palette1-2, $palette10-2 30%),
+  linear-gradient(to left, $palette1, $palette10);
+
+$dim-gradient-dm: linear-gradient(
+  0deg,
+  rgba(255, 255, 255, 0) 5%,
+  rgba(39, 38, 64, 0.8) 110%
+);
+
+$dim-gradient-lm: linear-gradient(
+  0deg,
+  rgba(255, 255, 255, 0) 5%,
+  rgba(204, 225, 145, 0.5) 120%
+);
+
+// Text colors OR Background colors for light and dark mode (lm & dm)
+// TODO: choose either or, but not both
+$text-lm: #213547; //  some kind of black blue
+$text-lm2: #2c3e50; // same
+$text-lm3: black;
+$text-dm: rgb(241, 245, 233);
+$text-dm2: rgba(226, 233, 212);
+$text-dm3: rgba(217, 237, 146, 1);
+
+$background-dm: rgb(39, 38, 64);
+$background-dm2: rgb(33, 47, 69);
+$bg-lm: white;
+$bg-lm2: rgb(181, 228, 140);
+$bg-super-light-lm: color.scale($bg-lm2, $alpha: -90%);
+$bg-light: color.scale($bg-lm2, $alpha: -50%);
+
+// filters, buttons, headers, etc.
+
+/********************COLOR SCHEMES********************/
+// in order below:   ( when 'none' = not declared)
+// TEXT, BG, TeXtHOVER, BgHOVER, OPACITY, OpacityHOVER
+$root-txt-lm: $text-lm;
+$root-txt-dm: $text-dm;
+
+$root-bg-lm: none; //$very-dim-bg-color;
+$root-bg-dm: $background-dm;
+
+$scheme-root-lm: $root-txt-lm, $root-bg-lm;
+$scheme-root-dm: $root-txt-dm, $root-bg-dm;
+$root-scheme: $scheme-root-lm, $scheme-root-dm;
+
+$link-accent-scheme-lm: $palette16, none, $palette10;
+$link-accent-scheme-dm: $text-dm3, none, $third-light-color;
+$link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
+
+$scheme-txt-accent-lm: $palette16; //can add a background
+$scheme-txt-accent-dm: $text-dm3; // can add a background
+
+$link-scheme-lm: $text-lm2, none, $palette9, none, none, 0.8;
+$link-scheme-dm: $text-dm3, none, $third-light-color;
+$link-scheme: $link-scheme-lm, $link-scheme-dm;
+
+// $tag-scheme-lm: $text-lm2, $secondary-light-color-35, $palette7, none, none, 0.8;
+// $tag-scheme-lm: $text-lm2, $palette11-2, $text-lm2, none, none, 0.8;
+$tag-scheme-lm: $text-lm, $bg-light, $palette8, none, none, 0.9;
+// $tag-scheme-dm: $text-dm, $secondary-light-color-35, $third-light-color;
+$tag-scheme-dm: $text-dm3, $very-dim-bg-color, $text-dm;
+// $tag-scheme-dm: $text-dm, $very-dim-bg-color, $text-dm3;
+$tag-scheme: $tag-scheme-lm, $tag-scheme-dm;
+
+$button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
+$button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,
+  0.9;
+$button-scheme: $button-scheme-lm, $button-scheme-dm;
+
+$accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
+
+/***********GLOBAL***********/
+
+// M = mobile / T = tablet / D = desktop
+// lm = light-mode  / dm = dark-mode
+// order for font scheme: size, weight, family, line-height
+
+//mostly in index.scss and app.scss
+
+$headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
+$headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
+$small-headings-ft-M: 1.2rem, 600, '"Poopins", sans-serif', 1.2;
+$small-headings-ft-D: 1.5rem, 600, '"Poopins", sans-serif', 1.4;
+$text-ft-M: 1rem, 500, none, 1.4;
+$text-ft-D: 1.35rem, 500, none, 1.8;
+$link-ft-M: 1.2rem, 500;
+$link-ft-D: 1.4rem, 500;
+$link-svg-size: 1.5rem;
+
+// clickabels and small button-like components
+
+$button-radius: 0.25rem;
+$button-padd: 0.5rem 1rem;
+
+$accordion-padd-M: 1.3rem 0.5rem;
+$accordion-padd-D: 1.5rem 1rem;
+$accorion-content-padd-D: 1.25rem 1rem;
+$accorion-content-padd-M: 1rem 0.5rem;
+$acc-height-M: 45px;
+$acc-height-D: 52px;
+$acc-ft-M: 1.2rem;
+$acc-ft-D: 1.4rem;
+
+$tag-ft-M: 0.9rem, 400, none;
+$tag-ft-D: 1.1rem, 400;
+$tag-padd: 0.1rem 0.4rem;
+$tag-radius: 0.3rem;
+
+$shadow-sz: 1.5px;
+$shadow-blur: 3px;
+$shadow-spread: 0;
+$shadow-color: $neutral;
+$shadow: $shadow-sz $shadow-sz $shadow-blur $shadow-spread $shadow-color;
+
+/*********LAYOUT*********/
+
+// Header variables:
+$header-hght-D: 9rem;
+$header-hght-M: 6rem;
+$header-padd-D: 1rem 2rem;
+$header-padd-M: 0.8rem;
+$header-ft-M: 1.7rem;
+$header-ft-D: 1.8rem;
+$header-ft-weight: 500; // Nav font weight overwrites this
+$header-title-M: 1.8rem;
+$header-title-D: 2.4rem;
+$header-bg-dm: $dim-gradient-dm; // TODO: add a color for hover
+$header-bg-lm: $dim-gradient-lm; //, $dim-gradient-dm;
+$header-bg-mode: $header-bg-lm, $header-bg-dm;
+$header-title-mode: $link-accent-mode;
+
+//menu button variables:
+// for Navigation and Mutton components
+$mutton-width: 5rem;
+$mutton-height: 4rem;
+$mutton-radius: $button-radius;
+$mutton-lines-height: 1.15rem;
+$mutton-lines-width: 100%;
+$mutton-line-height: 0.25rem;
+$mutton-line-shadow: $neutral 1.5px 1.5px 3px;
+$mutton-bg-dm: $background-dm;
+$mutton-bg-lm: $bg-light;
+
+// Navigation component
+$list-item-padding: 5px 10px;
+$nav-list-width: 160px;
+$nav-list-radius: $button-radius;
+$nav-default-bg: $mutton-bg-dm;
+$nav-list-bg-dm: $very-dim-bg-color;
+$nav-list-bg-lm: color.scale($bg-lm2, $alpha: -35%);
+$nav-link-color-dm: $text-dm2;
+$nav-link-color-lm: $text-lm2; // TODO: change ?
+$sub-nav-list-width-D: 34rem;
+// $nav-ft-s-D: 1.5rem; SEE HEADER VARIABLES
+// $nav-ft-s-M: 1.2rem; SEE HEADER VARIABLES
+$nav-ft-weight: 500;
+// TODO: need this?
+$home-loading-time: 5s;
+
+// HOME component
+//TODO: font spec only for welcome section > change name
+$home-ft-M: 1.7rem, 500, '"Poopins", sans-serif', 1.5;
+$home-ft-D: 2.7rem, 500, '"Poopins", sans-serif', 1.6;
+$h1-mode-scheme: $scheme-txt-accent-lm, $scheme-txt-accent-dm;
+$section-padd-M: 1.3rem;
+$section-padd-D: 2rem;
+$home-div-bg-dm: none, $very-dim-bg-color;
+// $home-div-bg-lm: $text-dm, $mutton-bg-dm; // remove text-shadow in home -> div
+// OR
+$home-div-bg-lm: none, $mutton-bg-lm;
+$home-div-bg-mode: $home-div-bg-lm, $home-div-bg-dm;
+$fade-out-time: 0.4s ease-in 6s forwards;
+/*down button*/
+
+$down-btn-bottom: 2rem;
+$down-btn-mode: $button-scheme;
+$down-btn-delay: 6.8s;
+
+/********Portfolio page ********/

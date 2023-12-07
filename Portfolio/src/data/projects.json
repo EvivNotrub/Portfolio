@@ -1,0 +1,187 @@
+{
+  "openclassrooms": [
+    {
+      "id": "99GRecnRFUCIen7SRuUoNg",
+      "name": "Ohmyfood",
+      "description": {
+        "FR": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Dynamisez une page web avec des animations CSS en utilisant SASS",
+        "EN": "Project 3 of the OpenClassrooms Web Developer program: Make a web page more dynamic with CSS animations using SASS"
+      },
+      "aim": {
+        "FR": "Découvrir SASS et les animations CSS",
+        "EN": "Discover SASS and CSS animations"
+      },
+      "summary": {
+        "FR": "Dynamisez une page web avec des animations",
+        "EN": "Make a web page more dynamic with animations"
+      },
+      "tags": ["Animations", "SASS", "HTML", "CSS"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/ohMyFood",
+        "demo": "https://evivnotrub.github.io/ohMyFood/"
+      },
+      "pictures": [
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood.png",
+          "alt": "site ohMyFood - home"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood0.png",
+          "alt": "site ohMyFood - loading"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood2.png",
+          "alt": "site ohMyFood - restaurants section"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood02.png",
+          "alt": "site ohMyFood - loading 2"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood4.png",
+          "alt": "site ohMyFood - menu page loading"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood3.png",
+          "alt": "site ohMyFood - menu page"
+        },
+        {
+          "src": "./src/assets/images/projects/ohmyfood/ohmyfood5.png",
+          "alt": "site ohMyFood - menu page 2"
+        }
+      ]
+    },
+    {
+      "id": "MglrBNMvbUmVnZ6M",
+      "name": "Portfolio de Sophie Bluel",
+      "description": {
+        "FR": "Projet 5 du parcours Intégrateur Web d'OpenClassrooms : Créer une page web dynamique avec JavaScript",
+        "EN": "Project 5 of the OpenClassrooms Web Developer program: Create a dynamic web page with JavaScript"
+      },
+      "aim": {
+        "FR": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques",
+        "EN": "Learn how to use JavaScript to implement dynamic features"
+      },
+      "summary": {
+        "FR": "Implémenter des fonctionnalités avec JavaScript",
+        "EN": "Implement dynamic with JavaScript"
+      },
+      "tags": ["JavaScript", "HTML", "CSS", "Modale"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/Portfolio-architecte-sophie-bluel"
+      },
+      "pictures": [
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb2.png",
+          "alt": "Sophie Bluel portfolio - home"
+        },
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb2.5.png",
+          "alt": "Sophie Bluel portfolio - loggin"
+        },
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb3.png",
+          "alt": "Sophie Bluel portfolio - home edit version"
+        },
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb3.8.png",
+          "alt": "Sophie Bluel portfolio - modal gallery"
+        },
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb5.png",
+          "alt": "Sophie Bluel portfolio - edit photo"
+        },
+        {
+          "src": "./src/assets/images/projects/portfolio_bluel/sb6.png",
+          "alt": "Sophie Bluel portfolio - add photo"
+        }
+      ]
+    },
+    {
+      "id": "RUSBl0LtMX0bMQ",
+      "name": "Kasa",
+      "description": {
+        "FR": "Projet 8 du parcours Intégrateur Web d'OpenClassrooms : Créer un site avec React en utilisant la structure en composants. Le site est responsive et utilise React-router-dom pour la navigation. ",
+        "EN": "Project 8 of the OpenClassrooms Web Developer program: Create a website with React using the component structure. The site is responsive and uses React-router-dom for navigation."
+      },
+      "aim": {
+        "FR": "Apprendre React et React-router-dom",
+        "EN": "Learn React and React-router-dom"
+      },
+      "summary": {
+        "FR": "Premier projet React",
+        "EN": "First React project"
+      },
+      "tags": ["React", "React-router"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/OC_p8_app_web_with_react",
+        "demo": "https://evivnotrub.github.io/OC_p8_app_web_with_react/"
+      },
+      "pictures": [
+        {
+          "src": "./src/assets/images/projects/kasa/kasa.png",
+          "alt": "site kasa - home"
+        },
+        {
+          "src": "./src/assets/images/projects/kasa/kasa2.png",
+          "alt": "site kasa - appartment page"
+        },
+        {
+          "src": "./src/assets/images/projects/kasa/kasa3.png",
+          "alt": "site kasa - appartment page 2"
+        },
+        {
+          "src": "./src/assets/images/projects/kasa/kasa4.png",
+          "alt": "site kasa - slider"
+        },
+        {
+          "src": "./src/assets/images/projects/kasa/kasa5.png",
+          "alt": "site kasa - about page"
+        }
+      ]
+    },
+    {
+      "id": "6PGYLzGyAkGkkI1wpJ",
+      "name": "77 Events",
+      "description": {
+        "FR": "Projet 10 du parcours Intégrateur Web d'OpenClassrooms : Débuggez une application React pour apprendre les tests unitaires et d'intégration ainsi que le debugging avec différents outils. Le projet original avec les problèmes peut être vu sur le repository github puisqu'il a été forké.",
+        "EN": "Project 10 during the Open Classroom cursus to learn about test implementation and librairies, test driven development , debugging and using different tools to do so. The original project with issues can be seen on the github repository since it has been forked."
+      },
+      "aim": {
+        "FR": "Apprendre les tests unitaires et d'intégration ainsi que le debugging avec différents outils.",
+        "EN": "Learn about test implementation and librairies, test driven development , debugging and using different tools to do so."
+      },
+      "summary": {
+        "FR": "Débuggez une application React",
+        "EN": "Debug a React application"
+      },
+      "tags": ["Unit Testing", "React", "Jest"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/Debuggez-une-application-React.JS",
+        "demo": "https://evivnotrub.github.io/Debuggez-une-application-React.JS/"
+      },
+      "pictures": [
+        {
+          "src": "./src/assets/images/projects/77_events/77.png",
+          "alt": "site 77 events - home page slider"
+        },
+        {
+          "src": "./src/assets/images/projects/77_events/77_2.png",
+          "alt": "site 77 events - project grid with filters"
+        },
+        {
+          "src": "./src/assets/images/projects/77_events/77_3.png",
+          "alt": "site 77 events - project grid with filters 2"
+        },
+        {
+          "src": "./src/assets/images/projects/77_events/77_4.png",
+          "alt": "site 77 events - contact form and footer"
+        },
+        {
+          "src": "./src/assets/images/projects/77_events/77_5.png",
+          "alt": "site 77 events - nos services"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.labeled-image {
+  flex: 1;
+  flex-basis: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  & img {
+    object-fit: contain;
+    width: 3rem;
+    height: 2.5rem;
+  }
+}

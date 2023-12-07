@@ -1,0 +1,14 @@
+@use "../../assets/styles/mixins" as *;
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  @include from-tablet-up {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+}

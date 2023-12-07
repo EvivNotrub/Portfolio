@@ -1,0 +1,30 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/keyframes" as *;
+
+.welcome {
+  position: relative;
+  @include mode(light) {
+    text-shadow: $neutral 1px 1px 2px;
+  }
+  padding: 1.7rem 1.2rem;
+  @include desktop-only {
+    padding: 3rem 8rem;
+  }
+  &::before {
+    z-index: -1;
+    @include pseudo-elmt-full;
+    @include color-mode($home-div-bg-mode...) {
+    }
+    border-radius: 0.35rem;
+    animation: fade-out $fade-out-time;
+  }
+  &__title {
+    & span {
+      @include color-mode($h1-mode-scheme...);
+    }
+  }
+  &__message span {
+    font-size: 0.9em;
+  }
+}

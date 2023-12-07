@@ -1,0 +1,31 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/keyframes" as *;
+
+.down {
+  // TODO: adjust layout for mobile paysage mode
+  //   @include absolute-bottom-right(10vh, 10px);
+  //   @include from-tablet-up {
+  //   @include absolute-bottom-left(11vh, 50%);
+  //   transform: translateX(-50%);
+  //   }
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 2.5rem;
+  @include from-tablet-up {
+    width: 2rem;
+    height: 3.2rem;
+  }
+  @include button-shadow;
+  border-radius: $button-radius $button-radius 50px 50px;
+  @include color-mode($down-btn-mode...);
+  @include flex-all-center;
+
+  &__arrow {
+    animation: vibrate 0.25s cubic-bezier(0.32, -0.63, 0.58, 1.33) alternate 4
+      $down-btn-delay;
+  }
+  &:hover > .down__arrow {
+    animation: rolls-down 0.55s cubic-bezier(0.32, -0.63, 0.58, 1.33);
+  }
+}

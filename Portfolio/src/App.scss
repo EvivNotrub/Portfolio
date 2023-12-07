@@ -25,6 +25,7 @@ TODO: best practice is to use CSS modules?
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   & > main {
     flex: 1;
     margin-top: $header-hght-M;

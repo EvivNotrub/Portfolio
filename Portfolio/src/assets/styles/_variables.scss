@@ -45,12 +45,13 @@ $palette8: rgb(49, 34, 68);
 $palette9: rgb(62, 31, 71);
 $palette10: rgb(77, 25, 77);
 $palette10-2: rgba(77, 25, 77, 0.7);
-$palette13: rgba(25, 77, 41, 0.7);
-$palette12: rgba(25, 77, 77, 0.7);
+$palette12-2: rgba(25, 77, 41, 0.7);
+$palette1-3: rgba(25, 77, 77, 0.7);
 
-// $palette11: #fd815e;
-// $palette12: #33ca2ed7;
-// $palette13: #4356ffcb;
+$palette11: #fd815e;
+$palette11-2: rgba(252, 128, 94, 0.678);
+$palette12: #33ca2ed7;
+$palette13: #4356ffcb;
 $palette14: #ff4356b0;
 $palette15: #ff6060d0;
 $palette16: #ff6060e7;
@@ -92,19 +93,40 @@ $bg-light: color.scale($bg-lm2, $alpha: -50%);
 /********************COLOR SCHEMES********************/
 // in order below:   ( when 'none' = not declared)
 // TEXT, BG, TeXtHOVER, BgHOVER, OPACITY, OpacityHOVER
+$root-txt-lm: $text-lm;
+$root-txt-dm: $text-dm;
+
+$root-bg-lm: none; //$very-dim-bg-color;
+$root-bg-dm: $background-dm;
+
+$scheme-root-lm: $root-txt-lm, $root-bg-lm;
+$scheme-root-dm: $root-txt-dm, $root-bg-dm;
+$root-scheme: $scheme-root-lm, $scheme-root-dm;
 
 $link-accent-scheme-lm: $palette16, none, $palette10;
 $link-accent-scheme-dm: $text-dm3, none, $third-light-color;
 $link-accent-mode: $link-accent-scheme-lm, $link-accent-scheme-dm;
+
 $scheme-txt-accent-lm: $palette16; //can add a background
 $scheme-txt-accent-dm: $text-dm3; // can add a background
+
 $link-scheme-lm: $text-lm2, none, $palette9, none, none, 0.8;
 $link-scheme-dm: $text-dm3, none, $third-light-color;
 $link-scheme: $link-scheme-lm, $link-scheme-dm;
+
+// $tag-scheme-lm: $text-lm2, $secondary-light-color-35, $palette7, none, none, 0.8;
+// $tag-scheme-lm: $text-lm2, $palette11-2, $text-lm2, none, none, 0.8;
+$tag-scheme-lm: $text-lm, $bg-light, $palette8, none, none, 0.9;
+// $tag-scheme-dm: $text-dm, $secondary-light-color-35, $third-light-color;
+$tag-scheme-dm: $text-dm3, $very-dim-bg-color, $text-dm;
+// $tag-scheme-dm: $text-dm, $very-dim-bg-color, $text-dm3;
+$tag-scheme: $tag-scheme-lm, $tag-scheme-dm;
+
 $button-scheme-lm: $text-lm2, $bg-light, $palette10, none, none, 0.8;
 $button-scheme-dm: $third-light-color, $very-dim-bg-color, $text-dm3, none, none,
   0.9;
 $button-scheme: $button-scheme-lm, $button-scheme-dm;
+
 $accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
 
 /***********GLOBAL***********/
@@ -113,7 +135,7 @@ $accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
 // lm = light-mode  / dm = dark-mode
 // order for font scheme: size, weight, family, line-height
 
-//index.scss and app.scss
+//mostly in index.scss and app.scss
 
 $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
@@ -125,20 +147,11 @@ $link-ft-M: 1.2rem, 500;
 $link-ft-D: 1.4rem, 500;
 $link-svg-size: 1.5rem;
 
-$root-txt-lm: $text-lm;
-$root-txt-dm: $text-dm;
-
-$root-bg-lm: none; //$very-dim-bg-color;
-$root-bg-dm: $background-dm;
-
-$scheme-root-lm: $root-txt-lm, $root-bg-lm;
-$scheme-root-dm: $root-txt-dm, $root-bg-dm;
-$root-scheme: $scheme-root-lm, $scheme-root-dm;
-
-// clickabels
+// clickabels and small button-like components
 
 $button-radius: 0.25rem;
 $button-padd: 0.5rem 1rem;
+
 $accordion-padd-M: 1.3rem 0.5rem;
 $accordion-padd-D: 1.5rem 1rem;
 $accorion-content-padd-D: 1.25rem 1rem;
@@ -147,6 +160,11 @@ $acc-height-M: 45px;
 $acc-height-D: 52px;
 $acc-ft-M: 1.2rem;
 $acc-ft-D: 1.4rem;
+
+$tag-ft-M: 0.9rem, 400, none;
+$tag-ft-D: 1.1rem, 400;
+$tag-padd: 0.1rem 0.4rem;
+$tag-radius: 0.3rem;
 
 $shadow-sz: 1.5px;
 $shadow-blur: 3px;
@@ -217,3 +235,5 @@ $fade-out-time: 0.4s ease-in 6s forwards;
 $down-btn-bottom: 2rem;
 $down-btn-mode: $button-scheme;
 $down-btn-delay: 6.8s;
+
+/********Portfolio page ********/

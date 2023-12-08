@@ -6,7 +6,7 @@
   margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
   &__banner {
     height: 5rem;
@@ -97,7 +97,7 @@
       padding: 0 1.5rem;
     }
     &__portfolio {
-      grid-template-columns: repeat(2, minmax(14rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
       gap: 2.2rem;
       margin-top: 2rem;
     }

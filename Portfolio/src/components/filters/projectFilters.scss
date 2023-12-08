@@ -1,17 +1,24 @@
 @use "../../assets/styles/variables" as *;
 @use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/keyframes" as *;
 
 .filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5rem;
-  max-width: 619px;
+  // max-width: 619px;
   &__filter {
     // TODO: add active style
     border: solid 0.125rem transparent;
+    transition: all 0.2s ease-out;
+    &.all {
+      animation: blink 0.22s ease-in-out 2 alternate;
+    }
     &.active {
+      // CAREFULL ABOVE this is a class not a pseudo selector
       border: solid 0.125rem $neutral;
+      transform: scale(1.04);
       @include mode() {
         // border: solid 0.125rem $secondary-light-color-35;
         border: solid 0.125rem $bg-light;
@@ -30,11 +37,11 @@
     }
   }
   @include desktop-only {
-    max-width: 800px;
+    // max-width: 800px;
     gap: 1rem;
     &__filter {
       min-width: 8.5rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 500;
     }
   }

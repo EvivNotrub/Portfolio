@@ -44,7 +44,7 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
         ))}
       <button
         className={`filters__filter ${
-          activeFilter.includes("all") ? "active" : ""
+          activeFilter.includes("all") ? "all" : ""
         }`}
         onClick={() => handleFilter("all")}
       >

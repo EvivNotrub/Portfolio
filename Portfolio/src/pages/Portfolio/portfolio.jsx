@@ -1,20 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import projects from "../../data/projects.json";
 import ProjectCard from "../../components/projectComponents/projectCard";
 import "./portfolio.scss";
 import ProjectFilters from "../../components/filters/projectFilters";
 
 function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  document.title = "Portfolio | My Work";
+  const [activeFilter, setActiveFilter] = useState(["all"]);
   console.log("activeFilter", activeFilter);
-  const ocProjects = projects.openclassrooms;
 
+  // TODO: Wrap in useEffect ?
+  // TODO: condition if projects.openclassrooms is undefined ?
+  const ocProjects = projects.openclassrooms;
   const filteredProjects = ocProjects.filter((project) => {
-    if (activeFilter === "all") {
+    if (activeFilter.includes("all")) {
       return true;
     }
-    return project.filterCategory.includes(activeFilter);
+    let state = false;
+    activeFilter.forEach((filter) => {
+      if (project.filterCategory.includes(filter)) {
+        state = true;
+      }
+    });
+    return state;
   });
+
+  useEffect(() => {
+    console.log("securing activeFilter");
+    activeFilter.length === 0 && setActiveFilter(["all"]);
+  }, [activeFilter]);
 
   return (
     <main data-testid="portfolio-testid" className="works">

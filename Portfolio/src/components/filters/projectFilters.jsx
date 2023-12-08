@@ -11,7 +11,21 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
   }, []);
 
   const handleFilter = (filter) => {
-    setActiveFilter(filter);
+    if (filter === "all") {
+      return setActiveFilter(["all"]);
+    }
+    if (activeFilter.includes("all")) {
+      const newFilter = activeFilter.filter((f) => f !== "all");
+      return setActiveFilter([...newFilter, filter]);
+    }
+    if (activeFilter.includes(filter)) {
+      const newFilter = activeFilter.filter((f) => f !== filter);
+      if (newFilter.length === 0) {
+        return setActiveFilter(["all"]);
+      }
+      return setActiveFilter(newFilter);
+    }
+    setActiveFilter([...activeFilter, filter]);
   };
 
   return (
@@ -21,7 +35,7 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
           <button
             key={filter + index}
             className={`filters__filter ${
-              activeFilter === filter ? "active" : ""
+              activeFilter.includes(filter) ? "active" : ""
             }`}
             onClick={() => handleFilter(filter)}
           >
@@ -29,7 +43,9 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
           </button>
         ))}
       <button
-        className={`filters__filter ${activeFilter === "all" ? "active" : ""}`}
+        className={`filters__filter ${
+          activeFilter.includes("all") ? "active" : ""
+        }`}
         onClick={() => handleFilter("all")}
       >
         All
@@ -39,7 +55,7 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
 }
 
 ProjectFilters.propTypes = {
-  activeFilter: PropTypes.string,
+  activeFilter: PropTypes.arrayOf(PropTypes.string),
   setActiveFilter: PropTypes.func,
 };
 

@@ -9,8 +9,13 @@
   max-width: 619px;
   &__filter {
     // TODO: add active style
+    border: solid 0.125rem transparent;
     &.active {
-      border: solid 3px $neutral;
+      border: solid 0.125rem $neutral;
+      @include mode() {
+        // border: solid 0.125rem $secondary-light-color-35;
+        border: solid 0.125rem $bg-light;
+      }
     }
     flex: 1;
     font-family: "Poppins", sans-serif;
@@ -18,7 +23,7 @@
     font-weight: 600;
     width: fit-content;
     min-width: 7.2rem;
-    padding: 0.3rem 0.35rem;
+    padding: 0.175rem 0.225rem;
     border-radius: $button-radius;
     @include mode(light) {
       box-shadow: $shadow;

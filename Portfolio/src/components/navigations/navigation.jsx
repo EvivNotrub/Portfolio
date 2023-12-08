@@ -65,8 +65,9 @@ function Navigation({ ...props }) {
       <ul className={"nav__list" + " " + (checked || isFocused ? "show" : "")}>
         <li className="nav__list__item">
           <Link
-            to="/"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
             onFocus={() => setSubNav(true)}
             onBlur={() => setSubNav(false)}
           >

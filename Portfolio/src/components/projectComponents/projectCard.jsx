@@ -9,7 +9,7 @@ function ProjectCard({ project }) {
       <Link
         className="project-card__link"
         id={project.name}
-        to={"/portfolio/" + project.id}
+        to={"/projects/" + project.id}
       >
         <img
           className="project-card__link__img"

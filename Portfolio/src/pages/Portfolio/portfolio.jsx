@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import projects from "../../data/projects.json";
+import projectsInfo from "../../data/projects.json";
 import ProjectCard from "../../components/projectComponents/projectCard";
 import "./portfolio.scss";
 import ProjectFilters from "../../components/filters/projectFilters";
@@ -11,7 +11,10 @@ function Portfolio() {
 
   // TODO: Wrap in useEffect ?
   // TODO: condition if projects.openclassrooms is undefined ?
-  const ocProjects = projects.openclassrooms;
+  const projects = projectsInfo.projects;
+  const ocProjects = projects.filter(
+    (project) => project.context === "openclassrooms",
+  );
   const filteredProjects = ocProjects.filter((project) => {
     if (activeFilter.includes("all")) {
       return true;

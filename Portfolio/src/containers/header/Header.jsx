@@ -15,7 +15,7 @@ function Header({ ...props }) {
             alt="logo Portfolio"
             className="main-logo__link__img"
           /> */}
-          {/* TODO: quelle balise ici ? */}
+          {/* TODO: quelle balise ici ? H1?? pour referencement? */}
           <div className="myName">Werlé Barthélémy</div>
         </Link>
       </div>

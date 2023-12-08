@@ -1,11 +1,10 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import data from "../../data/projects.json";
 import "./projectFilters.scss";
 
-function ProjectFilters() {
+function ProjectFilters({ activeFilter, setActiveFilter }) {
   const [filters, setFilters] = useState([]);
-  const [activeFilter, setActiveFilter] = useState("all");
-  console.log("filters", filters, "activeFilter", activeFilter);
 
   useEffect(() => {
     setFilters(data.filters);
@@ -38,5 +37,10 @@ function ProjectFilters() {
     </div>
   );
 }
+
+ProjectFilters.propTypes = {
+  activeFilter: PropTypes.string,
+  setActiveFilter: PropTypes.func,
+};
 
 export default ProjectFilters;

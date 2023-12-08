@@ -1,5 +1,5 @@
 {
-  "filters": ["React", "JavaScript", "HTML-CSS", "Jest"],
+  "filters": ["React", "JavaScript", "HTML-CSS", "Jest", "SASS"],
   "openclassrooms": [
     {
       "id": "99GRecnRFUCIen7SRuUoNg",
@@ -17,6 +17,7 @@
         "EN": "Make a web page more dynamic with animations"
       },
       "tags": ["Animations", "SASS"],
+      "filterCategory": ["HTML-CSS", "SASS"],
       "links": {
         "github": "https://github.com/EvivNotrub/ohMyFood",
         "demo": "https://evivnotrub.github.io/ohMyFood/"
@@ -68,6 +69,7 @@
         "EN": "Implement dynamic with JavaScript"
       },
       "tags": ["JavaScript", "Accessible Modale"],
+      "filterCategory": ["JavaScript"],
       "links": {
         "github": "https://github.com/EvivNotrub/Portfolio-architecte-sophie-bluel"
       },
@@ -114,6 +116,7 @@
         "EN": "First React project"
       },
       "tags": ["React", "React-router"],
+      "filterCategory": ["React"],
       "links": {
         "github": "https://github.com/EvivNotrub/OC_p8_app_web_with_react",
         "demo": "https://evivnotrub.github.io/OC_p8_app_web_with_react/"
@@ -157,6 +160,7 @@
         "EN": "Debug a React application"
       },
       "tags": ["Unit Testing", "React-testing", "Jest"],
+      "filterCategory": ["React", "Jest"],
       "links": {
         "github": "https://github.com/EvivNotrub/Debuggez-une-application-React.JS",
         "demo": "https://evivnotrub.github.io/Debuggez-une-application-React.JS/"

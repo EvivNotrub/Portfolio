@@ -2,20 +2,21 @@
 @use "../../assets/styles/_mixins.scss" as *;
 
 .project-info {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  & .--fullscreen:not(.slideshow, .slideshow *) {
+    opacity: 0.3;
+  }
   & h1,
   h2,
   h3 {
     font-family: "Roboto Mono", sans-serif;
   }
-  & h2 {
-    // font-weight: 600;
-    // line-height: 1.3;
-  }
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  //green background to see image border---temporary
   &::after {
     content: "";
     position: absolute;
@@ -42,15 +43,24 @@
       font-size: 1.9rem;
       margin: 0.5rem auto 0.5rem;
       padding: $project-page-padd-M;
+      @include from-mobile-up {
+        padding: $project-page-padd-T;
+      }
     }
     &__links {
       padding: $project-page-padd-M;
+      @include from-mobile-up {
+        padding: $project-page-padd-T;
+      }
     }
   }
   &__details {
     text-align: start;
     margin: 1rem auto 3rem;
     padding: $project-page-padd-M;
+    @include from-mobile-up {
+      padding: $project-page-padd-T;
+    }
     &__summary {
       &__title {
         font-size: 1.75rem;

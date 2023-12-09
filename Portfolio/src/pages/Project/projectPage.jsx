@@ -19,6 +19,7 @@ function ProjectPage() {
 
   // TODO: find better title
   //TODO: change header for this page: not name but Project or something
+  //TODO: adapt page for future non-OC projects
   useEffect(() => {
     if (project) {
       document.title = "Project: " + project.name;
@@ -85,8 +86,10 @@ function ProjectPage() {
               isFullscreen={isFullscreen}
             />
           </div>
-          <h1 className="project-info__major__title">{project.name}</h1>
-          <div className="project-info__major__links">
+          <h1 className={"project-info__major__title" + " " + classFullscreen}>
+            {project.name}
+          </h1>
+          <div className={"project-info__major__links" + " " + classFullscreen}>
             <LinkList>
               {project.links.github && (
                 <SocialLink link={project.links.github} text="GitHub">
@@ -117,7 +120,7 @@ function ProjectPage() {
             </LinkList>
           </div>
         </section>
-        <section className="project-info__details">
+        <section className={"project-info__details" + " " + classFullscreen}>
           <article className="project-info__details__summary">
             <h2 className="project-info__details__summary__title">
               In a nutshell:

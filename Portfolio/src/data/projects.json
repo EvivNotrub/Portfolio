@@ -64,7 +64,7 @@
       },
       "aim": {
         "FR": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques, comme une Modale accessible avec navigation au clavier et gestion du focus, et un contenu différent selon l'action de l'utilisateur.",
-        "EN": "Learn how to use JavaScript to implement dynamic features like an accessible Modal with keyboard navigation and focus management, and different content depending on the user's action."
+        "EN": "Learn how to use JavaScript to implement dynamic features like an accessible Modal with keyboard navigation and focus management, and changing the content depending on the user's action."
       },
       "summary": {
         "FR": "Implémenter des fonctionnalités avec JavaScript",

@@ -23,9 +23,10 @@
     &:hover {
       transform: translateY(-50%) scale(1.15);
       & .svg path {
-        fill: #ff6060;
+        // fill: #ff6060;
+        fill: $slideshow-color-lm;
         @include mode() {
-          fill: $text-dm3;
+          fill: $slideshow-color-dm;
         }
       }
     }
@@ -33,9 +34,9 @@
       width: 100%;
       height: 100%;
       & path {
-        fill: $palette16;
+        fill: $slideshow-arrows-lm;
         @include mode() {
-          fill: $third-light-color;
+          fill: $slideshow-arrows-dm;
         }
         filter: drop-shadow(15px -8px 15px rgba(0, 0, 0, 0.9));
       }

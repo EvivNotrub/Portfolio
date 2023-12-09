@@ -194,6 +194,11 @@ $header-bg-lm: $dim-gradient-lm; //, $dim-gradient-dm;
 $header-bg-mode: $header-bg-lm, $header-bg-dm;
 $header-title-mode: $link-accent-mode;
 
+$footer-hght-D: 10rem;
+$footer-hght-M: 7rem;
+$footer-padd-D: 1rem 2rem;
+$footer-padd-M: 0.8rem;
+
 //menu button variables:
 // for Navigation and Mutton components
 $mutton-width: 5rem;
@@ -242,3 +247,11 @@ $down-btn-mode: $button-scheme;
 $down-btn-delay: 6.8s;
 
 /********Portfolio page ********/
+
+/*********PROJECT PAGE*********/
+
+$proj-page-bg-lm: $bg-super-light-lm;
+
+$slideshow-width-M: 100%;
+
+$project-page-padd-M: 0 1rem;

@@ -1,13 +1,36 @@
-import "./slider.scss";
-// import { Link } from "react-router-dom";
+function Slider({
+  pictures,
+  currentPicture,
+  previousPicture,
+  nextPicture,
+  classFullscreen,
+}) {
+  return pictures.map((picture, index) => {
+    let position;
+    switch (index) {
+      case currentPicture:
+        position = " --current";
+        break;
+      case nextPicture:
+        position = " --next";
+        break;
+      case previousPicture:
+        position = " --previous";
+        break;
+      default:
+        position = "";
+    }
 
-function Slider() {
-  return (
-    <section className="projectSlider">
-      <h3>ProjectSlider</h3>
-      <p>En cours de construction</p>
-    </section>
-  );
+    return (
+      <img
+        key={picture.src + index}
+        className={"slideshow__picture" + position + classFullscreen}
+        id={index}
+        src={picture.src}
+        alt={picture.alt}
+      />
+    );
+  });
 }
 
 export default Slider;

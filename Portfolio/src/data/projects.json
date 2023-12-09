@@ -59,16 +59,16 @@
       "name": "Portfolio de Sophie Bluel",
       "context": "openclassrooms",
       "description": {
-        "FR": "Projet 5 du parcours Intégrateur Web d'OpenClassrooms : Créer une page web dynamique avec JavaScript",
-        "EN": "Project 5 of the OpenClassrooms Web Developer program: Create a dynamic web page with JavaScript"
+        "FR": "Projet 5 du parcours Intégrateur Web d'OpenClassrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par OpenClassrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
+        "EN": "Project 5 of the OpenClassrooms Web Developer program: Create a dynamic web page using JavaScript. The page is a portfolio for a photographer, with a filtered gallery and a contact form. The user can log in to edit the content of the page. To edit the page, a modal opens with a small view of the gallery. A form to add, change or delete pictures is displayed in the modal when the user clicks on a specific picture and icon. Of course the backend was not done by the students, it was provided by OpenClassrooms, and because it is meant for educationnal purposes, some features for changing content don't actually work. Only deleting and adding pictures are possible."
       },
       "aim": {
-        "FR": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques",
-        "EN": "Learn how to use JavaScript to implement dynamic features"
+        "FR": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques, comme une Modale accessible avec navigation au clavier et gestion du focus, et un contenu différent selon l'action de l'utilisateur.",
+        "EN": "Learn how to use JavaScript to implement dynamic features like an accessible Modal with keyboard navigation and focus management, and different content depending on the user's action."
       },
       "summary": {
         "FR": "Implémenter des fonctionnalités avec JavaScript",
-        "EN": "Implement dynamic with JavaScript"
+        "EN": "Implement dynamic features with JavaScript"
       },
       "tags": ["JavaScript", "Accessible Modale"],
       "filterCategory": ["JavaScript"],

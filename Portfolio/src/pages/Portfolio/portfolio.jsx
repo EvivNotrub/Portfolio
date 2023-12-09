@@ -40,6 +40,14 @@ function Portfolio() {
       </div>
       <section className="projects">
         <h2 className="projects__title">Open Classrooms Projects</h2>
+        <p className="projects__intro">
+          Projects from the education program, each with a specific topic to
+          practice. Meant to reflect reel life projects, some goals are set and
+          a team provides info and material, like Figma designs. When a backend
+          is used it is provided and we host it locally, we then base the
+          front-end interactions on the endpoints available. No UI libraries for
+          components are used throughout the entire cursus for maximum practice.
+        </p>
         <div className="projects__filters">
           <ProjectFilters
             activeFilter={activeFilter}

@@ -14,7 +14,7 @@ function ProjectCard({ project }) {
         <img
           className="project-card__link__img"
           src={project.pictures[0].src}
-          alt={project.pictures[0].src}
+          alt={project.pictures[0].alt}
           title={"Lien vers " + project.name}
         />
       </Link>

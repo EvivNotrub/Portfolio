@@ -125,7 +125,6 @@ function ProjectPage() {
             <h2 className="project-info__details__summary__title">
               In a nutshell:
             </h2>
-            <h3>Summary:</h3>
             <p>{project.summary.EN}</p>
             <h3>Aim:</h3>
             <p>{project.aim.EN}</p>

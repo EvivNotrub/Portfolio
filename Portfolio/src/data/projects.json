@@ -6,16 +6,16 @@
       "name": "Ohmyfood",
       "context": "openclassrooms",
       "description": {
-        "FR": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Dynamisez une page web avec des animations CSS en utilisant SASS",
-        "EN": "Project 3 of the OpenClassrooms Web Developer program: Make a web page more dynamic with CSS animations using SASS"
+        "FR": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Dynamisez une page web avec des animations CSS en utilisant SASS. Un design Figma a été fourni et nous devions faire le site en nous basant dessus, il devait être responsive et avoir des animations pour les actions de l'utilisateur. La page est un site de livraison de nourriture avec une page d'accueil et une page de menu pour chaque restaurant. La page de menu a une liste de plats avec un bouton pour les ajouter au panier.",
+        "EN": "Project 3 of the Open Classrooms Web Developer program: Make a web page more dynamic with CSS animations using SASS. A Figma design was provided and we had to make the site based on it, it needed to be responsive and to have animations for the user's actions. The page is a food delivery website with a home page and a menu page for each restaurant. The menu page has a list of dishes with a button to add them to the cart."
       },
       "aim": {
-        "FR": "Découvrir SASS et les animations CSS",
-        "EN": "Discover SASS and CSS animations"
+        "FR": "Découvrir SASS, la structure en 7-1 et les animations CSS.",
+        "EN": "Discover SASS, the 7-1 design and CSS animations."
       },
       "summary": {
-        "FR": "Dynamisez une page web avec des animations",
-        "EN": "Make a web page more dynamic with animations"
+        "FR": "Dynamisez une page web pour la rendre plus interactive avec des animations.",
+        "EN": "Make a web page more dynamic with CSS animations in order to make it more interactive."
       },
       "tags": ["Animations", "SASS"],
       "filterCategory": ["HTML-CSS", "SASS"],
@@ -25,31 +25,31 @@
       },
       "pictures": [
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood.png",
+          "src": "/images/projects/ohmyfood/ohmyfood.png",
           "alt": "site ohMyFood - home"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood0.png",
+          "src": "/images/projects/ohmyfood/ohmyfood0.png",
           "alt": "site ohMyFood - loading"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood2.png",
+          "src": "/images/projects/ohmyfood/ohmyfood2.png",
           "alt": "site ohMyFood - restaurants section"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood02.png",
+          "src": "/images/projects/ohmyfood/ohmyfood02.png",
           "alt": "site ohMyFood - loading 2"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood4.png",
+          "src": "/images/projects/ohmyfood/ohmyfood4.png",
           "alt": "site ohMyFood - menu page loading"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood3.png",
+          "src": "/images/projects/ohmyfood/ohmyfood3.png",
           "alt": "site ohMyFood - menu page"
         },
         {
-          "src": "/src/assets/images/projects/ohmyfood/ohmyfood5.png",
+          "src": "/images/projects/ohmyfood/ohmyfood5.png",
           "alt": "site ohMyFood - menu page 2"
         }
       ]
@@ -59,8 +59,8 @@
       "name": "Portfolio de Sophie Bluel",
       "context": "openclassrooms",
       "description": {
-        "FR": "Projet 5 du parcours Intégrateur Web d'OpenClassrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par OpenClassrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
-        "EN": "Project 5 of the OpenClassrooms Web Developer program: Create a dynamic web page using JavaScript. The page is a portfolio for a photographer, with a filtered gallery and a contact form. The user can log in to edit the content of the page. To edit the page, a modal opens with a small view of the gallery. A form to add, change or delete pictures is displayed in the modal when the user clicks on a specific picture and icon. Of course the backend was not done by the students, it was provided by OpenClassrooms, and because it is meant for educationnal purposes, some features for changing content don't actually work. Only deleting and adding pictures are possible."
+        "FR": "Projet 5 du parcours Intégrateur Web d'Open Classrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par Open Classrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
+        "EN": "Project 5 of the Open Classrooms Web Developer program: Create a dynamic web page using JavaScript. The page is a portfolio for a photographer, with a filtered gallery and a contact form. The user can log in to edit the content of the page. To edit the page, a modal opens with a small view of the gallery. A form to add, change or delete pictures is displayed in the modal when the user clicks on a specific picture and icon. Of course, the backend was not done by the students, it was provided by Open Classrooms, and because it is meant for educational purposes, some features for changing content don't actually work. Only deleting and adding pictures are possible."
       },
       "aim": {
         "FR": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques, comme une Modale accessible avec navigation au clavier et gestion du focus, et un contenu différent selon l'action de l'utilisateur.",
@@ -70,34 +70,34 @@
         "FR": "Implémenter des fonctionnalités avec JavaScript",
         "EN": "Implement dynamic features with JavaScript"
       },
-      "tags": ["JavaScript", "Accessible Modale"],
+      "tags": ["JavaScript", "Accessible Modal"],
       "filterCategory": ["JavaScript"],
       "links": {
         "github": "https://github.com/EvivNotrub/Portfolio-architecte-sophie-bluel"
       },
       "pictures": [
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb2.png",
+          "src": "/images/projects/portfolio_bluel/sb2.png",
           "alt": "Sophie Bluel portfolio - home"
         },
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb2.5.png",
+          "src": "/images/projects/portfolio_bluel/sb2.5.png",
           "alt": "Sophie Bluel portfolio - loggin"
         },
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb3.png",
+          "src": "/images/projects/portfolio_bluel/sb3.png",
           "alt": "Sophie Bluel portfolio - home edit version"
         },
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb3.8.png",
+          "src": "/images/projects/portfolio_bluel/sb3.8.png",
           "alt": "Sophie Bluel portfolio - modal gallery"
         },
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb5.png",
+          "src": "/images/projects/portfolio_bluel/sb5.png",
           "alt": "Sophie Bluel portfolio - edit photo"
         },
         {
-          "src": "/src/assets/images/projects/portfolio_bluel/sb6.png",
+          "src": "/images/projects/portfolio_bluel/sb6.png",
           "alt": "Sophie Bluel portfolio - add photo"
         }
       ]
@@ -107,12 +107,12 @@
       "name": "Kasa",
       "context": "openclassrooms",
       "description": {
-        "FR": "Projet 8 du parcours Intégrateur Web d'OpenClassrooms : Créer un site avec React en utilisant la structure en composants. Le site est responsive et utilise React-router-dom pour la navigation. ",
-        "EN": "Project 8 of the OpenClassrooms Web Developer program: Create a website with React using the component structure. The site is responsive and uses React-router-dom for navigation."
+        "FR": "Projet 8 du parcours Intégrateur Web d'OpenClassrooms : Créer un site avec React. C'était le premier projet React et nous devions le structurer avec des composants. Aucune librairie n'était autorisée comme d'habitude puisque le but était de créé depuis zéro. Le site est responsive et utilise React-router-dom pour la navigation.",
+        "EN": "Project 8 of the Open Classrooms Web Developer program: Create a website with React. This was the first React project and we had to structure it using components. No libraries were allowed as usual since it was meant to be created from scratch. The website is responsive and uses React-router-dom for navigation."
       },
       "aim": {
-        "FR": "Apprendre React et React-router-dom",
-        "EN": "Learn React and React-router-dom"
+        "FR": "Apprendre React etReact-router-dom pour la navigation et à structurer un projet depuis zéro.",
+        "EN": "Learn React, to structure a project from scratch and to use React-router-dom for navigation."
       },
       "summary": {
         "FR": "Premier projet React",
@@ -126,23 +126,23 @@
       },
       "pictures": [
         {
-          "src": "/src/assets/images/projects/kasa/kasa.png",
+          "src": "/images/projects/kasa/kasa.png",
           "alt": "site kasa - home"
         },
         {
-          "src": "/src/assets/images/projects/kasa/kasa2.png",
+          "src": "/images/projects/kasa/kasa2.png",
           "alt": "site kasa - appartment page"
         },
         {
-          "src": "/src/assets/images/projects/kasa/kasa3.png",
+          "src": "/images/projects/kasa/kasa3.png",
           "alt": "site kasa - appartment page 2"
         },
         {
-          "src": "/src/assets/images/projects/kasa/kasa4.png",
+          "src": "/images/projects/kasa/kasa4.png",
           "alt": "site kasa - slider"
         },
         {
-          "src": "/src/assets/images/projects/kasa/kasa5.png",
+          "src": "/images/projects/kasa/kasa5.png",
           "alt": "site kasa - about page"
         }
       ]
@@ -152,8 +152,8 @@
       "name": "77 Events",
       "context": "openclassrooms",
       "description": {
-        "FR": "Projet 10 du parcours Intégrateur Web d'OpenClassrooms : Débuggez une application React pour apprendre les tests unitaires et d'intégration ainsi que le debugging avec différents outils. Le projet original avec les problèmes peut être vu sur le repository github puisqu'il a été forké.",
-        "EN": "Project 10 during the Open Classroom cursus to learn about test implementation and librairies, test driven development , debugging and using different tools to do so. The original project with issues can be seen on the github repository since it has been forked."
+        "FR": "Projet 10 du parcours Intégrateur Web d'OpenClassrooms : Débugger une application React. Le projet est un site pour une agence d'évènementiel. Il a été fourni par OpenClassrooms avec des bugs à corriger. Le but était de corriger les bugs et d'ajouter des tests unitaires et d'intégration. Le projet original avec les bugs peut être vu sur le dépôt GitHub puisqu'il a été forké.",
+        "EN": "Project 10 during the Open Classrooms cursus to learn about test implementation and the libraries used, and about test driven development. Main work was debugging and using different tools to do so. Secondary task was to implement simple unit tests and a few integration tests (adding to the ones already written). The original project with issues can be seen on the GitHub repository since it has been forked."
       },
       "aim": {
         "FR": "Apprendre les tests unitaires et d'intégration ainsi que le debugging avec différents outils.",
@@ -163,7 +163,7 @@
         "FR": "Débuggez une application React",
         "EN": "Debug a React application"
       },
-      "tags": ["Unit Testing", "React-testing", "Jest"],
+      "tags": ["Unit Testing", "Integration Testing", "Jest"],
       "filterCategory": ["React", "Jest"],
       "links": {
         "github": "https://github.com/EvivNotrub/Debuggez-une-application-React.JS",
@@ -171,23 +171,23 @@
       },
       "pictures": [
         {
-          "src": "/src/assets/images/projects/77_events/77.png",
+          "src": "/images/projects/77_events/77.png",
           "alt": "site 77 events - home page slider"
         },
         {
-          "src": "/src/assets/images/projects/77_events/77_2.png",
+          "src": "/images/projects/77_events/77_2.png",
           "alt": "site 77 events - project grid with filters"
         },
         {
-          "src": "/src/assets/images/projects/77_events/77_3.png",
+          "src": "/images/projects/77_events/77_3.png",
           "alt": "site 77 events - project grid with filters 2"
         },
         {
-          "src": "/src/assets/images/projects/77_events/77_4.png",
+          "src": "/images/projects/77_events/77_4.png",
           "alt": "site 77 events - contact form and footer"
         },
         {
-          "src": "/src/assets/images/projects/77_events/77_5.png",
+          "src": "/images/projects/77_events/77_5.png",
           "alt": "site 77 events - nos services"
         }
       ]

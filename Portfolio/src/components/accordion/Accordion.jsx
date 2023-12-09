@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
-import arrow from "../../assets/images/icons/arrow.png";
+import arrow from "/images/icons/arrow.png";
 
 function Accordion({ title, datum, type, children, className }) {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -2,62 +2,62 @@
   "mainSkills": [
     {
       "name": "HTML",
-      "path": "./src/assets/images/icons/html-5.png"
+      "path": "/images/icons/html-5.png"
     },
     {
       "name": "CSS",
-      "path": "./src/assets/images/icons/css.png"
+      "path": "/images/icons/css.png"
     },
     {
       "name": "JavaScript",
-      "path": "./src/assets/images/icons/javascript.png"
+      "path": "/images/icons/javascript.png"
     },
     {
       "name": "GitHub",
-      "path": "./src/assets/images/icons/github.png"
+      "path": "/images/icons/github.png"
     },
     {
       "name": "Sass",
-      "path": "./src/assets/images/icons/sass.png"
+      "path": "/images/icons/sass.png"
     },
     {
       "name": "React",
-      "path": "./src/assets/images/icons/react.png"
+      "path": "/images/icons/react.png"
     },
     {
       "name": "Redux",
-      "path": "./src/assets/images/icons/redux.png"
+      "path": "/images/icons/redux.png"
     },
     {
       "name": "Git",
-      "path": "./src/assets/images/icons/git.png"
+      "path": "/images/icons/git.png"
     }
   ],
   "usedTech": [
     {
       "name": "Swagger Editor",
-      "path": "./src/assets/images/icons/swagger-logo.png"
+      "path": "/images/icons/swagger-logo.png"
     },
     {
       "name": "Node.js",
-      "path": "./src/assets/images/icons/icons8-node-js.png"
+      "path": "/images/icons/icons8-node-js.png"
     },
     {
       "name": "Vite",
-      "path": "./src/assets/images/icons/vite.png"
+      "path": "/images/icons/vite.png"
     },
     {
       "name": "Figma",
-      "path": "./src/assets/images/icons/figma.png"
+      "path": "/images/icons/figma.png"
     },
     {
       "name": "VsCode",
-      "path": "./src/assets/images/icons/vs_code.png"
+      "path": "/images/icons/vs_code.png"
     },
 
     {
       "name": "GitHub Copilot",
-      "path": "./src/assets/images/icons/icons8-github.png"
+      "path": "/images/icons/icons8-github.png"
     }
   ]
 }

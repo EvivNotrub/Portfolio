@@ -83,7 +83,18 @@
     }
   }
   &__intro {
-    margin-bottom: 1.2rem;
+    & h3 {
+      font-size: 1.2rem;
+      @include mode {
+        color: $text-dm;
+      }
+    }
+    & p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    margin: 1.6rem 0 2rem 0;
+    // max-width: max(500px, 50%);
   }
   &__filters {
     margin: 1.5rem 0;
@@ -105,13 +116,18 @@
       margin-top: 2rem;
     }
   }
+  @include from-tablet-up {
+    &__portfolio {
+      grid-template-columns: repeat(2, minmax(21rem, 1fr));
+    }
+  }
   @include desktop-only {
     & > * {
-      padding: 0;
+      padding: 0 2rem;
     }
     &__portfolio {
       margin-top: 3rem;
-      grid-template-columns: repeat(2, minmax(34rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
       gap: 5rem;
     }
   }

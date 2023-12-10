@@ -2,62 +2,62 @@
   "mainSkills": [
     {
       "name": "HTML",
-      "path": "./images/icons/html-5.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/html-5.png"
     },
     {
       "name": "CSS",
-      "path": "./images/icons/css.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/css.png"
     },
     {
       "name": "JavaScript",
-      "path": "./images/icons/javascript.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/javascript.png"
     },
     {
       "name": "GitHub",
-      "path": "./images/icons/github.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/github.png"
     },
     {
       "name": "Sass",
-      "path": "./images/icons/sass.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/sass.png"
     },
     {
       "name": "React",
-      "path": "./images/icons/react.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/react.png"
     },
     {
       "name": "Redux",
-      "path": "./images/icons/redux.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/redux.png"
     },
     {
       "name": "Git",
-      "path": "./images/icons/git.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/git.png"
     }
   ],
   "usedTech": [
     {
       "name": "Swagger Editor",
-      "path": "./images/icons/swagger-logo.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/swagger-logo.png"
     },
     {
       "name": "Node.js",
-      "path": "./images/icons/icons8-node-js.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-node-js.png"
     },
     {
       "name": "Vite",
-      "path": "./images/icons/vite.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vite.png"
     },
     {
       "name": "Figma",
-      "path": "./images/icons/figma.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/figma.png"
     },
     {
       "name": "VsCode",
-      "path": "./images/icons/vs_code.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vs_code.png"
     },
 
     {
       "name": "GitHub Copilot",
-      "path": "./images/icons/icons8-github.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-github.png"
     }
   ]
 }

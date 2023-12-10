@@ -2,17 +2,23 @@
 @use "../../assets/styles/mixins.scss" as *;
 
 .footer {
-  display: flex;
-  justify-content: center;
-  padding: 32px 0 24px 0;
+  width: 100%;
+  @include flex-clm-jc-center;
+  gap: 1rem;
+  padding: 2rem 0;
   border-top: solid 2px $background-dm2;
-  height: $footer-hght-M;
-  max-width: 90vw;
+  // height: $footer-hght-M;
+  // max-width: 90vw;
   overflow: hidden;
-  @include desktop-only {
-    height: $footer-hght-D;
-  }
+  // @include desktop-only {
+  //   height: $footer-hght-D;
+  // }
   &__copyright {
     font-size: 1rem;
+    text-align: center;
+  }
+  @include mode {
+    border-top: none;
+    background-color: rgba(0, 0, 0, 0.301);
   }
 }

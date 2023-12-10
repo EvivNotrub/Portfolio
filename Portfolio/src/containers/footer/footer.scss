@@ -2,13 +2,12 @@
 @use "../../assets/styles/mixins.scss" as *;
 
 .footer {
-  width: 100%;
   @include flex-clm-jc-center;
   gap: 1rem;
   padding: 2rem 0;
   border-top: solid 2px $background-dm2;
   // height: $footer-hght-M;
-  // max-width: 90vw;
+  max-width: 90vw;
   overflow: hidden;
   // @include desktop-only {
   //   height: $footer-hght-D;
@@ -18,7 +17,6 @@
     text-align: center;
   }
   @include mode {
-    border-top: none;
-    background-color: rgba(0, 0, 0, 0.301);
+    border-top: solid 3px $very-dim-bg-color;
   }
 }

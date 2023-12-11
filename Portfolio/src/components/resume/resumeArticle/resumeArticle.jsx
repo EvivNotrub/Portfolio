@@ -4,14 +4,14 @@ import "./resumeArticle.scss";
 function ResumeArticle({ article }) {
   return (
     <article className="catalog__section__group">
-      <h3 className="catalog__section__group__title">{article.title}</h3>
+      <h4 className="catalog__section__group__title">{article.title}</h4>
       {article.jobs.map((job) => (
         <div key={job.id} className="catalog__section__group__article">
-          <h4 className="job-title">
+          <h5 className="job-title">
             {job.title + " "}
             <time dateTime={job.dates.start}>{job.dates.start}</time> à{" "}
             <time dateTime={job.dates.end}>{job.dates.end}</time>
-          </h4>
+          </h5>
           <p className="job-description">
             <ul>
               {job.description.map((desc) => (

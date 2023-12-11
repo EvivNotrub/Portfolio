@@ -1,33 +1,39 @@
+import Accordion from "../../accordion/Accordion";
 import "./extras.scss";
 
 function Extras() {
+  const voyages = [
+    "été 2020: Voyage à VTT dans les Pyrénées en autonomie (France et Catalogne).",
+    "été 2018: permis de conduire puis voyage en fiat panda 1985 de Berlin à Istanbul: découverte des pays, cultures et paysages",
+    "été 2012 à fin 2013: De l'Allemagne jusqu'au Ladakh (Inde, Himalaya) en stop puis en bus et finalement à vélo.",
+  ];
+
+  const hobbies = [
+    "VTT - Vélo de route",
+    "Randonnées - Trekking - Ski de randonnée",
+    "Escalade - Bloc",
+    "Photographie, Guitare",
+  ];
+
   return (
     <>
       <article className="essentials__article">
-        <h4 className="essentials__article__title">Voyages</h4>
-        <ul>
-          <li>
-            été 2020: Voyage à VTT dans les Pyrénées en autonomie (France et
-            Catalogne).
-          </li>
-          <li>
-            été 2018: permis de conduire puis voyage en fiat panda 1985 de
-            Berlin à Istanbul: découverte des pays, cultures et paysages
-          </li>
-          <li>
-            été 2012 à fin 2013: De l&apos;Allemagne jusqu&apos;au Ladakh (Inde,
-            Himalaya) en stop puis en bus et finalement à vélo.
-          </li>
-        </ul>
+        <Accordion
+          type="text-list"
+          title="Voyages"
+          header="h4"
+          datum={voyages}
+          className={"essentials__article__accordion"}
+        />
       </article>
       <article className="essentials__article">
-        <h4 className="essentials__article__title">Hobbies</h4>
-        <ul>
-          <li>VTT - Vélo de route</li>
-          <li>Randonnées - Trekking - Ski de randonnée</li>
-          <li>Escalade - Bloc</li>
-          <li>Photographie, Guitare</li>
-        </ul>
+        <Accordion
+          type="text-list"
+          title="Hobbies"
+          header="h4"
+          datum={hobbies}
+          className={"essentials__article__accordion"}
+        />
       </article>
     </>
   );

@@ -1,2 +1,41 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixins" as *;
+
 .essentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  &__part {
+    flex: 1;
+    & .part-title {
+      font-size: 1.15rem;
+    }
+    &__articles {
+      display: flex;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      & .essentials__article {
+        width: 100%;
+        min-width: 15.625rem;
+        flex: 1;
+        transform: scale(0.9, 0.9);
+        & .accordion2__header__title {
+          font-size: 1.05rem;
+          width: 85%;
+          overflow: hidden;
+          text-wrap: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  @include from-tablet-up {
+    flex-direction: column;
+    &__part {
+      &__articles {
+        flex-direction: column;
+      }
+    }
+  }
 }

@@ -4,14 +4,15 @@ import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import arrow from "/images/icons/arrow.png";
 
-function Accordion({ title, datum, type, children, className }) {
+function Accordion({ title, datum, type, children, className, header }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const HeaderTag = header || "h3";
 
   return (
     <div className={"accordion2-container" + " " + className}>
       <div className="accordion2">
         <div className="accordion2__header">
-          <h3 className="accordion2__header__title">{title}</h3>
+          <HeaderTag className="accordion2__header__title">{title}</HeaderTag>
           <button
             onClick={() => {
               !isExpanded ? setIsExpanded(true) : setIsExpanded(false);
@@ -30,7 +31,7 @@ function Accordion({ title, datum, type, children, className }) {
           className="accordion2__content"
           aria-expanded={isExpanded ? "true" : "false"}
         >
-          {<AccordionContent type={type} datum={datum} />}
+          {datum && <AccordionContent type={type} datum={datum} />}
           {children}
         </div>
       </div>
@@ -40,6 +41,7 @@ function Accordion({ title, datum, type, children, className }) {
 
 Accordion.propTypes = {
   title: PropTypes.string,
+  header: PropTypes.string,
   datum: PropTypes.string,
   type: PropTypes.string,
   className: PropTypes.string,

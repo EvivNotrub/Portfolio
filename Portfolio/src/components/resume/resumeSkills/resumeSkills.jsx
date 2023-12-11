@@ -1,26 +1,33 @@
+import Accordion from "../../accordion/Accordion";
 import "./resumeSkills.scss";
 
 function ResumeSkills() {
+  const skills = [
+    "HTML, CSS, JavaScript",
+    "React, Redux, Jest",
+    "Git, GitHub",
+    "VS Code, EsLint, Prettier",
+    "Lightroom, Figma, Photoshop",
+    "Word, Excel, Outlook, PowerPoint",
+  ];
+  const languages = [
+    "Francais, Langue Maternelle",
+    "Allemand, Bilingue",
+    "Anglais, Courant",
+  ];
+
   return (
     <>
       <article className="essentials__article">
-        <h4 className="essentials__article__title">Langues</h4>
-        <ul>
-          <li>Francais, Langue Maternelle</li>
-          <li>Allemand, Bilingue</li>
-          <li>Anglais, Courant</li>
-        </ul>
+        <Accordion
+          type="text-list"
+          datum={languages}
+          title="Langues"
+          header="h4"
+        />
       </article>
       <article className="essentials__article">
-        <h4 className="essentials__article__title">IT:</h4>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React, Redux, Jest</li>
-          <li>Git, GitHub</li>
-          <li>VS Code, EsLint, Prettier</li>
-          <li>Lightroom, Figma, Photoshop</li>
-          <li>Word, Excel, Outlook, PowerPoint</li>
-        </ul>
+        <Accordion type="text-list" datum={skills} title="IT" header="h4" />
       </article>
     </>
   );

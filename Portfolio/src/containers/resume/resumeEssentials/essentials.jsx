@@ -1,16 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Education from "../../../components/resume/education/education";
 import Extras from "../../../components/resume/extras/extras";
 import ResumeSkills from "../../../components/resume/resumeSkills/resumeSkills";
 import "./essentials.scss";
 import arrow from "../../../../public/images/icons/arrow.png";
+import { getWindowSize } from "../../../utils/helpers/helpers";
+import { booleanSwitch } from "../../../utils/helpers/helpers";
 
 function Essentials() {
   const [hidden, setHidden] = useState(true);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
-  function toggleHidden() {
-    setHidden(!hidden);
-  }
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+    windowSize.innerWidth < 768 && setHidden(true);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [windowSize]);
 
   return (
     <div className="essentials">
@@ -30,8 +42,8 @@ function Essentials() {
       <section className="essentials__part --extra-pro">
         <h3 className="part-title --toggle">
           Extra-professionnel
-          <button onClick={toggleHidden}>
-            <img src={arrow} alt="arrow" />
+          <button onClick={() => booleanSwitch(hidden, setHidden)}>
+            <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" />
           </button>
         </h3>
         <div

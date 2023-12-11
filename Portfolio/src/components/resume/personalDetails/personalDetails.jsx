@@ -4,15 +4,16 @@ import "./personalDetails.scss";
 function PersonalDetails() {
   return (
     <>
+      {/* TODO: add google maps or link */}
       <address className="addresse">
         <span>23 Rue du Salève,</span>
         <span>
           <span>74100</span> <span>Annemasse, France</span>
         </span>
       </address>
-      <span className="tel">
+      {/*TODO: find a wise way to have a phone number <span className="tel">
         Tel.: <a href="tel:+33767887884">0767887884</a>
-      </span>
+      </span> */}
       <Link to="/contact" className="address__contact">
         Me contacter
       </Link>

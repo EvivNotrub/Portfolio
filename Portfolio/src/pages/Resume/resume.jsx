@@ -10,11 +10,13 @@ function Resume() {
       <div className="resume__banner">
         <h1 className="resume__main__title">CV</h1>
       </div>
-      <aside className="resume__aside">
-        <Essentials className={"resume__aside"} />
-      </aside>
-      <div className="resume__major">
-        <ResumeMajor className={"resume__major"} />
+      <div className="resume__main__container">
+        <aside className="resume__aside">
+          <Essentials className={"resume__aside"} />
+        </aside>
+        <div className="resume__major">
+          <ResumeMajor className={"resume__major"} />
+        </div>
       </div>
     </main>
   );

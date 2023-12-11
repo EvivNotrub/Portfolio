@@ -12,13 +12,13 @@ function ResumeArticle({ article }) {
             <time dateTime={job.dates.start}>{job.dates.start}</time> à{" "}
             <time dateTime={job.dates.end}>{job.dates.end}</time>
           </h5>
-          <p className="job-description">
+          <div className="job-description">
             <ul>
               {job.description.map((desc) => (
                 <li key={desc.id}>{desc.text}</li>
               ))}
             </ul>
-          </p>
+          </div>
         </div>
       ))}
     </article>

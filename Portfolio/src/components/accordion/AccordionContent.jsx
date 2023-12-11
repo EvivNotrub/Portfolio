@@ -34,7 +34,11 @@ function AccordionContent({ type, datum }) {
 
 AccordionContent.propTypes = {
   type: PropTypes.string,
-  datum: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  datum: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]),
 };
 
 export default AccordionContent;

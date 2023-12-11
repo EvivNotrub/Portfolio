@@ -42,7 +42,11 @@ function Accordion({ title, datum, type, children, className, header }) {
 Accordion.propTypes = {
   title: PropTypes.string,
   header: PropTypes.string,
-  datum: PropTypes.string,
+  datum: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]),
   type: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([

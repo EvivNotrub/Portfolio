@@ -1,9 +1,17 @@
+import { useState } from "react";
 import Education from "../../../components/resume/education/education";
 import Extras from "../../../components/resume/extras/extras";
 import ResumeSkills from "../../../components/resume/resumeSkills/resumeSkills";
 import "./essentials.scss";
+import arrow from "../../../../public/images/icons/arrow.png";
 
 function Essentials() {
+  const [hidden, setHidden] = useState(true);
+
+  function toggleHidden() {
+    setHidden(!hidden);
+  }
+
   return (
     <div className="essentials">
       {/* <h2 className="essentials__title">En Bref</h2> */}
@@ -20,8 +28,17 @@ function Essentials() {
         </div>
       </section>
       <section className="essentials__part --extra-pro">
-        <h3 className="part-title">Extra-professionnel</h3>
-        <div className="essentials__part__articles">
+        <h3 className="part-title --toggle">
+          Extra-professionnel
+          <button onClick={toggleHidden}>
+            <img src={arrow} alt="arrow" />
+          </button>
+        </h3>
+        <div
+          className={
+            "essentials__part__articles" + " " + (hidden ? "hide" : "")
+          }
+        >
           <Extras />
         </div>
       </section>

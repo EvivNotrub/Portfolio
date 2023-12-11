@@ -7,8 +7,23 @@
   gap: 0.5rem;
   &__part {
     flex: 1;
+    & .hide {
+      display: none;
+    }
     & .part-title {
       font-size: 1.15rem;
+      &.--toggle {
+        display: flex;
+        justify-content: space-between;
+        & button {
+          flex-shrink: 0;
+          z-index: 100;
+          padding: 0.2rem 0.5rem;
+          border-radius: $button-radius;
+          margin-right: 1rem;
+          box-shadow: $shadow;
+        }
+      }
     }
     &__articles {
       display: flex;

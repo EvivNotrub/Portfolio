@@ -7,7 +7,7 @@ import Accordion from "../../components/accordion/Accordion";
 
 function Portfolio() {
   const introText =
-    "Projects from the education program, each with a specific topic. Meant to reflect reel life projects, some goals are set and a team provides info and material, like Figma designs. When a backend is used it is provided and we host it locally, we then base the front-end interactions on the endpoints available. No UI libraries for components are used throughout the entire cursus for maximum practice.";
+    "These projects are from the education program at Open Classrooms, each with a specific topic. They are meant to reflect reel life projects, some goals are set and an imaginary team provides info and material, like Figma designs. When a backend is used it is provided and we host it locally, we then base the front-end interactions on the endpoints available. No UI libraries for components are used throughout the entire cursus for maximum practice.";
 
   document.title = "Portfolio | My Work";
   const [activeFilter, setActiveFilter] = useState(["all"]);

@@ -2,7 +2,6 @@ import { PropTypes } from "prop-types";
 import "./linkList.scss";
 
 function LinkList({ children, className }) {
-  console.log(children);
   return (
     <ul className={"link-list" + " " + (className && className)}>
       {children.map((child, index) => {

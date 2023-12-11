@@ -20,6 +20,10 @@
           border-radius: $button-radius;
           margin-right: 1rem;
           box-shadow: $shadow;
+          @include mode {
+            background-color: $very-dim-bg-color;
+            box-shadow: none;
+          }
         }
         & img {
           transition: transform 0.25s ease-in-out;

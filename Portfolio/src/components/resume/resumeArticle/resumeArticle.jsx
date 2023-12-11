@@ -4,7 +4,7 @@ import "./resumeArticle.scss";
 function ResumeArticle({ article }) {
   return (
     <article className="catalog__section__group">
-      <h4 className="catalog__section__group__title">{article.title}</h4>
+      <h4 className="catalog__section__group__title">{article.name}</h4>
       {article.jobs.map((job) => (
         <div key={job.id} className="catalog__section__group__article">
           <h5 className="job-title">
@@ -27,7 +27,7 @@ function ResumeArticle({ article }) {
 
 ResumeArticle.propTypes = {
   article: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     jobs: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,

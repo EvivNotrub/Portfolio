@@ -1,0 +1,257 @@
+{
+  "tertiaire": {
+    "name": "Tertiaire",
+    "groups": [
+      {
+        "id": "uniqueGroupID1",
+        "name": "Proxy Solicitation",
+        "jobs": [
+          {
+            "id": "s12fs51g2",
+            "title": "« Associate » Franco-Allemand-Anglais, D.F.King Ltd (Londres, GB)",
+            "dates": {
+              "start": "2015",
+              "end": "2016"
+            },
+            "description": [
+              {
+                "id": "d5fg13b53",
+                "text": "Analyser l'ordre du jour et les documents d'assemblée générale en rapport avec les pratiques du marché concerné/pays. S'informer sur les pratiques et changements de législation"
+              },
+              {
+                "id": "6s8dfs864",
+                "text": "Organisation de téléconférences, rédaction des rapports (EN, FR) pour nos clients"
+              },
+              {
+                "id": "uniqueDescID8",
+                "text": "Contacter les investisseurs Institutionnels, entretenir le relationnel avec les contacts importants, développer la base de données (front et back office)"
+              },
+              {
+                "id": "uniqueDescID9",
+                "text": "Évaluer et prévoir le comportement de vote des actionnaires. Analyses Excel"
+              },
+              {
+                "id": "uniqueDescID10",
+                "text": "Organisation du calendrier des managers (Outlook)"
+              },
+              {
+                "id": "uniqueDescID11",
+                "text": "Recherche de contacts et étude de l’actionnariat: analyse de la structure du capital et des résultats de vote"
+              },
+              {
+                "id": "uniqueDescID12",
+                "text": "Mener les campagnes destinées aux petits actionnaires : former le personnel temporaire, création de Q&A, suivi de l'évolution de la campagne, rapports journaliers et final (rédigé, Excel et téléphonique"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "uniqueGroupID2",
+        "name": "Étude de marché et télémarketing",
+        "jobs": [
+          {
+            "id": "687f1s53g",
+            "title": "Consultant marketing Français/Allemand/Anglais, L.E.K. // The Parthenon Group (Londres, GB)",
+            "dates": {
+              "start": "Juillet 2016",
+              "end": "Août 2016"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID1",
+                "text": "Évaluer un marché spécifique (ou marché potentiel), sa dynamique et ses acteurs : clients potentiels, concurrence, zones potentielles de croissance, etc."
+              },
+              {
+                "id": "uniqueDescID2",
+                "text": "Organiser et effectuer des recherches sur ce marché en Français, Allemand et Anglais"
+              },
+              {
+                "id": "uniqueDescID3",
+                "text": "Prospection de contacts/spécialistes, organiser de/ participation aux rendez-vous, interviews, téléconférences."
+              },
+              {
+                "id": "uniqueDescID4",
+                "text": "Compilation et analyses des données, production de rapports écrits et Excel"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "uniqueGroupID3",
+        "name": "Service Client",
+        "jobs": [
+          {
+            "id": "uniqueJobID2",
+            "title": "Employé polyvalent de service Franco-Allemand, Asendia Press Edigroup SA (Genève, CH)",
+            "dates": {
+              "start": "Déc. 2013",
+              "end": "Avril 2015"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID5",
+                "text": "Responsable des marchés Belge et Suisse Allemand : gestion des abonnements, rapport"
+              },
+              {
+                "id": "uniqueDescID6",
+                "text": "Traduction: site internet et modèles de lettre du service client (Français vers l'Allemand)"
+              },
+              {
+                "id": "uniqueDescID7",
+                "text": "Diverses tâches administratives"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "name": "Restauration et Services",
+    "groups": [
+      {
+        "id": "uniqueGroupID4",
+        "name": "Boulangerie",
+        "jobs": [
+          {
+            "id": "687f1s53g",
+            "title": "Vendeur / Cuiseur en Boulangerie (Saint Jean de Sixt, FR)",
+            "category": "services",
+            "group": "Boulangerie",
+            "dates": {
+              "start": "2021-05",
+              "end": "2022-05"
+            },
+            "description": [
+              {
+                "id": "8gs4df15vc4g8",
+                "text": "Cuisson et préparation des produits, mise en rayon, gestion des quantités de production en temps réel, inventaire, suivi des DLC, accueil clientèle et vente, formation des recrues"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "uniqueGroupID5",
+        "name": "Restauration",
+        "jobs": [
+          {
+            "id": "uniqueJobID3",
+            "title": "Aide de Cuisine, Café de Paris SA (Genève, CH)",
+            "dates": {
+              "start": "Mai",
+              "end": "Juin 2022"
+            },
+            "description": []
+          },
+          {
+            "id": "s3df5g4sdf35",
+            "title": "Intérim en restauration, OK JOB, One Placement (Genève, CH)",
+            "dates": {
+              "start": "2018",
+              "end": "2020"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID14",
+                "text": "Remplacements en cuisine (Hotel Métropole, Café de Paris). Évènementiel: ATP; CIO de Lausanne; Mariages; (Parc des Eaux Vives, Fusion des Sens). Restauration self service (Manora"
+              }
+            ]
+          },
+          {
+            "id": "uniqueJobID4",
+            "title": "Commis de Cuisine, La Réserve (Bellevue, CH)",
+            "dates": {
+              "start": "Déc. 2018",
+              "end": "Fév. 2019"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID15",
+                "text": "Travail à la section entrées pour le restaurant, snacks pour le bar et room service."
+              }
+            ]
+          },
+          {
+            "id": "uniqueJobID5",
+            "title": "Commis Chef, Dans le Noir ? (Londres, GB)",
+            "dates": {
+              "start": "Fev. 2017",
+              "end": "Mars 2018"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID16",
+                "text": "En charge des sections entrées et desserts. Estimer les quantités pour le service et les préparations sur plusieurs jours. (Tout fait maison.) Suivi du stock"
+              }
+            ]
+          },
+          {
+            "id": "uniqueJobID6",
+            "title": "Employé polyvalent de Cuisine, Evolve Hospitality (Londres, GB)",
+            "dates": {
+              "start": "Sept.",
+              "end": "Nov. 2016"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID17",
+                "text": "Intérim en restauration/évènementiel (Baxterstorey"
+              }
+            ]
+          },
+          {
+            "id": "uniqueJobID7",
+            "title": "Employé polyvalent de service, KBM Orgasport (Munich, DE)",
+            "dates": {
+              "start": "Mai 2011",
+              "end": "Mai 2012"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID18",
+                "text": "Gestion autonome de la cuisine (seul cuisinier), travail au bar et à la réception."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s31sdf5g4sdfg534",
+        "name": "Distribution",
+        "jobs": [
+          {
+            "id": "uniqueJobID8",
+            "title": "Chef d'équipe / Facteur, Südpost Gmbh (Munich, DE)",
+            "dates": {
+              "start": "Jan. 2010",
+              "end": "Jan. 2011"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID19",
+                "text": "Responsable de l'organisation des quartiers et de 6 personnes; aide au manager."
+              }
+            ]
+          },
+          {
+            "id": "uniqueJobID9",
+            "title": "Coursier Cycliste, Omega couriers Ltd (Londres, GB)",
+            "dates": {
+              "start": "Oct.",
+              "end": "Nov. 2015"
+            },
+            "description": [
+              {
+                "id": "uniqueDescID20",
+                "text": "Fidélisation clients (objets de valeur), organisation de la distribution."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@ import Education from "../../../components/resume/education/education";
 import Extras from "../../../components/resume/extras/extras";
 import ResumeSkills from "../../../components/resume/resumeSkills/resumeSkills";
 import "./essentials.scss";
-import arrow from "../../../../public/images/icons/arrow.png";
+import arrow from "../../../assets/images/arrow.png";
 import { getWindowSize } from "../../../utils/helpers/helpers";
 import { booleanSwitch } from "../../../utils/helpers/helpers";
 
@@ -17,7 +17,7 @@ function Essentials() {
     }
 
     window.addEventListener("resize", handleWindowResize);
-    windowSize.innerWidth < 768 && setHidden(true);
+    windowSize.innerWidth < 768 ? setHidden(true) : setHidden(false);
 
     return () => {
       window.removeEventListener("resize", handleWindowResize);

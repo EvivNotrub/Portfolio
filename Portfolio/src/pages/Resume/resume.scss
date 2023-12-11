@@ -3,8 +3,12 @@
 
 .resume {
   &__main {
+    max-width: 80rem;
     text-align: left;
     padding: 0.5rem;
+    @include mode {
+      color: whitesmoke;
+    }
     & h2 {
       font-size: 1.6rem;
     }
@@ -20,9 +24,10 @@
       font-size: 1rem;
     }
     & ul {
-      padding-left: 0.5rem;
-      list-style-type: "-";
+      padding-left: 1rem;
+      list-style-type: circle;
     }
+
     &__banner {
       height: 5rem;
       margin-top: 1.2rem;
@@ -50,6 +55,7 @@
     &__container {
       display: flex;
       flex-direction: column;
+      gap: 1.5rem;
       &__aside {
         flex: 1;
       }
@@ -70,12 +76,13 @@
       }
       &__container {
         flex-direction: row;
+
         &__aside {
           flex: 1;
           margin-right: 1.5rem;
         }
         &__major {
-          flex: 3;
+          flex: 2;
         }
       }
     }

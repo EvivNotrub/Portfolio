@@ -71,7 +71,7 @@ function Navigation({ ...props }) {
             onFocus={() => setSubNav(true)}
             onBlur={() => setSubNav(false)}
           >
-            Accueil
+            Home
           </Link>
           <nav
             data-testid="sub-nav-testid"
@@ -86,7 +86,7 @@ function Navigation({ ...props }) {
                   to="/#about"
                   onClick={() => focusOnRef(aboutRef)}
                 >
-                  A propos
+                  About
                 </Link>
               </li>
               <li className="sub-nav__item">
@@ -95,7 +95,7 @@ function Navigation({ ...props }) {
                   to="/#skills"
                   onClick={() => focusOnRef(skillsRef)}
                 >
-                  Compétences
+                  Skills
                 </Link>
               </li>
               <li className="sub-nav__item">
@@ -112,12 +112,12 @@ function Navigation({ ...props }) {
         </li>
         <li className="nav__list__item">
           <Link to="/projects" onClick={blur}>
-            Mes Projets
+            Projects
           </Link>
         </li>
         <li className="nav__list__item">
           <Link to="/resume" onClick={blur}>
-            CV
+            Resume
           </Link>
         </li>
         <li className="nav__list__item">

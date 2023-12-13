@@ -144,8 +144,8 @@ $headings-ft-M: 2.15rem, 600, '"Poopins", sans-serif', 1.3;
 $headings-ft-D: 3.5rem, 600, '"Poopins", sans-serif', 1.5;
 $small-headings-ft-M: 1.3rem, 600, '"Poopins", sans-serif', 1.2;
 $small-headings-ft-D: 1.7rem, 600, '"Poopins", sans-serif', 1.4;
-$text-ft-M: 1rem, 500, none, 1.4;
-$text-ft-D: 1.35rem, 500, none, 1.8;
+$text-ft-M: 1rem, 400, none, 1.4;
+$text-ft-D: 1.35rem, 400, none, 1.8;
 $link-ft-M: 1.2rem, 500;
 $link-ft-D: 1.4rem, 500;
 $link-svg-size: 1.5rem;
@@ -185,7 +185,7 @@ $header-hght-M: 6rem;
 $header-padd-D: 1rem 2rem;
 $header-padd-M: 0.8rem;
 $header-ft-M: 1.7rem;
-$header-ft-D: 1.8rem;
+$header-ft-D: 1.5rem;
 $header-ft-weight: 500; // Nav font weight overwrites this
 $header-title-M: 1.8rem;
 $header-title-D: 2.4rem;
@@ -212,16 +212,20 @@ $mutton-bg-dm: $background-dm;
 $mutton-bg-lm: $bg-light;
 
 // Navigation component
+$nav-pad-top-M: 0.8rem; // important for sub-nav placement on mobile -M
+$nav-padd-left-D: 0.8rem; // has only an effect on desktop therefore the name -D
+$nav-padd-M: $nav-pad-top-M $nav-padd-left-D;
+$sub-nav-padd-M: 0.5rem 0.7rem;
 $list-item-padding: 5px 10px;
-$nav-list-width: 160px;
+$nav-list-width: 11rem;
 $nav-list-radius: $button-radius;
 $nav-default-bg: $mutton-bg-dm;
 $nav-list-bg-dm: $very-dim-bg-color;
-$nav-list-bg-lm: color.scale($bg-lm2, $alpha: -35%);
-// $nav-list-bg-lm: $bg-light;
+// $nav-list-bg-lm: color.scale($bg-lm2, $alpha: -35%);
+$nav-list-bg-lm: $bg-light;
 $nav-link-color-dm: $text-dm2;
 $nav-link-color-lm: $text-lm2; // TODO: change ?
-$sub-nav-list-width-D: 34rem;
+$sub-nav-list-width-D: 30rem;
 // $nav-ft-s-D: 1.5rem; SEE HEADER VARIABLES
 // $nav-ft-s-M: 1.2rem; SEE HEADER VARIABLES
 $nav-ft-weight: 500;

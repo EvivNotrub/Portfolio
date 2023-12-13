@@ -11,6 +11,19 @@
     gap: 1.3rem;
     padding: 2rem 0;
     margin: 0 auto 2rem auto;
+    & h3 {
+      font-family: "Roboto mono";
+      font-weight: 500;
+    }
+    @include from-tablet-up {
+      & h3 {
+        font-size: 1.5rem;
+      }
+      & .accordion2__content__data {
+        font-size: 1.2rem;
+      }
+    }
+
     // max-width: 95%;
     // @include from-tablet-up {
     //   max-width: 80%;

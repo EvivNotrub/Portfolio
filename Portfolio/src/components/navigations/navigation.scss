@@ -1,4 +1,5 @@
 @use "../../assets/styles/variables.scss" as *;
+@use "../../assets/styles/mixins.scss" as *;
 
 .nav {
   position: relative;
@@ -23,13 +24,14 @@
       // TODO: don't need this? and bottom one?
       color: $nav-link-color-dm;
       font-size: inherit;
+      font-weight: $nav-ft-weight;
     }
     background-color: $nav-default-bg;
     border-radius: $nav-list-radius;
     // TODO: color & bg
     text-align: end;
     width: $nav-list-width;
-    padding: 1rem 0;
+    padding: $nav-padd-M;
     position: absolute;
     top: calc($mutton-height + 10px);
     right: 0;
@@ -40,6 +42,14 @@
     transform: translate(0, 0) scale(1, 0);
     opacity: 0;
     transition: all 0.2s ease-in-out;
+    @include untill-desktop {
+      @include mode {
+        border: solid 3px $very-dim-bg-color;
+        & .sub-nav {
+          border: solid 3px $very-dim-bg-color;
+        }
+      }
+    }
     @media (min-width: 1280px) {
       background-color: $nav-list-bg-dm;
       width: auto;
@@ -66,9 +76,9 @@
         border-radius: $nav-list-radius;
         position: absolute;
         text-align: left;
-        top: -1rem; // nav padding top
+        top: -$nav-pad-top-M;
         right: $nav-list-width;
-        padding: 0.5rem 0.7rem;
+        padding: $sub-nav-padd-M;
         // TODO: color & backgr
         transform-origin: right;
         transform: translate(0, 0) scale(0, 1);
@@ -89,7 +99,7 @@
           flex-direction: column;
           gap: 0.5rem;
           & .sub-nav__item {
-            font-size: 0.8em;
+            font-size: 0.9em;
           }
         }
         @media (min-width: 1280px) {
@@ -97,7 +107,7 @@
           transform-origin: top;
           top: 140%;
           right: inherit;
-          left: 0;
+          left: -$nav-padd-left-D;
 
           transform: translate(0, 0) scale(1, 0);
           & .sub-nav__list {
@@ -115,6 +125,7 @@
 @media (prefers-color-scheme: light) {
   .nav {
     &__list {
+      box-shadow: $shadow;
       & a {
         color: $nav-link-color-lm;
       }
@@ -122,6 +133,7 @@
       background-color: $nav-list-bg-lm;
       &__item {
         & .sub-nav {
+          box-shadow: $shadow;
           background-color: $nav-list-bg-lm;
         }
       }

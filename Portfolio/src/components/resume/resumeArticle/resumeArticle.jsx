@@ -1,17 +1,30 @@
+import { useState } from "react";
 import { PropTypes } from "prop-types";
+import arrow from "../../../assets/images/arrow.png";
+import { booleanSwitch } from "../../../utils/helpers/helpers.jsx";
 import "./resumeArticle.scss";
 
 function ResumeArticle({ article }) {
+  const [hidden, setHidden] = useState(true);
   return (
-    <article className="catalog__section__group">
-      <h4 className="catalog__section__group__title">{article.name}</h4>
+    <article className="line-of-work">
+      <div className="line-of-work__header">
+        <h4 className="line-of-work__title">{article.name}</h4>
+        <button onClick={() => booleanSwitch(hidden, setHidden)}>
+          <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" />
+        </button>
+      </div>
       {article.jobs.map((job) => (
-        <div key={job.id} className="catalog__section__group__article">
+        <div
+          key={job.id}
+          className={"line-of-work__article" + " " + (hidden ? "hide" : "")}
+        >
           <h5 className="job-title">
             {job.title + " "}
             <time dateTime={job.dates.start}>{job.dates.start}</time> à{" "}
             <time dateTime={job.dates.end}>{job.dates.end}</time>
           </h5>
+
           <div className="job-description">
             <ul>
               {job.description.map((desc) => (

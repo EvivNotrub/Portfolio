@@ -5,12 +5,10 @@ import ResumeArticle from "../../../components/resume/resumeArticle/resumeArticl
 
 function ResumeMajor({ className }) {
   const tertiaryJobs = jobs.tertiaire.groups;
-  console.log(tertiaryJobs);
   const servicesJobs = jobs.services.groups;
-  console.log(servicesJobs);
   return (
     <div className={(className && className) + " " + "catalog"}>
-      <h2>Expérience professionnelle</h2>
+      <h2 className="catalog__title">Expérience professionnelle</h2>
       <section className="catalog__section --tertiaire">
         <h3 className="catalog__section__title">Tertiaire</h3>
         {tertiaryJobs.map((job) => (

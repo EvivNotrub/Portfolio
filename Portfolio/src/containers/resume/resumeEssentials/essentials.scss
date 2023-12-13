@@ -14,11 +14,14 @@
         display: flex;
         justify-content: space-between;
         & button {
+          width: 2rem;
+          height: 1.6rem;
+          @include flex-all-center;
           flex-shrink: 0;
           z-index: 100;
           padding: 0.2rem 0.5rem;
           border-radius: $button-radius;
-          margin-right: 1rem;
+          margin-right: 0.5rem;
           box-shadow: $shadow;
           @include mode {
             background-color: $very-dim-bg-color;
@@ -26,6 +29,8 @@
           }
         }
         & img {
+          object-fit: cover;
+          width: 100%;
           transition: transform 0.25s ease-in-out;
           &.turn {
             transform: rotate(-180deg);

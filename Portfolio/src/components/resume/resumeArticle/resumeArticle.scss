@@ -1,0 +1,58 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixins" as *;
+
+.line-of-work {
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__title {
+      flex: 1;
+    }
+    & button {
+      width: 2rem;
+      height: 2rem;
+      @include flex-all-center;
+      flex-shrink: 0;
+      z-index: 10;
+      padding: 0.2rem 0.5rem;
+      border-radius: $button-radius;
+      margin-right: 1rem;
+      background-color: white;
+      @include mode {
+        background-color: $very-dim-bg-color;
+      }
+    }
+    & img {
+      @include mode(light) {
+        filter: invert(1);
+      }
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.25s ease-in-out;
+      &.turn {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  &__article {
+    height: 100%;
+    overflow: hidden;
+    transition:
+      height 0s 0.22s,
+      transform 0.2s ease-in-out,
+      opacity 0.15s ease-in-out;
+    transform-origin: left;
+    &.hide {
+      height: 0;
+      transform: scale(0, 0.8) translateX(-15%);
+      opacity: 0;
+    }
+    & .job-description {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

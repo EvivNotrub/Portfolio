@@ -18,7 +18,7 @@ function Navigation({ ...props }) {
     document.activeElement.blur();
   };
   const closeNav = () => {
-    // TODO: is there not a way like this to focus on the element instead ofthis shit ref prop drilling?
+    // TODO: is there not a way like this to focus on the element instead of this ref prop drilling?
     // let elem = document.getElementById(e.target.hash.slice(1));
     // if (elem) {
     //   elem.current.focus();

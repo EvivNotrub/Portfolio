@@ -4,7 +4,7 @@
 .main-header {
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 500;
   font-size: $header-ft-M;
   display: flex;
   flex-direction: row;
@@ -14,6 +14,10 @@
   padding: $header-padd-M;
   height: $header-hght-M;
   @include color-mode-bg($header-bg-mode...);
+  // background-color: white;
+  // @include mode() {
+  //   background-color: $background-dm;
+  // }
   & .myName {
     font-family: "Bungee Inline";
     font-size: $header-title-M;

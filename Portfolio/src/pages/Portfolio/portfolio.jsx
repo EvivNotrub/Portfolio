@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import projectsInfo from "../../data/projects.json";
+import projectsInfo from "../../data/projects2.json";
 import ProjectCard from "../../components/projectComponents/projectCard";
 import "./portfolio.scss";
 import ProjectFilters from "../../components/filters/projectFilters";

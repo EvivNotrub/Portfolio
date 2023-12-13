@@ -16,7 +16,11 @@ function Header({ ...props }) {
             className="main-logo__link__img"
           /> */}
           {/* TODO: quelle balise ici ? H1?? pour referencement? */}
-          <div className="myName">Werlé Barthélémy</div>
+          <div className="myName --1">Werlé Barthélémy</div>
+          <div className="myName --2">Werlé Barthélémy</div>
+          <div className="myName --3">Werlé Barthélémy</div>
+          <div className="myName --4">Werlé Barthélémy</div>
+          {/* <div className="myName --5">Werlé Barthélémy</div> */}
         </Link>
       </div>
       <Navigation

@@ -53,6 +53,18 @@
   }
 }
 
+@keyframes ghost {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 // y-axis animation
 
 @keyframes descent {

@@ -15,6 +15,14 @@
     &.all {
       animation: blink 0.22s ease-in-out 2 alternate;
     }
+    @include mode {
+      border: solid 0.125rem $background-dm;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.137) -70%,
+        $bg-light
+      );
+    }
     &.active {
       // CAREFULL ABOVE this is a class not a pseudo selector
       border: solid 0.125rem $neutral;

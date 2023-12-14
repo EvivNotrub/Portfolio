@@ -1,5 +1,5 @@
 {
-  "filters": ["React", "JavaScript", "HTML-CSS", "Jest", "SASS"],
+  "filters": ["React", "JavaScript", "HTML-CSS", "Jest", "SASS", "SEO"],
   "projects": [
     {
       "id": "99GRecnRFUCIen7SRuUoNg",
@@ -56,7 +56,7 @@
     },
     {
       "id": "MglrBNMvbUmVnZ6M",
-      "name": "Portfolio de Sophie Bluel",
+      "name": "Portfolio of Sophie Bluel",
       "context": "openclassrooms",
       "description": {
         "FR": "Projet 5 du parcours Intégrateur Web d'Open Classrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par Open Classrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
@@ -67,8 +67,8 @@
         "EN": "Learn how to use JavaScript to implement dynamic features like an accessible Modal with keyboard navigation and focus management, and changing the content depending on the user's action."
       },
       "summary": {
-        "FR": "Implémenter des fonctionnalités avec JavaScript",
-        "EN": "Implement dynamic features with JavaScript"
+        "FR": "Implémenter des fonctionnalités avec JavaScript.",
+        "EN": "Implement dynamic features with JavaScript."
       },
       "tags": ["JavaScript", "Accessible Modal"],
       "filterCategory": ["JavaScript"],
@@ -189,6 +189,191 @@
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/77_events/77_5.png",
           "alt": "site 77 events - nos services"
+        }
+      ]
+    },
+    {
+      "id": "Xq1v7IWaOdFD54QOr",
+      "name": "Booki",
+      "context": "openclassrooms",
+      "description": {
+        "FR": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Création de la page d'accueil d'une agence de voyage en HTML et CSS. La page doit être responsive. Il s’agit du premier projet plus complet en HTML et CSS, pour apprendre à gérer le layout en fonction des différentes tailles d’écran.",
+        "EN": "Project 3 during the Open Classrooms program. The goal was to create the home page of a travel agency using HTML and CSS. The page had to be responsive. This was the first complete project in HTML and CSS, to learn how to install a DEV-environment and manage the layout depending on the different screen sizes."
+      },
+      "aim": {
+        "FR": "Intégrer du contenu conformément à une maquette avec HTML et CSS, comprendre la gestion du layout en responsive et installer un environnement de développement front-end.",
+        "EN": "Integrate content according to a mockup using HTML and CSS, understand how to manage the layout in responsive and set up a front-end development environment."
+      },
+      "summary": {
+        "FR": "Premier projet HTML/CSS et responsive",
+        "EN": "First HTML/CSS and responsive project"
+      },
+      "tags": ["HTML", "CSS"],
+      "filterCategory": ["HTML-CSS"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/booki_OC_P3",
+        "demo": "https://evivnotrub.github.io/booki_OC_P3/"
+      },
+      "pictures": [
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki.png",
+          "alt": "site booki - home desktop view upper part"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki2.png",
+          "alt": "site booki - home desktop view lower part"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki3.png",
+          "alt": "site booki - home mobile view upper part"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki4.png",
+          "alt": "site booki - home mobile view middle part"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki5.png",
+          "alt": "site booki - home tablet view middle part"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/booki/booki6.png",
+          "alt": "site booki - home tablet view lower part"
+        }
+      ]
+    },
+    {
+      "id": "oEZVHL2oSJ55nCaF0xq",
+      "name": "Argent Bank",
+      "context": "openclassrooms",
+      "description": {
+        "FR": "Projet 11 du parcours Intégrateur Web d'OpenClassrooms : Implémenter le front-end d'une application bancaire fictive d'après une maquette en HTML/CSS en utilisant React et Redux pour la gestion des données. Assurer le bon fonctionnement de certaines fonctionnalités en communiquant avec l'API (locale) comme le login avec option « remember », le SignIn et interagir avec les données utilisateur. De plus, nous devions définir les spécifications des routes API avec Swagger Editor pour la phase deux du développement qui se focalisait sur les détails du compte et des transactions. En raison du backend, il n’y a pas de site en ligne disponible.",
+        "EN": "Project 11 during the Open Classrooms program. The goal was to implement the front-end of a fictive banking application based on a HTML/CSS mock-up, using React and Redux for data management. I had to make sure some features worked properly when communicating with the API (local), like logging in with the option 'remember', signing In and interacting with the API for user data. Furthermore, we had to define the API routes specifications using swagger editor for phase two of development with focus on account and transaction details. Due to the backend, there is no online website available."
+      },
+      "aim": {
+        "FR": "Afficher des données backend sur l'interface utilisateur, gérer les données avec Redux et configurer des routes API avec l'outils Swagger Editor.",
+        "EN": "Display backend data on the user interface, manage data with Redux and configure API routes with Swagger Editor."
+      },
+      "summary": {
+        "FR": "Implémenter le front-end d'une application bancaire fictive avec React et Redux.",
+        "EN": "Implement the front-end of a fictive banking application with React and Redux."
+      },
+      "tags": ["Redux", "React", "Swagger"],
+      "filterCategory": ["React"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/OC_P11_ArgentBank-website"
+      },
+      "pictures": [
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab2.png",
+          "alt": "site Argent Bank - SignIn page"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab1.png",
+          "alt": "site Argent Bank -  header when logged in"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab3.png",
+          "alt": "site Argent Bank -  SignIn loading"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab4.png",
+          "alt": "site Argent Bank -  Userpage displaying user data"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab5.png",
+          "alt": "site Argent Bank - SignUp page"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/argent-bank/ab6.png",
+          "alt": "Swagger Editor - API routes specifications"
+        }
+      ]
+    },
+    {
+      "id": "Ai5bUdS2q6P3JZ7gSE",
+      "name": "Portfolio of Nina Carducci",
+      "context": "openclassrooms",
+      "description": {
+        "FR": "Projet 9 du parcours Intégrateur Web d'OpenClassrooms : Le but est d'améliorer les performances du portfolio pour une photographe fictive et de s'initier au SEO. Un site a été fourni avec des problèmes de performance et de SEO. Le but était de l'analyser avec des outils comme Lighthouse, responsive image linter, Wave et « Google Rich snippets » afin de déterminer quelles mesures d'amélioration peuvent être entreprises. Ensuite, il fallait faire une proposition d'amélioration factice puis implémenter ces mesures et vérifier que les performances et le SEO étaient meilleurs. L'utilisation de shema.org pour l'ajout de données structurées était aussi demandée, ainsi que l'ajout de méta tags pour les réseaux sociaux.",
+        "EN": "Project 9 during the Open Classrooms program. The goal was to improve the performance of a portfolio for a fictive photographer and to learn about SEO. A website was provided with performance and SEO issues. The goal was to analyse it with tools like Lighthouse, responsive image linter, Wave and 'Google Rich snippets' to determine which improvement measures could be taken. Then, a fake improvement proposal had to be made and finally implemented, and the performance and SEO had to be checked. The use of shema.org for structured data was also required, as well as adding meta tags for social media."
+      },
+      "aim": {
+        "FR": "Découvrir l'importance du SEO, les outils d'analyse de performance et accessibilité.",
+        "EN": "Discover the importance of SEO and the tools to analyse accessibility and performance."
+      },
+      "summary": {
+        "FR": "Améliorer les performances et le SEO d'un site web.",
+        "EN": "Improve the performance and SEO of a website."
+      },
+      "tags": ["Performance", "SEO"],
+      "filterCategory": ["SEO"],
+      "links": {
+        "github": "https://github.com/EvivNotrub/ninacarducci.oc.project",
+        "demo": "https://evivnotrub.github.io/ninacarducci.oc.project/",
+        "origin": "https://github.com/ninacarducci/ninacarducci.github.io"
+      },
+      "pictures": [
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_carducci/nc1.png",
+          "alt": "Portfolio Nina Carducci - slider"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_carducci/nc2.png",
+          "alt": "Portfolio Nina Carducci - Home: header, slider and about section"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_carducci/nc3.png",
+          "alt": "Portfolio Nina Carducciing - works section with filters"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_carducci/nc4.png",
+          "alt": "Portfolio Nina Carducci - work section with filters, one selected"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_carducci/nc5.png",
+          "alt": "Portfolio Nina Carducci - contact section"
+        }
+      ]
+    },
+    {
+      "id": "ZJ8K21LmCGKZXCPvb",
+      "name": "Qwenta",
+      "context": "openclassrooms",
+      "description": {
+        "FR": "Projet 7 du parcours Intégrateur Web d'OpenClassrooms : Planifier le développement du site d’un client. Dans le but de comprendre le processus de développement pour des plus gros projets, il était ici question de rédiger les spécificités techniques nécessaire à la réalisation de l’application ainsi que de mettre en place des outils et méthodes pour effectuer une veille informationnelle ciblée. Le choix d’un bon outil de gestion de projet tel que Notion était aussi à faire, de même que la découpe en étapes précises pour prévoir le déroulement du développement en équipe (fictive) avec une méthode de gestion comme la méthode scrum par exemple.",
+        "EN": "Project 7 during the Open Classrooms program. The goal was to plan the development of a fictive client's website. In order to understand the development process for bigger projects, the task was to write the technical specifications needed for the realization of the application and to set up tools and methods to establish an information-watch . The choice of a good project management tool such as Notion was also to be made, as well as the breakdown into precise steps to plan the development process in a (fictitious) team with a management method such as the scrum method for example."
+      },
+      "aim": {
+        "FR": "S'initier à la gestion de projet et à la planification du développement en équipe.",
+        "EN": "Learn about project management and development planning as part of a team."
+      },
+      "summary": {
+        "FR": "Planifier le développement d'une application.",
+        "EN": "Plan the development of an application."
+      },
+      "tags": ["Project management", "Technical specifications"],
+      "filterCategory": [],
+      "links": {},
+      "pictures": [
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/qwenta/qw0.png",
+          "alt": "Tableau Kanban - gestion de projet"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/qwenta/qw.png",
+          "alt": "Tableau Kanban - details of a task"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/qwenta/qw1.png",
+          "alt": "Notion - veille informationnelle"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/qwenta/qw2.png",
+          "alt": "Project management - sprints planning"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/qwenta/qw3.png",
+          "alt": "Project management - sprints planning 2"
         }
       ]
     }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import projects from "../../data/projects2.json";
+import projects from "../../data/projects.json";
 import "./projectPage.scss";
 import Loader from "../../components/loader/loader";
 import Slideshow from "../../containers/slider/Slideshow";

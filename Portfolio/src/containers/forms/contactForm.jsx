@@ -2,12 +2,11 @@ import "./contactForm.scss";
 
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { validForm } from "../../utils/helpers/fieldValidation";
 
 function ContactForm() {
   const form = useRef();
-
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  async function send() {
     try {
       const result = await emailjs.sendForm(
         "service_7s3blms",
@@ -23,27 +22,70 @@ function ContactForm() {
       alert("Message failed to send !");
       // TODO: // Handle error
     }
-  };
+  }
 
+  const sendForm = async (e) => {
+    e.preventDefault();
+    const name = e.target.user_name.value;
+    const mail = e.target.user_email.value;
+    const message = e.target.message.value;
+    const phone = e.target.user_phone.value;
+    if (!validForm(name, mail, message, phone)) {
+      return;
+    }
+    send();
+  };
   return (
-    <form ref={form} className="contactForm" onSubmit={sendEmail}>
+    <form ref={form} className="contactForm" onSubmit={sendForm}>
       <div className="fields">
         <div className="field">
-          <label htmlFor="name">Your full Name:</label>
-          <input type="text" id="name" name="user_name" />
+          <label htmlFor="name">
+            Your full Name: <span className="asterisk">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="user_name"
+            required
+            maxLength={35}
+          />
         </div>
         <div className="field">
-          <label htmlFor="email">E-mail:</label>
-          <input type="email" id="email" name="user_email" />
+          <label htmlFor="email">
+            E-mail: <span className="asterisk">*</span>
+          </label>
+          <input type="email" id="email" name="user_email" required />
         </div>
         <div className="field">
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" rows={8} name="message"></textarea>
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="user_phone"
+            minLength="9"
+            maxLength="16"
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="message">
+            Message: <span className="asterisk">*</span>
+          </label>
+          <textarea
+            id="message"
+            rows={8}
+            name="message"
+            required
+            minLength={30}
+            maxLength={700}
+          ></textarea>
         </div>
       </div>
-      <button className="submit" type="submit">
-        Send Message !
-      </button>
+      <div className="contactForm__footer">
+        <button className="submit" type="submit">
+          Send Message !
+        </button>
+        <span className="asterisk">* Required fields</span>
+      </div>
     </form>
   );
 }

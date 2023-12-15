@@ -26,10 +26,14 @@
     &.active {
       // CAREFULL ABOVE this is a class not a pseudo selector
       border: solid 0.125rem $neutral;
+      background-color: white;
       transform: scale(1.04);
       @include mode() {
         // border: solid 0.125rem $secondary-light-color-35;
         border: solid 0.125rem $bg-light;
+        // background-color: $bg-light;
+        background-color: $text-dm3;
+        color: $text-lm2;
       }
     }
     flex: 1;
@@ -38,7 +42,7 @@
     font-weight: 600;
     width: fit-content;
     min-width: 7.2rem;
-    padding: 0.175rem 0.225rem;
+    padding: 0.125rem 0.225rem;
     border-radius: $button-radius;
     @include mode(light) {
       box-shadow: $shadow;

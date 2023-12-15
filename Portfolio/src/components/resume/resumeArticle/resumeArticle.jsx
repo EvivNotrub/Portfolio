@@ -8,12 +8,15 @@ function ResumeArticle({ article }) {
   const [hidden, setHidden] = useState(true);
   return (
     <article className="line-of-work">
-      <div className="line-of-work__header">
-        <h4 className="line-of-work__title">{article.name}</h4>
-        <button onClick={() => booleanSwitch(hidden, setHidden)}>
+      <button
+        onClick={() => booleanSwitch(hidden, setHidden)}
+        className="line-of-work__header"
+      >
+        <h4 className="line-of-work__header__title">{article.name}</h4>
+        <div className="line-of-work__header__arrow">
           <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" />
-        </button>
-      </div>
+        </div>
+      </button>
       {article.jobs.map((job) => (
         <div
           key={job.id}

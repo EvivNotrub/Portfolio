@@ -28,8 +28,7 @@ function Welcome() {
     <div className="welcome">
       <p className="welcome__welcome">Welcome,</p>
       <h1 className="welcome__title typing">
-        I&apos;m a Junior{" "}
-        {typingJob ? <Typewriter text={job} speed={80} /> : ""}
+        I&apos;m a {typingJob ? <Typewriter text={job} speed={80} /> : ""}
         {/*TODO: find a more efficient way.<span className="typing">{job}</span>*/}
         ,
         <br />

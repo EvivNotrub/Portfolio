@@ -18,46 +18,14 @@
   // @include mode() {
   //   background-color: $background-dm;
   // }
-  &__logo {
-    height: 100%;
-    width: 100%;
-    &__link {
-      display: inline-block;
-      position: relative;
-      height: 100%;
-      width: 100%;
-      & .myName {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        font-size: $header-title-M;
-        text-align: start;
-        line-height: 1.2;
-        @include color-mode($header-title-mode...);
-        &.--1 {
-          font-family: "Bungee Hairline";
-          animation: subterfuge 1s ease-in-out 12.1s both;
-          font-weight: 600;
-        }
-        &.--2 {
-          font-family: "Bungee";
-          animation: fade-out 1.25s ease-in-out 8.3s both;
-        }
-        &.--3 {
-          font-family: "Bungee Inline";
-          animation: ghost 2.5s ease-in-out 8.65s both;
-        }
-        &.--4 {
-          font-family: "Bungee Outline";
-          animation: ghost 2.5s ease-in-out 10.4s both;
-        }
-        // &.--5 {
-        //   font-family: "Bungee Shade";
-        //   animation: ghost 1.5s ease-in-out 4.4s both;
-        // }
-      }
-    }
+
+  & .myName {
+    font-size: $header-title-M;
+    font-family: "Bungee Hairline";
+    font-weight: 800;
+    text-align: start;
+    line-height: 1.2;
+    @include color-mode($header-title-mode...);
   }
 
   & nav {
@@ -92,13 +60,4 @@
       }
     }
   }
-  // &__social {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   margin-top: 1em;
-  //   & > * {
-  //     margin: 0 0.5em;
-  //   }
-  // }
 }

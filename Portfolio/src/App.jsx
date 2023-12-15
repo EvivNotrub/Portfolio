@@ -12,7 +12,8 @@ import Contact from "./pages/Contact/contact.jsx";
 
 // TODO: manage Rooter properly
 function App() {
-  const pPreviewRef = useRef(null);
+  const homeRef = useRef(null);
+  // const pPreviewRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
 
@@ -23,7 +24,8 @@ function App() {
       {/* TODO_REMOVE: If Mentors confirm, remove and keep only the Router in main.jsx */}
       {/* <Router basename={import.meta.env.BASE_URL}> */}
       <Header
-        pPreviewRef={pPreviewRef}
+        // pPreviewRef={pPreviewRef}
+        homeRef={homeRef}
         aboutRef={aboutRef}
         skillsRef={skillsRef}
       />
@@ -32,7 +34,8 @@ function App() {
           path="/"
           element={
             <Home
-              pPreviewRef={pPreviewRef}
+              // pPreviewRef={pPreviewRef}
+              homeRef={homeRef}
               aboutRef={aboutRef}
               skillsRef={skillsRef}
             />

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 import backgroundImage from "../../assets/images/frame.jpg";
 import About from "../../containers/about/about";
-import ProjectsPreview from "../../containers/projects/projectsPreview";
+// import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
 import "./home.scss";
 import Welcome from "../../containers/welcome/welcome";
 import ScrollPage from "../../components/buttons/scrollPage";
 
-function Home({ pPreviewRef, aboutRef, skillsRef }) {
+// function Home({ pPreviewRef, aboutRef, skillsRef }) {
+function Home({ aboutRef, skillsRef, homeRef }) {
   const location = useLocation();
 
   useEffect(() => {
@@ -40,6 +41,8 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
         className={
           "greet home__main__section" + " " + (location.hash && "hide")
         }
+        ref={homeRef}
+        tabIndex="-1"
       >
         <Welcome />
         <ScrollPage path="/#about" />
@@ -52,14 +55,14 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
       >
         <About />
       </section>
-      <section
+      {/* <section
         id="projectsPreview"
         className="projects home__main__section"
         ref={pPreviewRef}
         tabIndex="-1"
       >
         <ProjectsPreview />
-      </section>
+      </section> */}
       <section
         id="skills"
         className="knowledge home__main__section"
@@ -73,7 +76,8 @@ function Home({ pPreviewRef, aboutRef, skillsRef }) {
 }
 
 Home.propTypes = {
-  pPreviewRef: PropTypes.object,
+  // pPreviewRef: PropTypes.object,
+  homeRef: PropTypes.object,
   aboutRef: PropTypes.object,
   skillsRef: PropTypes.object,
 };

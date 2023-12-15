@@ -5,7 +5,8 @@ import "./navigation.scss";
 import Mutton from "../buttons/mutton";
 
 function Navigation({ ...props }) {
-  const { pPreviewRef, skillsRef, aboutRef } = props;
+  // const { pPreviewRef, skillsRef, aboutRef } = props;
+  const { skillsRef, aboutRef, homeRef } = props;
   const [checked, setChecked] = useState(false);
   // on focus can be manged from line 8 to 13 in nav.scss
   const [isFocused, setIsFocused] = useState(false);
@@ -81,6 +82,16 @@ function Navigation({ ...props }) {
           >
             <ul className="sub-nav__list">
               <li className="sub-nav__item">
+                {/* TODO: update test for new item */}
+                <Link
+                  data-testid="welcomeLink"
+                  to="/"
+                  onClick={() => focusOnRef(homeRef)}
+                >
+                  Welcome
+                </Link>
+              </li>
+              <li className="sub-nav__item">
                 <Link
                   data-testid="aboutLink"
                   to="/#about"
@@ -98,7 +109,7 @@ function Navigation({ ...props }) {
                   Skills
                 </Link>
               </li>
-              <li className="sub-nav__item">
+              {/* <li className="sub-nav__item">
                 <Link
                   data-testid="pPreviewLink"
                   to="/#projectsPreview"
@@ -106,7 +117,7 @@ function Navigation({ ...props }) {
                 >
                   Projets Preview
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </li>
@@ -131,7 +142,8 @@ function Navigation({ ...props }) {
 }
 
 Navigation.propTypes = {
-  pPreviewRef: PropTypes.object,
+  // pPreviewRef: PropTypes.object,
+  homeRef: PropTypes.object,
   skillsRef: PropTypes.object,
   aboutRef: PropTypes.object,
 };

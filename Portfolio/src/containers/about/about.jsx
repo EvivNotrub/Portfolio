@@ -69,7 +69,7 @@ function About() {
           </SocialLink>
         </LinkList>
       </div>
-      <ScrollPage path="/#projectsPreview" />
+      <ScrollPage path="/#skills" />
     </div>
   );
 }

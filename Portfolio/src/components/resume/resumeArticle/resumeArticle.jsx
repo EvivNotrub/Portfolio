@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { booleanSwitch } from "../../../utils/helpers/helpers.jsx";
 import "./resumeArticle.scss";
 
@@ -17,7 +16,7 @@ function ResumeArticle({ article }) {
         <div className="line-of-work__header__arrow">
           <FontAwesomeIcon
             className={!hidden ? "turn" : ""}
-            icon={faChevronDown}
+            icon="fa-solid fa-chevron-down"
           />
         </div>
       </button>

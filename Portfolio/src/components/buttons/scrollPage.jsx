@@ -2,13 +2,12 @@ import PropTypes from "prop-types";
 import "./scrollPage.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDownLong } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollPage = ({ path }) => {
   return (
     <Link to={path} className="down">
       <span className="down__arrow">
-        <FontAwesomeIcon icon={faArrowDownLong} />
+        <FontAwesomeIcon icon="fa-solid fa-arrow-down-long" />
       </span>
     </Link>
   );

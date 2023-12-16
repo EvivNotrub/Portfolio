@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 function Accordion({ title, datum, type, children, className, header }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -23,7 +22,7 @@ function Accordion({ title, datum, type, children, className, header }) {
           >
             <FontAwesomeIcon
               className="accordion2__header__button__arrow"
-              icon={faChevronDown}
+              icon="fa-solid fa-chevron-down"
             />
           </button>
         </div>

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
+import initFontAwesome from "./utils/fontAwesome/fontAwesomeLib.js";
 import "./App.scss";
 import Home from "./pages/Home/home.jsx";
 import Error from "./pages/Error/error.jsx";
@@ -9,6 +10,8 @@ import Portfolio from "./pages/Portfolio/portfolio.jsx";
 import ProjectPage from "./pages/Project/projectPage.jsx";
 import Resume from "./pages/Resume/resume.jsx";
 import Contact from "./pages/Contact/contact.jsx";
+
+initFontAwesome();
 
 // TODO: manage Rooter properly
 function App() {

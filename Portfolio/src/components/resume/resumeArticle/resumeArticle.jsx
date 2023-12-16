@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
-import arrow from "../../../assets/images/arrow.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { booleanSwitch } from "../../../utils/helpers/helpers.jsx";
 import "./resumeArticle.scss";
 
@@ -14,7 +15,10 @@ function ResumeArticle({ article }) {
       >
         <h4 className="line-of-work__header__title">{article.name}</h4>
         <div className="line-of-work__header__arrow">
-          <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" />
+          <FontAwesomeIcon
+            className={!hidden ? "turn" : ""}
+            icon={faChevronDown}
+          />
         </div>
       </button>
       {article.jobs.map((job) => (

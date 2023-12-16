@@ -3,9 +3,11 @@ import Education from "../../../components/resume/education/education";
 import Extras from "../../../components/resume/extras/extras";
 import ResumeSkills from "../../../components/resume/resumeSkills/resumeSkills";
 import "./essentials.scss";
-import arrow from "../../../assets/images/arrow.png";
+// import arrow from "../../../assets/images/arrow.png";
 import { getWindowSize } from "../../../utils/helpers/helpers";
 import { booleanSwitch } from "../../../utils/helpers/helpers";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 function Essentials() {
   const [hidden, setHidden] = useState(true);
@@ -43,7 +45,11 @@ function Essentials() {
         <h3 className="part-title --toggle">
           Extra-professionnel
           <button onClick={() => booleanSwitch(hidden, setHidden)}>
-            <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" />
+            {/* <img className={!hidden ? "turn" : ""} src={arrow} alt="arrow" /> */}
+            <FontAwesomeIcon
+              className={!hidden ? "turn" : ""}
+              icon={faChevronDown}
+            />
           </button>
         </h3>
         <div

@@ -15,12 +15,12 @@
     }
     &__arrow {
       width: 2rem;
-      height: 1.7rem;
+      height: 1.6rem;
       @include flex-all-center;
       flex-shrink: 0;
       flex-grow: 0;
       z-index: 10;
-      padding: 0.2rem 0.5rem;
+      padding: 0.2rem 0.418rem;
       border-radius: $button-radius;
       margin-right: 1rem;
       background-color: white;
@@ -28,12 +28,9 @@
         background-color: $very-dim-bg-color;
       }
     }
-    & img {
-      @include mode(light) {
-        filter: invert(1);
-      }
-      object-fit: cover;
+    & svg {
       width: 100%;
+      height: 1.3rem;
       transition: transform 0.25s ease-in-out;
       &.turn {
         transform: rotate(-180deg);

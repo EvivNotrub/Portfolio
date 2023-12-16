@@ -19,7 +19,7 @@
           @include flex-all-center;
           flex-shrink: 0;
           z-index: 100;
-          padding: 0.2rem 0.5rem;
+          padding: 0.2rem 0.418rem;
           border-radius: $button-radius;
           margin-right: 0.5rem;
           box-shadow: $shadow;
@@ -28,9 +28,9 @@
             box-shadow: none;
           }
         }
-        & img {
-          object-fit: cover;
+        & svg {
           width: 100%;
+          height: 1.3rem;
           transition: transform 0.25s ease-in-out;
           &.turn {
             transform: rotate(-180deg);

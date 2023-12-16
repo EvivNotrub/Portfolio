@@ -48,13 +48,13 @@
         margin-right: 12px;
         transition: all 0.28s ease-in-out;
         @include from-mobile-up {
-          margin-right: 0px;
-          width: 16px;
-          height: 10px;
+          margin-right: 5px;
+          width: 1.7rem;
+          height: 1.3rem;
         }
       }
-      &[aria-expanded="true"] img {
-        transform: rotate(180deg) translate(0%, 25%);
+      &[aria-expanded="true"] svg {
+        transform: translate(0%, -40%) rotate(180deg);
       }
     }
   }

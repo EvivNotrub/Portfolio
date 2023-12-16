@@ -2,7 +2,8 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
-import arrow from "/images/icons/arrow.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 function Accordion({ title, datum, type, children, className, header }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -20,10 +21,9 @@ function Accordion({ title, datum, type, children, className, header }) {
             className="accordion2__header__button"
             aria-expanded={isExpanded ? "true" : "false"}
           >
-            <img
+            <FontAwesomeIcon
               className="accordion2__header__button__arrow"
-              src={arrow}
-              alt="image of an arrow as button for accordion"
+              icon={faChevronDown}
             />
           </button>
         </div>

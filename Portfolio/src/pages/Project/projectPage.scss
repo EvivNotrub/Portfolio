@@ -73,6 +73,9 @@
         padding: $project-page-padd-T;
       }
     }
+    & path {
+      fill: black;
+    }
   }
   &__details {
     text-align: start;

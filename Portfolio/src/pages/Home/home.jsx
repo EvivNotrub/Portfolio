@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import backgroundImage from "../../assets/images/frame.jpg";
+import backgroundImage from "../../assets/images/1x2/1x2.webp";
 import About from "../../containers/about/about";
 // import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
@@ -31,6 +31,8 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         <img
           className="home__main__background__img"
           src={backgroundImage}
+          sizes="100vw"
+          srcSet="/src/assets/images/1x2/1x2-300.webp 300w, /src/assets/images/1x2/1x2-448.webp 448w, /src/assets/images/1x2/1x2-650.webp 650w, /src/assets/images/1x2/1x2-860.webp 860w, /src/assets/images/1x2/1x2-1030.webp 1030w, /src/assets/images/1x2/1x2-1180.webp 1180w, /src/assets/images/1x2/1x2-1310.webp 1310w, /src/assets/images/1x2/1x2-1430.webp 1430w, /src/assets/images/1x2/1x2-1540.webp 1540w, /src/assets/images/1x2/1x2-1650.webp 1650w, /src/assets/images/1x2/1x2-1740.webp 1740w, /src/assets/images/1x2/1x2-1830.webp 1830w, /src/assets/images/1x2/1x2.webp 1920w,"
           alt="Jigar Panchal's 3d abstract art from Unsplash"
         />
       </div>

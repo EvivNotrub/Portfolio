@@ -2,62 +2,62 @@
   "mainSkills": [
     {
       "name": "HTML",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/html-5.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/html-5/html-5-48.webp"
     },
     {
       "name": "CSS",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/css.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/css/css-48.webp"
     },
     {
       "name": "JavaScript",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/javascript.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/javascript/javascript-48.webp"
     },
     {
       "name": "GitHub",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/github.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/github/github-48.webp"
     },
     {
       "name": "Sass",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/sass.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/sass/sass-48.webp"
     },
     {
       "name": "React",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/react.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/react/react-48.webp"
     },
     {
       "name": "Redux",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/redux.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/redux/redux-48.webp"
     },
     {
       "name": "Git",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/git.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/git/git-48.webp"
     }
   ],
   "usedTech": [
     {
       "name": "Swagger Editor",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/swagger-logo.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/swagger-logo/swagger-logo-48.webp"
     },
     {
       "name": "Node.js",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-node-js.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-node-js/icons8-node-js-48.webp"
     },
     {
       "name": "Vite",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vite.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vite/vite-48.webp"
     },
     {
       "name": "Figma",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/figma.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/figma/figma-48.webp"
     },
     {
       "name": "VsCode",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vs_code.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/vs_code/vs_code-48.webp"
     },
 
     {
       "name": "GitHub Copilot",
-      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-github.png"
+      "path": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/icons/icons8-github/icons8-github-48.webp"
     }
   ]
 }

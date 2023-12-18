@@ -21,6 +21,7 @@ function Mutton({ addClass, checked, setChecked }) {
         onChange={() => setChecked(!checked)}
         checked={checked}
         value={checked}
+        aria-label="toggle navigation menu"
       />
       <div className="lines">
         <div className="lines__center">

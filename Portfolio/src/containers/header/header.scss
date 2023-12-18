@@ -20,6 +20,7 @@
   // }
 
   & .myName {
+    animation: subterfuge 0.5s ease-in-out 8s both;
     font-size: $header-title-M;
     font-family: "Bungee Hairline";
     font-weight: 800;

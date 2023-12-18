@@ -15,7 +15,6 @@ function Slideshow({
   const [previousPicture, setPreviousPicture] = useState(pictures.length - 1);
   const [nextPicture, setNextPicture] = useState(1);
   const picturesLength = pictures.length;
-  console.log("picturesLength", picturesLength, "pictures", pictures);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -67,9 +66,9 @@ function Slideshow({
         <div className="slideshow__footer">
           <div className="slideshow__footer__ghost"></div>
           {picturesLength > 1 && (
-            <p className="slideshow__footer__count">
+            <h2 className="slideshow__footer__count">
               {currentPicture + 1 + "/" + picturesLength}
-            </p>
+            </h2>
           )}
           {
             <FullscreenButton

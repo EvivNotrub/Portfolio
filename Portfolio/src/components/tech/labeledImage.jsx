@@ -1,10 +1,10 @@
 import { PropTypes } from "prop-types";
 import "./labeledImage.scss";
 
-function LabeledImage({ key, image, label }) {
+function LabeledImage({ image, label }) {
   return (
-    <li key={key} className="labeled-image">
-      <img src={image} alt={label} />
+    <li className="labeled-image">
+      <img src={image} alt={label + " clored logo"} loading="lazy" />
       <span>{label}</span>
     </li>
   );
@@ -13,7 +13,6 @@ function LabeledImage({ key, image, label }) {
 LabeledImage.propTypes = {
   image: PropTypes.string,
   label: PropTypes.string,
-  key: PropTypes.string,
 };
 
 export default LabeledImage;

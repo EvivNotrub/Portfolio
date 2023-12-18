@@ -11,7 +11,6 @@ function Portfolio() {
 
   document.title = "Portfolio | My Work";
   const [activeFilter, setActiveFilter] = useState(["all"]);
-  console.log("activeFilter", activeFilter);
 
   // TODO: Wrap in useEffect ?
   // TODO: condition if projects.openclassrooms is undefined ?
@@ -33,7 +32,6 @@ function Portfolio() {
   });
 
   useEffect(() => {
-    console.log("securing activeFilter");
     activeFilter.length === 0 && setActiveFilter(["all"]);
   }, [activeFilter]);
 
@@ -56,8 +54,8 @@ function Portfolio() {
           />
         </div>
         <div className="projects__portfolio">
-          {filteredProjects.map((project) => (
-            <ProjectCard project={project} key={project.id} />
+          {filteredProjects.map((project, index) => (
+            <ProjectCard project={project} key={project.id} index={index} />
           ))}
         </div>
       </section>

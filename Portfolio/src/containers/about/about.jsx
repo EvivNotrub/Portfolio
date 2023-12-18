@@ -49,7 +49,7 @@ function About() {
           </SocialLink>
         </LinkList>
       </div>
-      <ScrollPage path="/#skills" />
+      <ScrollPage path="/#skills" ariaLabel="next section: Skills" />
     </div>
   );
 }

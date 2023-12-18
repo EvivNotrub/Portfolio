@@ -7,18 +7,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Accordion({ title, datum, type, children, className, header }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const HeaderTag = header || "h3";
+  const headerId = title.replace(/\s+/g, "") + Date.now();
 
   return (
     <div className={"accordion2-container" + " " + className}>
       <div className="accordion2">
         <div className="accordion2__header">
-          <HeaderTag className="accordion2__header__title">{title}</HeaderTag>
+          <HeaderTag id={headerId} className="accordion2__header__title">
+            {title}
+          </HeaderTag>
           <button
             onClick={() => {
               !isExpanded ? setIsExpanded(true) : setIsExpanded(false);
             }}
             className="accordion2__header__button"
             aria-expanded={isExpanded ? "true" : "false"}
+            aria-labelledby={headerId}
           >
             <FontAwesomeIcon
               className="accordion2__header__button__arrow"

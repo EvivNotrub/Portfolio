@@ -98,6 +98,7 @@
     // max-width: max(500px, 50%);
   }
   &__filters {
+    // TODO: add height to prevent shifting before loading
     margin: 1.5rem 0;
   }
   &__portfolio {

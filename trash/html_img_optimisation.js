@@ -52,30 +52,9 @@ function addSrcSet() {
 
 addSrcSet();
 
-const nina = document.querySelector(".picture.left img");
-nina.setAttribute(
+const image = document.querySelector(".someClass img");
+image.setAttribute(
   "sizes",
-  "(min-width: 2020px) 560px, (min-width: 1200px) calc(30vw - 40px), (min-width: 660px) calc(46.15vw - 75px), calc(80vw - 51px)",
+  "100vw",
 );
 
-const carouselItems = document.querySelectorAll(".carousel-item img");
-carouselItems.forEach((image) => {
-  image.setAttribute(
-    "sizes",
-    "(min-width: 2040px) 1920px, calc(94.19vw + 17px)",
-  );
-});
-
-const galleryItems = document.querySelectorAll(".gallery-item");
-galleryItems.forEach((image) => {
-  image.setAttribute(
-    "sizes",
-    "(min-width: 1400px) 424px, (min-width: 1200px) 364px, (min-width: 1000px) 304px, (min-width: 780px) 224px, (min-width: 580px) 254px, calc(100vw - 16px)",
-  );
-});
-
-const camera = document.querySelector(".picture.right img");
-camera.setAttribute(
-  "sizes",
-  "(min-width: 1600px) 419px, (min-width: 1200px) calc(28.16vw - 26px), (min-width: 1020px) calc(43.75vw - 68px), (min-width: 980px) calc(200vw - 1612px), (min-width: 680px) calc(42.86vw - 63px), (min-width: 640px) calc(-975vw + 6653px), calc(75.94vw - 58px)",
-);

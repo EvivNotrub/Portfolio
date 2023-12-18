@@ -25,7 +25,7 @@ function Slideshow({
     return () => {
       document.removeEventListener("keydown", (e) => e);
     };
-  }, [isFullscreen]);
+  }, [isFullscreen, setIsFullscreen]);
 
   function updatePictures(direction) {
     if (direction === "next") {

@@ -29,6 +29,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         setLoading(false);
         return;
       }
+      setLoading(false);
       bgImgSrcSet(backgroundImage);
     }
 
@@ -40,7 +41,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       const timeout = setTimeout(() => {
         window.sessionStorage.setItem("firstVisit", false);
         setFirstVisit("false");
-      }, 2250);
+      }, 2000);
       return () => {
         clearTimeout(timeout);
       };

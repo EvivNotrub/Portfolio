@@ -8,9 +8,15 @@ import Skills from "../../containers/skills/skills";
 import "./home.scss";
 import Welcome from "../../containers/welcome/welcome";
 import ScrollPage from "../../components/buttons/scrollPage";
+import Loader from "../../components/loader/loader";
 
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
 function Home({ aboutRef, skillsRef, homeRef }) {
+  const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
+  console.log("visitStamp", visitStamp);
+  const [firstVisit, setFirstVisit] = useState(visitStamp);
+  console.log("firstVisit", firstVisit);
+  const [loading, setLoading] = useState(true);
   const [bgImgSrc, bgImgSrcSet] = useState(
     "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/1x2/1x2.webp",
   );
@@ -22,6 +28,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/1x2/1x2.webp",
       );
       if (response.ok) {
+        setLoading(false);
         return;
       }
       bgImgSrcSet(backgroundImage);
@@ -40,6 +47,25 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   }, [location]);
+
+  useEffect(() => {
+    if (firstVisit) {
+      const timeout = setTimeout(() => {
+        window.sessionStorage.setItem("firstVisit", "false");
+        setFirstVisit("false");
+      }, 3300);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [firstVisit]);
+
+  if (loading && visitStamp === "true")
+    return (
+      <main>
+        <Loader />
+      </main>
+    );
 
   return (
     <main data-testid="home-testid" className="home__main">

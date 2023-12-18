@@ -60,6 +60,7 @@ function Slider({
         sizes="(min-width: 1280px) 936px, (min-width: 960px) 836px, (min-width: 540px) 90vw, 100vw"
         srcSet={picture.srcset ? picture.srcset : null}
         alt={picture.alt}
+        loading={position === " --current" ? "eager" : "lazy"}
       />
     );
   });

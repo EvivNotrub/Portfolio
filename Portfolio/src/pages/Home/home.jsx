@@ -15,7 +15,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
 
   useEffect(() => {
     if (location.hash) {
-      console.log(location);
       let elem = document.getElementById(location.hash.slice(1));
       if (elem) {
         elem.scrollIntoView({ behavior: "smooth", block: "start" });

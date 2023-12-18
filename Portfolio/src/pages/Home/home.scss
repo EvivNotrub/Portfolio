@@ -49,6 +49,7 @@
     position: relative;
     width: 100%;
     padding: $section-padd-M;
+
     @include from-xl-mobile-up {
       padding: $section-padd-D;
     }
@@ -84,6 +85,9 @@
         background: $background-dm2;
         opacity: 0.8;
       }
+    }
+    &:focus-visible {
+      outline: none;
     }
   }
 }

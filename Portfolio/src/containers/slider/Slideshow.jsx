@@ -67,9 +67,9 @@ function Slideshow({
         <div className="slideshow__footer">
           <div className="slideshow__footer__ghost"></div>
           {picturesLength > 1 && (
-            <p className="slideshow__footer__count">
+            <h2 className="slideshow__footer__count">
               {currentPicture + 1 + "/" + picturesLength}
-            </p>
+            </h2>
           )}
           {
             <FullscreenButton

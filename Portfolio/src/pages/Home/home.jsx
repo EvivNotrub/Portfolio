@@ -47,7 +47,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         tabIndex="-1"
       >
         <Welcome />
-        <ScrollPage path="/#about" />
+        <ScrollPage path="/#about" ariaLabel="next section: About" />
       </section>
       <section
         id="about"

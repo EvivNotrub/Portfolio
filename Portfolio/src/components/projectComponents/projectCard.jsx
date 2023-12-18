@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./projectCard.scss";
 import Tags from "../tags/tags";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, index }) {
   return (
     <article className="project-card">
       <Link
@@ -16,6 +16,7 @@ function ProjectCard({ project }) {
           src={project.pictures[0].src}
           alt={project.pictures[0].alt}
           title={"Lien vers " + project.name}
+          loading={index > 1 ? "lazy" : "eager"}
         />
       </Link>
       <Tags
@@ -28,6 +29,7 @@ function ProjectCard({ project }) {
 }
 
 ProjectCard.propTypes = {
+  index: PropTypes.number,
   project: PropTypes.object,
 };
 

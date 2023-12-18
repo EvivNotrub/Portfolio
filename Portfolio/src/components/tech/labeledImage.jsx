@@ -4,7 +4,7 @@ import "./labeledImage.scss";
 function LabeledImage({ key, image, label }) {
   return (
     <li key={key} className="labeled-image">
-      <img src={image} alt={label} />
+      <img src={image} alt={label + " clored logo"} loading="lazy" />
       <span>{label}</span>
     </li>
   );

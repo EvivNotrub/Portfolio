@@ -56,8 +56,8 @@ function Portfolio() {
           />
         </div>
         <div className="projects__portfolio">
-          {filteredProjects.map((project) => (
-            <ProjectCard project={project} key={project.id} />
+          {filteredProjects.map((project, index) => (
+            <ProjectCard project={project} key={project.id} index={index} />
           ))}
         </div>
       </section>

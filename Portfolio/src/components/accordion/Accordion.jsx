@@ -12,13 +12,16 @@ function Accordion({ title, datum, type, children, className, header }) {
     <div className={"accordion2-container" + " " + className}>
       <div className="accordion2">
         <div className="accordion2__header">
-          <HeaderTag className="accordion2__header__title">{title}</HeaderTag>
+          <HeaderTag id="labelHeader" className="accordion2__header__title">
+            {title}
+          </HeaderTag>
           <button
             onClick={() => {
               !isExpanded ? setIsExpanded(true) : setIsExpanded(false);
             }}
             className="accordion2__header__button"
             aria-expanded={isExpanded ? "true" : "false"}
+            aria-labelledby="labelHeader"
           >
             <FontAwesomeIcon
               className="accordion2__header__button__arrow"

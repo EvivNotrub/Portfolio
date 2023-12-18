@@ -77,16 +77,12 @@
       },
       "pictures": [
         {
-          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb2.webp",
-          "alt": "Sophie Bluel portfolio - home"
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb3.webp",
+          "alt": "Sophie Bluel portfolio - home edit version"
         },
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb2.5.webp",
           "alt": "Sophie Bluel portfolio - loggin"
-        },
-        {
-          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb3.webp",
-          "alt": "Sophie Bluel portfolio - home edit version"
         },
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb3.8.webp",
@@ -99,6 +95,10 @@
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb6.webp",
           "alt": "Sophie Bluel portfolio - add photo"
+        },
+        {
+          "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb2.webp",
+          "alt": "Sophie Bluel portfolio - home"
         }
       ]
     },

@@ -11,7 +11,6 @@ function Portfolio() {
 
   document.title = "Portfolio | My Work";
   const [activeFilter, setActiveFilter] = useState(["all"]);
-  console.log("activeFilter", activeFilter);
 
   // TODO: Wrap in useEffect ?
   // TODO: condition if projects.openclassrooms is undefined ?
@@ -33,7 +32,6 @@ function Portfolio() {
   });
 
   useEffect(() => {
-    console.log("securing activeFilter");
     activeFilter.length === 0 && setActiveFilter(["all"]);
   }, [activeFilter]);
 

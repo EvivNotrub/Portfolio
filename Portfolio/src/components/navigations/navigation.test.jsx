@@ -15,17 +15,17 @@ describe("navigation", () => {
     expect(screen.getByTestId("nav-testid")).toBeInTheDocument();
   });
   it("renders home link", () => {
-    const home = screen.getByText("Accueil");
+    const home = screen.getByText("Home");
     expect(home).toBeInTheDocument();
     expect(home).toHaveAttribute("href", "/");
   });
   it("renders projects link", () => {
-    const projects = screen.getByText("Mes Projets");
+    const projects = screen.getByText("Projects");
     expect(projects).toBeInTheDocument();
     expect(projects).toHaveAttribute("href", "/projects");
   });
   it("renders resume link", () => {
-    const resume = screen.getByText("CV");
+    const resume = screen.getByText("Resume");
     expect(resume).toBeInTheDocument();
     expect(resume).toHaveAttribute("href", "/resume");
   });
@@ -39,19 +39,14 @@ describe("navigation", () => {
       expect(screen.getByTestId("sub-nav-testid")).toBeInTheDocument();
     });
     it("renders about link", () => {
-      expect(screen.getByText("A propos"))
+      expect(screen.getByText("About"))
         .toBeInTheDocument()
         .toHaveAttribute("href", "/#about");
     });
     it("renders skills link", () => {
-      expect(screen.getByText("Compétences"))
+      expect(screen.getByText("Skills"))
         .toBeInTheDocument()
         .toHaveAttribute("href", "/#skills");
-    });
-    it("renders projectsPreview link", () => {
-      expect(screen.getByText("Projets Preview"))
-        .toBeInTheDocument()
-        .toHaveAttribute("href", "/#projectsPreview");
     });
   });
   //   it("scrolls to About when Link is clicked", () => {

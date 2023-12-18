@@ -15,7 +15,6 @@ function Slideshow({
   const [previousPicture, setPreviousPicture] = useState(pictures.length - 1);
   const [nextPicture, setNextPicture] = useState(1);
   const picturesLength = pictures.length;
-  console.log("picturesLength", picturesLength, "pictures", pictures);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {

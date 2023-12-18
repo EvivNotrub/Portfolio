@@ -39,7 +39,6 @@ function ProjectPage() {
         setLoading(false);
         return;
       }
-      console.log("project", project);
       setProject(project);
       setLoading(false);
     }

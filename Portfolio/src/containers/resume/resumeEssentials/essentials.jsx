@@ -42,7 +42,10 @@ function Essentials() {
       <section className="essentials__part --extra-pro">
         <h3 className="part-title --toggle">
           Extra-professionnel
-          <button onClick={() => booleanSwitch(hidden, setHidden)}>
+          <button
+            aria-label="Show more"
+            onClick={() => booleanSwitch(hidden, setHidden)}
+          >
             <FontAwesomeIcon
               className={!hidden ? "turn" : ""}
               icon="fa-solid fa-chevron-down"

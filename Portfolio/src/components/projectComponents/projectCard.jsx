@@ -17,6 +17,7 @@ function ProjectCard({ project, index }) {
           alt={project.pictures[0].alt}
           title={"Lien vers " + project.name}
           loading={index > 1 ? "lazy" : "eager"}
+          // fetchpriority={index > 1 ? "high" : "low"}
         />
       </Link>
       <Tags

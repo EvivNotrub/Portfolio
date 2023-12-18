@@ -3,13 +3,13 @@ import "./tags.scss";
 
 function Tags({ tags, className, htmlFor }) {
   return (
-    <label htmlFor={htmlFor} className={"tags" + " " + className}>
+    <div htmlFor={htmlFor} className={"tags" + " " + className}>
       {tags.map((tag, index) => (
         <span key={Math.random() * (index + 10) + tag} className="tags__tag">
           {tag}
         </span>
       ))}
-    </label>
+    </div>
   );
 }
 

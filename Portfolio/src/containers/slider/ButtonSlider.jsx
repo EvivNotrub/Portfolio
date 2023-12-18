@@ -12,6 +12,7 @@ function ButtonSlider({ next, previous }) {
             previous();
           }}
           className="buttonSlider__arrow --left"
+          aria-label="previous slide"
         >
           <FontAwesomeIcon className="svg" icon="fa-solid fa-chevron-left" />
         </button>
@@ -21,6 +22,7 @@ function ButtonSlider({ next, previous }) {
             next();
           }}
           className="buttonSlider__arrow --right"
+          aria-label="next slide"
         >
           <FontAwesomeIcon className="svg" icon="fa-solid fa-chevron-right" />
         </button>

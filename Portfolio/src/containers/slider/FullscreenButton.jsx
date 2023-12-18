@@ -8,6 +8,7 @@ function FullscreenButton({ isFullscreen, setIsFullscreen }) {
       onClick={() => {
         isFullscreen ? setIsFullscreen(false) : setIsFullscreen(true);
       }}
+      aria-label="toggle fullscreen button"
     >
       {isFullscreen ? (
         <FontAwesomeIcon icon="fa-solid fa-compress" />

@@ -13,9 +13,7 @@ import Loader from "../../components/loader/loader";
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
 function Home({ aboutRef, skillsRef, homeRef }) {
   const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
-  console.log("visitStamp", visitStamp);
   const [firstVisit, setFirstVisit] = useState(visitStamp);
-  console.log("firstVisit", firstVisit);
   const [loading, setLoading] = useState(true);
   const [bgImgSrc, bgImgSrcSet] = useState(
     "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/1x2/1x2.webp",
@@ -38,6 +36,18 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }, []);
 
   useEffect(() => {
+    if (firstVisit) {
+      const timeout = setTimeout(() => {
+        window.sessionStorage.setItem("firstVisit", false);
+        setFirstVisit("false");
+      }, 2250);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [firstVisit]);
+
+  useEffect(() => {
     if (location.hash) {
       let elem = document.getElementById(location.hash.slice(1));
       if (elem) {
@@ -48,19 +58,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [location]);
 
-  useEffect(() => {
-    if (firstVisit) {
-      const timeout = setTimeout(() => {
-        window.sessionStorage.setItem("firstVisit", "false");
-        setFirstVisit("false");
-      }, 3300);
-      return () => {
-        clearTimeout(timeout);
-      };
-    }
-  }, [firstVisit]);
-
-  if (loading && visitStamp === "true")
+  if (firstVisit === "true" || loading)
     return (
       <main>
         <Loader />

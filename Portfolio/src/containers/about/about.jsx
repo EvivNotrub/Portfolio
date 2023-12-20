@@ -44,7 +44,7 @@ function About() {
           <SocialLink link="https://codepen.io/EvivNotrub/" text="CodePen">
             <FontAwesomeIcon icon="fa-brands fa-codepen" />
           </SocialLink>
-          <SocialLink link="/contact" text="Email">
+          <SocialLink link="/contact" text="Email" ReactRouter={true}>
             <FontAwesomeIcon icon="fa-solid fa-envelope" />
           </SocialLink>
         </LinkList>

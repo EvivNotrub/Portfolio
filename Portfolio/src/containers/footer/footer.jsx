@@ -19,7 +19,7 @@ function Footer() {
             <FontAwesomeIcon icon="fa-brands fa-linkedin" />
           </SocialLink>
           {/* TODO: add linkedin */}
-          <SocialLink link="/contact" text="Email">
+          <SocialLink link="/contact" text="Email" ReactRouter={true}>
             <FontAwesomeIcon icon="fa-solid fa-envelope" />
           </SocialLink>
         </LinkList>

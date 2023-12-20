@@ -1,7 +1,19 @@
 import { PropTypes } from "prop-types";
 import "./socialLink.scss";
+import { Link } from "react-router-dom";
 
-function SocialLink({ link, text, children, className }) {
+function SocialLink({ link, text, children, className, ReactRouter }) {
+  if (ReactRouter)
+    return (
+      <Link
+        className={"social-link" + (className ? " " + className : "")}
+        to={link}
+      >
+        {children}
+        <span className="social-link__text">{text}</span>
+      </Link>
+    );
+
   return (
     <a
       className={"social-link" + (className ? " " + className : "")}
@@ -16,6 +28,7 @@ function SocialLink({ link, text, children, className }) {
 }
 
 SocialLink.propTypes = {
+  ReactRouter: PropTypes.bool,
   link: PropTypes.string,
   icon: PropTypes.string,
   text: PropTypes.string,

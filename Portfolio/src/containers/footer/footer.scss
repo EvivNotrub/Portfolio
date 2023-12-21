@@ -30,9 +30,23 @@
       fill: black;
     }
   }
-  &__copyright {
+  &__legal {
     font-size: 1rem;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    & > * {
+      flex: 1;
+      min-width: 290px;
+      &.legal-notice {
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: underline;
+      }
+    }
   }
   @include mode {
     border-top: solid 3px $very-dim-bg-color;

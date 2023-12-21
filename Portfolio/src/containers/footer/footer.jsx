@@ -3,6 +3,7 @@ import PersonalDetails from "../../components/resume/personalDetails/personalDet
 import LinkList from "../../components/linkList/linkList";
 import SocialLink from "../../components/buttons/socialLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import legalNotice from "../../assets/documents/legalNotice_portfolio_BW.pdf";
 
 function Footer() {
   return (
@@ -29,7 +30,17 @@ function Footer() {
           <PersonalDetails />
         </div>
       </div>
-      <p className="footer__copyright">Copyright 2023 Barthélémy Werlé</p>
+      <p className="footer__legal">
+        <span>Copyright 2023 Barthélémy Werlé</span>
+        <a
+          className="legal-notice"
+          href={legalNotice}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Legal Notice
+        </a>
+      </p>
     </footer>
   );
 }

@@ -35,7 +35,10 @@ function About() {
       <div className="about__links">
         <LinkList>
           {/* TODO: add linkedin ink */}
-          <SocialLink link="https://www.linkedin.com/" text="LinkedIn">
+          <SocialLink
+            link="https://www.linkedin.com/in/barthelemy-werle-b93769128"
+            text="LinkedIn"
+          >
             <FontAwesomeIcon icon="fa-brands fa-linkedin" />
           </SocialLink>
           <SocialLink link="https://github.com/EvivNotrub" text="GitHub">

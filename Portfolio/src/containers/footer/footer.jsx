@@ -16,7 +16,10 @@ function Footer() {
           <SocialLink link="https://github.com/EvivNotrub" text="GitHub">
             <FontAwesomeIcon icon="fa-brands fa-github" />
           </SocialLink>
-          <SocialLink link="https://www.linkedin.com/" text="LinkedIn">
+          <SocialLink
+            link="https://www.linkedin.com/in/barthelemy-werle-b93769128"
+            text="LinkedIn"
+          >
             <FontAwesomeIcon icon="fa-brands fa-linkedin" />
           </SocialLink>
           {/* TODO: add linkedin */}

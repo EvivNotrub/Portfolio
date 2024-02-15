@@ -14,8 +14,10 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: calc((1.6vh + 1.2vw + 1vmin) * 2.3);
-    height: calc((1.6vh + 1.2vw + 1vmin) * 2.3);
+    width: calc((1.6vh + 1.2vw + 1vmin) * 2.1);
+    height: calc((1.6vh + 1.2vw + 1vmin) * 2.1);
+    max-width: 3.8rem;
+    max-height: 3.8rem;
     cursor: pointer;
     background: none;
     padding: 5px;

@@ -113,12 +113,16 @@
       padding: 0;
       transition: all 0.25s ease-in-out;
       & svg {
-        width: 1.8rem;
-        height: 1.8rem;
-        @include from-tablet-up {
-          width: 1.55rem;
-          height: 1.55rem;
-        }
+        width: calc((1.4vh + 1.3vw + 1vmin) * 1.1);
+        height: calc((1.4vh + 1.3vw + 1vmin) * 1.1);
+        max-width: 1.8rem;
+        max-height: 1.8rem;
+        // width: 1.8rem;
+        // height: 1.8rem;
+        // @include from-tablet-up {
+        //   width: 1.55rem;
+        //   height: 1.55rem;
+        // }
         & path {
           fill: $slideshow-color-lm;
           @include mode {

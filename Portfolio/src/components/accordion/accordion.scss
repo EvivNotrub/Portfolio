@@ -15,7 +15,7 @@
     border-radius: $button-radius;
     padding: $accordion-padd-M;
     @include color-mode($button-scheme...);
-    @include button-shadow;
+    // @include button-shadow;
     position: relative;
     overflow: hidden;
     display: flex;

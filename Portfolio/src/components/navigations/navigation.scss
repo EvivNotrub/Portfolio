@@ -125,7 +125,7 @@
 @media (prefers-color-scheme: light) {
   .nav {
     &__list {
-      box-shadow: $shadow;
+      // box-shadow: $shadow;
       & a {
         color: $nav-link-color-lm;
       }
@@ -133,7 +133,7 @@
       background-color: $nav-list-bg-lm;
       &__item {
         & .sub-nav {
-          box-shadow: $shadow;
+          // box-shadow: $shadow;
           background-color: $nav-list-bg-lm;
         }
       }

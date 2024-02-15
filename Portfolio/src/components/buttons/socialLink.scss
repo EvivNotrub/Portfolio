@@ -8,7 +8,7 @@
   gap: 0.5rem;
   padding: $button-padd;
   border-radius: $button-radius;
-  @include button-shadow;
+  // @include button-shadow;
   @include color-mode($button-scheme...);
   &:hover {
     animation: shake-it 0.04s alternate 8;

@@ -44,9 +44,9 @@
     min-width: 7.2rem;
     padding: 0.125rem 0.225rem;
     border-radius: $button-radius;
-    @include mode(light) {
-      box-shadow: $shadow;
-    }
+    // @include mode(light) {
+    //   box-shadow: $shadow;
+    // }
   }
   @include desktop-only {
     // max-width: 800px;

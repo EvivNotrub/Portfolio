@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Accordion({ title, datum, type, children, className, header }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+function Accordion({
+  title,
+  datum,
+  type,
+  children,
+  className,
+  header,
+  expanded,
+}) {
+  const [isExpanded, setIsExpanded] = useState(expanded || false);
   const HeaderTag = header || "h3";
   const headerId = title.replace(/\s+/g, "") + Date.now();
+
+  useEffect(() => {
+    setIsExpanded(expanded);
+  }, [expanded]);
 
   return (
     <div className={"accordion2-container" + " " + className}>
@@ -23,6 +35,7 @@ function Accordion({ title, datum, type, children, className, header }) {
             className="accordion2__header__button"
             aria-expanded={isExpanded ? "true" : "false"}
             aria-labelledby={headerId}
+            title={isExpanded ? "Collapse" : "Expand"}
           >
             <FontAwesomeIcon
               className="accordion2__header__button__arrow"
@@ -50,6 +63,7 @@ Accordion.propTypes = {
     PropTypes.array,
     PropTypes.object,
   ]),
+  expanded: PropTypes.bool,
   type: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([

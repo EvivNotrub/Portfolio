@@ -4,6 +4,7 @@ import ProjectCard from "../../components/projectComponents/projectCard";
 import "./portfolio.scss";
 import ProjectFilters from "../../components/filters/projectFilters";
 import Accordion from "../../components/accordion/Accordion";
+import { getWindowSize } from "../../utils/helpers/helpers";
 
 function Portfolio() {
   const introText =
@@ -11,6 +12,21 @@ function Portfolio() {
 
   document.title = "Portfolio | My Work";
   const [activeFilter, setActiveFilter] = useState(["all"]);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+    windowSize.innerWidth < 768 ? setIsExpanded(false) : setIsExpanded(true);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [windowSize]);
 
   // TODO: Wrap in useEffect ?
   // TODO: condition if projects.openclassrooms is undefined ?
@@ -44,7 +60,11 @@ function Portfolio() {
         <div className="projects__header">
           <h2 className="projects__title">Open Classrooms Projects</h2>
           <div className="projects__intro">
-            <Accordion title="Information" datum={introText}></Accordion>
+            <Accordion
+              title="Information"
+              datum={introText}
+              expanded={isExpanded}
+            ></Accordion>
           </div>
         </div>
         <div className="projects__filters">

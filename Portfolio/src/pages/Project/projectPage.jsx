@@ -8,6 +8,7 @@ import Slideshow from "../../containers/slider/Slideshow";
 import LinkList from "../../components/linkList/linkList";
 import SocialLink from "../../components/buttons/socialLink";
 import Accordion from "../../components/accordion/Accordion";
+import { getWindowSize } from "../../utils/helpers/helpers";
 
 function ProjectPage() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -17,6 +18,21 @@ function ProjectPage() {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+    windowSize.innerWidth < 768 ? setIsExpanded(false) : setIsExpanded(true);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [windowSize]);
 
   // TODO: find better title
   //TODO: change header for this page: not name but Project or something
@@ -123,6 +139,7 @@ function ProjectPage() {
             title="Full Description"
             datum={project.description.EN}
             className="project-info__details__description"
+            expanded={isExpanded}
           ></Accordion>
         </section>
       </main>

@@ -1,29 +1,25 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
 import Mutton from "../buttons/mutton";
 
-function Navigation({ ...props }) {
-  // const { pPreviewRef, skillsRef, aboutRef } = props;
-  const { skillsRef, aboutRef, homeRef } = props;
+// import PropTypes from "prop-types";
+// function Navigation({ ...props }) {
+// const { pPreviewRef, skillsRef, aboutRef, homeRef } = props;
+
+function Navigation() {
   const [checked, setChecked] = useState(false);
   // on focus can be manged from line 8 to 13 in nav.scss
   const [isFocused, setIsFocused] = useState(false);
   const [subNav, setSubNav] = useState(false);
-  const focusOnRef = (ref) => {
-    ref.current.focus();
-  };
-
+  // const focusOnRef = (ref) => {
+  //   ref.current.focus();
+  // };
   const blur = () => {
     document.activeElement.blur();
   };
   const closeNav = () => {
-    // TODO: is there not a way like this to focus on the element instead of this ref prop drilling?
-    // let elem = document.getElementById(e.target.hash.slice(1));
-    // if (elem) {
-    //   elem.current.focus();
-    // }
+    // focus is also managed in home.jsx using location.hash
     // line below: a simple alternative without focus:
     // document.activeElement.blur();
 
@@ -86,7 +82,7 @@ function Navigation({ ...props }) {
                 <Link
                   data-testid="welcomeLink"
                   to="/"
-                  onClick={() => focusOnRef(homeRef)}
+                  // onClick={() => focusOnRef(homeRef)} See home.jsx
                 >
                   Welcome
                 </Link>
@@ -95,7 +91,7 @@ function Navigation({ ...props }) {
                 <Link
                   data-testid="aboutLink"
                   to="/#about"
-                  onClick={() => focusOnRef(aboutRef)}
+                  // onClick={() => focusOnRef(aboutRef)} See home.jsx
                 >
                   About
                 </Link>
@@ -104,7 +100,7 @@ function Navigation({ ...props }) {
                 <Link
                   data-testid="skillsLink"
                   to="/#skills"
-                  onClick={() => focusOnRef(skillsRef)}
+                  // onClick={() => focusOnRef(skillsRef)} See home.jsx
                 >
                   Skills
                 </Link>
@@ -141,11 +137,11 @@ function Navigation({ ...props }) {
   );
 }
 
-Navigation.propTypes = {
-  // pPreviewRef: PropTypes.object,
-  homeRef: PropTypes.object,
-  skillsRef: PropTypes.object,
-  aboutRef: PropTypes.object,
-};
+// Navigation.propTypes = {
+//   pPreviewRef: PropTypes.object,
+//   homeRef: PropTypes.object,
+//   skillsRef: PropTypes.object,
+//   aboutRef: PropTypes.object,
+// };
 
 export default Navigation;

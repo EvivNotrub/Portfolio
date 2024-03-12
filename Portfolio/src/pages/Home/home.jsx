@@ -20,6 +20,14 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   );
   const location = useLocation();
 
+  // here we have a function that focus on ref after a delay:
+
+  function focusOnRef(ref) {
+    setTimeout(() => {
+      ref.current.focus();
+    }, 1000);
+  }
+
   useEffect(() => {
     async function fetchImage() {
       const response = await fetch(
@@ -49,15 +57,24 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }, [firstVisit]);
 
   useEffect(() => {
-    if (location.hash) {
-      let elem = document.getElementById(location.hash.slice(1));
-      if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+    if (firstVisit === "true" || loading) return;
+
+    const id = location.hash.slice(1);
+    if (id === "about") {
+      aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      focusOnRef(aboutRef);
+    } else if (id === "skills") {
+      skillsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      focusOnRef(skillsRef);
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      // TODO: focus on homeRef but it makes sub nav disapear after few seconds when clicking on Home...should not happen!!
+      // focusOnRef(homeRef);
     }
-  }, [location]);
+  }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
   if (firstVisit === "true" || loading)
     return (

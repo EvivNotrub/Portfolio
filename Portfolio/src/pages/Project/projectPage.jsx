@@ -86,22 +86,28 @@ function ProjectPage() {
               isFullscreen={isFullscreen}
             />
           </div>
-          <h1 className={"project-info__major__title" + " " + classFullscreen}>
-            {project.name}
-          </h1>
-          <div className={"project-info__major__links" + " " + classFullscreen}>
-            <LinkList>
-              {project.links.github && (
-                <SocialLink link={project.links.github} text="GitHub">
-                  <FontAwesomeIcon icon="fa-brands fa-github" />
-                </SocialLink>
-              )}
-              {project.links.demo && (
-                <SocialLink link={project.links.demo} text="GitHub Pages">
-                  <FontAwesomeIcon icon="fa-solid fa-globe" />
-                </SocialLink>
-              )}
-            </LinkList>
+          <div className="project-info__major__description">
+            <h1
+              className={"project-info__major__title" + " " + classFullscreen}
+            >
+              {project.name}
+            </h1>
+            <div
+              className={"project-info__major__links" + " " + classFullscreen}
+            >
+              <LinkList>
+                {project.links.github && (
+                  <SocialLink link={project.links.github} text="GitHub">
+                    <FontAwesomeIcon icon="fa-brands fa-github" />
+                  </SocialLink>
+                )}
+                {project.links.demo && (
+                  <SocialLink link={project.links.demo} text="GitHub Pages">
+                    <FontAwesomeIcon icon="fa-solid fa-globe" />
+                  </SocialLink>
+                )}
+              </LinkList>
+            </div>
           </div>
         </section>
         <section className={"project-info__details" + " " + classFullscreen}>

@@ -1,13 +1,15 @@
 @use "../../../assets/styles/variables" as *;
 @use "../../../assets/styles/mixins" as *;
 
+$acc-height-M: 40px;
+$acc-height-D: 48px;
+
 .essentials {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   &__part {
     flex: 1;
-
     & .part-title {
       font-size: 1.15rem;
       &.--toggle {
@@ -47,16 +49,26 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       & .essentials__article {
-        width: 100%;
+        width: 90%;
         min-width: 15.625rem;
         flex: 1;
-        transform: scale(0.9, 0.9);
-        & .accordion2__header__title {
-          font-size: 1.05rem;
-          width: 85%;
-          overflow: hidden;
-          text-wrap: nowrap;
-          text-overflow: ellipsis;
+        align-self: center;
+      }
+      & .accordion2 {
+        margin-bottom: -$acc-height-M;
+        &__header {
+          height: $acc-height-M;
+          &__title {
+            font-size: 1.05rem;
+            width: 85%;
+            overflow: hidden;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+        &__content {
+          top: -$acc-height-M;
+          padding: $acc-height-M 0 0 0;
         }
       }
     }
@@ -65,7 +77,18 @@
     flex-direction: column;
     &__part {
       &__articles {
+        gap: 0.7rem;
         flex-direction: column;
+        & .accordion2 {
+          margin-bottom: -$acc-height-D;
+          &__header {
+            height: $acc-height-D;
+          }
+          &__content {
+            top: -$acc-height-D;
+            padding: $acc-height-D 0 0 0;
+          }
+        }
       }
     }
   }

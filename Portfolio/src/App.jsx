@@ -20,8 +20,6 @@ function App() {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
 
-  // TODO: find a proper title
-  document.title = "Portfolio";
   return (
     <div className="App" data-testid="app-testid">
       {/* TODO_REMOVE: If Mentors confirm, remove and keep only the Router in main.jsx */}

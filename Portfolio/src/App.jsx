@@ -5,6 +5,7 @@ import "./App.scss";
 import Home from "./pages/Home/home.jsx";
 import Error from "./pages/Error/error.jsx";
 import MainStructuredData from "./components/helmet/mainStructuredData.jsx";
+import HomeMetaData from "./components/helmet/homeMetaData.jsx";
 import Header from "./containers/header/header.jsx";
 import Footer from "./containers/footer/footer.jsx";
 import Portfolio from "./pages/Portfolio/portfolio.jsx";
@@ -26,6 +27,7 @@ function App() {
       {/* TODO_REMOVE: If Mentors confirm, remove and keep only the Router in main.jsx */}
       {/* <Router basename={import.meta.env.BASE_URL}> */}
       <MainStructuredData />
+      <HomeMetaData />
       <Header
         // pPreviewRef={pPreviewRef}
         homeRef={homeRef}

@@ -4,7 +4,8 @@ import HelmetMetaData from "../../utils/helpers/helmet/helmetMetaData";
     <!-- <meta property="og:image" content="" /> -->
     <!-- <meta name="twitter:image" content="" /> -->
 */
-
+//TODO: add image for og:image and twitter:image
+//TODO: not working with crawkers??? Why?
 function HomeMetaData() {
   return (
     <HelmetMetaData

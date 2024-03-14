@@ -31,7 +31,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   useEffect(() => {
     async function fetchImage() {
       const response = await fetch(
-        "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webps",
+        "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp",
       );
       if (response.ok) {
         setLoading(false);

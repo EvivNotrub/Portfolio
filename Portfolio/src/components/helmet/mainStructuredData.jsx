@@ -30,14 +30,6 @@ function MainStructuredData() {
           },
           startDate: "2023",
         },
-        {
-          "@type": "OrganizationRole",
-          alumniOf: {
-            "@type": "HighSchool",
-            name: "Lycée Jean Renoir de Munich",
-          },
-          startDate: "2008",
-        },
       ],
     },
   };

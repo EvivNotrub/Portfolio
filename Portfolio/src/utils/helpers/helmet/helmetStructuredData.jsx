@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function HelmetStructuredData(props) {
   const structuredData = props.structuredData;
   return (
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>

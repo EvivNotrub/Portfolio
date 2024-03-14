@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 
 function HelmetMetaData({ title, description, ogtype, xtype, name, children }) {
   return (
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="author" content={name} />

@@ -35,6 +35,12 @@
 
 // fade animation
 
+@keyframes fade-from-one {
+  from {
+    opacity: 1;
+  }
+}
+
 @keyframes fade-out {
   from {
     opacity: 1;
@@ -44,10 +50,22 @@
   }
 }
 
+@keyframes fade-out-no-start {
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes subterfuge {
   from {
     opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes subterfuge-no-start {
   to {
     opacity: 1;
   }

@@ -14,10 +14,17 @@
   &::before {
     z-index: -1;
     @include pseudo-elmt-full;
+    // added to make the background color darker, manages both themes
     @include color-mode($home-div-bg-mode...) {
     }
     border-radius: 0.35rem;
-    animation: fade-out $fade-out-time;
+    opacity: 0.6;
+    // filter: brightness(1.5);
+    // animation: fade-from-one 0.9s ease-in 8s backwards;
+    animation: fade-from-one $fade-out-time-back;
+    @include mode() {
+      animation: fade-out-no-start $fade-out-time;
+    }
   }
   &__title {
     & span {

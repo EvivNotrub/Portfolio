@@ -242,9 +242,10 @@ $section-padd-D: 2rem;
 $home-div-bg-dm: none, $very-dim-bg-color;
 // $home-div-bg-lm: $text-dm, $mutton-bg-dm; // remove text-shadow in home -> div
 // OR
-$home-div-bg-lm: none, $mutton-bg-lm;
+$home-div-bg-lm: none, $text-dm;
 $home-div-bg-mode: $home-div-bg-lm, $home-div-bg-dm;
-$fade-out-time: 0.4s ease-in 6s forwards;
+$fade-out-time: 0.6s ease-in 6s forwards;
+$fade-out-time-back: 1.9s cubic-bezier(0.7, -0.01, 1, 0.79) 5.3s backwards;
 /*down button*/
 
 $down-btn-bottom: 2rem;

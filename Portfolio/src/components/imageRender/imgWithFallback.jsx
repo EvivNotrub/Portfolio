@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// !!!! carefull the loading attribute is for img tag not related to setLoading
+// !!!! carefull the loading attribute is for img tag NOT related to setLoading
 export default function ImgWithFallback({
   src,
   fallback,

@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import PropTypes from "prop-types";
 import backgroundImage from "../../assets/images/bgImgTest.webp";
+import ImgWithFallback from "../../components/imageRender/imgWithFallback";
 import About from "../../containers/about/about";
 // import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
@@ -16,11 +16,9 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
   const [firstVisit, setFirstVisit] = useState(visitStamp);
   const [loading, setLoading] = useState(true);
-  const [bgImgSrc, bgImgSrcSet] = useState(null);
   const location = useLocation();
 
-  // here we have a function that focus on ref after a delay:
-
+  // focus on ref after a delay in order to avoid focus on ref before it is rendered:
   function focusOnRef(ref) {
     setTimeout(() => {
       ref.current.focus();
@@ -28,27 +26,11 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }
 
   useEffect(() => {
-    const img = new Image();
-    img.src =
-      "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp";
-
-    img.onerror = () => {
-      bgImgSrcSet(backgroundImage);
-      setLoading(false);
-    };
-
-    img.onload = () => {
-      bgImgSrcSet(img);
-      setLoading(false);
-    };
-  }, []);
-
-  useEffect(() => {
     if (firstVisit) {
       const timeout = setTimeout(() => {
         window.sessionStorage.setItem("firstVisit", false);
         setFirstVisit("false");
-      }, 2000);
+      }, 2500);
       return () => {
         clearTimeout(timeout);
       };
@@ -56,6 +38,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }, [firstVisit]);
 
   useEffect(() => {
+    console.log("firstVisit", firstVisit, "loading", loading);
     if (firstVisit === "true" || loading) return;
     const id = location.hash.slice(1);
     if (id === "about") {
@@ -74,7 +57,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
-  if (firstVisit === "true" || loading)
+  if (firstVisit === "true")
     return (
       <main>
         <Loader />
@@ -84,13 +67,17 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   return (
     <main data-testid="home-testid" className="home__main">
       <div className="home__main__background">
-        <img
-          className="home__main__background__img"
-          src={bgImgSrc}
-          sizes="100vw"
-          srcSet="https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-300.webp 300w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-448.webp 448w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-650.webp 650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-860.webp 860w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1030.webp 1030w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1180.webp 1180w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1310.webp 1310w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1430.webp 1430w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1540.webp 1540w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1650.webp 1650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1740.webp 1740w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1830.webp 1830w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp 1920w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1990.webp 1990W, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2048.webp 2048w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2560.webp 2560w"
+        <ImgWithFallback
+          setLoading={setLoading}
+          src={
+            "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp"
+          }
+          fallback={backgroundImage}
           alt="Mont Buet, France"
           loading="eager"
+          className="home__main__background__img"
+          sizes="100vw"
+          srcSet="https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-300.webp 300w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-448.webp 448w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-650.webp 650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-860.webp 860w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1030.webp 1030w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1180.webp 1180w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1310.webp 1310w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1430.webp 1430w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1540.webp 1540w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1650.webp 1650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1740.webp 1740w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1830.webp 1830w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp 1920w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1990.webp 1990w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2048.webp 2048w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2560.webp 2560w"
         />
       </div>
       {/* TODO: implement hide class on scroll ?
@@ -103,8 +90,14 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         ref={homeRef}
         tabIndex="-1"
       >
-        <Welcome />
-        <ScrollPage path="/#about" ariaLabel="next section: About" />
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            <Welcome />
+            <ScrollPage path="/#about" ariaLabel="next section: About" />
+          </>
+        )}
       </section>
       <section
         id="about"

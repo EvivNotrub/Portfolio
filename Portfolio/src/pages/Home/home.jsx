@@ -38,7 +38,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }, [firstVisit]);
 
   useEffect(() => {
-    console.log("firstVisit", firstVisit, "loading", loading);
     if (firstVisit === "true" || loading) return;
     const id = location.hash.slice(1);
     if (id === "about") {

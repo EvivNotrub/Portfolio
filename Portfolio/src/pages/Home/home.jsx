@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import PropTypes from "prop-types";
 import backgroundImage from "../../assets/images/bgImgTest.webp";
 import About from "../../containers/about/about";
@@ -15,9 +16,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
   const [firstVisit, setFirstVisit] = useState(visitStamp);
   const [loading, setLoading] = useState(true);
-  const [bgImgSrc, bgImgSrcSet] = useState(
-    "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp",
-  );
+  const [bgImgSrc, bgImgSrcSet] = useState(null);
   const location = useLocation();
 
   // here we have a function that focus on ref after a delay:
@@ -30,21 +29,25 @@ function Home({ aboutRef, skillsRef, homeRef }) {
 
   useEffect(() => {
     async function fetchImage() {
-      const response = await fetch(
-        "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp",
-      );
-      if (response.ok) {
+      try {
+        const response = await fetch(
+          "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp",
+        );
+        if (response.ok) {
+          let imageBlob = await response.blob();
+          const imageObjectURL = URL.createObjectURL(imageBlob);
+          bgImgSrcSet(imageObjectURL);
+          setLoading(false);
+        }
+        if (!response.ok) {
+          throw new Error(`HTTP error: status: ${response.status}`);
+        }
+      } catch (err) {
+        bgImgSrcSet(backgroundImage);
+        console.error("Error fetching image: ", err.message);
+      } finally {
         setLoading(false);
-        console.log("fetchImage: response.ok", response);
-        return;
       }
-      setLoading(false);
-      console.log(
-        "fetchImage: response not ok",
-        response,
-        "\nusing default imported image.",
-      );
-      bgImgSrcSet(backgroundImage);
     }
 
     fetchImage();
@@ -64,7 +67,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
 
   useEffect(() => {
     if (firstVisit === "true" || loading) return;
-
     const id = location.hash.slice(1);
     if (id === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -28,29 +28,19 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   }
 
   useEffect(() => {
-    async function fetchImage() {
-      try {
-        const response = await fetch(
-          "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp",
-        );
-        if (response.ok) {
-          let imageBlob = await response.blob();
-          const imageObjectURL = URL.createObjectURL(imageBlob);
-          bgImgSrcSet(imageObjectURL);
-          setLoading(false);
-        }
-        if (!response.ok) {
-          throw new Error(`HTTP error: status: ${response.status}`);
-        }
-      } catch (err) {
-        bgImgSrcSet(backgroundImage);
-        console.error("Error fetching image: ", err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
+    const img = new Image();
+    img.src =
+      "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp";
 
-    fetchImage();
+    img.onerror = () => {
+      bgImgSrcSet(backgroundImage);
+      setLoading(false);
+    };
+
+    img.onload = () => {
+      bgImgSrcSet(img);
+      setLoading(false);
+    };
   }, []);
 
   useEffect(() => {

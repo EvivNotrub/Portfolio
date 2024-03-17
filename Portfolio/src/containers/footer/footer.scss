@@ -4,7 +4,7 @@
 .footer {
   @include flex-clm-jc-center;
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 2rem 0.8rem;
   // height: $footer-hght-M;
   width: 100%;
   margin: auto;
@@ -23,6 +23,9 @@
       opacity: 0.75;
       border-top: solid 3px $neutral;
     }
+  }
+  @include from-tablet-up {
+    padding: 2rem 2rem;
   }
   @include large-screen-only {
     margin: 100px auto 0;

@@ -52,6 +52,11 @@
     // all sections of home except "greet" (first section)
     position: relative;
     width: 100%;
+    max-width: 1400px;
+    // @include large-screen-only {
+    // min-width: 1400px;
+    // width: 80%;
+    // }
     padding: $section-padd-M;
     @include from-xl-mobile-up {
       padding: $section-padd-D;

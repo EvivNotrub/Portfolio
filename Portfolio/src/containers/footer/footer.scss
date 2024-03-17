@@ -5,13 +5,33 @@
   @include flex-clm-jc-center;
   gap: 1rem;
   padding: 2rem 0;
-  border-top: solid 2px $background-dm2;
   // height: $footer-hght-M;
-  max-width: 90vw;
+  width: 100%;
+  margin: auto;
   overflow: hidden;
-  // @include desktop-only {
+  position: relative;
   //   height: $footer-hght-D;
-  // }
+  //TODO: choose either max or both lines below :after (now 29-30) + same in home.scss .section:not(.greet) max-width
+  max-width: 1400px;
+  &::after {
+    @include pseudo-elmt-full;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.78);
+    border-top: solid 2px $background-dm2;
+    @include mode {
+      background: $background-dm2;
+      opacity: 0.75;
+      border-top: solid 3px $neutral;
+    }
+  }
+  @include large-screen-only {
+    margin: 100px auto 0;
+    // min-width: 1400px;
+    // width: 80%;
+    &::after {
+      border: none;
+    }
+  }
   &__info {
     display: flex;
     flex-wrap: wrap;
@@ -47,8 +67,5 @@
         text-decoration: underline;
       }
     }
-  }
-  @include mode {
-    border-top: solid 3px $very-dim-bg-color;
   }
 }

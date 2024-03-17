@@ -106,6 +106,12 @@
 }
 
 /*******BREAKPOINTS*******/
+@mixin large-screen-only {
+  @media (min-width: $breakpoint-xl-d) {
+    @content;
+  }
+}
+
 @mixin desktop-only {
   @media (min-width: $breakpoint-d) {
     @content;

@@ -56,13 +56,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
-  if (firstVisit === "true")
-    return (
-      <main>
-        <Loader />
-      </main>
-    );
-
   return (
     <main data-testid="home-testid" className="home__main">
       <div className="home__main__background">
@@ -89,7 +82,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         ref={homeRef}
         tabIndex="-1"
       >
-        {loading ? (
+        {firstVisit === "true" || loading ? (
           <Loader />
         ) : (
           <>

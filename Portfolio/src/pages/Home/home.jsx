@@ -16,6 +16,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
   const [firstVisit, setFirstVisit] = useState(visitStamp);
   const [loading, setLoading] = useState(true);
+  const [welcomeLoaded, setWelcomeLoaded] = useState(false);
   const location = useLocation();
 
   // focus on ref after a delay in order to avoid focus on ref before it is rendered:
@@ -60,7 +61,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     <main data-testid="home-testid" className="home__main">
       <div
         className={
-          (loading ? "" : "img-loaded") + " " + "home__main__background"
+          (welcomeLoaded ? "img-loaded" : "") + " " + "home__main__background"
         }
       >
         <ImgWithFallback
@@ -90,7 +91,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
           <Loader />
         ) : (
           <>
-            <Welcome />
+            <Welcome setWelcomeLoaded={setWelcomeLoaded} />
             <ScrollPage path="/#about" ariaLabel="next section: About" />
           </>
         )}

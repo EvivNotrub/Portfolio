@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
-function Welcome() {
+function Welcome({ setWelcomeLoaded }) {
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
@@ -24,6 +25,10 @@ function Welcome() {
     }
   }, [typingFullName, typingJob]);
 
+  useEffect(() => {
+    setWelcomeLoaded(true);
+  }, [setWelcomeLoaded]);
+
   return (
     <div className="welcome">
       <p className="welcome__welcome">Welcome,</p>
@@ -44,10 +49,7 @@ function Welcome() {
 }
 
 Welcome.propTypes = {
-  job: Typewriter.propTypes.text,
-  fullName: Typewriter.propTypes.text,
-  typingJob: Typewriter.propTypes.text,
-  typingFullName: Typewriter.propTypes.text,
+  setWelcomeLoaded: PropTypes.func.isRequired,
 };
 
 export default Welcome;

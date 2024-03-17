@@ -11,7 +11,10 @@ export default function ImgWithFallback({
   ...props
 }) {
   const [error, setError] = useState(false);
+  const [errorCount, setErrorCount] = useState(0);
   const [imgSrc, imgSrcSet] = useState(src);
+
+  console.log("ImgWithFallback src:", src, "\nfallback:", fallback);
 
   function handleError() {
     console.error(
@@ -21,6 +24,7 @@ export default function ImgWithFallback({
       fallback,
     );
     setError(true);
+    setErrorCount(errorCount + 1);
   }
 
   function handleLoad() {
@@ -32,6 +36,13 @@ export default function ImgWithFallback({
       imgSrcSet(fallback);
     }
   }, [error, fallback, imgSrc]);
+
+  useEffect(() => {
+    if (errorCount > 1) {
+      console.error("Failed to load image from source:", imgSrc);
+      setLoading(false);
+    }
+  }, [errorCount, imgSrc, setLoading]);
 
   return (
     <>

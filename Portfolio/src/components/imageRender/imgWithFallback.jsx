@@ -14,8 +14,6 @@ export default function ImgWithFallback({
   const [errorCount, setErrorCount] = useState(0);
   const [imgSrc, imgSrcSet] = useState(src);
 
-  console.log("ImgWithFallback src:", src, "\nfallback:", fallback);
-
   function handleError() {
     console.error(
       "Failed to load image from source:",

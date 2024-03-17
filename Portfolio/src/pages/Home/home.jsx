@@ -58,7 +58,11 @@ function Home({ aboutRef, skillsRef, homeRef }) {
 
   return (
     <main data-testid="home-testid" className="home__main">
-      <div className="home__main__background">
+      <div
+        className={
+          (loading ? "" : "img-loaded") + " " + "home__main__background"
+        }
+      >
         <ImgWithFallback
           setLoading={setLoading}
           src={

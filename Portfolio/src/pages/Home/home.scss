@@ -29,11 +29,18 @@
       height: 100%;
       background: rgb(255, 255, 255);
       opacity: 0.4;
-      animation: fade-out-no-start 0.9s ease-in 7.1s forwards;
       @include mode() {
         background: $background-dm2;
         opacity: 0.8;
-        animation: fade-out-no-start 0.9s ease-in 8s forwards;
+      }
+    }
+    &.img-loaded {
+      // background image loaded starts animation for overlay
+      &::before {
+        animation: fade-out-no-start 0.9s ease-in 7.1s forwards;
+        @include mode() {
+          animation: fade-out-no-start 0.9s ease-in 8s forwards;
+        }
       }
     }
     &__img {

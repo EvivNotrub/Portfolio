@@ -23,33 +23,20 @@ function VadorToggle({ className }) {
     JSON.parse(localStorage.getItem("wantsDark")),
   );
 
-  console.log(
-    " => isDark: ",
-    isDark,
-    "||  => systemTheme: ",
-    systemTheme,
-    "||  => prefersDark: ",
-    prefersDark,
-    "||  => wantsDark: ",
-    wantsDark,
-  );
-
+  
+   
   const removePreferance = useCallback(() => {
     const localPref = localStorage.getItem("wantsDark");
-    console.log(
-      "local_theme in removePreferance: ",
-      localPref,
-      "system_theme: ",
-      systemTheme,
-    );
+    
+      
 
     if (localPref !== null) {
-      console.log("removeItem from storage in removePreferance");
+      
       localStorage.removeItem("wantsDark");
       setWantsDark(null);
     }
     if (systemTheme != (isDark === true ? "dark" : "light")) {
-      console.log("switch_theme_rules in removePreferance");
+      
       switch_theme_rules();
       setIsDark(!isDark);
     }
@@ -104,7 +91,7 @@ function VadorToggle({ className }) {
     }
   }
   function setMetaColorScheme(isDark) {
-    console.log("setMetaColorScheme: with isDark=", isDark);
+    
     const meta = document.querySelector('meta[name="color-scheme"]');
     if (meta) {
       meta.setAttribute("content", isDark ? "dark" : "light");
@@ -113,10 +100,10 @@ function VadorToggle({ className }) {
         "beforeend",
         `<meta name="color-scheme" content="${isDark ? "dark" : "light"}">`,
       );
-      console.log("meta color-scheme added");
+      
     }
     if (isDark === null) {
-      console.log("meta color-scheme set to *dark light*");
+      
       document
         .querySelector('meta[name="color-scheme"]')
         .setAttribute("content", "dark light");
@@ -126,14 +113,7 @@ function VadorToggle({ className }) {
   function handleClick() {
     localStorage.setItem("wantsDark", !isDark);
     setWantsDark(!isDark);
-    console.log(
-      "BUTTON sates: isDark: ",
-      isDark,
-      "wantsDark: ",
-      wantsDark,
-      "new wantsDark: ",
-      !isDark,
-    );
+    
   }
 
   /*// a function to change the color-scheme of the page
@@ -143,14 +123,9 @@ function VadorToggle({ className }) {
 
   // check if the theme state is dark or light and changes the theme accordingly
   useEffect(() => {
-    console.log(
-      "useEffect on wantsDark != isDark , wantsDark : ",
-      wantsDark,
-      "isDark: ",
-      isDark,
-    );
+    
     // changes the meta color-scheme according to the theme state chosen
-    // changes for *no preferance* handled in removePreferance with value null
+    // changes for *no preference* handled in removePreferance with value null
     if (wantsDark !== null) {
       setMetaColorScheme(isDark);
     }
@@ -158,13 +133,13 @@ function VadorToggle({ className }) {
     // changeColorScheme(isDark ? "dark" : "light");
     // change the view state if the user changes the theme
     if (wantsDark !== null && wantsDark != isDark) {
-      console.log("\nSwitch!!!");
+      
       switch_theme_rules();
       setIsDark(wantsDark);
     }
-    // change the view state if the system theme changes and the user has no preferance
+    // change the view state if the system theme changes and the user has no preference
     if (wantsDark === null && (systemTheme === "dark") !== isDark) {
-      console.log("change isDark for > no preferance");
+      
       setIsDark(systemTheme === "dark");
     }
   }, [systemTheme, wantsDark, isDark]);
@@ -175,14 +150,9 @@ function VadorToggle({ className }) {
   // on cahnge of system theme
   useEffect(() => {
     const bob = (e) => {
-      console.log(
-        "useEffect on prefers-color-scheme",
-        "|| e.matches dark =",
-        e.matches,
-        "\nSwitch by theme!!",
-      );
-      console.log("Switch by theme listener again!!");
-      // avoid changes if the user has a preferance
+      
+      
+      // avoid changes if the user has a preference
       const localPref = localStorage.getItem("wantsDark");
       if (localPref !== null) {
         switch_theme_rules();
@@ -210,14 +180,20 @@ function VadorToggle({ className }) {
       <button
         className={"vador__toggle" + (isDark ? " vador__toggle--dark" : "")}
         data-testid="vador-testid"
-        aria-label="Toggle Dark Mode"
+        aria-label="Toggle Dark or Light Mode"
+        title="Toggle Dark or Light Mode"
         onClick={() => handleClick()}
       >
         <div className="vador__toggle__circle">
           <div className="vador__toggle__half-disc"></div>
         </div>
       </button>
-      <button onClick={removePreferance} className="vador__shred">
+      <button
+        onClick={removePreferance}
+        className="vador__shred"
+        aria-label="Set back to system preference"
+        title="Set back to system preference"
+      >
         {/* <FontAwesomeIcon icon="fa-solid fa-trash" /> */}
         <FontAwesomeIcon icon="fa-solid fa-rotate-left" />
       </button>

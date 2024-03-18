@@ -4,10 +4,13 @@ import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
 function Welcome({ setWelcomeLoaded }) {
+  const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
+  console.log(visitStamp);
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
   const [typingFullName, setTypingFullName] = useState(false);
+  const [firstTyping] = useState(visitStamp === "true");
 
   function delay(setState, value, ms) {
     const timeout = setTimeout(() => {
@@ -17,13 +20,16 @@ function Welcome({ setWelcomeLoaded }) {
   }
 
   useEffect(() => {
-    if (!typingJob) {
-      delay(setTypingJob, true, 1000);
+    if (firstTyping) {
+      if (!typingJob) {
+        delay(setTypingJob, true, 1000);
+      }
+      if (!typingFullName) {
+        delay(setTypingFullName, true, 3000);
+      }
+      window.sessionStorage.setItem("firstTyping", false);
     }
-    if (!typingFullName) {
-      delay(setTypingFullName, true, 3000);
-    }
-  }, [typingFullName, typingJob]);
+  }, [firstTyping, typingFullName, typingJob]);
 
   useEffect(() => {
     setWelcomeLoaded(true);
@@ -33,12 +39,29 @@ function Welcome({ setWelcomeLoaded }) {
     <div className="welcome">
       <p className="welcome__welcome">Welcome,</p>
       <h1 className="welcome__title typing">
-        I&apos;m a {typingJob ? <Typewriter text={job} speed={80} /> : ""}
+        I&apos;m a{" "}
+        {firstTyping ? (
+          typingJob ? (
+            <Typewriter text={job} speed={80} />
+          ) : (
+            ""
+          )
+        ) : (
+          <span>{job}</span>
+        )}
         {/*TODO: find a more efficient way.<span className="typing">{job}</span>*/}
         ,
         <br />
         my name is{" "}
-        {typingFullName ? <Typewriter text={fullName} speed={80} /> : ""}
+        {firstTyping ? (
+          typingFullName ? (
+            <Typewriter text={fullName} speed={80} />
+          ) : (
+            ""
+          )
+        ) : (
+          <span>{fullName}</span>
+        )}
         {/*<span className="typing">{fullName}</span>*/}.
       </h1>
       <p className="welcome__message typing --size">

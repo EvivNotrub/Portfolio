@@ -2,7 +2,13 @@ import { useEffect, useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import "./vadorToggle.scss";
+// import { Helmet } from "react-helmet-async";
 
+/* this function is a workaround when style is already setup for light and 
+ dark mode with media queries. It will change the rules for each stylesheet
+ and the meta tag for color-scheme to make it feel like the theme changed.
+ The toggle-button will add local storage and set the oposite state , and 
+ useEffect will change the theme accordingly.*/
 function VadorToggle({ className }) {
   /*boolean: prefersDark = true/false*/
   const prefersDark =
@@ -16,8 +22,6 @@ function VadorToggle({ className }) {
   const [wantsDark, setWantsDark] = useState(
     JSON.parse(localStorage.getItem("wantsDark")),
   );
-  // wantsDark || (wantsDark === null && prefersDark),
-  // );
 
   console.log(
     " => isDark: ",
@@ -38,6 +42,7 @@ function VadorToggle({ className }) {
       "system_theme: ",
       systemTheme,
     );
+
     if (localPref !== null) {
       console.log("removeItem from storage in removePreferance");
       localStorage.removeItem("wantsDark");
@@ -48,6 +53,7 @@ function VadorToggle({ className }) {
       switch_theme_rules();
       setIsDark(!isDark);
     }
+    setMetaColorScheme(null);
   }, [isDark, systemTheme]);
 
   function switch_theme_rules() {
@@ -97,6 +103,25 @@ function VadorToggle({ className }) {
       }
     }
   }
+  function setMetaColorScheme(isDark) {
+    console.log("setMetaColorScheme: with isDark=", isDark);
+    const meta = document.querySelector('meta[name="color-scheme"]');
+    if (meta) {
+      meta.setAttribute("content", isDark ? "dark" : "light");
+    } else {
+      document.head.insertAdjacentHTML(
+        "beforeend",
+        `<meta name="color-scheme" content="${isDark ? "dark" : "light"}">`,
+      );
+      console.log("meta color-scheme added");
+    }
+    if (isDark === null) {
+      console.log("meta color-scheme set to *dark light*");
+      document
+        .querySelector('meta[name="color-scheme"]')
+        .setAttribute("content", "dark light");
+    }
+  }
 
   function handleClick() {
     localStorage.setItem("wantsDark", !isDark);
@@ -111,6 +136,11 @@ function VadorToggle({ className }) {
     );
   }
 
+  /*// a function to change the color-scheme of the page
+  function changeColorScheme(scheme) {
+    document.documentElement.setAttribute("color-scheme", scheme);
+  }*/
+
   // check if the theme state is dark or light and changes the theme accordingly
   useEffect(() => {
     console.log(
@@ -119,6 +149,13 @@ function VadorToggle({ className }) {
       "isDark: ",
       isDark,
     );
+    // changes the meta color-scheme according to the theme state chosen
+    // changes for *no preferance* handled in removePreferance with value null
+    if (wantsDark !== null) {
+      setMetaColorScheme(isDark);
+    }
+    // changes the page color scheme according to the theme state
+    // changeColorScheme(isDark ? "dark" : "light");
     // change the view state if the user changes the theme
     if (wantsDark !== null && wantsDark != isDark) {
       console.log("\nSwitch!!!");
@@ -127,12 +164,13 @@ function VadorToggle({ className }) {
     }
     // change the view state if the system theme changes and the user has no preferance
     if (wantsDark === null && (systemTheme === "dark") !== isDark) {
-      console.log("change isDark for no preferance");
+      console.log("change isDark for > no preferance");
       setIsDark(systemTheme === "dark");
     }
   }, [systemTheme, wantsDark, isDark]);
 
   // listens for changes in the theme and changes the theme accordingly
+  // DO NOT REMOVE THE >EMPTY< ARRAY DEPENDENCY
   //TODO: check behavior with chrome and other pages...maybe remove local storage
   // on cahnge of system theme
   useEffect(() => {
@@ -164,6 +202,11 @@ function VadorToggle({ className }) {
 
   return (
     <div className={className + " " + "vador"}>
+      {/* <Helmet>
+      // meta color-scheme managed above since it's not deleted here when added
+      //TODO: add specific theme-color for dark and light
+        <meta name="theme-color" content={isDark ? "#000" : "#fff"} />
+      </Helmet> */}
       <button
         className={"vador__toggle" + (isDark ? " vador__toggle--dark" : "")}
         data-testid="vador-testid"

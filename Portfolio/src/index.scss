@@ -16,7 +16,8 @@
   font-size: 16px;
   text-align: center;
   /* TODO: manage dark/light mode */
-  color-scheme: light dark;
+  /* color-scheme: light dark; moved to index.html meta tag
+   + js update for toggle */
   @include color-mode($root-scheme...);
 
   /* TODO:  research on lines below  */

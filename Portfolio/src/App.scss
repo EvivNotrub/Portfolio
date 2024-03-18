@@ -38,10 +38,10 @@ TODO: best practice is to use CSS modules?
   &__vador {
     position: fixed;
     z-index: 100;
-    bottom: $header-hght-M;
+    bottom: 2rem;
     right: $header-padd-M;
     @include from-tablet-up {
-      bottom: $header-hght-D;
+      bottom: 2rem;
       right: 2rem;
     }
   }

@@ -1,11 +1,17 @@
 import { useEffect, useState, useCallback } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
 import "./vadorToggle.scss";
 
-function VadorToggle() {
-  let prefersDark =
+function VadorToggle({ className }) {
+  /*boolean: prefersDark = true/false*/
+  const prefersDark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [systemTheme, setSystemTheme] = useState(get_system_theme());
+  /*string: systemDark = "dark" / "light"*/
+  const [systemTheme, setSystemTheme] = useState(
+    prefersDark ? "dark" : "light",
+  );
   const [isDark, setIsDark] = useState(prefersDark);
   const [wantsDark, setWantsDark] = useState(
     JSON.parse(localStorage.getItem("wantsDark")),
@@ -24,26 +30,14 @@ function VadorToggle() {
     wantsDark,
   );
 
-  function get_system_theme() {
-    const theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    return theme;
-  }
-
   const removePreferance = useCallback(() => {
     const localPref = localStorage.getItem("wantsDark");
     console.log(
       "local_theme in removePreferance: ",
       localPref,
       "system_theme: ",
-      get_system_theme(),
+      systemTheme,
     );
-    // if (localPref !== null) {
-    // if (systemTheme != (localPref === true ? "dark" : "light")) {
-    //   console.log("switch_theme_rules in removePreferance");
-    //   switch_theme_rules();
-    // }
     if (localPref !== null) {
       console.log("removeItem from storage in removePreferance");
       localStorage.removeItem("wantsDark");
@@ -104,6 +98,19 @@ function VadorToggle() {
     }
   }
 
+  function handleClick() {
+    localStorage.setItem("wantsDark", !isDark);
+    setWantsDark(!isDark);
+    console.log(
+      "BUTTON sates: isDark: ",
+      isDark,
+      "wantsDark: ",
+      wantsDark,
+      "new wantsDark: ",
+      !isDark,
+    );
+  }
+
   // check if the theme state is dark or light and changes the theme accordingly
   useEffect(() => {
     console.log(
@@ -112,11 +119,13 @@ function VadorToggle() {
       "isDark: ",
       isDark,
     );
+    // change the view state if the user changes the theme
     if (wantsDark !== null && wantsDark != isDark) {
       console.log("\nSwitch!!!");
       switch_theme_rules();
       setIsDark(wantsDark);
     }
+    // change the view state if the system theme changes and the user has no preferance
     if (wantsDark === null && (systemTheme === "dark") !== isDark) {
       console.log("change isDark for no preferance");
       setIsDark(systemTheme === "dark");
@@ -124,6 +133,8 @@ function VadorToggle() {
   }, [systemTheme, wantsDark, isDark]);
 
   // listens for changes in the theme and changes the theme accordingly
+  //TODO: check behavior with chrome and other pages...maybe remove local storage
+  // on cahnge of system theme
   useEffect(() => {
     const bob = (e) => {
       console.log(
@@ -133,10 +144,12 @@ function VadorToggle() {
         "\nSwitch by theme!!",
       );
       console.log("Switch by theme listener again!!");
+      // avoid changes if the user has a preferance
       const localPref = localStorage.getItem("wantsDark");
       if (localPref !== null) {
         switch_theme_rules();
       }
+      // update the system theme state => has an effect on the view state above
       setSystemTheme(e.matches ? "dark" : "light");
     };
     window
@@ -150,40 +163,27 @@ function VadorToggle() {
   }, []);
 
   return (
-    <>
+    <div className={className + " " + "vador"}>
       <button
-        className="vador-toggle"
+        className={"vador__toggle" + (isDark ? " vador__toggle--dark" : "")}
         data-testid="vador-testid"
         aria-label="Toggle Dark Mode"
-        onClick={() => {
-          localStorage.setItem("wantsDark", !isDark);
-          setWantsDark(!isDark);
-          console.log(
-            "BUTTON sates: isDark: ",
-            isDark,
-            "wantsDark: ",
-            wantsDark,
-            "new wantsDark: ",
-            !isDark,
-          );
-        }}
+        onClick={() => handleClick()}
       >
-        <svg
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 496 496"
-        >
-          <path
-            fill="currentColor"
-            d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
-            transform="translate(-8 -8)"
-          />
-        </svg>
+        <div className="vador__toggle__circle">
+          <div className="vador__toggle__half-disc"></div>
+        </div>
       </button>
-      <p> ---- </p>
-      <button onClick={removePreferance}>Remove Theme</button>
-    </>
+      <button onClick={removePreferance} className="vador__shred">
+        {/* <FontAwesomeIcon icon="fa-solid fa-trash" /> */}
+        <FontAwesomeIcon icon="fa-solid fa-rotate-left" />
+      </button>
+    </div>
   );
 }
+
+VadorToggle.propTypes = {
+  className: PropTypes.string,
+};
 
 export default VadorToggle;

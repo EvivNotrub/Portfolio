@@ -33,7 +33,7 @@ function App() {
         aboutRef={aboutRef}
         skillsRef={skillsRef}
       />
-      <VadorToggle />
+      <VadorToggle className={"App__vador"} />
       <Routes>
         <Route
           path="/"

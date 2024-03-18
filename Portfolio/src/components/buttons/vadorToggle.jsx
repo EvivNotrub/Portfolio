@@ -23,20 +23,13 @@ function VadorToggle({ className }) {
     JSON.parse(localStorage.getItem("wantsDark")),
   );
 
-  
-   
   const removePreferance = useCallback(() => {
     const localPref = localStorage.getItem("wantsDark");
-    
-      
-
     if (localPref !== null) {
-      
       localStorage.removeItem("wantsDark");
       setWantsDark(null);
     }
     if (systemTheme != (isDark === true ? "dark" : "light")) {
-      
       switch_theme_rules();
       setIsDark(!isDark);
     }
@@ -51,7 +44,6 @@ function VadorToggle({ className }) {
       if it finds one that requires light theme then it makes it require dark theme / vise
       versa. The idea is that it will feel as though the themes switched even if they haven't. 
   */
-
     for (
       var sheet_file = 0;
       sheet_file < document.styleSheets.length;
@@ -91,7 +83,6 @@ function VadorToggle({ className }) {
     }
   }
   function setMetaColorScheme(isDark) {
-    
     const meta = document.querySelector('meta[name="color-scheme"]');
     if (meta) {
       meta.setAttribute("content", isDark ? "dark" : "light");
@@ -100,20 +91,16 @@ function VadorToggle({ className }) {
         "beforeend",
         `<meta name="color-scheme" content="${isDark ? "dark" : "light"}">`,
       );
-      
     }
     if (isDark === null) {
-      
       document
         .querySelector('meta[name="color-scheme"]')
         .setAttribute("content", "dark light");
     }
   }
-
   function handleClick() {
     localStorage.setItem("wantsDark", !isDark);
     setWantsDark(!isDark);
-    
   }
 
   /*// a function to change the color-scheme of the page
@@ -123,7 +110,6 @@ function VadorToggle({ className }) {
 
   // check if the theme state is dark or light and changes the theme accordingly
   useEffect(() => {
-    
     // changes the meta color-scheme according to the theme state chosen
     // changes for *no preference* handled in removePreferance with value null
     if (wantsDark !== null) {
@@ -133,25 +119,20 @@ function VadorToggle({ className }) {
     // changeColorScheme(isDark ? "dark" : "light");
     // change the view state if the user changes the theme
     if (wantsDark !== null && wantsDark != isDark) {
-      
       switch_theme_rules();
       setIsDark(wantsDark);
     }
     // change the view state if the system theme changes and the user has no preference
     if (wantsDark === null && (systemTheme === "dark") !== isDark) {
-      
       setIsDark(systemTheme === "dark");
     }
   }, [systemTheme, wantsDark, isDark]);
-
   // listens for changes in the theme and changes the theme accordingly
   // DO NOT REMOVE THE >EMPTY< ARRAY DEPENDENCY
   //TODO: check behavior with chrome and other pages...maybe remove local storage
   // on cahnge of system theme
   useEffect(() => {
     const bob = (e) => {
-      
-      
       // avoid changes if the user has a preference
       const localPref = localStorage.getItem("wantsDark");
       if (localPref !== null) {

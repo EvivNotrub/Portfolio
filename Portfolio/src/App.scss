@@ -18,6 +18,7 @@ TODO: best practice is to use CSS modules?
 }
 
 .App {
+  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   min-width: 320px;
@@ -32,6 +33,16 @@ TODO: best practice is to use CSS modules?
     margin-top: $header-hght-M;
     @include desktop-only {
       margin-top: $header-hght-D;
+    }
+  }
+  &__vador {
+    position: fixed;
+    z-index: 100;
+    bottom: 2rem;
+    right: $header-padd-M;
+    @include from-tablet-up {
+      bottom: 2rem;
+      right: 2rem;
     }
   }
 }

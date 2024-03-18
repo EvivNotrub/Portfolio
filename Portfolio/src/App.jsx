@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
 import initFontAwesome from "./utils/fontAwesome/fontAwesomeLib.js";
+import VadorToggle from "./components/buttons/vadorToggle.jsx";
 import "./App.scss";
 import Home from "./pages/Home/home.jsx";
 import Error from "./pages/Error/error.jsx";
@@ -32,6 +33,7 @@ function App() {
         aboutRef={aboutRef}
         skillsRef={skillsRef}
       />
+      <VadorToggle className={"App__vador"} />
       <Routes>
         <Route
           path="/"

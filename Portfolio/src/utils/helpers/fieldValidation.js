@@ -24,7 +24,7 @@ function validPhoneNumber(phone) {
 // TODO: regex for message
 
 export function validForm(name, mail, message, phone) {
-  console.log("validForm", name, mail, message, phone);
+  
   if (!name || !validName(name)) {
     alert("Please enter a valid name !");
     return false;

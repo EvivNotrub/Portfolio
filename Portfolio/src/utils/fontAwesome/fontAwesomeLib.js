@@ -8,6 +8,8 @@ import {
   faChevronLeft,
   faExpand,
   faCompress,
+  faTrash,
+  faRotateLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   fab,
@@ -30,6 +32,8 @@ function initFontAwesome() {
     faGlobe,
     faExpand,
     faCompress,
+    faTrash,
+    faRotateLeft,
   );
 }
 export default initFontAwesome;

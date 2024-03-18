@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
-function Welcome({ setWelcomeLoaded }) {
+function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
-
+  console.log(loading, firstVisit);
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
@@ -20,7 +20,7 @@ function Welcome({ setWelcomeLoaded }) {
   }
 
   useEffect(() => {
-    if (firstTyping) {
+    if (firstTyping && !loading && firstVisit === "false") {
       if (!typingJob) {
         delay(setTypingJob, true, 1000);
       }
@@ -29,14 +29,18 @@ function Welcome({ setWelcomeLoaded }) {
       }
       window.sessionStorage.setItem("firstTyping", false);
     }
-  }, [firstTyping, typingFullName, typingJob]);
+  }, [firstTyping, typingFullName, typingJob, loading, firstVisit]);
 
   useEffect(() => {
     setWelcomeLoaded(true);
   }, [setWelcomeLoaded]);
 
   return (
-    <div className="welcome">
+    <div
+      className={
+        "welcome" + (firstVisit === "false" && !loading ? " --show" : "")
+      }
+    >
       <p className="welcome__welcome">Welcome,</p>
       <h1 className="welcome__title typing">
         I&apos;m a{" "}
@@ -73,6 +77,8 @@ function Welcome({ setWelcomeLoaded }) {
 
 Welcome.propTypes = {
   setWelcomeLoaded: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  firstVisit: PropTypes.string.isRequired,
 };
 
 export default Welcome;

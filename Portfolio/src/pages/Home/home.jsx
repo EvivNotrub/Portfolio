@@ -87,14 +87,15 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         ref={homeRef}
         tabIndex="-1"
       >
-        {firstVisit === "true" || loading ? (
-          <Loader />
-        ) : (
-          <>
-            <Welcome setWelcomeLoaded={setWelcomeLoaded} />
-            <ScrollPage path="/#about" ariaLabel="next section: About" />
-          </>
-        )}
+        <>
+          {(firstVisit === "true" || loading) && <Loader />}
+          <Welcome
+            setWelcomeLoaded={setWelcomeLoaded}
+            loading={loading}
+            firstVisit={firstVisit}
+          />
+          <ScrollPage path="/#about" ariaLabel="next section: About" />
+        </>
       </section>
       <section
         id="about"

@@ -103,6 +103,34 @@
   }
 }
 
+// x-axis animation
+
+@keyframes out-of-the-way {
+  to {
+    transform: translate(125vw, 20vh) scale(0.2);
+  }
+}
+
+// x and y-axis animation
+
+@keyframes fly-in-the-room {
+  from {
+    transform: translateX(0);
+  }
+  25% {
+    transform: scale(0.8) translate(35vw, 30vh);
+  }
+  45% {
+    transform: scale(0.5) translate(-65vw, 5vh);
+  }
+  85% {
+    transform: scale(0.5) translate(0vw, -65vh);
+  }
+  to {
+    transform: translate(25vw, -10vh) scale(0.5);
+  }
+}
+
 // TODO: typewriter animation
 
 @keyframes typewriter {

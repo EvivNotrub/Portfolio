@@ -57,11 +57,15 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
+  // TODO: bob below is a temporary class ...implement a better solution !!
   return (
     <main data-testid="home-testid" className="home__main">
       <div
         className={
-          (welcomeLoaded ? "img-loaded" : "") + " " + "home__main__background"
+          (firstVisit === "false" ? "bob " : "") +
+          (welcomeLoaded ? "img-loaded" : "") +
+          " " +
+          "home__main__background"
         }
       >
         <ImgWithFallback

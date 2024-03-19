@@ -5,7 +5,6 @@ import Typewriter from "../../components/typing/typing";
 
 function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
-  console.log(loading, firstVisit);
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);

@@ -9,12 +9,15 @@ function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
   const [imgLoaded, setImgLoaded] = useState("");
 
   //don't forget space before className addition
+
+  // control the bob class to avoid opacity animation after first visit
   useEffect(() => {
     if (firstVisit === "false") {
       setBob(" bob");
     }
   }, [firstVisit]);
 
+  // control the animation class to match the welcome animation
   useEffect(() => {
     if (welcomeLoaded) {
       setImgLoaded(" img-loaded");

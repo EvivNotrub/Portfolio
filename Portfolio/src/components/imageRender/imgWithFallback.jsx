@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// !!!! carefull the loading attribute is for img tag NOT related to setLoading
+// !!!! CAREFUL the loading attribute is for img tag NOT related to setLoading
 export default function ImgWithFallback({
   src,
   fallback,
@@ -11,6 +11,7 @@ export default function ImgWithFallback({
   ...props
 }) {
   const [error, setError] = useState(false);
+  // errorCount: to avoid getting stuck with loading error
   const [errorCount, setErrorCount] = useState(0);
   const [imgSrc, imgSrcSet] = useState(src);
 

@@ -13,8 +13,14 @@ import Loader from "../../components/loader/loader";
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
 function Home({ aboutRef, skillsRef, homeRef }) {
   const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
+  /* firstVisit: reflects the first visit per session.
+  Controls the welcome + img animation
+   */
   const [firstVisit, setFirstVisit] = useState(visitStamp);
+  /* loading: reflects the loading state of the image in the background
+  and controls the welcome animation + scrollIntoview delay*/
   const [loading, setLoading] = useState(true);
+  //welcomeLoaded: controls the img animation class to match the welcome animation
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
   const location = useLocation();
 

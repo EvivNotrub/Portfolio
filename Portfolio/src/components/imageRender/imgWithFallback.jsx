@@ -10,7 +10,6 @@ export default function ImgWithFallback({
   setLoading,
   ...props
 }) {
-  console.log("ImgWithFallback");
   const [error, setError] = useState(false);
   const [errorCount, setErrorCount] = useState(0);
   const [imgSrc, imgSrcSet] = useState(src);

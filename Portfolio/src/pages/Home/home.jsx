@@ -1,8 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-// import backgroundImage from "../../assets/images/bgImgTest.webp";
-// import ImgWithFallback from "../../components/imageRender/imgWithFallback";
 import BackgroundImg from "../../components/backgroundImage/backgroundImg.jsx";
 import About from "../../containers/about/about";
 // import ProjectsPreview from "../../containers/projects/projectsPreview";
@@ -18,7 +16,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   const [firstVisit, setFirstVisit] = useState(visitStamp);
   const [loading, setLoading] = useState(true);
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
-  const [className, setClassName] = useState("home__main__background");
   const location = useLocation();
 
   // focus on ref after a delay in order to avoid focus on ref before it is rendered:
@@ -27,22 +24,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       ref.current.focus();
     }, 1000);
   }
-
-  function hasStringIn(string, className) {
-    return className.includes(string);
-  }
-
-  useEffect(() => {
-    console.log("className", className);
-    console.log("welcomeLoaded", welcomeLoaded);
-    if (welcomeLoaded && !hasStringIn("img-loaded", className)) {
-      setClassName((prev) => prev + " img-loaded");
-    }
-    console.log("firstVisit", firstVisit);
-    if (firstVisit === "false" && !hasStringIn("bob", className)) {
-      setClassName((prev) => prev + " bob");
-    }
-  }, [welcomeLoaded, className, firstVisit]);
 
   useEffect(() => {
     if (firstVisit) {
@@ -75,10 +56,14 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
-  // TODO: bob below is a temporary class ...implement a better solution !!
   return (
     <main data-testid="home-testid" className="home__main">
-      <BackgroundImg setLoading={setLoading} className={className} />
+      <BackgroundImg
+        firstVisit={firstVisit}
+        setLoading={setLoading}
+        welcomeLoaded={welcomeLoaded}
+        className="home__main__background"
+      />
       {/* TODO: implement hide class on scroll ?
           TODO: layout for smartphone landscape mode*/}
       <section

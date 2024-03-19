@@ -1,8 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import backgroundImage from "../../assets/images/bgImgTest.webp";
-import ImgWithFallback from "../../components/imageRender/imgWithFallback";
+// import backgroundImage from "../../assets/images/bgImgTest.webp";
+// import ImgWithFallback from "../../components/imageRender/imgWithFallback";
+import BackgroundImg from "../../components/backgroundImage/backgroundImg.jsx";
 import About from "../../containers/about/about";
 // import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
@@ -17,6 +18,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   const [firstVisit, setFirstVisit] = useState(visitStamp);
   const [loading, setLoading] = useState(true);
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
+  const [className, setClassName] = useState("home__main__background");
   const location = useLocation();
 
   // focus on ref after a delay in order to avoid focus on ref before it is rendered:
@@ -25,6 +27,22 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       ref.current.focus();
     }, 1000);
   }
+
+  function hasStringIn(string, className) {
+    return className.includes(string);
+  }
+
+  useEffect(() => {
+    console.log("className", className);
+    console.log("welcomeLoaded", welcomeLoaded);
+    if (welcomeLoaded && !hasStringIn("img-loaded", className)) {
+      setClassName((prev) => prev + " img-loaded");
+    }
+    console.log("firstVisit", firstVisit);
+    if (firstVisit === "false" && !hasStringIn("bob", className)) {
+      setClassName((prev) => prev + " bob");
+    }
+  }, [welcomeLoaded, className, firstVisit]);
 
   useEffect(() => {
     if (firstVisit) {
@@ -60,27 +78,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   // TODO: bob below is a temporary class ...implement a better solution !!
   return (
     <main data-testid="home-testid" className="home__main">
-      <div
-        className={
-          (firstVisit === "false" ? "bob " : "") +
-          (welcomeLoaded ? "img-loaded" : "") +
-          " " +
-          "home__main__background"
-        }
-      >
-        <ImgWithFallback
-          setLoading={setLoading}
-          src={
-            "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp"
-          }
-          fallback={backgroundImage}
-          alt="Mont Buet, France"
-          loading="eager"
-          className="home__main__background__img"
-          sizes="100vw"
-          srcSet="https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-300.webp 300w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-448.webp 448w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-650.webp 650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-860.webp 860w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1030.webp 1030w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1180.webp 1180w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1310.webp 1310w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1430.webp 1430w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1540.webp 1540w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1650.webp 1650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1740.webp 1740w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1830.webp 1830w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp 1920w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1990.webp 1990w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2048.webp 2048w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2560.webp 2560w"
-        />
-      </div>
+      <BackgroundImg setLoading={setLoading} className={className} />
       {/* TODO: implement hide class on scroll ?
           TODO: layout for smartphone landscape mode*/}
       <section

@@ -3,7 +3,8 @@ import backgroundImage from "../../assets/images/bgImgTest.webp";
 import ImgWithFallback from "../../components/imageRender/imgWithFallback";
 import PropTypes from "prop-types";
 import "./backgroundImg.scss";
-
+/*TODO: dynamic import for the image here as it is a fallback image
+pass path as string to component?? Or else? */
 function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
   const [bob, setBob] = useState("");
   const [imgLoaded, setImgLoaded] = useState("");

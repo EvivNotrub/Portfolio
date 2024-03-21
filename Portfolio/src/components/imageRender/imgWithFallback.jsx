@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// !!!! CAREFUL the loading attribute is for img tag NOT related to setLoading
 export default function ImgWithFallback({
   src,
   fallback,
-  alt,
-  loading,
   setLoading,
   ...props
 }) {
@@ -44,16 +41,7 @@ export default function ImgWithFallback({
   }, [errorCount, imgSrc, setLoading]);
 
   return (
-    <>
-      <img
-        src={imgSrc}
-        alt={alt}
-        onError={handleError}
-        onLoad={handleLoad}
-        loading={loading}
-        {...props}
-      />
-    </>
+    <img src={imgSrc} onError={handleError} onLoad={handleLoad} {...props} />
   );
 }
 
@@ -61,8 +49,6 @@ ImgWithFallback.propTypes = {
   setLoading: PropTypes.func.isRequired,
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   fallback: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  loading: PropTypes.string,
   sercSet: PropTypes.string,
   sizes: PropTypes.string,
   width: PropTypes.string,

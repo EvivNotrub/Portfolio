@@ -4,29 +4,21 @@
 .project-card {
   &__link {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    height: 17rem;
+    overflow: hidden;
+    @include from-tablet-up {
+      height: 20rem;
+    }
+    border-radius: $button-radius;
+    @include mode(light) {
+      box-shadow: $shadow;
+    }
     &__loader {
       width: 100%;
-      height: 17rem;
-      @include from-tablet-up {
-        height: 20rem;
-      }
+      height: 100%;
       background-color: rgba(128, 128, 128, 0.144);
       @include flex-all-center;
-      border-radius: $button-radius;
-    }
-    &__img {
-      width: 100%;
-      height: 17rem;
-      @include from-tablet-up {
-        height: 20rem;
-      }
-      object-fit: cover;
-      border-radius: $button-radius;
-      @include mode(light) {
-        box-shadow: $shadow;
-      }
-      transition: all 0.3s ease-in-out;
     }
   }
   &__label {

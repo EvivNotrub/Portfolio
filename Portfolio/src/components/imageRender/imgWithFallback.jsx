@@ -39,7 +39,10 @@ export default function ImgWithFallback({
       setLoading(false);
     }
   }, [errorCount, imgSrc, setLoading]);
-
+  /*onError={() => {
+          //TODO: check with this option if it's better and works
+          src !== fallbackSrc ? src = fallbackSrc : handleError();
+   }}*/
   return (
     <img src={imgSrc} onError={handleError} onLoad={handleLoad} {...props} />
   );

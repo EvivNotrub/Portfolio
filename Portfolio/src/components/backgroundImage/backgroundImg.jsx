@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import smallImage from "../../assets/images/bgImg-size-25.webp";
 import backgroundImage from "../../assets/images/bgImgTest.webp";
 import ImgWithFallback from "../../components/imageRender/imgWithFallback";
 import PropTypes from "prop-types";
@@ -27,7 +28,10 @@ function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
 
   // TODO: bob below is a temporary class ...implement a better solution !!
   return (
-    <div className={"main-bckgd-img" + " " + className + bob + imgLoaded}>
+    <div
+      className={"main-bckgd-img" + " " + className + bob + imgLoaded}
+      style={{ backgroundImage: `url(${smallImage})` }}
+    >
       <ImgWithFallback
         setLoading={setLoading}
         src={

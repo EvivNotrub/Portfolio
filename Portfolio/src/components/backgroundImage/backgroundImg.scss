@@ -11,16 +11,28 @@
   width: 100%;
   height: 100%;
   opacity: 0.85;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @include mode() {
     opacity: 0.73;
   }
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.25s ease-in 0.6s;
+  }
+  //TODO: before apears suddenly on the background...rectification needed
   &::before {
     // overlay background at start only
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 170%;
+    width: 100%;
     height: 100%;
     background: rgb(255, 255, 255);
     opacity: 0.4;
@@ -36,22 +48,14 @@
     &::before {
       opacity: 0;
     }
+    & > .main-bckgd-img__img {
+      opacity: 1;
+    }
   }
   &.bob {
     transition: all 0s ease-in 0s;
     &::before {
       transition: opacity 0s ease-in 0s;
     }
-  }
-  &__img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    // opacity: 0.28;
-    // filter: contrast(0.8) brightness(1.5);
-    // @media (prefers-color-scheme: dark) {
-    //   opacity: 0.35;
-    //   filter: brightness(0.8);
-    // }
   }
 }

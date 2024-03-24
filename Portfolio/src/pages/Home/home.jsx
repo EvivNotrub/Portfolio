@@ -36,7 +36,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       const timeout = setTimeout(() => {
         window.sessionStorage.setItem("firstVisit", false);
         setFirstVisit("false");
-      }, 2500);
+      }, 1800);
       return () => {
         clearTimeout(timeout);
       };
@@ -83,6 +83,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         <>
           {(firstVisit === "true" || loading) && <Loader />}
           <Welcome
+            welcomeLoaded={welcomeLoaded}
             setWelcomeLoaded={setWelcomeLoaded}
             loading={loading}
             firstVisit={firstVisit}

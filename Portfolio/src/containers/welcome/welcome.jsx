@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
-function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
+function Welcome({ welcomeLoaded, setWelcomeLoaded, loading, firstVisit }) {
   const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
@@ -17,7 +17,7 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
     }, ms);
     return () => clearTimeout(timeout);
   }
-
+  //TODO: confirm if there is no need for this useEffect?
   useEffect(() => {
     if (firstTyping && !loading && firstVisit === "false") {
       if (!typingJob) {
@@ -31,8 +31,12 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   }, [firstTyping, typingFullName, typingJob, loading, firstVisit]);
 
   useEffect(() => {
-    setWelcomeLoaded(true);
-  }, [setWelcomeLoaded]);
+    /* welcomeLoaded is here to time animations properly in background comonent,
+    therefore in a useEffect }*/
+    if (!welcomeLoaded) {
+      setWelcomeLoaded(true);
+    }
+  }, [welcomeLoaded]);
 
   return (
     <div
@@ -75,6 +79,7 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
 }
 
 Welcome.propTypes = {
+  welcomeLoaded: PropTypes.bool.isRequired,
   setWelcomeLoaded: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   firstVisit: PropTypes.string.isRequired,

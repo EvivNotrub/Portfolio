@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import smallImage from "../../assets/images/bgImg-size-25.webp";
 import backgroundImage from "../../assets/images/bgImgTest.webp";
 import ImgWithFallback from "../../components/imageRender/imgWithFallback";
@@ -7,29 +6,17 @@ import "./backgroundImg.scss";
 /*TODO: dynamic import for the image here as it is a fallback image
 pass path as string to component?? Or else? */
 function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
-  const [bob, setBob] = useState("");
-  const [imgLoaded, setImgLoaded] = useState("");
-
   //don't forget space before className addition
 
-  // control the bob class to avoid opacity animation after first visit
-  useEffect(() => {
-    if (firstVisit === "false") {
-      setBob(" bob");
-    }
-  }, [firstVisit]);
-
-  // control the animation class to match the welcome animation
-  useEffect(() => {
-    if (welcomeLoaded) {
-      setImgLoaded(" img-loaded");
-    }
-  }, [welcomeLoaded]);
-
-  // TODO: bob below is a temporary class ...implement a better solution !!
   return (
     <div
-      className={"main-bckgd-img" + " " + className + bob + imgLoaded}
+      className={
+        "main-bckgd-img" +
+        " " +
+        className +
+        (firstVisit === "false" ? " second-visit" : "") +
+        (welcomeLoaded ? " welcome-loaded" : "")
+      }
       style={{ backgroundImage: `url(${smallImage})` }}
     >
       <ImgWithFallback

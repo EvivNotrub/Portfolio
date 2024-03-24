@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 /* here I checked performance with the new Image() option, lighthouse had a slight lower
 rating for performance. Same with a fetch in a useEffect */
-export default function ImgWithFallback({
+const ImgWithFallback = memo(function ImgWithFallback({
   src,
   fallback,
   setLoading,
@@ -48,7 +48,7 @@ export default function ImgWithFallback({
   return (
     <img src={imgSrc} onError={handleError} onLoad={handleLoad} {...props} />
   );
-}
+});
 
 ImgWithFallback.propTypes = {
   setLoading: PropTypes.func.isRequired,
@@ -63,3 +63,5 @@ ImgWithFallback.propTypes = {
   title: PropTypes.string,
   alt: PropTypes.string,
 };
+
+export default ImgWithFallback;

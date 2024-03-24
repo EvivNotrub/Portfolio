@@ -3,13 +3,19 @@ import backgroundImage from "../../assets/images/bgImgTest.webp";
 import ImgWithFallback from "../../components/imageRender/imgWithFallback";
 import PropTypes from "prop-types";
 import "./backgroundImg.scss";
+import { memo } from "react";
 /*TODO: dynamic import for the image here as it is a fallback image
 pass path as string to component?? Or else? */
 /*Component that creates a div with a very small background-image, rapping an
  img tag (withfallback because of the free CDN used) that is the actual background.*/
 /* CSS class added when loading === false IN HOME component, because it's needed 
   for another layer. ImgWithFallback sets loading to false.*/
-function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
+const BackgroundImg = memo(function BackgroundImg({
+  setLoading,
+  className,
+  firstVisit,
+  welcomeLoaded,
+}) {
   //don't forget space before className addition
   return (
     <div
@@ -36,7 +42,7 @@ function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
       />
     </div>
   );
-}
+});
 
 BackgroundImg.propTypes = {
   setLoading: PropTypes.func.isRequired,

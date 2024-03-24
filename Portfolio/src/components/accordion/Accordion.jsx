@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import PropTypes from "prop-types";
 import "./accordion.scss";
 import AccordionContent from "./AccordionContent.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Accordion({
+const Accordion = memo(function Accordion({
   title,
   datum,
   type,
@@ -53,7 +53,7 @@ function Accordion({
       </div>
     </div>
   );
-}
+});
 
 Accordion.propTypes = {
   title: PropTypes.string,

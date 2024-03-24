@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
-function Welcome({ welcomeLoaded, setWelcomeLoaded, loading, firstVisit }) {
-  const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
+function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
   const [typingFullName, setTypingFullName] = useState(false);
-  const [firstTyping] = useState(visitStamp === "true");
-
+  const [firstTyping] = useState(() => {
+    const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
+    return visitStamp === "true";
+  });
   function delay(setState, value, ms) {
     const timeout = setTimeout(() => {
       setState(value);
@@ -32,11 +33,9 @@ function Welcome({ welcomeLoaded, setWelcomeLoaded, loading, firstVisit }) {
 
   useEffect(() => {
     /* welcomeLoaded is here to time animations properly in background comonent,
-    therefore in a useEffect }*/
-    if (!welcomeLoaded) {
-      setWelcomeLoaded(true);
-    }
-  }, [welcomeLoaded]);
+    therefore in a useEffect to set the state after first render}*/
+    setWelcomeLoaded(true);
+  }, [setWelcomeLoaded]);
 
   return (
     <div
@@ -79,7 +78,6 @@ function Welcome({ welcomeLoaded, setWelcomeLoaded, loading, firstVisit }) {
 }
 
 Welcome.propTypes = {
-  welcomeLoaded: PropTypes.bool.isRequired,
   setWelcomeLoaded: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   firstVisit: PropTypes.string.isRequired,

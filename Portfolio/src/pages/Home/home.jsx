@@ -11,20 +11,25 @@ import ScrollPage from "../../components/buttons/scrollPage";
 import Loader from "../../components/loader/loader";
 
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
+/* Component manges the states needed to trigger and time CSS 
+animations and avoid having them every time you visit the page. */
 function Home({ aboutRef, skillsRef, homeRef }) {
-  const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
   /* firstVisit: reflects the first visit per session.
   Controls the welcome + img animation
    */
-  const [firstVisit, setFirstVisit] = useState(visitStamp);
+  const [firstVisit, setFirstVisit] = useState(() => {
+    const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
+    return visitStamp;
+  });
   /* loading: reflects the loading state of the image in the background
-  and controls the welcome animation + scrollIntoview delay*/
+  and controls the welcome animation + scrollIntoview delay. It is set to false 
+  by ImgWithFallback*/
   const [loading, setLoading] = useState(true);
   //welcomeLoaded: controls the img animation class to match the welcome animation
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
   const location = useLocation();
 
-  // focus on ref after a delay in order to avoid focus on ref before it is rendered:
+  // focus on ref after a delay in order to avoid trying focus on ref before it is rendered:
   function focusOnRef(ref) {
     setTimeout(() => {
       ref.current.focus();
@@ -43,8 +48,11 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [firstVisit]);
 
+  /*This useEffect prevents the code below to be executed every time Home renders */
   useEffect(() => {
-    if (firstVisit === "true" || loading) return;
+    if (firstVisit === "true" || loading) {
+      return;
+    }
     const id = location.hash.slice(1);
     if (id === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });

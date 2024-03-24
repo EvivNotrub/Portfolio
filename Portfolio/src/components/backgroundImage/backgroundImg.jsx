@@ -5,9 +5,12 @@ import PropTypes from "prop-types";
 import "./backgroundImg.scss";
 /*TODO: dynamic import for the image here as it is a fallback image
 pass path as string to component?? Or else? */
+/*Component that creates a div with a very small background-image, rapping an
+ img tag (withfallback because of the free CDN used) that is the actual background.*/
+/* CSS class added when loading === false IN HOME component, because it's needed 
+  for another layer. ImgWithFallback sets loading to false.*/
 function BackgroundImg({ setLoading, className, firstVisit, welcomeLoaded }) {
   //don't forget space before className addition
-
   return (
     <div
       className={

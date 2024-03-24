@@ -18,7 +18,6 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
     }, ms);
     return () => clearTimeout(timeout);
   }
-  //TODO: confirm if there is no need for this useEffect?
   useEffect(() => {
     if (firstTyping && !loading && firstVisit === "false") {
       if (!typingJob) {
@@ -33,7 +32,8 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
 
   useEffect(() => {
     /* welcomeLoaded is here to time animations properly in background comonent,
-    therefore in a useEffect to set the state after first render}*/
+    therefore in a useEffect to set the state after first render,
+     no welcomeLoaded dependancy to avoid firing it again.}*/
     setWelcomeLoaded(true);
   }, [setWelcomeLoaded]);
 

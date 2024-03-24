@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
+/* here I checked performance with the new Image() option, lighthouse had a slight lower
+rating for performance. Same with a fetch in a useEffect */
 export default function ImgWithFallback({
   src,
   fallback,
@@ -52,10 +54,12 @@ ImgWithFallback.propTypes = {
   setLoading: PropTypes.func.isRequired,
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   fallback: PropTypes.string.isRequired,
-  sercSet: PropTypes.string,
+  srcSet: PropTypes.string,
   sizes: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
   className: PropTypes.string,
   id: PropTypes.string,
+  title: PropTypes.string,
+  alt: PropTypes.string,
 };

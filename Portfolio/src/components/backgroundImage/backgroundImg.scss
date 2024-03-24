@@ -4,7 +4,6 @@
 @use "sass:color";
 
 .main-bckgd-img {
-  // background image for the home page
   z-index: -10;
   position: fixed;
   top: 0;
@@ -26,7 +25,8 @@
     opacity: 0;
     transition: opacity 0.45s ease-in-out 0.32s;
   }
-  //TODO: before apears suddenly on the background...rectification needed
+  /*  before apeared suddenly on the background apparently waiting 
+   for the image opacity to be 1 changed to after to avoid this*/
   &::after {
     // overlay background at start only
     content: "";
@@ -45,7 +45,6 @@
     }
   }
   &.welcome-loaded {
-    // background image loaded + first render welcome starts transition for overlay
     &::after {
       opacity: 0;
     }

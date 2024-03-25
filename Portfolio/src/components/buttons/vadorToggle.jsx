@@ -9,7 +9,7 @@ import "./vadorToggle.scss";
  and the meta tag for color-scheme to make it feel like the theme changed.
  The toggle-button will add local storage and set the oposite state , and 
  useEffect will change the theme accordingly.*/
-function VadorToggle({ className }) {
+export function VadorToggle({ className }) {
   /*boolean: prefersDark = true/false*/
   const prefersDark =
     window.matchMedia &&
@@ -22,6 +22,18 @@ function VadorToggle({ className }) {
   const [wantsDark, setWantsDark] = useState(
     JSON.parse(localStorage.getItem("wantsDark")),
   );
+
+  const switch_theme_rules = () => {
+    import("./vadorFunction.js").then((module) => {
+      module.switch_theme_rules();
+    });
+  };
+
+  const setMetaColorScheme = (isDark) => {
+    import("./vadorFunction.js").then((module) => {
+      module.setMetaColorScheme(isDark);
+    });
+  };
 
   const removePreferance = useCallback(() => {
     const localPref = localStorage.getItem("wantsDark");
@@ -36,68 +48,6 @@ function VadorToggle({ className }) {
     setMetaColorScheme(null);
   }, [isDark, systemTheme]);
 
-  function switch_theme_rules() {
-    /*
-      Function for switching the rules for perfers-color-scheme
-      Goes through each style sheet file, then each rule within each stylesheet
-      and looks for any rules that require a prefered colorscheme, 
-      if it finds one that requires light theme then it makes it require dark theme / vise
-      versa. The idea is that it will feel as though the themes switched even if they haven't. 
-  */
-    for (
-      var sheet_file = 0;
-      sheet_file < document.styleSheets.length;
-      sheet_file++
-    ) {
-      try {
-        for (
-          var sheet_rule = 0;
-          sheet_rule < document.styleSheets[sheet_file].cssRules.length;
-          sheet_rule++
-        ) {
-          const rule = document.styleSheets[sheet_file].cssRules[sheet_rule];
-
-          if (
-            rule &&
-            rule.media &&
-            rule.media.mediaText.includes("prefers-color-scheme")
-          ) {
-            const rule_media = rule.media.mediaText;
-            let new_rule_media;
-            if (rule_media.includes("light")) {
-              new_rule_media = rule_media.replace("light", "dark");
-            }
-            if (rule_media.includes("dark")) {
-              new_rule_media = rule_media.replace("dark", "light");
-            }
-            rule.media.deleteMedium(rule_media);
-            rule.media.appendMedium(new_rule_media);
-          }
-        }
-      } catch (e) {
-        const broken_sheet = document.styleSheets[sheet_file].href;
-        console.warn(
-          broken_sheet + " broke something with theme toggle : " + e,
-        );
-      }
-    }
-  }
-  function setMetaColorScheme(isDark) {
-    const meta = document.querySelector('meta[name="color-scheme"]');
-    if (meta) {
-      meta.setAttribute("content", isDark ? "dark" : "light");
-    } else {
-      document.head.insertAdjacentHTML(
-        "beforeend",
-        `<meta name="color-scheme" content="${isDark ? "dark" : "light"}">`,
-      );
-    }
-    if (isDark === null) {
-      document
-        .querySelector('meta[name="color-scheme"]')
-        .setAttribute("content", "dark light");
-    }
-  }
   function handleClick() {
     localStorage.setItem("wantsDark", !isDark);
     setWantsDark(!isDark);
@@ -185,5 +135,3 @@ function VadorToggle({ className }) {
 VadorToggle.propTypes = {
   className: PropTypes.string,
 };
-
-export default VadorToggle;

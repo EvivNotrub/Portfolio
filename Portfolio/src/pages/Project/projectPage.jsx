@@ -71,6 +71,7 @@ function ProjectPage() {
     }
   }, [error, navigate]);
 
+  // TODO: remove loader
   if (isLoading) {
     return (
       <main className="project-loading">

@@ -12,6 +12,7 @@ function ProjectCard({ project }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [smallSrc, setSmallSrc] = useState(null);
 
+  //TODO: move to imageblurloader
   useEffect(() => {
     if (project.pictures[0].src) {
       setSrc(project.pictures[0].src);
@@ -62,23 +63,26 @@ function ProjectCard({ project }) {
         id={project.name}
         to={"/projects/" + project.id}
       >
-        {isLoaded ? (
-          <ImageBlurLoader
-            src={src}
-            srcSet={srcset ? srcset : null}
-            sizes={
-              srcset
-                ? "(min-width: 1420px) 628px, (min-width: 540px) calc(46.51vw - 23px), (min-width: 400px) 100vw, calc(75vw + 79px)"
-                : null
-            }
-            smallSrc={smallSrc ? smallSrc : null}
-            className="project-card__link__progImg"
-            alt={project.pictures[0].alt}
-            title={"Lien vers " + project.name}
-          />
-        ) : (
-          <div className="project-card__link__loader"> Loading... </div>
-        )}
+        {
+          //TODO: move to imageblurloader
+          isLoaded ? (
+            <ImageBlurLoader
+              src={src}
+              srcSet={srcset ? srcset : null}
+              sizes={
+                srcset
+                  ? "(min-width: 1420px) 628px, (min-width: 540px) calc(46.51vw - 23px), (min-width: 400px) 100vw, calc(75vw + 79px)"
+                  : null
+              }
+              smallSrc={smallSrc ? smallSrc : null}
+              className="project-card__link__progImg"
+              alt={project.pictures[0].alt}
+              title={"Lien vers " + project.name}
+            />
+          ) : (
+            <div className="project-card__link__loader"> Loading... </div>
+          )
+        }
       </Link>
       <Tags
         className="project-card__tags"

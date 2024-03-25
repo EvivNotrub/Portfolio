@@ -17,13 +17,14 @@ function Slideshow({
   const picturesLength = pictures.length;
 
   useEffect(() => {
-    document.addEventListener("keydown", (e) => {
+    function handleKeyDown(e) {
       if (e.key === "Escape" && isFullscreen) {
         setIsFullscreen(false);
       }
-    });
+    }
+    document.addEventListener("keydown", (e) => handleKeyDown(e));
     return () => {
-      document.removeEventListener("keydown", (e) => e);
+      document.removeEventListener("keydown", (e) => handleKeyDown(e));
     };
   }, [isFullscreen, setIsFullscreen]);
 

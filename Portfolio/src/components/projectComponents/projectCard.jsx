@@ -1,10 +1,11 @@
+import { useEffect, useState, Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./projectCard.scss";
 import Tags from "../tags/tags";
-import { useEffect, useState } from "react";
 import imageRenderSizes from "../../data/imageRenderSizes.json";
-import ImageBlurLoader from "../imageRender/progressiveImg";
+
+const ProgressiveImg = lazy(() => import("../imageRender/progressiveImg"));
 
 function ProjectCard({ project }) {
   const [srcset, setSrcset] = useState(null);
@@ -63,26 +64,30 @@ function ProjectCard({ project }) {
         id={project.name}
         to={"/projects/" + project.id}
       >
-        {
-          //TODO: move to imageblurloader
-          isLoaded ? (
-            <ImageBlurLoader
-              src={src}
-              srcSet={srcset ? srcset : null}
-              sizes={
-                srcset
-                  ? "(min-width: 1420px) 628px, (min-width: 540px) calc(46.51vw - 23px), (min-width: 400px) 100vw, calc(75vw + 79px)"
-                  : null
-              }
-              smallSrc={smallSrc ? smallSrc : null}
-              className="project-card__link__progImg"
-              alt={project.pictures[0].alt}
-              title={"Lien vers " + project.name}
-            />
-          ) : (
+        <Suspense
+          fallback={
             <div className="project-card__link__loader"> Loading... </div>
-          )
-        }
+          }
+        >
+          {
+            //TODO: move to imageblurloader
+            isLoaded ? (
+              <ProgressiveImg
+                src={src}
+                srcSet={srcset ? srcset : null}
+                sizes={
+                  srcset
+                    ? "(min-width: 1420px) 628px, (min-width: 540px) calc(46.51vw - 23px), (min-width: 400px) 100vw, calc(75vw + 79px)"
+                    : null
+                }
+                smallSrc={smallSrc ? smallSrc : null}
+                className="project-card__link__progImg"
+                alt={project.pictures[0].alt}
+                title={"Lien vers " + project.name}
+              />
+            ) : null
+          }
+        </Suspense>
       </Link>
       <Tags
         className="project-card__tags"

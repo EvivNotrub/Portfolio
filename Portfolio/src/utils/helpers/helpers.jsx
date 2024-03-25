@@ -31,3 +31,9 @@ export function extractLastDirectory(path) {
   const secondLastIndex = path.lastIndexOf("/", lastIndex - 1);
   return path.substring(secondLastIndex + 1, lastIndex);
 }
+
+export function wait(time) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}

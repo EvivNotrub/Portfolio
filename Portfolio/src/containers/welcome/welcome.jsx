@@ -31,7 +31,7 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   }, [firstTyping, typingFullName, typingJob, loading, firstVisit]);
 
   useEffect(() => {
-    /* welcomeLoaded is here to time animations properly in background comonent,
+    /* setWelcomeLoaded is here to time animations properly in background comonent,
     therefore in a useEffect to set the state after first render,
      no welcomeLoaded dependancy to avoid firing it again.}*/
     setWelcomeLoaded(true);

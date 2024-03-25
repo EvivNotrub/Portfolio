@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./progressiveImg.scss";
 
 // TODO: children prop is not used here, remove it or find a way to handle children onLoad
-function ImageBlurLoader({ src, smallSrc, children, className, ...props }) {
+function ProgressiveImg({ src, smallSrc, children, className, ...props }) {
   const [loaded, setLoaded] = useState(false);
   return (
     <div
@@ -27,7 +27,7 @@ function ImageBlurLoader({ src, smallSrc, children, className, ...props }) {
   );
 }
 
-ImageBlurLoader.propTypes = {
+ProgressiveImg.propTypes = {
   src: PropTypes.string.isRequired,
   smallSrc: PropTypes.string.isRequired,
   className: PropTypes.string,
@@ -36,4 +36,4 @@ ImageBlurLoader.propTypes = {
   loading: PropTypes.string,
 };
 
-export default ImageBlurLoader;
+export default ProgressiveImg;

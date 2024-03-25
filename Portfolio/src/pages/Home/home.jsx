@@ -91,7 +91,6 @@ function Home({ aboutRef, skillsRef, homeRef }) {
         <>
           {(firstVisit === "true" || loading) && <Loader />}
           <Welcome
-            welcomeLoaded={welcomeLoaded}
             setWelcomeLoaded={setWelcomeLoaded}
             loading={loading}
             firstVisit={firstVisit}

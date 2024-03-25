@@ -13,7 +13,7 @@
   @include desktop-only {
     overflow: visible;
     box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
   }
   &.--fullscreen {
     height: 60vh;

@@ -1,4 +1,4 @@
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library, config } from "@fortawesome/fontawesome-svg-core";
 import {
   faEnvelope,
   faChevronDown,
@@ -17,6 +17,8 @@ import {
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+
+config.autoAddCss = false;
 
 function initFontAwesome() {
   library.add(

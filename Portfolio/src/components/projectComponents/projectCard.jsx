@@ -24,10 +24,7 @@ function ProjectCard({ project }) {
       const newDir = src.replace(/\.[^/\\.]+$/, "/"); // with backslash
       // const newDir2 = src.substr(0, src.lastIndexOf(".")); // no backslash
       const fileName = src.substr(lastIndex + 1).replace(/\.[^/\\.]+$/, ""); // fileName without extension
-      const fileDirectory = src.substring(
-        src.lastIndexOf("/", lastIndex - 1) + 1,
-        lastIndex,
-      );
+      /*const fileDirectory = src.substring(src.lastIndexOf("/", lastIndex - 1) + 1,lastIndex,);*/
       const imageResizeInfo = imageRenderSizes.find(
         (el) => el.fileName === fileName,
       );
@@ -36,18 +33,8 @@ function ProjectCard({ project }) {
           .map((size, index) => {
             const pathRoot = newDir + fileName + "-";
             const newPath = pathRoot + size.sizeName + ".webp";
-            /*TODO: setSmallSrc(pathRoot + "-35.webp"); WAIT FOR PUSH TO BE ABLE TO USE CDN PATH*/
-            index === 0
-              ? setSmallSrc(
-                  "/images/projects/" +
-                    fileDirectory +
-                    "/" +
-                    fileName +
-                    "/" +
-                    fileName +
-                    "-35.webp",
-                )
-              : null;
+            /*NOTE:  setSmallSrc("/images/projects/" +fileDirectory +"/" +fileName +"/" +fileName +"-35.webp",); old version if no push has been made*/
+            index === 0 ? setSmallSrc(pathRoot + "35.webp") : null;
             return newPath + " " + size.size + "w";
           })
           .join(", ");

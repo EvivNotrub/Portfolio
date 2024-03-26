@@ -10,6 +10,8 @@ import SocialLink from "../../components/buttons/socialLink";
 import Accordion from "../../components/accordion/Accordion";
 import { getWindowSize } from "../../utils/helpers/helpers";
 
+//TODO: add background loading for images @tag: #userexperience
+//TODO: add go-back arrow @tag: #userexperience
 function ProjectPage() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const classFullscreen = isFullscreen ? " --fullscreen" : " --normalview";

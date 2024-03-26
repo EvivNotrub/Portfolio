@@ -10,6 +10,7 @@ import "./vadorToggle.scss";
  The toggle-button will add local storage and set the oposite state , and 
  useEffect will change the theme accordingly.*/
 export function VadorToggle({ className }) {
+  console.log("VadorToggle");
   /*boolean: prefersDark = true/false*/
   const prefersDark =
     window.matchMedia &&
@@ -23,26 +24,28 @@ export function VadorToggle({ className }) {
     JSON.parse(localStorage.getItem("wantsDark")),
   );
 
-  const switch_theme_rules = () => {
-    import("./vadorFunction.js").then((module) => {
+  const switch_theme_rules = async () => {
+    await import("./vadorFunction.js").then((module) => {
+      console.log("switch_theme_rules");
       module.switch_theme_rules();
     });
   };
 
-  const setMetaColorScheme = (isDark) => {
-    import("./vadorFunction.js").then((module) => {
+  const setMetaColorScheme = async (isDark) => {
+    await import("./vadorFunction.js").then((module) => {
+      console.log("setMetaColorScheme");
       module.setMetaColorScheme(isDark);
     });
   };
 
-  const removePreferance = useCallback(() => {
+  const removePreferance = useCallback(async () => {
     const localPref = localStorage.getItem("wantsDark");
     if (localPref !== null) {
       localStorage.removeItem("wantsDark");
       setWantsDark(null);
     }
     if (systemTheme != (isDark === true ? "dark" : "light")) {
-      switch_theme_rules();
+      await switch_theme_rules();
       setIsDark(!isDark);
     }
     setMetaColorScheme(null);
@@ -59,18 +62,27 @@ export function VadorToggle({ className }) {
   }*/
 
   // check if the theme state is dark or light and changes the theme accordingly
+
   useEffect(() => {
+    async function changeTheme() {
+      console.log("wantsDark != null: should set meta color scheme");
+      await setMetaColorScheme(isDark);
+    }
+    async function changeThemeRules() {
+      console.log("wantsDark != isDark: should switch theme rules");
+      await switch_theme_rules();
+      setIsDark(wantsDark);
+    }
     // changes the meta color-scheme according to the theme state chosen
     // changes for *no preference* handled in removePreferance with value null
     if (wantsDark !== null) {
-      setMetaColorScheme(isDark);
+      changeTheme();
     }
     // changes the page color scheme according to the theme state
     // changeColorScheme(isDark ? "dark" : "light");
     // change the view state if the user changes the theme
     if (wantsDark !== null && wantsDark != isDark) {
-      switch_theme_rules();
-      setIsDark(wantsDark);
+      changeThemeRules();
     }
     // change the view state if the system theme changes and the user has no preference
     if (wantsDark === null && (systemTheme === "dark") !== isDark) {
@@ -82,22 +94,22 @@ export function VadorToggle({ className }) {
   //TODO: check behavior with chrome and other pages...maybe remove local storage
   // on cahnge of system theme
   useEffect(() => {
-    const bob = (e) => {
+    const bob = async (e) => {
       // avoid changes if the user has a preference
       const localPref = localStorage.getItem("wantsDark");
       if (localPref !== null) {
-        switch_theme_rules();
+        await switch_theme_rules();
       }
       // update the system theme state => has an effect on the view state above
       setSystemTheme(e.matches ? "dark" : "light");
     };
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) => bob(e));
+      .addEventListener("change", async (e) => await bob(e));
     return () => {
       window
         .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", (e) => bob(e));
+        .removeEventListener("change", async (e) => await bob(e));
     };
   }, []);
 

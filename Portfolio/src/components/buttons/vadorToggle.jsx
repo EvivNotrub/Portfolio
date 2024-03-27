@@ -45,7 +45,7 @@ export function VadorToggle({ className }) {
       await switch_theme_rules();
       setIsDark(!isDark);
     }
-    setMetaColorScheme(null);
+    await setMetaColorScheme(null);
   }, [isDark, systemTheme]);
 
   function handleClick() {
@@ -53,51 +53,16 @@ export function VadorToggle({ className }) {
     setWantsDark(!isDark);
   }
 
-  // adjsuts the theme rules for the NEW stylesheets generated after a new the page load
+  /* adjsuts the theme rules for the NEW stylesheets generated after
+   a new the page load, but only if changes are aplied.*/
   useEffect(() => {
     if (!swithed) {
       return;
     }
-    const adjustStylesheetForThemeMode = async (stylesheetNode) => {
-      try {
-        await new Promise((resolve, reject) => {
-          stylesheetNode.onload = resolve;
-          stylesheetNode.onerror = reject;
-        });
-
-        const stylesheet = stylesheetNode.sheet;
-
-        if (!stylesheet) {
-          console.error("Failed to retrieve stylesheet from node.");
-          return;
-        }
-
-        const rulesToAdjust = [];
-        // Extract relevant rules from the stylesheet
-        const cssRules = stylesheet.cssRules;
-        for (let i = 0; i < cssRules.length; i++) {
-          const rule = cssRules[i];
-          if (
-            rule.media &&
-            rule.media.mediaText.includes("prefers-color-scheme")
-          ) {
-            rulesToAdjust.push(rule);
-          }
-        }
-
-        // Adjust rules for theme mode
-        rulesToAdjust.forEach((rule) => {
-          let newMediaText = rule.media.mediaText;
-          if (newMediaText.includes("light")) {
-            newMediaText = newMediaText.replace("light", "dark");
-          } else if (newMediaText.includes("dark")) {
-            newMediaText = newMediaText.replace("dark", "light");
-          }
-          rule.media.mediaText = newMediaText;
-        });
-      } catch (error) {
-        console.error("Failed to load stylesheet:", error);
-      }
+    const adjustThemeRules = async (stylesheetNode) => {
+      await import("./vadorFunction.js").then(async (module) => {
+        await module.adjustStylesheetForThemeMode(stylesheetNode);
+      });
     };
     // Observe the document for new stylesheets:
     const observer = new MutationObserver((mutationsList) => {
@@ -110,7 +75,7 @@ export function VadorToggle({ className }) {
               node.tagName === "STYLE" ||
               (node.tagName === "LINK" && node.rel === "stylesheet")
             ) {
-              adjustStylesheetForThemeMode(node);
+              adjustThemeRules(node);
             }
           }
         }
@@ -153,7 +118,8 @@ export function VadorToggle({ className }) {
       setIsDark(systemTheme === "dark");
     }
   }, [systemTheme, wantsDark, isDark]);
-  // listens for changes in the theme and changes the theme accordingly
+
+  // listens for changes in the window theme and changes the theme accordingly
   // DO NOT REMOVE THE >EMPTY< ARRAY DEPENDENCY
   //TODO: check behavior with chrome and other pages...maybe remove local storage
   // on cahnge of system theme
@@ -164,7 +130,7 @@ export function VadorToggle({ className }) {
       if (localPref !== null) {
         await switch_theme_rules();
       }
-      // update the system theme state => has an effect on the view state above
+      // update the system theme state => has an effect on the view-state above
       setSystemTheme(e.matches ? "dark" : "light");
     };
     window

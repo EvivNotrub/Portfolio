@@ -60,6 +60,46 @@ export function setMetaColorScheme(isDark) {
   }
 }
 
+export const adjustStylesheetForThemeMode = async (stylesheetNode) => {
+  try {
+    await new Promise((resolve, reject) => {
+      stylesheetNode.onload = resolve;
+      stylesheetNode.onerror = reject;
+    });
+
+    const stylesheet = stylesheetNode.sheet;
+     
+
+    if (!stylesheet) {
+      console.error("Failed to retrieve stylesheet from node.");
+      return;
+    }
+
+    const rulesToAdjust = [];
+    // Extract relevant rules from the stylesheet
+    const cssRules = stylesheet.cssRules;
+    for (let i = 0; i < cssRules.length; i++) {
+      const rule = cssRules[i];
+      if (rule.media && rule.media.mediaText.includes("prefers-color-scheme")) {
+        rulesToAdjust.push(rule);
+      }
+    }
+
+    // Adjust rules for theme mode
+    rulesToAdjust.forEach((rule) => {
+      let newMediaText = rule.media.mediaText;
+      if (newMediaText.includes("light")) {
+        newMediaText = newMediaText.replace("light", "dark");
+      } else if (newMediaText.includes("dark")) {
+        newMediaText = newMediaText.replace("dark", "light");
+      }
+      rule.media.mediaText = newMediaText;
+    });
+  } catch (error) {
+    console.error("Failed to load stylesheet:", error);
+  }
+};
+
 /*// a function to change the color-scheme of the page
   function changeColorScheme(scheme) {
     document.documentElement.setAttribute("color-scheme", scheme);

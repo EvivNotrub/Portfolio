@@ -9,6 +9,7 @@ import "./vadorToggle.scss";
  and the meta tag for color-scheme to make it feel like the theme changed.
  The toggle-button will add local storage and set the oposite state , and 
  useEffect will change the theme accordingly.*/
+//TODO: add loader on button to show that the theme is changing when it takes time
 export function VadorToggle({ className }) {
   const prefersDark =
     window.matchMedia &&
@@ -70,7 +71,6 @@ export function VadorToggle({ className }) {
         if (mutation.type === "childList") {
           const addedNodes = mutation.addedNodes;
           for (const node of addedNodes) {
-            //
             if (
               node.tagName === "STYLE" ||
               (node.tagName === "LINK" && node.rel === "stylesheet")

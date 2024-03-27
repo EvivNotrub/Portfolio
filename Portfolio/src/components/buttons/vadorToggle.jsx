@@ -11,24 +11,24 @@ import "./vadorToggle.scss";
  useEffect will change the theme accordingly.*/
 export function VadorToggle({ className }) {
   console.log("VadorToggle");
-  /*boolean: prefersDark = true/false*/
   const prefersDark =
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  /*string: systemDark = "dark" / "light"*/
+    window.matchMedia("(prefers-color-scheme: dark)").matches; //boolean
   const [systemTheme, setSystemTheme] = useState(
     prefersDark ? "dark" : "light",
-  );
-  const [isDark, setIsDark] = useState(prefersDark);
+  ); //string
+  const [isDark, setIsDark] = useState(prefersDark); //current aplied theme
   const [wantsDark, setWantsDark] = useState(
     JSON.parse(localStorage.getItem("wantsDark")),
-  );
+  ); //saved theme
+  const [swithed, setSwitched] = useState(false); //to control the adjustment of rule-changes for later added stylesheets (lazy loading issue)
 
   const switch_theme_rules = async () => {
     await import("./vadorFunction.js").then((module) => {
       console.log("switch_theme_rules");
       module.switch_theme_rules();
     });
+    setSwitched((previousState) => !previousState);
   };
 
   const setMetaColorScheme = async (isDark) => {
@@ -56,13 +56,83 @@ export function VadorToggle({ className }) {
     setWantsDark(!isDark);
   }
 
-  /*// a function to change the color-scheme of the page
-  function changeColorScheme(scheme) {
-    document.documentElement.setAttribute("color-scheme", scheme);
-  }*/
+  // adjsuts the theme rules for the NEW stylesheets generated after a new the page load
+  useEffect(() => {
+    if (!swithed) {
+      return;
+    }
+    const adjustStylesheetForThemeMode = async (stylesheetNode) => {
+      try {
+        await new Promise((resolve, reject) => {
+          stylesheetNode.onload = resolve;
+          stylesheetNode.onerror = reject;
+        });
+
+        const stylesheet = stylesheetNode.sheet;
+        console.log("stylesheet", stylesheet);
+
+        if (!stylesheet) {
+          console.error("Failed to retrieve stylesheet from node.");
+          return;
+        }
+
+        const rulesToAdjust = [];
+        // Extract relevant rules from the stylesheet
+        const cssRules = stylesheet.cssRules;
+        for (let i = 0; i < cssRules.length; i++) {
+          const rule = cssRules[i];
+          if (
+            rule.media &&
+            rule.media.mediaText.includes("prefers-color-scheme")
+          ) {
+            rulesToAdjust.push(rule);
+          }
+        }
+
+        // Adjust rules for theme mode
+        rulesToAdjust.forEach((rule) => {
+          let newMediaText = rule.media.mediaText;
+          if (newMediaText.includes("light")) {
+            newMediaText = newMediaText.replace("light", "dark");
+          } else if (newMediaText.includes("dark")) {
+            newMediaText = newMediaText.replace("dark", "light");
+          }
+          rule.media.mediaText = newMediaText;
+        });
+      } catch (error) {
+        console.error("Failed to load stylesheet:", error);
+      }
+    };
+    // Observe the document for new stylesheets:
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          const addedNodes = mutation.addedNodes;
+          for (const node of addedNodes) {
+            // console.log("node", node);
+            if (
+              node.tagName === "STYLE" ||
+              (node.tagName === "LINK" && node.rel === "stylesheet")
+            ) {
+              adjustStylesheetForThemeMode(node);
+            }
+          }
+        }
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
+  }, [swithed]);
 
   // check if the theme state is dark or light and changes the theme accordingly
-
   useEffect(() => {
     async function changeTheme() {
       console.log("wantsDark != null: should set meta color scheme");

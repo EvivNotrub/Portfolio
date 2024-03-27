@@ -59,3 +59,8 @@ export function setMetaColorScheme(isDark) {
       .setAttribute("content", "dark light");
   }
 }
+
+/*// a function to change the color-scheme of the page
+  function changeColorScheme(scheme) {
+    document.documentElement.setAttribute("color-scheme", scheme);
+  }*/

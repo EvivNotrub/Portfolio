@@ -10,7 +10,6 @@ import "./vadorToggle.scss";
  The toggle-button will add local storage and set the oposite state , and 
  useEffect will change the theme accordingly.*/
 export function VadorToggle({ className }) {
-  console.log("VadorToggle");
   const prefersDark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches; //boolean
@@ -25,7 +24,6 @@ export function VadorToggle({ className }) {
 
   const switch_theme_rules = async () => {
     await import("./vadorFunction.js").then((module) => {
-      console.log("switch_theme_rules");
       module.switch_theme_rules();
     });
     setSwitched((previousState) => !previousState);
@@ -33,7 +31,6 @@ export function VadorToggle({ className }) {
 
   const setMetaColorScheme = async (isDark) => {
     await import("./vadorFunction.js").then((module) => {
-      console.log("setMetaColorScheme");
       module.setMetaColorScheme(isDark);
     });
   };
@@ -69,7 +66,6 @@ export function VadorToggle({ className }) {
         });
 
         const stylesheet = stylesheetNode.sheet;
-        console.log("stylesheet", stylesheet);
 
         if (!stylesheet) {
           console.error("Failed to retrieve stylesheet from node.");
@@ -109,7 +105,7 @@ export function VadorToggle({ className }) {
         if (mutation.type === "childList") {
           const addedNodes = mutation.addedNodes;
           for (const node of addedNodes) {
-            // console.log("node", node);
+            //
             if (
               node.tagName === "STYLE" ||
               (node.tagName === "LINK" && node.rel === "stylesheet")
@@ -135,11 +131,9 @@ export function VadorToggle({ className }) {
   // check if the theme state is dark or light and changes the theme accordingly
   useEffect(() => {
     async function changeTheme() {
-      console.log("wantsDark != null: should set meta color scheme");
       await setMetaColorScheme(isDark);
     }
     async function changeThemeRules() {
-      console.log("wantsDark != isDark: should switch theme rules");
       await switch_theme_rules();
       setIsDark(wantsDark);
     }

@@ -41,7 +41,6 @@ TODO: best practice is to use CSS modules?
     bottom: 2rem;
     right: $header-padd-M;
     @include from-tablet-up {
-      bottom: 2rem;
       right: 2rem;
     }
   }

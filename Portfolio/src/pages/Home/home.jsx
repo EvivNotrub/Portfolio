@@ -1,8 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import backgroundImage from "../../assets/images/bgImgTest.webp";
-import ImgWithFallback from "../../components/imageRender/imgWithFallback";
+import BackgroundImg from "../../components/backgroundImage/backgroundImg.jsx";
 import About from "../../containers/about/about";
 // import ProjectsPreview from "../../containers/projects/projectsPreview";
 import Skills from "../../containers/skills/skills";
@@ -12,14 +11,25 @@ import ScrollPage from "../../components/buttons/scrollPage";
 import Loader from "../../components/loader/loader";
 
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
+/* Component manges the states needed to trigger and time CSS 
+animations and avoid having them every time you visit the page. */
 function Home({ aboutRef, skillsRef, homeRef }) {
-  const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
-  const [firstVisit, setFirstVisit] = useState(visitStamp);
+  /* firstVisit: reflects the first visit per session.
+  Controls the welcome + img animation
+   */
+  const [firstVisit, setFirstVisit] = useState(() => {
+    const visitStamp = window.sessionStorage.getItem("firstVisit") || "true";
+    return visitStamp;
+  });
+  /* loading: reflects the loading state of the image in the background
+  and controls the welcome animation + scrollIntoview delay. It is set to false 
+  by ImgWithFallback*/
   const [loading, setLoading] = useState(true);
+  //welcomeLoaded: controls the img animation class to match the welcome animation
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
   const location = useLocation();
 
-  // focus on ref after a delay in order to avoid focus on ref before it is rendered:
+  // focus on ref after a delay in order to avoid trying focus on ref before it is rendered:
   function focusOnRef(ref) {
     setTimeout(() => {
       ref.current.focus();
@@ -31,15 +41,18 @@ function Home({ aboutRef, skillsRef, homeRef }) {
       const timeout = setTimeout(() => {
         window.sessionStorage.setItem("firstVisit", false);
         setFirstVisit("false");
-      }, 2500);
+      }, 1800);
       return () => {
         clearTimeout(timeout);
       };
     }
   }, [firstVisit]);
 
+  /*This useEffect prevents the code below to be executed every time Home renders */
   useEffect(() => {
-    if (firstVisit === "true" || loading) return;
+    if (firstVisit === "true" || loading) {
+      return;
+    }
     const id = location.hash.slice(1);
     if (id === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -57,30 +70,14 @@ function Home({ aboutRef, skillsRef, homeRef }) {
     }
   }, [aboutRef, firstVisit, homeRef, loading, location, skillsRef]);
 
-  // TODO: bob below is a temporary class ...implement a better solution !!
   return (
     <main data-testid="home-testid" className="home__main">
-      <div
-        className={
-          (firstVisit === "false" ? "bob " : "") +
-          (welcomeLoaded ? "img-loaded" : "") +
-          " " +
-          "home__main__background"
-        }
-      >
-        <ImgWithFallback
-          setLoading={setLoading}
-          src={
-            "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp"
-          }
-          fallback={backgroundImage}
-          alt="Mont Buet, France"
-          loading="eager"
-          className="home__main__background__img"
-          sizes="100vw"
-          srcSet="https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-300.webp 300w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-448.webp 448w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-650.webp 650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-860.webp 860w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1030.webp 1030w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1180.webp 1180w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1310.webp 1310w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1430.webp 1430w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1540.webp 1540w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1650.webp 1650w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1740.webp 1740w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1830.webp 1830w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg.webp 1920w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-1990.webp 1990w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2048.webp 2048w, https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/bgImg/bgImg-2560.webp 2560w"
-        />
-      </div>
+      <BackgroundImg
+        firstVisit={firstVisit}
+        setLoading={setLoading}
+        welcomeLoaded={welcomeLoaded}
+        className="home__main__background"
+      />
       {/* TODO: implement hide class on scroll ?
           TODO: layout for smartphone landscape mode*/}
       <section

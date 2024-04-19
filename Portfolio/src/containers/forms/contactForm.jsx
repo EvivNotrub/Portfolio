@@ -3,7 +3,7 @@ import "./contactForm.scss";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { validForm } from "../../utils/helpers/fieldValidation";
-
+//TODO: handle short message message or veiw
 function ContactForm() {
   const form = useRef();
   async function send() {

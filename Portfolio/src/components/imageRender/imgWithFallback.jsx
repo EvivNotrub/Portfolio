@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// !!!! carefull the loading attribute is for img tag NOT related to setLoading
-export default function ImgWithFallback({
+/* here I checked performance with the new Image() option, lighthouse had a slight lower
+rating for performance. Same with a fetch in a useEffect */
+const ImgWithFallback = memo(function ImgWithFallback({
   src,
   fallback,
-  alt,
-  loading,
   setLoading,
   ...props
 }) {
   const [error, setError] = useState(false);
+  // errorCount: to avoid getting stuck with loading error
   const [errorCount, setErrorCount] = useState(0);
   const [imgSrc, imgSrcSet] = useState(src);
 
@@ -41,31 +41,27 @@ export default function ImgWithFallback({
       setLoading(false);
     }
   }, [errorCount, imgSrc, setLoading]);
-
+  /*onError={() => {
+          //TODO: check with this option if it's better and works
+          src !== fallbackSrc ? src = fallbackSrc : handleError();
+   }}*/
   return (
-    <>
-      <img
-        src={imgSrc}
-        alt={alt}
-        onError={handleError}
-        onLoad={handleLoad}
-        loading={loading}
-        {...props}
-      />
-    </>
+    <img src={imgSrc} onError={handleError} onLoad={handleLoad} {...props} />
   );
-}
+});
 
 ImgWithFallback.propTypes = {
   setLoading: PropTypes.func.isRequired,
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   fallback: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  loading: PropTypes.string,
-  sercSet: PropTypes.string,
+  srcSet: PropTypes.string,
   sizes: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
   className: PropTypes.string,
   id: PropTypes.string,
+  title: PropTypes.string,
+  alt: PropTypes.string,
 };
+
+export default ImgWithFallback;

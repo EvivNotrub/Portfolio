@@ -1,9 +1,10 @@
-import PropTypes from "prop-types";
-import "./scrollPage.scss";
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import "./scrollPage.scss";
 
-const ScrollPage = ({ path, ariaLabel }) => {
+const ScrollPage = memo(function ScrollPage({ path, ariaLabel }) {
   return (
     <Link to={path} className="down" aria-label={ariaLabel}>
       <span className="down__arrow">
@@ -11,7 +12,7 @@ const ScrollPage = ({ path, ariaLabel }) => {
       </span>
     </Link>
   );
-};
+});
 
 ScrollPage.propTypes = {
   ariaLabel: PropTypes.string,

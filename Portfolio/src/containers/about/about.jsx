@@ -1,10 +1,11 @@
+import { memo } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ScrollPage from "../../components/buttons/scrollPage";
 import SocialLink from "../../components/buttons/socialLink";
 import LinkList from "../../components/linkList/linkList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./about.scss";
 
-function About() {
+const About = memo(function About() {
   return (
     <div data-testid="about-testid" className="about">
       <h2 className="about__title">About</h2>
@@ -55,6 +56,6 @@ function About() {
       <ScrollPage path="/#skills" ariaLabel="next section: Skills" />
     </div>
   );
-}
+});
 
 export default About;

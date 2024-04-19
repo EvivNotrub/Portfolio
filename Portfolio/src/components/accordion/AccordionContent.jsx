@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { PropTypes } from "prop-types";
 import LabeledImage from "../tech/labeledImage";
 import "./AccordionContent.scss";
 
-function AccordionContent({ type, datum }) {
+const AccordionContent = memo(function AccordionContent({ type, datum }) {
   // TODO: this has to be removed or adjusted
   switch (type) {
     case "text-list":
@@ -30,7 +31,7 @@ function AccordionContent({ type, datum }) {
     default:
       return <p className="accordion2__content__data">{datum}</p>;
   }
-}
+});
 
 AccordionContent.propTypes = {
   type: PropTypes.string,

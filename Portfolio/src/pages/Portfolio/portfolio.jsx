@@ -19,6 +19,7 @@ function Portfolio() {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
+    //TODO:  USE MEDIA QUERIES INSTEAD IN CSS
 
     window.addEventListener("resize", handleWindowResize);
     windowSize.innerWidth < 768 ? setIsExpanded(false) : setIsExpanded(true);

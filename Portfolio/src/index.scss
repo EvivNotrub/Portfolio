@@ -1,5 +1,6 @@
 @use "./assets/styles/mixins" as *;
 @use "./assets/styles/variables" as *;
+// @import "node_modules/@fortawesome/fontawesome-svg-core/styles";
 
 *,
 *::before,
@@ -25,6 +26,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
+}
+
+:root,
+:host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
 }
 
 // * > * {
@@ -114,8 +140,8 @@ h6 {
   }
   margin: 0.45em 0;
 }
-
-button:focus,
-button:focus-visible {
-  border: 4px auto -webkit-focus-ring-color;
-}
+//TODO:
+// button:focus,
+// button:focus-visible {
+//   // border: 4px auto -webkit-focus-ring-color;
+// }

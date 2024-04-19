@@ -7,59 +7,6 @@
   flex-direction: column;
   place-items: center;
   width: 100%;
-  &__background {
-    // background image for the home page
-    z-index: -10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.85;
-    @include mode() {
-      opacity: 0.73;
-    }
-    &::before {
-      // overlay background at start only
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 170%;
-      height: 100%;
-      background: rgb(255, 255, 255);
-      opacity: 0.4;
-      transition: opacity 0.9s ease-in 7.1s;
-      @include mode() {
-        background: $background-dm2;
-        opacity: 0.8;
-        transition: opacity 0.9s ease-in 8s;
-      }
-    }
-    &.img-loaded {
-      // background image loaded + first render welcome starts transition for overlay
-      &::before {
-        opacity: 0;
-      }
-    }
-    &.bob {
-      transition: all 0s ease-in 0s;
-      &::before {
-        transition: opacity 0s ease-in 0s;
-      }
-    }
-    &__img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      // opacity: 0.28;
-      // filter: contrast(0.8) brightness(1.5);
-      // @media (prefers-color-scheme: dark) {
-      //   opacity: 0.35;
-      //   filter: brightness(0.8);
-      // }
-    }
-  }
   &__section:not(.greet) {
     // all sections of home except "greet" (first section)
     position: relative;

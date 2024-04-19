@@ -1,0 +1,62 @@
+@use "../../assets/styles/mixins" as *;
+@use "../../assets/styles/variables" as *;
+
+.main-bckgd-img {
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mode() {
+    opacity: 0.73;
+  }
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.45s ease-in-out 0.32s;
+  }
+  /*  before apeared suddenly on the background apparently waiting 
+   for the image opacity to be 1 changed to after to avoid this*/
+  &::after {
+    // overlay background at start only
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    opacity: 0.3;
+    transition: opacity 0.9s ease-in-out 1.1s;
+    @include mode() {
+      background: $background-dm2;
+      opacity: 0.8;
+      transition: opacity 0.9s ease-in 7.83s;
+    }
+  }
+  &.welcome-loaded {
+    &::after {
+      opacity: 0;
+    }
+    & > img {
+      opacity: 1;
+    }
+  }
+  &.second-visit {
+    transition: all 0s ease-in-out 0s;
+    &::after {
+      transition: opacity 0s ease-in-out 0s;
+    }
+    & .main-bckgd-img__img {
+      transition: opacity 0.25s ease-in-out 0s;
+    }
+  }
+}

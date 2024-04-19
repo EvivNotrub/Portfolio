@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { getWindowSize } from "../../utils/helpers/helpers";
 import Accordion from "../../components/accordion/Accordion";
 // import LabeledImage from "../../components/tech/labeledImage";
 import "./skills.scss";
 import skills from "../../data/skillsIcons.json";
 
-function Skills() {
+const Skills = memo(function Skills() {
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isExpanded, setIsExpanded] = useState(false);
   const knowledge = [
@@ -58,6 +58,6 @@ function Skills() {
       </div>
     </div>
   );
-}
+});
 
 export default Skills;

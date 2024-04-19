@@ -4,20 +4,20 @@ import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
 
 function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
-  const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
   const job = "Front End Developer";
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
   const [typingFullName, setTypingFullName] = useState(false);
-  const [firstTyping] = useState(visitStamp === "true");
-
+  const [firstTyping] = useState(() => {
+    const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
+    return visitStamp === "true";
+  });
   function delay(setState, value, ms) {
     const timeout = setTimeout(() => {
       setState(value);
     }, ms);
     return () => clearTimeout(timeout);
   }
-
   useEffect(() => {
     if (firstTyping && !loading && firstVisit === "false") {
       if (!typingJob) {
@@ -31,6 +31,9 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
   }, [firstTyping, typingFullName, typingJob, loading, firstVisit]);
 
   useEffect(() => {
+    /* setWelcomeLoaded is here to time animations properly in background comonent,
+    therefore in a useEffect to set the state after first render,
+     no welcomeLoaded dependancy to avoid firing it again.}*/
     setWelcomeLoaded(true);
   }, [setWelcomeLoaded]);
 

@@ -78,8 +78,13 @@ export const adjustStylesheetForThemeMode = async (stylesheetNode) => {
       console.error("Failed to retrieve stylesheet from node.");
       return;
     }
-    const rulesToAdjust = extractRulesToAdjust(stylesheet);
-    adjustRulesForThemeMode(rulesToAdjust);
+    try {
+      const rulesToAdjust = extractRulesToAdjust(stylesheet);
+      adjustRulesForThemeMode(rulesToAdjust);
+    } catch (e) {
+      const broken_sheet = stylesheet.href;
+      console.warn(broken_sheet + " broke something with theme toggle : " + e);
+    }
   } catch (error) {
     console.error("Failed to load stylesheet:", error);
   }

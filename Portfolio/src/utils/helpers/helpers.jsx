@@ -3,10 +3,6 @@
   or console.log.*$ for single lines then replace which you want.
 */
 
-export function booleanSwitch(state, setState) {
-  setState(!state);
-}
-
 export function getWindowSize() {
   const { innerWidth, innerHeight } = window;
   return { innerWidth, innerHeight };
@@ -36,4 +32,11 @@ export function wait(time) {
   return new Promise((resolve) => {
     setTimeout(resolve, time);
   });
+}
+// this was probably intended >to get used to helper functions< beeing in the separate file
+export function booleanSwitch(state, setState) {
+  setState(!state);
+}
+export function switchState(setState) {
+  setState((previousState) => !previousState);
 }

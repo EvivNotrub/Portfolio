@@ -23,19 +23,18 @@ export function VadorToggle({ className }) {
   ); //saved theme
   const [swithed, setSwitched] = useState(false); //to control the adjustment of rule-changes for later added stylesheets (lazy loading issue)
 
+  // only load the functions when needed
   const switch_theme_rules = async () => {
     await import("./vadorFunction.js").then((module) => {
       module.switch_theme_rules();
     });
     setSwitched((previousState) => !previousState);
   };
-
   const setMetaColorScheme = async (isDark) => {
     await import("./vadorFunction.js").then((module) => {
       module.setMetaColorScheme(isDark);
     });
   };
-
   const removePreferance = useCallback(async () => {
     const localPref = localStorage.getItem("wantsDark");
     if (localPref !== null) {
@@ -60,6 +59,8 @@ export function VadorToggle({ className }) {
     if (!swithed) {
       return;
     }
+    /* Function to adjust the theme rules for a new stylesheet node,
+     only needed in here*/
     const adjustThemeRules = async (stylesheetNode) => {
       await import("./vadorFunction.js").then(async (module) => {
         await module.adjustStylesheetForThemeMode(stylesheetNode);
@@ -167,7 +168,6 @@ export function VadorToggle({ className }) {
         aria-label="Set back to system preference"
         title="Set back to system preference"
       >
-        {/* <FontAwesomeIcon icon="fa-solid fa-trash" /> */}
         <FontAwesomeIcon icon="fa-solid fa-rotate-left" />
       </button>
     </div>

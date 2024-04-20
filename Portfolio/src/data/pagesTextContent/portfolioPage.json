@@ -1,0 +1,33 @@
+{
+  "pageTitle": { "fr": "Projets", "en": "My Work", "de": "Projekte" },
+  "banner": "Portfolio",
+  "information": {
+    "title": {
+      "fr": "Informations",
+      "en": "Information",
+      "de": "Informationen"
+    },
+    "introText": {
+      "fr": "Ces projets sont issus du cursus de formation d'Openclassrooms, chacun ayant un thème spécifique. Ils sont censés refléter des projets du milieu professionnelle; des objectifs sont fixés et une équipe imaginaire fournit des informations et du matériel, comme des designs Figma par exemple. Lorsqu'un backend est utilisé, il est fourni et nous l'hébergeons localement, nous nous basons ensuite sur les endpoints pour définir les interactions front-end. Aucune bibliothèque d'interface utilisateur pour les composants n'est utilisée tout au long du cursus afin de maximiser la pratique.",
+      "en": "These projects are from the education program at Open Classrooms, each with a specific topic. They are meant to reflect reel life projects, some goals are set and an imaginary team provides info and material, like Figma designs. When a backend is used it is provided and we host it locally, we then base the front-end interactions on the endpoints available. No UI libraries for components are used throughout the entire cursus for maximum practice.",
+      "de": "Diese Projekte stammen aus dem Ausbildungsprogramm von Openclassrooms und haben jeweils ein spezifisches Thema. Sie sollen reale Projekte widerspiegeln; Ziele sind festgelegt und ein imaginäres Team stellt Informationen und Material zur Verfügung, wie z.B. Figma-Designs. Wenn ein Backend verwendet wird, wird es bereitgestellt und lokal gehostet, wir basieren uns dann auf den Endpunkten um die Front-End-Interaktionen zu definieren. Im gesamten Kurs wird keine UI-Bibliothek für Komponenten verwendet."
+    }
+  },
+  "OCTitle": {
+    "fr": "Projets OpenClassrooms",
+    "en": "OpenClassrooms Projects",
+    "de": "OpenClassrooms Projekte"
+  },
+  "filters": {
+    "title": {
+      "fr": "Filtres",
+      "en": "Filters",
+      "de": "Filter"
+    },
+    "all": {
+      "fr": "Tous",
+      "en": "All",
+      "de": "Alle"
+    }
+  }
+}

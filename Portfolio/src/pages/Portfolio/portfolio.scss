@@ -14,7 +14,7 @@
     @include flex-all-center;
     position: relative;
     &:after {
-      content: "Portfolio";
+      content: attr(data-after-content);
       font-family: "Poppins", sans-serif;
       position: absolute;
       top: 50%;

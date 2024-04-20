@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 import projectsInfo from "../../data/projects.json";
+import textContent from "../../data/pagesTextContent/portfolioPage.json";
 import ProjectCard from "../../components/projectComponents/projectCard";
 import "./portfolio.scss";
 import ProjectFilters from "../../components/filters/projectFilters";
@@ -7,10 +9,10 @@ import Accordion from "../../components/accordion/Accordion";
 import { getWindowSize } from "../../utils/helpers/helpers";
 
 function Portfolio() {
-  const introText =
-    "These projects are from the education program at Open Classrooms, each with a specific topic. They are meant to reflect reel life projects, some goals are set and an imaginary team provides info and material, like Figma designs. When a backend is used it is provided and we host it locally, we then base the front-end interactions on the endpoints available. No UI libraries for components are used throughout the entire cursus for maximum practice.";
+  const { language } = useLanguage();
+  const title = textContent.pageTitle[language];
 
-  document.title = "Portfolio | My Work";
+  document.title = "Portfolio | " + title;
   const [activeFilter, setActiveFilter] = useState(["all"]);
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isExpanded, setIsExpanded] = useState(false);
@@ -54,16 +56,16 @@ function Portfolio() {
 
   return (
     <main data-testid="portfolio-testid" className="works">
-      <div className="works__banner">
-        <h1 className="works__banner__title">My Work</h1>
+      <div className="works__banner" data-after-content={textContent.banner}>
+        <h1 className="works__banner__title">{title}</h1>
       </div>
       <section className="projects">
         <div className="projects__header">
-          <h2 className="projects__title">Open Classrooms Projects</h2>
+          <h2 className="projects__title">{textContent.OCTitle[language]}</h2>
           <div className="projects__intro">
             <Accordion
-              title="Information"
-              datum={introText}
+              title={textContent.information.title[language]}
+              datum={textContent.information.introText[language]}
               expanded={isExpanded}
             ></Accordion>
           </div>
@@ -72,6 +74,7 @@ function Portfolio() {
           <ProjectFilters
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
+            textContent={textContent.filters}
           />
         </div>
         <div className="projects__portfolio">

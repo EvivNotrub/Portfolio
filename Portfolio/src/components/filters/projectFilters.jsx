@@ -2,9 +2,11 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import data from "../../data/projects.json";
 import "./projectFilters.scss";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 
-function ProjectFilters({ activeFilter, setActiveFilter }) {
+function ProjectFilters({ activeFilter, setActiveFilter, textContent }) {
   const [filters, setFilters] = useState([]);
+  const { language } = useLanguage();
 
   useEffect(() => {
     setFilters(data.filters);
@@ -48,7 +50,7 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
         }`}
         onClick={() => handleFilter("all")}
       >
-        All
+        {textContent.all[language]}
       </button>
     </div>
   );
@@ -57,6 +59,7 @@ function ProjectFilters({ activeFilter, setActiveFilter }) {
 ProjectFilters.propTypes = {
   activeFilter: PropTypes.arrayOf(PropTypes.string),
   setActiveFilter: PropTypes.func,
+  textContent: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
 };
 
 export default ProjectFilters;

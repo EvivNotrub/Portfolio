@@ -9,6 +9,8 @@ import LinkList from "../../components/linkList/linkList";
 import SocialLink from "../../components/buttons/socialLink";
 import Accordion from "../../components/accordion/Accordion";
 import { getWindowSize } from "../../utils/helpers/helpers";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
+import textContent from "../../data/pagesTextContent/projectPage.json";
 
 //TODO: add background loading for images @tag: #userexperience
 //TODO: add go-back arrow @tag: #userexperience
@@ -22,6 +24,7 @@ function ProjectPage() {
   const navigate = useNavigate();
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isExpanded, setIsExpanded] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     function handleWindowResize() {
@@ -132,15 +135,25 @@ function ProjectPage() {
         <section className={"project-info__details" + " " + classFullscreen}>
           <article className="project-info__details__summary">
             <h2 className="project-info__details__summary__title">
-              In a nutshell:
+              {textContent.summaryTitle[language]
+                ? textContent.summaryTitle[language]
+                : "En bref:"}
             </h2>
-            <p>{project.summary.EN}</p>
-            <h3>Aim:</h3>
-            <p>{project.aim.EN}</p>
+            <p>{project.summary[language]}</p>
+            <h3>
+              {textContent.aimTitle[language]
+                ? textContent.aimTitle[language]
+                : "Objectif:"}
+            </h3>
+            <p>{project.aim[language]}</p>
           </article>
           <Accordion
-            title="Full Description"
-            datum={project.description.EN}
+            title={
+              textContent.descriptionTitle[language]
+                ? textContent.descriptionTitle[language]
+                : "Description complète"
+            }
+            datum={project.description[language]}
             className="project-info__details__description"
             expanded={isExpanded}
           ></Accordion>

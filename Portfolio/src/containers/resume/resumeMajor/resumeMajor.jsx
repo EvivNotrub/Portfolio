@@ -4,25 +4,17 @@ import "./resumeMajor.scss";
 import ResumeArticle from "../../../components/resume/resumeArticle/resumeArticle";
 import { useLanguage } from "../../../utils/contexts/reactContext/language/useLang";
 
-function ResumeMajor({ className }) {
+function ResumeMajor({ className, textContent }) {
   //TODO: move to data and add it in resume page as well
-  const textContent = {
-    pageTitle: { fr: "CV", en: "Resume", de: "Lebenslauf" },
-    majorTitle: {
-      fr: "Expérience professionnelle",
-      en: "Work Experience",
-      de: "Berufserfahrung",
-    },
-    tertiary: { fr: "Tertiaire", en: "Tertiary Sector" },
-    services: { fr: "Restauration et Services", en: "Catering and Services" },
-  };
+
   const { language } = useLanguage();
   const tertiair = jobs.tertiaire;
   const tertiaryJobs = tertiair.groups;
-  const servicesJobs = jobs.services.groups;
+  const services = jobs.services;
+  const servicesJobs = services.groups;
   return (
     <div className={(className && className) + " " + "catalog"}>
-      <h2 className="catalog__title">{textContent.majorTitle[language]}</h2>
+      <h2 className="catalog__title">{textContent.title[language]}</h2>
       <section className="catalog__section --tertiaire">
         <h3 className="catalog__section__title">{tertiair.name[language]}</h3>
         {tertiaryJobs.map((job) => (
@@ -30,9 +22,7 @@ function ResumeMajor({ className }) {
         ))}
       </section>
       <section className="catalog__section --services">
-        <h3 className="catalog__section__title">
-          {textContent.majorTitle[language]}
-        </h3>
+        <h3 className="catalog__section__title">{services.name[language]}</h3>
         {servicesJobs.map((job) => (
           <ResumeArticle key={job.id} article={job} />
         ))}
@@ -43,6 +33,7 @@ function ResumeMajor({ className }) {
 
 ResumeMajor.propTypes = {
   className: PropTypes.string,
+  textContent: PropTypes.object,
 };
 
 export default ResumeMajor;

@@ -1,0 +1,137 @@
+{
+  "pageTitle": { "fr": "CV", "en": "Resume", "de": "Lebenslauf" },
+  "resumeMajor": {
+    "title": {
+      "fr": "Expérience professionnelle",
+      "en": "Work Experience",
+      "de": "Berufserfahrung"
+    },
+    "tertiary": { "fr": "Tertiaire", "en": "Tertiary Sector" },
+    "services": {
+      "fr": "Restauration et Services",
+      "en": "Catering and Services"
+    }
+  },
+  "resumeEssentials": {
+    "resumeSkills": {
+      "title": {
+        "fr": "Compétences",
+        "en": "Skills"
+      },
+      "sections": [
+        {
+          "title": {
+            "fr": "Langues",
+            "en": "Languages"
+          },
+          "content": {
+            "fr": [
+              "Francais, Langue Maternelle",
+              "Allemand, Bilingue",
+              "Anglais, Courant"
+            ],
+            "en": ["French, Native", "German, Bilingual", "English, Fluent"]
+          }
+        },
+        {
+          "title": {
+            "fr": "IT",
+            "en": "IT"
+          },
+          "content": {
+            "fr": [
+              "HTML, CSS, JavaScript",
+              "React, Redux, Jest",
+              "Git, GitHub",
+              "VS Code, EsLint, Prettier",
+              "Lightroom, Figma, Photoshop",
+              "Word, Excel, Outlook, PowerPoint"
+            ],
+            "en": [
+              "HTML, CSS, JavaScript",
+              "React, Redux, Jest",
+              "Git, GitHub",
+              "VS Code, EsLint, Prettier",
+              "Lightroom, Figma, Photoshop",
+              "Word, Excel, Outlook, PowerPoint"
+            ]
+          }
+        }
+      ]
+    },
+    "education": {
+      "title": {
+        "fr": "Dilplômes / Education",
+        "en": "Education / Diplomas"
+      },
+      "sections": [
+        {
+          "title": {
+            "fr": "Intégrateur Web",
+            "en": "Web développer"
+          },
+          "content": {
+            "fr": "Open Classrooms - à distance",
+            "en": "Open Classrooms - Online"
+          }
+        },
+        {
+          "title": {
+            "fr": "Baccalauréat Général S - SVT",
+            "en": "A-level in Science - Biology"
+          },
+          "content": {
+            "fr": "Lycée Jean Renoir, Munich, Allemagne",
+            "en": "Lycée Jean Renoir, Munich, Germany"
+          }
+        }
+      ]
+    },
+    "extras": {
+      "title": {
+        "fr": "Extra-professionnel",
+        "en": "Spare Time"
+      },
+      "sections": [
+        {
+          "title": {
+            "fr": "Voyages",
+            "en": "Travels"
+          },
+          "content": {
+            "fr": [
+              "été 2020: Voyage à VTT dans les Pyrénées en autonomie (France et Catalogne).",
+              "été 2018: permis de conduire puis voyage en fiat panda 1985 de Berlin à Istanbul: découverte des pays, cultures et paysages",
+              "été 2012 à fin 2013: De l'Allemagne jusqu'au Ladakh (Inde, Himalaya) en stop puis en bus et finalement à vélo."
+            ],
+            "en": [
+              "summer 2020: Bikepacking trip in the Pyrenees (France and Catalonia).",
+              "summer 2018: driving license then drove a 1985 fiat panda from Berlin to Istanbul: discovered countries, cultures and landscapes",
+              "summer 2012 to end of 2013: From Germany to Ladakh (India, Himalaya) hitchhiking, then by bus and finally by bike."
+            ]
+          }
+        },
+        {
+          "title": {
+            "fr": "Hobbies",
+            "en": "Hobbies"
+          },
+          "content": {
+            "fr": [
+              "VTT - Vélo de route",
+              "Randonnées - Trekking - Ski de randonnée",
+              "Escalade - Bloc",
+              "Photographie, Guitare"
+            ],
+            "en": [
+              "MTB - Road bike",
+              "Hiking - Trekking - Ski touring",
+              "Climbing - Bouldering",
+              "Photography, Guitar"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

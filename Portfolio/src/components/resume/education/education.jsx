@@ -1,52 +1,60 @@
+import { PropTypes } from "prop-types";
+import { useLanguage } from "../../../utils/contexts/reactContext/language/useLang";
 import Accordion from "../../accordion/Accordion";
 import "./education.scss";
 
-function Education() {
-  const intWeb = (
-    <>
-      <span>
-        <time dateTime="2023-03">03/2023</time>-
-        <time dateTime="2023-12">12/2023</time>
-      </span>
-      <br />
-      <span className="essentials__article__institute">
-        Open Classrooms - Online
-      </span>
-    </>
-  );
-  const bacc = (
-    <>
-      <span>
-        <time dateTime="2008-06">06/2008</time>
-      </span>
-      <br />
-      <span className="essentials__article__institute">
-        Lycée Jean Renoir, Munich, Allemagne
-      </span>
-    </>
-  );
+function Education({ textContent }) {
+  const { language } = useLanguage();
+
   return (
     <>
       <article className="essentials__article">
         <Accordion
           type="text"
-          title="Intégrateur Web"
+          title={textContent[0].title[language]}
           header="h4"
-          datum={intWeb}
+          datum={
+            <>
+              <span>
+                <time dateTime="2023-03">03/2023</time>-
+                <time dateTime="2023-12">12/2023</time>
+              </span>
+              <br />
+              <span className="essentials__article__institute">
+                {textContent[0].content[language]}
+              </span>
+            </>
+          }
           className={"essentials__article__accordion"}
         />
       </article>
       <article className="essentials__article">
         <Accordion
           type="text"
-          title="Baccalauréat Général S - SVT"
+          title={textContent[1].title[language]}
           header="h4"
-          datum={bacc}
+          datum={
+            <>
+              <span>
+                <time dateTime="2008-06">06/2008</time>
+              </span>
+              <br />
+              <span className="essentials__article__institute">
+                {textContent[1].content[language]}
+              </span>
+            </>
+          }
           className={"essentials__article__accordion"}
         />
       </article>
     </>
   );
 }
+
+Education.propTypes = {
+  textContent: PropTypes.arrayOf(
+    PropTypes.shape({ title: PropTypes.object, content: PropTypes.object }),
+  ),
+};
 
 export default Education;

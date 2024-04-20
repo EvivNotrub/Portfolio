@@ -53,14 +53,14 @@ function ResumeArticle({ article }) {
     </article>
   );
 }
-
+//TODO: change : shapeOff for objects "fr" "en"
 ResumeArticle.propTypes = {
   article: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.object.isRequired,
     jobs: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
+        title: PropTypes.object.isRequired,
         dates: PropTypes.shape({
           start: PropTypes.string.isRequired,
           end: PropTypes.string,
@@ -68,12 +68,12 @@ ResumeArticle.propTypes = {
         description: PropTypes.oneOfType([
           PropTypes.shape({
             id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
+            text: PropTypes.object.isRequired,
           }),
           PropTypes.arrayOf(
             PropTypes.shape({
               id: PropTypes.string.isRequired,
-              text: PropTypes.string.isRequired,
+              text: PropTypes.object.isRequired,
             }),
           ),
         ]).isRequired,

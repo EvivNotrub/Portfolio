@@ -1,42 +1,38 @@
+import { PropTypes } from "prop-types";
 import Accordion from "../../accordion/Accordion";
 import "./extras.scss";
+import { useLanguage } from "../../../utils/contexts/reactContext/language/useLang";
 
-function Extras() {
-  const voyages = [
-    "été 2020: Voyage à VTT dans les Pyrénées en autonomie (France et Catalogne).",
-    "été 2018: permis de conduire puis voyage en fiat panda 1985 de Berlin à Istanbul: découverte des pays, cultures et paysages",
-    "été 2012 à fin 2013: De l'Allemagne jusqu'au Ladakh (Inde, Himalaya) en stop puis en bus et finalement à vélo.",
-  ];
-
-  const hobbies = [
-    "VTT - Vélo de route",
-    "Randonnées - Trekking - Ski de randonnée",
-    "Escalade - Bloc",
-    "Photographie, Guitare",
-  ];
-
+function Extras({ textContent }) {
+  const { language } = useLanguage();
   return (
     <>
       <article className="essentials__article">
         <Accordion
           type="text-list"
-          title="Voyages"
+          title={textContent[0].title[language]}
           header="h4"
-          datum={voyages}
+          datum={textContent[0].content[language]}
           className={"essentials__article__accordion"}
         />
       </article>
       <article className="essentials__article">
         <Accordion
           type="text-list"
-          title="Hobbies"
+          title={textContent[1].title[language]}
           header="h4"
-          datum={hobbies}
+          datum={textContent[1].content[language]}
           className={"essentials__article__accordion"}
         />
       </article>
     </>
   );
 }
+
+Extras.propTypes = {
+  textContent: PropTypes.arrayOf(
+    PropTypes.shape({ title: PropTypes.object, content: PropTypes.object }),
+  ),
+};
 
 export default Extras;

@@ -35,22 +35,13 @@ TODO: best practice is to use CSS modules?
       margin-top: $header-hght-D;
     }
   }
-  &__vador,
-  .App__lang {
+  &__vador {
     position: fixed;
     z-index: 100;
     bottom: 1.5rem;
-  }
-  &__vador {
     right: $header-padd-M;
     @include from-tablet-up {
       right: 2rem;
-    }
-  }
-  &__lang {
-    left: $header-padd-M;
-    @include from-tablet-up {
-      left: 2rem;
     }
   }
 }

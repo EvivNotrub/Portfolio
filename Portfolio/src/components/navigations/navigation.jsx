@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navigation.scss";
 import Mutton from "../buttons/mutton";
+import LangSelect from "../select/langSelect";
+//TODO: need lazy loading for LangSelect?
 
 // import PropTypes from "prop-types";
 // function Navigation({ ...props }) {
@@ -131,6 +133,14 @@ function Navigation() {
           <Link to="/contact" onClick={blur}>
             Contact
           </Link>
+        </li>
+        <li className="nav__list__item">
+          <LangSelect
+            className={"nav__list__item__lang"}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          />
         </li>
       </ul>
     </nav>

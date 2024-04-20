@@ -28,7 +28,21 @@
     line-height: 1.2;
     @include color-mode($header-title-mode...);
   }
-
+  &__lang {
+    &__select {
+      width: 19px;
+      height: 19px;
+      overflow: visible;
+      &__opt {
+        transform: translateY(20px);
+        min-width: fit-content;
+        width: 80px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
   & nav {
     flex: 1;
   }

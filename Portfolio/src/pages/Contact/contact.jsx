@@ -1,14 +1,23 @@
 import ContactForm from "../../containers/forms/contactForm";
+
 import "./contact.scss";
+import textContent from "../../data/pagesTextContent/contactPage.json";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 
 function Contact() {
-  document.title = "Contact | Barthélémy Werlé";
+  const { language } = useLanguage();
+  const title = textContent.pageTitle[language]
+    ? textContent.pageTitle[language]
+    : "Contact";
+  document.title = title + " - Werlé Barthélémy";
 
   return (
     <main data-testid="contact-testid" className="container">
-      <h1 className="contact-title">Contact</h1>
+      <div className="contact-banner" data-after-content={title}>
+        <h1 className="contact-banner__title">{title}</h1>
+      </div>
       <div className="contact-wrapper">
-        <ContactForm />
+        <ContactForm textContent={textContent.contactForm[language]} />
       </div>
     </main>
   );

@@ -1,10 +1,10 @@
-import "./contactForm.scss";
-
 import { useRef } from "react";
+import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
 import { validForm } from "../../utils/helpers/fieldValidation";
+import "./contactForm.scss";
 //TODO: handle short message message or veiw
-function ContactForm() {
+function ContactForm({ textContent }) {
   const form = useRef();
   async function send() {
     try {
@@ -40,7 +40,9 @@ function ContactForm() {
       <div className="fields">
         <div className="field">
           <label htmlFor="name">
-            Your full Name: <span className="asterisk">*</span>
+            {textContent.name ? textContent.name : "Votre Nom complet"}
+            {": "}
+            <span className="asterisk">*</span>
           </label>
           <input
             type="text"
@@ -52,12 +54,17 @@ function ContactForm() {
         </div>
         <div className="field">
           <label htmlFor="email">
-            E-mail: <span className="asterisk">*</span>
+            {textContent.email ? textContent.email : "E-mail:"}
+            {": "}
+            <span className="asterisk">*</span>
           </label>
           <input type="email" id="email" name="user_email" required />
         </div>
         <div className="field">
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone">
+            {textContent.tel ? textContent.tel : "Numéro de téléphone:"}
+            {": "}
+          </label>
           <input
             type="tel"
             id="phone"
@@ -68,7 +75,9 @@ function ContactForm() {
         </div>
         <div className="field">
           <label htmlFor="message">
-            Message: <span className="asterisk">*</span>
+            {textContent.message ? textContent.message : "Message:"}
+            {": "}
+            <span className="asterisk">*</span>
           </label>
           <textarea
             id="message"
@@ -82,12 +91,18 @@ function ContactForm() {
       </div>
       <div className="contactForm__footer">
         <button className="submit" type="submit">
-          Send Message !
+          {textContent.send ? textContent.send : "Envoyer le message"} !
         </button>
-        <span className="asterisk">* Required fields</span>
+        <span className="asterisk">
+          * {textContent.info ? textContent.info : "Champs obligatoires"}
+        </span>
       </div>
     </form>
   );
 }
+
+ContactForm.propTypes = {
+  textContent: PropTypes.objectOf(PropTypes.string),
+};
 
 export default ContactForm;

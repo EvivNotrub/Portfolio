@@ -11,7 +11,7 @@ function Resume() {
   const title = textContent.pageTitle[language] || "CV";
   document.title = title + " - Werlé Barthélémy";
   return (
-    <main lang="fr" data-testid="resume-testid" className="resume__main">
+    <main data-testid="resume-testid" className="resume__main">
       <div className="resume__main__banner" data-after-content={title}>
         <h1 className="resume__main__banner__title">{title}</h1>
       </div>

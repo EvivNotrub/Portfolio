@@ -1,0 +1,32 @@
+{
+  "pageTitle": { "fr": "Contact", "en": "Contact", "de": "Kontakt" },
+  "contactForm": {
+    "fr": {
+      "title": "Prenez contact",
+      "name": "Votre Nom complet",
+      "email": "E-mail",
+      "tel": "Numéro de téléphone",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "info": "Champs obligatoires"
+    },
+    "en": {
+      "title": "Get in touch",
+      "name": "Your full Name",
+      "email": "E-mail",
+      "tel": "Phone number",
+      "message": "Message",
+      "send": "Send Message",
+      "info": "Required fields"
+    },
+    "de": {
+      "title": "Kontaktieren Sie mich",
+      "name": "Name",
+      "email": "Email",
+      "tel": "Telefonnummer",
+      "message": "Nachricht",
+      "send": "Nachricht senden",
+      "info": "Pflichtfelder"
+    }
+  }
+}

@@ -8,22 +8,16 @@ function ResumeSkills({ textContent }) {
 
   return (
     <>
-      <article className="essentials__article">
-        <Accordion
-          type="text-list"
-          datum={textContent[0].content[language]}
-          title={textContent[0].title[language]}
-          header="h4"
-        />
-      </article>
-      <article className="essentials__article">
-        <Accordion
-          type="text-list"
-          datum={textContent[1].content[language]}
-          title={textContent[1].title[language]}
-          header="h4"
-        />
-      </article>
+      {textContent.map((section) => (
+        <article className="essentials__article" key={section.id}>
+          <Accordion
+            type="text-list"
+            title={section.title[language]}
+            header="h4"
+            datum={section.content[language]}
+          />
+        </article>
+      ))}
     </>
   );
 }

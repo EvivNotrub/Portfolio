@@ -7,24 +7,17 @@ function Extras({ textContent }) {
   const { language } = useLanguage();
   return (
     <>
-      <article className="essentials__article">
-        <Accordion
-          type="text-list"
-          title={textContent[0].title[language]}
-          header="h4"
-          datum={textContent[0].content[language]}
-          className={"essentials__article__accordion"}
-        />
-      </article>
-      <article className="essentials__article">
-        <Accordion
-          type="text-list"
-          title={textContent[1].title[language]}
-          header="h4"
-          datum={textContent[1].content[language]}
-          className={"essentials__article__accordion"}
-        />
-      </article>
+      {textContent.map((section) => (
+        <article className="essentials__article" key={section.id}>
+          <Accordion
+            type="text-list"
+            title={section.title[language]}
+            header="h4"
+            datum={section.content[language]}
+            className={"essentials__article__accordion"}
+          />
+        </article>
+      ))}
     </>
   );
 }

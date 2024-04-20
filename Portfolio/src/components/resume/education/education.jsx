@@ -8,45 +8,41 @@ function Education({ textContent }) {
 
   return (
     <>
-      <article className="essentials__article">
-        <Accordion
-          type="text"
-          title={textContent[0].title[language]}
-          header="h4"
-          datum={
-            <>
-              <span>
-                <time dateTime="2023-03">03/2023</time>-
-                <time dateTime="2023-12">12/2023</time>
-              </span>
-              <br />
-              <span className="essentials__article__institute">
-                {textContent[0].content[language]}
-              </span>
-            </>
-          }
-          className={"essentials__article__accordion"}
-        />
-      </article>
-      <article className="essentials__article">
-        <Accordion
-          type="text"
-          title={textContent[1].title[language]}
-          header="h4"
-          datum={
-            <>
-              <span>
-                <time dateTime="2008-06">06/2008</time>
-              </span>
-              <br />
-              <span className="essentials__article__institute">
-                {textContent[1].content[language]}
-              </span>
-            </>
-          }
-          className={"essentials__article__accordion"}
-        />
-      </article>
+      {textContent.map((section) => (
+        <article className="essentials__article" key={section.id}>
+          <Accordion
+            type="text"
+            title={section.title[language]}
+            header="h4"
+            datum={
+              <>
+                {section.dates ? (
+                  <span>
+                    {section.dates.map((date, index) => {
+                      return (
+                        <>
+                          {index > 0 ? " - " : null}
+                          <time
+                            key={index + date.dateTime}
+                            dateTime={date.dateTime}
+                          >
+                            {date.display}
+                          </time>
+                        </>
+                      );
+                    })}
+                  </span>
+                ) : null}
+                <br />
+                <span className="essentials__article__institute">
+                  {section.content[language]}
+                </span>
+              </>
+            }
+            className={"essentials__article__accordion"}
+          />
+        </article>
+      ))}
     </>
   );
 }

@@ -20,6 +20,7 @@
       },
       "sections": [
         {
+          "id": "d41d8cd98f00b204",
           "title": {
             "fr": "Langues",
             "en": "Languages"
@@ -34,6 +35,7 @@
           }
         },
         {
+          "id": "e9800998ecf8427e",
           "title": {
             "fr": "IT",
             "en": "IT"
@@ -66,20 +68,27 @@
       },
       "sections": [
         {
+          "id": "8350e5a3e24c153",
           "title": {
             "fr": "Intégrateur Web",
-            "en": "Web développer"
+            "en": "Web developper"
           },
+          "dates": [
+            { "dateTime": "2023-03", "display": "03/2023" },
+            { "dateTime": "202-12", "display": "12/2023" }
+          ],
           "content": {
             "fr": "Open Classrooms - à distance",
             "en": "Open Classrooms - Online"
           }
         },
         {
+          "id": "df2275c9f80692773",
           "title": {
             "fr": "Baccalauréat Général S - SVT",
             "en": "A-level in Science - Biology"
           },
+          "dates": [{ "dateTime": "2008-06", "display": "06/2008" }],
           "content": {
             "fr": "Lycée Jean Renoir, Munich, Allemagne",
             "en": "Lycée Jean Renoir, Munich, Germany"
@@ -94,6 +103,7 @@
       },
       "sections": [
         {
+          "id": "31d6cfe0d16ae931",
           "title": {
             "fr": "Voyages",
             "en": "Travels"
@@ -112,6 +122,7 @@
           }
         },
         {
+          "id": "b73c59d7e0c089c0",
           "title": {
             "fr": "Hobbies",
             "en": "Hobbies"

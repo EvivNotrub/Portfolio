@@ -3,16 +3,25 @@ import { PropTypes } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { booleanSwitch } from "../../../utils/helpers/helpers.jsx";
 import "./resumeArticle.scss";
+import { useLanguage } from "../../../utils/contexts/reactContext/language/useLang.js";
 
 function ResumeArticle({ article }) {
   const [hidden, setHidden] = useState(true);
+  const { language } = useLanguage();
+  const textContent = {
+    fr: "à",
+    en: "to",
+    de: "bis",
+  };
   return (
     <article className="line-of-work">
       <button
         onClick={() => booleanSwitch(hidden, setHidden)}
         className="line-of-work__header"
       >
-        <h4 className="line-of-work__header__title">{article.name}</h4>
+        <h4 className="line-of-work__header__title">
+          {article.name[language]}
+        </h4>
         <div className="line-of-work__header__arrow">
           <FontAwesomeIcon
             className={!hidden ? "turn" : ""}
@@ -26,15 +35,16 @@ function ResumeArticle({ article }) {
           className={"line-of-work__article" + " " + (hidden ? "hide" : "")}
         >
           <h5 className="job-title">
-            {job.title + " "}
-            <time dateTime={job.dates.start}>{job.dates.start}</time> à{" "}
+            {job.title[language] + " "}
+            <time dateTime={job.dates.start}>{job.dates.start}</time>{" "}
+            {textContent[language] + " "}
             <time dateTime={job.dates.end}>{job.dates.end}</time>
           </h5>
 
           <div className="job-description">
             <ul>
               {job.description.map((desc) => (
-                <li key={desc.id}>{desc.text}</li>
+                <li key={desc.id}>{desc.text[language]}</li>
               ))}
             </ul>
           </div>

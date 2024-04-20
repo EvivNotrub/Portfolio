@@ -8,7 +8,10 @@
         "jobs": [
           {
             "id": "s12fs51g2",
-            "title": "« Associate » Franco-Allemand-Anglais, D.F.King Ltd (Londres, GB)",
+            "title": {
+              "fr": "« Associate » Franco-Allemand-Anglais, D.F.King Ltd (Londres, GB)",
+              "en": "French-German-English Associate, D.F.King Ltd (London, UK)"
+            },
             "dates": {
               "start": "2015",
               "end": "2016"
@@ -16,31 +19,52 @@
             "description": [
               {
                 "id": "d5fg13b53",
-                "text": "Analyser l'ordre du jour et les documents d'assemblée générale en rapport avec les pratiques du marché concerné/pays. S'informer sur les pratiques et changements de législation"
+                "text": {
+                  "fr": "Analyser l'ordre du jour et les documents d'assemblée générale en rapport avec les pratiques du marché concerné/pays. S'informer sur les pratiques et changements de législation",
+                  "en": "Analyze the agenda and general meeting documents related to market best practices in the country. Stay informed about market practices and legislative changes."
+                }
               },
               {
                 "id": "6s8dfs864",
-                "text": "Organisation de téléconférences, rédaction des rapports (EN, FR) pour nos clients"
+                "text": {
+                  "fr": "Organisation de téléconférences, rédaction des rapports (EN, FR) pour nos clients",
+                  "en": "Organize conference calls, write reports (EN, FR) for our clients"
+                }
               },
               {
                 "id": "uniqueDescID8",
-                "text": "Contacter les investisseurs Institutionnels, entretenir le relationnel avec les contacts importants, développer la base de données (front et back office)"
+                "text": {
+                  "fr": "Contacter les investisseurs Institutionnels, entretenir le relationnel avec les contacts importants, développer la base de données (front et back office)",
+                  "en": "Contact Institutional investors, maintain relationships with key contacts, develop the database (front and back office)"
+                }
               },
               {
                 "id": "uniqueDescID9",
-                "text": "Évaluer et prévoir le comportement de vote des actionnaires. Analyses Excel"
+                "text": {
+                  "fr": "Évaluer et prévoir le comportement de vote des actionnaires. Analyses Excel",
+                  "en": "Assess and predict shareholder voting behavior. Excel analysis"
+                }
               },
               {
                 "id": "uniqueDescID10",
-                "text": "Organisation du calendrier des managers (Outlook)"
+                "text": {
+                  "fr": "Organisation du calendrier des managers (Outlook)",
+                  "en": "Organize my managers calendar (Outlook)"
+                }
               },
               {
                 "id": "uniqueDescID11",
-                "text": "Recherche de contacts et étude de l’actionnariat: analyse de la structure du capital et des résultats de vote"
+                "text": {
+                  "fr": "Recherche de contacts et étude de l’actionnariat: analyse de la structure du capital et des résultats de vote",
+                  "en": "Contact research and shareholding study: analyse capital structure and voting results"
+                }
               },
               {
                 "id": "uniqueDescID12",
-                "text": "Mener les campagnes destinées aux petits actionnaires : former le personnel temporaire, création de Q&A, suivi de l'évolution de la campagne, rapports journaliers et final (rédigé, Excel et téléphonique"
+                "text": {
+                  "fr": "Mener les campagnes destinées aux petits actionnaires : former le personnel temporaire, création de Q&A, suivi de l'évolution de la campagne, rapports journaliers et final (rédigé, Excel et téléphonique",
+                  "en": "Lead campaigns for small shareholders: train temporary staff, create Q&A, monitor campaign progress, daily and final reports (written, Excel and conference calls)"
+                }
               }
             ]
           }
@@ -48,11 +72,17 @@
       },
       {
         "id": "uniqueGroupID2",
-        "name": "Étude de marché et télémarketing",
+        "name": {
+          "fr": "Étude de marché et télémarketing",
+          "en": "Market Research and Telemarketing"
+        },
         "jobs": [
           {
             "id": "687f1s53g",
-            "title": "Consultant marketing Français/Allemand/Anglais, L.E.K. // The Parthenon Group (Londres, GB)",
+            "title": {
+              "fr": "Consultant marketing Français/Allemand/Anglais, L.E.K. // The Parthenon Group (Londres, GB)",
+              "en": "French/German/English Marketing Consultant, L.E.K. // The Parthenon Group (London, UK)"
+            },
             "dates": {
               "start": "2016-07",
               "end": "2016-09"
@@ -60,7 +90,10 @@
             "description": [
               {
                 "id": "uniqueDescID1",
-                "text": "Évaluer un marché spécifique (ou marché potentiel), sa dynamique et ses acteurs : clients potentiels, concurrence, zones potentielles de croissance, etc."
+                "text": {
+                  "fr": "Évaluer un marché spécifique (ou marché potentiel), sa dynamique et ses acteurs : clients potentiels, concurrence, zones potentielles de croissance, etc.",
+                  "en": "Evaluate a specific market (or potential market), its dynamics and its players: potential customers, competition, potential growth areas, etc."
+                }
               },
               {
                 "id": "uniqueDescID2",

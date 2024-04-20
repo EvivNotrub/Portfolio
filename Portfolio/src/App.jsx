@@ -18,6 +18,7 @@ const VadorToggle = lazy(() =>
     return { default: module.VadorToggle };
   }),
 );
+const LangSelect = lazy(() => import("./components/select/langSelect.jsx"));
 
 // TODO: manage Rooter properly
 function App() {
@@ -37,6 +38,7 @@ function App() {
           aboutRef={aboutRef}
           skillsRef={skillsRef}
         />
+        <LangSelect className={"App__lang"} />
         <VadorToggle className={"App__vador"} />
         <Routes>
           <Route

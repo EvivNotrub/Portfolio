@@ -1,0 +1,28 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/mixins" as *;
+
+.lang {
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  padding: 1px 1px 1px 5px;
+  @include color-mode($lang-scheme...);
+  border-radius: $button-radius;
+  & p {
+    font-weight: 500;
+    letter-spacing: -0.08rem;
+    line-height: normal;
+    @include from-tablet-up {
+      font-size: 1.2rem;
+    }
+  }
+  &__select {
+    border-radius: $button-radius;
+    width: 18px;
+    height: 18px;
+    font-size: 1rem;
+    border: transparent;
+    @include color-mode($lang-select-scheme...);
+  }
+}

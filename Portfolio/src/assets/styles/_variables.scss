@@ -131,6 +131,14 @@ $button-scheme: $button-scheme-lm, $button-scheme-dm;
 $button-scheme-dm2: $text-dm, $bg-light, $third-light-color, none, 1.2, 0.9;
 $button-scheme2: $button-scheme-lm, $button-scheme-dm2;
 
+$lang-scheme-lm: $text-lm3, $bg-lm2, $palette10, none, none;
+$lang-scheme-dm: $text-dm3, $background-dm, $text-dm;
+$lang-scheme: $lang-scheme-lm, $lang-scheme-dm;
+
+$lang-select-scheme-lm: $text-lm3, $very-dim-bg-color, $palette10, none, none;
+$lang-select-scheme-dm: $text-dm, $background-dm;
+$lang-select-scheme: $lang-select-scheme-lm, $lang-select-scheme-dm;
+
 $accorion-content-bg-scheme: $neutral-light, $very-dim-bg-color;
 
 /***********GLOBAL***********/

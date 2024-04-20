@@ -7,11 +7,11 @@ const LANGUAGES = [
 ];
 
 function getLanguage() {
+  const storedLang = localStorage.getItem("language");
+  if (storedLang) return storedLang;
   const browserLang = navigator.language.split(/[-_]/)[0];
-  console.log(browserLang, navigator, navigator.language);
-  return (
-    LANGUAGES.find((l) => l.code === browserLang).code || LANGUAGES[1].code
-  );
+  const lang = LANGUAGES.find((l) => l.code === browserLang).code;
+  return lang || LANGUAGES[1].code;
 }
 
 export const LanguageContext = createContext("fr");

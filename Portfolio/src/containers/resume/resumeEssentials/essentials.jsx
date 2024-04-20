@@ -13,7 +13,6 @@ function Essentials({ textContent }) {
   const [hidden, setHidden] = useState(true);
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const { language } = useLanguage();
-  console.log("textContent", textContent, language);
 
   useEffect(() => {
     function handleWindowResize() {

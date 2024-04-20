@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { PropTypes } from "prop-types";
 import { useLanguage } from "../../../utils/contexts/reactContext/language/useLang";
 import Accordion from "../../accordion/Accordion";
@@ -20,15 +21,10 @@ function Education({ textContent }) {
                   <span>
                     {section.dates.map((date, index) => {
                       return (
-                        <>
+                        <Fragment key={index + date.dateTime}>
                           {index > 0 ? " - " : null}
-                          <time
-                            key={index + date.dateTime}
-                            dateTime={date.dateTime}
-                          >
-                            {date.display}
-                          </time>
-                        </>
+                          <time dateTime={date.dateTime}>{date.display}</time>
+                        </Fragment>
                       );
                     })}
                   </span>

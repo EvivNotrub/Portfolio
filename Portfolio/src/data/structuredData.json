@@ -1,0 +1,48 @@
+{
+  "defaultLang": "fr",
+  "langVariations": {
+    "name": {
+      "fr": "Portfolio de Barthélémy Werlé - Développeur Web",
+      "en": "Portfolio of Barthélémy Werlé - Web Developer"
+    },
+    "description": {
+      "fr": "Site portfolio affichant des projets de développement web, les compétences principales et un CV.",
+      "en": "Portfolio website displaying web-development projects, main skills, and a resume."
+    },
+    "jobTitle": {
+      "fr": "Développeur Web Frontend",
+      "en": "Frontend Web Developer"
+    }
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portfolio de Barthélémy Werlé - Développeur Web",
+    "url": "https://evivnotrub.github.io/Portfolio/",
+    "description": "Site portfolio affichant des projets de développement web, les compétences principales et un CV.",
+    "author": {
+      "@type": "Person",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Annemasse",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "postalCode": "74100"
+      },
+      "jobTitle": "Développeur Web Frontend",
+      "name": "Barthélémy Werlé",
+      "telephone": "+33 (0)7 67 88 78 84",
+      "sameAs": "https://www.linkedin.com/in/barthelemy-werle-b93769128/",
+      "alumniOf": [
+        {
+          "@type": "OrganizationRole",
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "OpenClassrooms",
+            "sameAs": "https://openclassrooms.com/"
+          },
+          "startDate": "2023"
+        }
+      ]
+    }
+  }
+}

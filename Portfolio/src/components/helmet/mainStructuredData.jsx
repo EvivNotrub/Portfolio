@@ -1,38 +1,18 @@
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang.js";
 import HelmetStructuredData from "../../utils/helpers/helmet/helmetStructuredData";
+import data from "../../data/structuredData.json";
 
 function MainStructuredData() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Portfolio of Barthélémy Werlé - Web Developer",
-    url: "https://evivnotrub.github.io/Portfolio/",
-    description:
-      "Portfolio website of Barthélémy Werlé displaying web-development projects, main skills, and a resume.",
-    author: {
-      "@type": "Person",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Annemasse",
-        addressRegion: "Auvergne-Rhône-Alpes",
-        postalCode: "74100",
-      },
-      jobTitle: "Front-End Web Developer",
-      name: "Barthélémy Werlé",
-      telephone: "+33 (0)7 67 88 78 84",
-      sameAs: "https://www.linkedin.com/in/barthelemy-werle-b93769128/",
-      alumniOf: [
-        {
-          "@type": "OrganizationRole",
-          alumniOf: {
-            "@type": "EducationalOrganization",
-            name: "OpenClassrooms",
-            sameAs: "https://openclassrooms.com/",
-          },
-          startDate: "2023",
-        },
-      ],
-    },
-  };
+  const { language } = useLanguage();
+
+  const structuredData = data.structuredData;
+  const defaultLanguage = data.defaultLanguage;
+  if (defaultLanguage !== language) {
+    const DataLangVar = data.langVariations;
+    structuredData.name = DataLangVar.name[language];
+    structuredData.description = DataLangVar.description[language];
+    structuredData.author.jobTitle = DataLangVar.jobTitle[language];
+  }
 
   return <HelmetStructuredData structuredData={structuredData} />;
 }

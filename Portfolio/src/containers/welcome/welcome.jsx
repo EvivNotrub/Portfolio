@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./welcome.scss";
 import Typewriter from "../../components/typing/typing";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 
-function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
-  const job = "Front End Developer";
+function Welcome({ setWelcomeLoaded, loading, firstVisit, textContent }) {
   const fullName = "Barthélémy Werlé";
   const [typingJob, setTypingJob] = useState(false);
   const [typingFullName, setTypingFullName] = useState(false);
@@ -12,6 +12,7 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
     const visitStamp = window.sessionStorage.getItem("firstTyping") || "true";
     return visitStamp === "true";
   });
+  const { language } = useLanguage();
   function delay(setState, value, ms) {
     const timeout = setTimeout(() => {
       setState(value);
@@ -43,22 +44,23 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
         "welcome" + (firstVisit === "false" && !loading ? " --show" : "")
       }
     >
-      <p className="welcome__welcome">Welcome,</p>
+      <p className="welcome__welcome">{textContent.greating[language] + ","}</p>
       <h1 className="welcome__title typing">
-        I&apos;m a{" "}
+        {textContent.message.start[language] + " "}
+        {/*TODO: issue with typing and language changes in the same time*/}
         {firstTyping ? (
           typingJob ? (
-            <Typewriter text={job} speed={80} />
+            <Typewriter text={textContent.message.job[language]} speed={80} />
           ) : (
             ""
           )
         ) : (
-          <span>{job}</span>
+          <span>{textContent.message.job[language]}</span>
         )}
         {/*TODO: find a more efficient way.<span className="typing">{job}</span>*/}
         ,
         <br />
-        my name is{" "}
+        {textContent.message.end[language] + " "}
         {firstTyping ? (
           typingFullName ? (
             <Typewriter text={fullName} speed={80} />
@@ -71,16 +73,17 @@ function Welcome({ setWelcomeLoaded, loading, firstVisit }) {
         {/*<span className="typing">{fullName}</span>*/}.
       </h1>
       <p className="welcome__message typing --size">
-        <span>Make yourself at home and feel free to browse.</span>
+        <span>{textContent.message.getIn[language]}</span>
       </p>
     </div>
   );
 }
-
+//TODO: describe the props
 Welcome.propTypes = {
   setWelcomeLoaded: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   firstVisit: PropTypes.string.isRequired,
+  textContent: PropTypes.object.isRequired,
 };
 
 export default Welcome;

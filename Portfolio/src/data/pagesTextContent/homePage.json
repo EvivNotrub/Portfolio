@@ -1,0 +1,73 @@
+{
+  "welcome": {
+    "greating": { "fr": "Bienvenue", "en": "Welcome" },
+    "message": {
+      "start": { "fr": "Je suis", "en": "I'm a" },
+      "job": { "fr": "Développeur Front-end", "en": "Front-end Developer" },
+      "end": { "fr": "mon nom est", "en": "my name is" },
+      "getIn": {
+        "en": "Make yourself at home and feel free to browse.",
+        "fr": "Faites comme chez vous et naviguer à votre guise."
+      }
+    }
+  },
+  "about": {
+    "title": { "fr": "À propos", "en": "About" },
+    "article": {
+      "fr": [
+        "Ce site est une vitrine des projets, compétences et technologies avec lesquels j'ai travaillé. Cela représente déjà un nombre d'outils intéressant pour créer ou améliorer des applications web.",
+        "Ce n'est que le début, d'autres projets arriveront très bientôt, et l'apprentissage fait partie du quotidien.",
+        "Tout juste sorti d'une formation de développeur web chez OpenClassrooms, mon site présente pour l'instant des projets faisant partie du diplôme. Ils sont réalisés dans le seul but d'apprendre de nouvelles compétences et technologies, chacun avec un sujet spécifique. Une description du projet fournit le contexte et les objectifs que nous avions, car tous n'a pas été réalisé de zéro. Cela vous permet de comprendre ce qui a été mis en œuvre par moi-même ou non.",
+        "Des liens supplémentaires vers mon CV, GitHub et autres fourniront plus d'informations."
+      ],
+      "en": [
+        "This website is a showcase of the projects, skills and technologies I worked on, they already provide a good deal of tools to create or improve website-applications.",
+        "This is just the beginning, more projects will come very soon, and learning is part of everyday life.",
+        " Fresh out of a web-developer education program at OpenClassrooms, my site is, as of now, advertising some projects that are part of the degree. They are made for the sole purpose of learning new skills and technologies, each one with a specific topic. A description of the project provides context and the goals we had, since not all of them were made from scratch. This allows you to understand what was implemented by myself or not.",
+        "Additional links to my resume, GitHub and others will provide more information."
+      ]
+    }
+  },
+  "skills": {
+    "title": {
+      "fr": "Compétences",
+      "en": "Skills and Knowledge"
+    },
+    "mainSkills": {
+      "title": {
+        "fr": "Compétences principales",
+        "en": "Main Skills"
+      }
+    },
+    "knowledge": {
+      "title": {
+        "fr": "Connaissances",
+        "en": "Knowledge"
+      },
+      "content": {
+        "fr": [
+          "Accessibilité",
+          "SEO",
+          "Optimisation des performances",
+          "Débogage",
+          "Contrôle de version",
+          "Tests unitaires"
+        ],
+        "en": [
+          "Accessibility",
+          "SEO",
+          "Performance Optimisation",
+          "Debugging",
+          "Version Controle",
+          "Unit Testing"
+        ]
+      }
+    },
+    "used": {
+      "title": {
+        "fr": "Technologies utilisées",
+        "en": "Used Technologies"
+      }
+    }
+  }
+}

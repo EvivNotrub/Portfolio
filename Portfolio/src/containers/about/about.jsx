@@ -1,37 +1,23 @@
 import { memo } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ScrollPage from "../../components/buttons/scrollPage";
 import SocialLink from "../../components/buttons/socialLink";
 import LinkList from "../../components/linkList/linkList";
 import "./about.scss";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 
-const About = memo(function About() {
+const About = memo(function About({ textContent }) {
+  const { language } = useLanguage();
   return (
     <div data-testid="about-testid" className="about">
-      <h2 className="about__title">About</h2>
+      <h2 className="about__title">{textContent.title[language]}</h2>
       <article className="about__article">
-        <p className="about__article__text">
-          This website is a showcase of the projects, skills and technologies I
-          worked on, they already provide a good deal of tools to create or
-          improve website-applications.
-        </p>
-        <p className="about__article__text">
-          This is just the beginning, more projects will come very soon, and
-          learning is part of everyday life.
-        </p>
-        <p className="about__article__text">
-          Fresh out of a web-developer education program at Open Classrooms, my
-          site is, as of now, advertising some projects that are part of the
-          degree. They are made for the sole purpose of learning new skills and
-          technologies, each one with a specific topic. A description of the
-          project provides context and the goals we had, since not all of them
-          were made from scratch. This allows you to understand what was
-          implemented by myself or not.
-        </p>
-        <p className="about__article__text">
-          Additional links to my resume, GitHub and others will provide more
-          information about myself.
-        </p>
+        {textContent.article[language].map((paragraph, index) => (
+          <p key={index + paragraph[0]} className="about__article__text">
+            {paragraph}
+          </p>
+        ))}
       </article>
       <div className="about__links">
         <LinkList>
@@ -57,5 +43,10 @@ const About = memo(function About() {
     </div>
   );
 });
+
+//TODO: describe the props
+About.propTypes = {
+  textContent: PropTypes.object.isRequired,
+};
 
 export default About;

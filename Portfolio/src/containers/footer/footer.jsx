@@ -3,7 +3,7 @@ import PersonalDetails from "../../components/resume/personalDetails/personalDet
 import LinkList from "../../components/linkList/linkList";
 import SocialLink from "../../components/buttons/socialLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import legalNotice from "../../assets/documents/legalNotice_portfolio_BW.pdf";
+import legalNotice from "../../assets/documents/mentions_legales_portfolio_BW_24.pdf";
 import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
 import textContent from "../../data/moreTextContent/footer.json";
 

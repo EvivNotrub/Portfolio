@@ -7,6 +7,14 @@ const Typewriter = ({ text, speed, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    /* here we compare currentText with text prop to avoid having a mixup of two
+     texts if language changes during typing. But we do not reset typing animation.*/
+    if (
+      currentIndex > 0 &&
+      currentText[currentIndex - 1] !== text[currentIndex - 1]
+    ) {
+      setCurrentText(text.slice(0, currentIndex));
+    }
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setCurrentText((prevText) => prevText + text[currentIndex]);
@@ -15,7 +23,7 @@ const Typewriter = ({ text, speed, className }) => {
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, speed, text]);
+  }, [currentIndex, currentText, speed, text]);
   return <span className={className}>{currentText}</span>;
 };
 

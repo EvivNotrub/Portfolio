@@ -1,0 +1,24 @@
+{
+  "en": {
+    "home": {
+      "head": "Home",
+      "subNav": { "welcome": "Welcome", "about": "About", "skills": "Skills" }
+    },
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "fr": {
+    "home": {
+      "head": "Accueil",
+      "subNav": {
+        "welcome": "Bienvenue",
+        "about": "À propos",
+        "skills": "Compétences"
+      }
+    },
+    "projects": "Projets",
+    "resume": "CV",
+    "contact": "Contact"
+  }
+}

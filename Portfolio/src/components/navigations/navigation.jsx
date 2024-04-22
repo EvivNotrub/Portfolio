@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./navigation.scss";
 import Mutton from "../buttons/mutton";
 import LangSelect from "../select/langSelect";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
+import textContent from "../../data/moreTextContent/navigation.json";
 //TODO: need lazy loading for LangSelect?
 
 // import PropTypes from "prop-types";
@@ -14,6 +16,9 @@ function Navigation() {
   // on focus can be manged from line 8 to 13 in nav.scss
   const [isFocused, setIsFocused] = useState(false);
   const [subNav, setSubNav] = useState(false);
+  const { language } = useLanguage();
+  const { home, projects, resume, contact } = textContent[language];
+
   // const focusOnRef = (ref) => {
   //   ref.current.focus();
   // };
@@ -70,7 +75,7 @@ function Navigation() {
             onFocus={() => setSubNav(true)}
             onBlur={() => setSubNav(false)}
           >
-            Home
+            {home.head}
           </Link>
           <nav
             data-testid="sub-nav-testid"
@@ -86,7 +91,7 @@ function Navigation() {
                   to="/"
                   // onClick={() => focusOnRef(homeRef)} See home.jsx
                 >
-                  Welcome
+                  {home.subNav.welcome}
                 </Link>
               </li>
               <li className="sub-nav__item">
@@ -95,7 +100,7 @@ function Navigation() {
                   to="/#about"
                   // onClick={() => focusOnRef(aboutRef)} See home.jsx
                 >
-                  About
+                  {home.subNav.about}
                 </Link>
               </li>
               <li className="sub-nav__item">
@@ -104,7 +109,7 @@ function Navigation() {
                   to="/#skills"
                   // onClick={() => focusOnRef(skillsRef)} See home.jsx
                 >
-                  Skills
+                  {home.subNav.skills}
                 </Link>
               </li>
               {/* <li className="sub-nav__item">
@@ -121,17 +126,17 @@ function Navigation() {
         </li>
         <li className="nav__list__item">
           <Link to="/projects" onClick={blur}>
-            Projects
+            {projects}
           </Link>
         </li>
         <li className="nav__list__item">
           <Link to="/resume" onClick={blur}>
-            Resume
+            {resume}
           </Link>
         </li>
         <li className="nav__list__item">
           <Link to="/contact" onClick={blur}>
-            Contact
+            {contact}
           </Link>
         </li>
         <li className="nav__list__item">

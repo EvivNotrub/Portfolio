@@ -6,7 +6,7 @@ import "./scrollPage.scss";
 
 const ScrollPage = memo(function ScrollPage({ path, ariaLabel }) {
   return (
-    <Link to={path} className="down" aria-label={ariaLabel}>
+    <Link to={path} className="down" aria-label={ariaLabel} title={ariaLabel}>
       <span className="down__arrow">
         <FontAwesomeIcon icon="fa-solid fa-arrow-down-long" />
       </span>

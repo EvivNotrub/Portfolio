@@ -6,8 +6,8 @@
       "name": "Ohmyfood",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Dynamisez une page web avec des animations CSS en utilisant SASS. Un design Figma a été fourni et nous devions faire le site en nous basant dessus, il devait être responsive et avoir des animations pour les actions de l'utilisateur. La page est un site de livraison de nourriture avec une page d'accueil et une page de menu pour chaque restaurant. La page de menu a une liste de plats avec un bouton pour les ajouter au panier.",
-        "en": "Project 3 of the Open Classrooms Web Developer program: Make a web page more dynamic with CSS animations using SASS. A Figma design was provided and we had to make the site based on it, it needed to be responsive and to have animations for the user's actions. The page is a food delivery website with a home page and a menu page for each restaurant. The menu page has a list of dishes with a button to add them to the cart."
+        "fr": "Projet 3 du parcours Intégrateur Web d'Openclassrooms : Dynamisez une page web avec des animations CSS en utilisant SASS. Un design Figma a été fourni et nous devions faire le site en nous basant dessus, il devait être responsive et avoir des animations pour les actions de l'utilisateur. La page est un site de livraison de nourriture avec une page d'accueil et une page de menu pour chaque restaurant. La page de menu a une liste de plats avec un bouton pour les ajouter au panier.",
+        "en": "Project 3 of the Openclassrooms Web Developer program: Make a web page more dynamic with CSS animations using SASS. A Figma design was provided and we had to make the site based on it, it needed to be responsive and to have animations for the user's actions. The page is a food delivery website with a home page and a menu page for each restaurant. The menu page has a list of dishes with a button to add them to the cart."
       },
       "aim": {
         "fr": "Découvrir SASS, la structure en 7-1 et les animations CSS.",
@@ -59,8 +59,8 @@
       "name": "Portfolio - Sophie Bluel",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 5 du parcours Intégrateur Web d'Open Classrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par Open Classrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
-        "en": "Project 5 of the Open Classrooms Web Developer program: Create a dynamic web page using JavaScript. The page is a portfolio for a photographer, with a filtered gallery and a contact form. The user can log in to edit the content of the page. To edit the page, a modal opens with a small view of the gallery. A form to add, change or delete pictures is displayed in the modal when the user clicks on a specific picture and icon. Of course, the backend was not done by the students, it was provided by Open Classrooms, and because it is meant for educational purposes, some features for changing content don't actually work. Only deleting and adding pictures are possible."
+        "fr": "Projet 5 du parcours Intégrateur Web d'Openclassrooms : Créer une page web dynamique avec JavaScript. La page est un portfolio pour une photographe, avec une galerie filtrée et un formulaire de contact. L'utilisateur peut se connecter pour modifier le contenu de la page. Pour modifier la page, une modale s'ouvre avec une petite vue de la galerie. Un formulaire pour ajouter, modifier ou supprimer des photos est affiché dans la modale quand l'utilisateur clique sur une photo et/ou une icône. Bien sûr le backend n'a pas été fait par les étudiants, il a été fourni par Openclassrooms, et parce qu'il est destiné à des fins éducatives, certaines fonctionnalités pour changer le contenu ne fonctionnent pas réellement. Seuls la suppression et l'ajout de photos sont possibles.",
+        "en": "Project 5 of the Openclassrooms Web Developer program: Create a dynamic web page using JavaScript. The page is a portfolio for a photographer, with a filtered gallery and a contact form. The user can log in to edit the content of the page. To edit the page, a modal opens with a small view of the gallery. A form to add, change or delete pictures is displayed in the modal when the user clicks on a specific picture and icon. Of course, the backend was not done by the students, it was provided by Openclassrooms, and because it is meant for educational purposes, some features for changing content don't actually work. Only deleting and adding pictures are possible."
       },
       "aim": {
         "fr": "Apprendre à utiliser JavaScript pour implémenter des fonctionnalités dynamiques, comme une Modale accessible avec navigation au clavier et gestion du focus, et un contenu différent selon l'action de l'utilisateur.",
@@ -82,7 +82,7 @@
         },
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb2.5.webp",
-          "alt": "Sophie Bluel portfolio - loggin"
+          "alt": "Sophie Bluel portfolio - login"
         },
         {
           "src": "https://cdn.jsdelivr.net/gh/EvivNotrub/Portfolio@gh-pages/images/projects/portfolio_bluel/sb3.8.webp",
@@ -107,11 +107,11 @@
       "name": "Kasa",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 8 du parcours Intégrateur Web d'OpenClassrooms : Créer un site avec React. C'était le premier projet React et nous devions le structurer avec des composants. Aucune librairie n'était autorisée comme d'habitude puisque le but était de créé depuis zéro. Le site est responsive et utilise React-router-dom pour la navigation.",
-        "en": "Project 8 of the Open Classrooms Web Developer program: Create a website with React. This was the first React project and we had to structure it using components. No libraries were allowed as usual since it was meant to be created from scratch. The website is responsive and uses React-router-dom for navigation."
+        "fr": "Projet 8 du parcours Intégrateur Web d'Openclassrooms : Créer un site avec React. C'était le premier projet React et nous devions le structurer avec des composants. Aucune librairie n'était autorisée comme d'habitude puisque le but était de créé depuis zéro. Le site est responsive et utilise React-router-dom pour la navigation.",
+        "en": "Project 8 of the Openclassrooms Web Developer program: Create a website with React. This was the first React project and we had to structure it using components. No libraries were allowed as usual since it was meant to be created from scratch. The website is responsive and uses React-router-dom for navigation."
       },
       "aim": {
-        "fr": "Apprendre React etReact-router-dom pour la navigation et à structurer un projet depuis zéro.",
+        "fr": "Apprendre React et React-router-dom pour la navigation et à structurer un projet depuis zéro.",
         "en": "Learn React, to structure a project from scratch and to use React-router-dom for navigation."
       },
       "summary": {
@@ -152,12 +152,12 @@
       "name": "77 Events",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 10 du parcours Intégrateur Web d'OpenClassrooms : Débugger une application React. Le projet est un site pour une agence d'évènementiel. Il a été fourni par OpenClassrooms avec des bugs à corriger. Le but était de corriger les bugs et d'ajouter des tests unitaires et d'intégration. Le projet original avec les bugs peut être vu sur le dépôt GitHub puisqu'il a été forké.",
-        "en": "Project 10 during the Open Classrooms cursus to learn about test implementation and the libraries used, and about test driven development. Main work was debugging and using different tools to do so. Secondary task was to implement simple unit tests and a few integration tests (adding to the ones already written). The original project with issues can be seen on the GitHub repository since it has been forked."
+        "fr": "Projet 10 du parcours Intégrateur Web d'Openclassrooms : Débugger une application React. Le projet est un site pour une agence d'évènementiel. Il a été fourni par Openclassrooms avec des bugs à corriger. Le but était de corriger les bugs et d'ajouter des tests unitaires et d'intégration. Le projet original avec les bugs peut être vu sur le dépôt GitHub puisqu'il a été forké.",
+        "en": "Project 10 during the Openclassrooms cursus to learn about test implementation and the libraries used, and about test driven development. Main work was debugging and using different tools to do so. Secondary task was to implement simple unit tests and a few integration tests (adding to the ones already written). The original project with issues can be seen on the GitHub repository since it has been forked."
       },
       "aim": {
-        "fr": "Apprendre les tests unitaires et d'intégration ainsi que le debugging avec différents outils.",
-        "en": "Learn about test implementation and librairies, test driven development , debugging and using different tools to do so."
+        "fr": "Apprendre les tests unitaires et d'intégration ainsi que le débogage avec différents outils.",
+        "en": "Learn about test implementation and libraries, test driven development, debugging and using different tools to do so."
       },
       "summary": {
         "fr": "Débuggez une application React",
@@ -197,12 +197,12 @@
       "name": "Booki",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 3 du parcours Intégrateur Web d'OpenClassrooms : Création de la page d'accueil d'une agence de voyage en HTML et CSS. La page doit être responsive. Il s’agit du premier projet plus complet en HTML et CSS, pour apprendre à gérer le layout en fonction des différentes tailles d’écran.",
-        "en": "Project 3 during the Open Classrooms program. The goal was to create the home page of a travel agency using HTML and CSS. The page had to be responsive. This was the first complete project in HTML and CSS, to learn how to install a DEV-environment and manage the layout depending on the different screen sizes."
+        "fr": "Projet 3 du parcours Intégrateur Web d'Openclassrooms : Création de la page d'accueil d'une agence de voyage en HTML et CSS. La page doit être responsive. Il s’agit du premier projet plus complet en HTML et CSS, pour apprendre à gérer le layout en fonction des différentes tailles d’écran.",
+        "en": "Project 3 during the Openclassrooms program. The goal was to create the home page of a travel agency using HTML and CSS. The page had to be responsive. This was the first complete project in HTML and CSS, to learn how to install a DEV-environment and manage the layout depending on the different screen sizes."
       },
       "aim": {
         "fr": "Intégrer du contenu conformément à une maquette avec HTML et CSS, comprendre la gestion du layout en responsive et installer un environnement de développement front-end.",
-        "en": "Integrate content according to a mockup using HTML and CSS, understand how to manage the layout in responsive and set up a front-end development environment."
+        "en": "Integrate content according to a mock-up using HTML and CSS, understand how to manage the layout in responsive and set up a front-end development environment."
       },
       "summary": {
         "fr": "Premier projet HTML/CSS et responsive",
@@ -246,8 +246,8 @@
       "name": "Argent Bank",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 11 du parcours Intégrateur Web d'OpenClassrooms : Implémenter le front-end d'une application bancaire fictive d'après une maquette en HTML/CSS en utilisant React et Redux pour la gestion des données. Assurer le bon fonctionnement de certaines fonctionnalités en communiquant avec l'API (locale) comme le login avec option « remember », le SignIn et interagir avec les données utilisateur. De plus, nous devions définir les spécifications des routes API avec Swagger Editor pour la phase deux du développement qui se focalisait sur les détails du compte et des transactions. En raison du backend, il n’y a pas de site en ligne disponible.",
-        "en": "Project 11 during the Open Classrooms program. The goal was to implement the front-end of a fictive banking application based on a HTML/CSS mock-up, using React and Redux for data management. I had to make sure some features worked properly when communicating with the API (local), like logging in with the option 'remember', signing In and interacting with the API for user data. Furthermore, we had to define the API routes specifications using swagger editor for phase two of development with focus on account and transaction details. Due to the backend, there is no online website available."
+        "fr": "Projet 11 du parcours Intégrateur Web d'Openclassrooms : Implémenter le front-end d'une application bancaire fictive d'après une maquette en HTML/CSS en utilisant React et Redux pour la gestion des données. Assurer le bon fonctionnement de certaines fonctionnalités en communiquant avec l'API (locale), comme le login avec option « remember », le Sign-In et les changements de données utilisateur.  De plus, nous devions définir les spécifications des routes API avec Swagger Editor pour la phase deux du développement qui se focalisait sur les détails du compte et des transactions. En raison du backend, il n’y a pas de site en ligne disponible.",
+        "en": "Project 11 during the Openclassrooms program. The goal was to implement the front-end of a fictive banking application based on a HTML/CSS mock-up, using React and Redux for data management. I had to make sure some features worked properly when communicating with the API (local), like logging in with the option 'remember', signing In and interacting with the API for user data. Furthermore, we had to define the API routes specifications using swagger editor for phase two of development with focus on account and transaction details. Due to the backend, there is no online website available."
       },
       "aim": {
         "fr": "Afficher des données backend sur l'interface utilisateur, gérer les données avec Redux et configurer des routes API avec l'outils Swagger Editor.",
@@ -294,8 +294,8 @@
       "name": "Portfolio - Nina Carducci",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 9 du parcours Intégrateur Web d'OpenClassrooms : Le but est d'améliorer les performances du portfolio pour une photographe fictive et de s'initier au SEO. Un site a été fourni avec des problèmes de performance et de SEO. Le but était de l'analyser avec des outils comme Lighthouse, responsive image linter, Wave et « Google Rich snippets » afin de déterminer quelles mesures d'amélioration peuvent être entreprises. Ensuite, il fallait faire une proposition d'amélioration factice puis implémenter ces mesures et vérifier que les performances et le SEO étaient meilleurs. L'utilisation de shema.org pour l'ajout de données structurées était aussi demandée, ainsi que l'ajout de méta tags pour les réseaux sociaux.",
-        "en": "Project 9 during the Open Classrooms program. The goal was to improve the performance of a portfolio for a fictive photographer and to learn about SEO. A website was provided with performance and SEO issues. The goal was to analyse it with tools like Lighthouse, responsive image linter, Wave and 'Google Rich snippets' to determine which improvement measures could be taken. Then, a fake improvement proposal had to be made and finally implemented, and the performance and SEO had to be checked. The use of shema.org for structured data was also required, as well as adding meta tags for social media."
+        "fr": "Projet 9 du parcours Intégrateur Web d'Openclassrooms : Le but est d'améliorer les performances du portfolio pour une photographe fictive et de s'initier au SEO. Un site a été fourni avec des problèmes de performance et de SEO. Le but était de l'analyser avec des outils comme Lighthouse, responsive image linter, Wave et « Google Rich snippets » afin de déterminer quelles mesures d'amélioration peuvent être entreprises. Ensuite, il fallait faire une proposition d'amélioration factice puis implémenter ces mesures et vérifier que les performances et le SEO étaient meilleurs. L'utilisation de shema.org pour l'ajout de données structurées était aussi demandée, ainsi que l'ajout de méta tags pour les réseaux sociaux.",
+        "en": "Project 9 during the Openclassrooms program. The goal was to improve the performance of a portfolio for a fictive photographer and to learn about SEO. A website was provided with performance and SEO issues. The goal was to analyse it with tools like Lighthouse, responsive image linter, Wave and 'Google Rich snippets' to determine which improvement measures could be taken. Then, a fake improvement proposal had to be made and finally implemented, and the performance and SEO had to be checked. The use of shema.org for structured data was also required, as well as adding meta tags for social media."
       },
       "aim": {
         "fr": "Découvrir l'importance du SEO, les outils d'analyse de performance et accessibilité.",
@@ -340,8 +340,8 @@
       "name": "Qwenta",
       "context": "openclassrooms",
       "description": {
-        "fr": "Projet 7 du parcours Intégrateur Web d'OpenClassrooms : Planifier le développement du site d’un client. Dans le but de comprendre le processus de développement pour des plus gros projets, il était ici question de rédiger les spécificités techniques nécessaire à la réalisation de l’application ainsi que de mettre en place des outils et méthodes pour effectuer une veille informationnelle ciblée. Le choix d’un bon outil de gestion de projet tel que Notion était aussi à faire, de même que la découpe en étapes précises pour prévoir le déroulement du développement en équipe (fictive) avec une méthode de gestion comme la méthode scrum par exemple.",
-        "en": "Project 7 during the Open Classrooms program. The goal was to plan the development of a fictive client's website. In order to understand the development process for bigger projects, the task was to write the technical specifications needed for the realization of the application and to set up tools and methods to establish an information-watch . The choice of a good project management tool such as Notion was also to be made, as well as the breakdown into precise steps to plan the development process in a (fictitious) team with a management method such as the scrum method for example."
+        "fr": "Projet 7 du parcours Intégrateur Web d'Openclassrooms : Planifier le développement du site d’un client. Dans le but de comprendre le processus de développement pour des plus gros projets, il était ici question de rédiger les spécificités techniques nécessaire à la réalisation de l’application ainsi que de mettre en place des outils et méthodes pour effectuer une veille informationnelle ciblée. Le choix d’un bon outil de gestion de projet tel que Notion était aussi à faire, de même que la découpe en étapes précises pour prévoir le déroulement du développement en équipe (fictive) avec une méthode de gestion comme la méthode scrum par exemple.",
+        "en": "Project 7 during the Openclassrooms program. The goal was to plan the development of a fictive client's website. In order to understand the development process for bigger projects, the task was to write the technical specifications needed for the realization of the application and to set up tools and methods to establish an information-watch. The choice of a good project management tool such as Notion was also to be made, as well as the breakdown into precise steps to plan the development process in a (fictitious) team with a management method such as the scrum method for example."
       },
       "aim": {
         "fr": "S'initier à la gestion de projet et à la planification du développement en équipe.",

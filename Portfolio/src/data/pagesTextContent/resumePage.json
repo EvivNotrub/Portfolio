@@ -27,7 +27,7 @@
           },
           "content": {
             "fr": [
-              "Francais, Langue Maternelle",
+              "Français, Langue Maternelle",
               "Allemand, Bilingue",
               "Anglais, Courant"
             ],
@@ -63,7 +63,7 @@
     },
     "education": {
       "title": {
-        "fr": "Dilplômes / Education",
+        "fr": "Diplômes / Education",
         "en": "Education / Diplomas"
       },
       "sections": [
@@ -78,8 +78,8 @@
             { "dateTime": "202-12", "display": "12/2023" }
           ],
           "content": {
-            "fr": "Open Classrooms - à distance",
-            "en": "Open Classrooms - Online"
+            "fr": "Openclassrooms - à distance",
+            "en": "Openclassrooms - Online"
           }
         },
         {

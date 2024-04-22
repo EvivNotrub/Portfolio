@@ -10,13 +10,11 @@ import Welcome from "../../containers/welcome/welcome";
 import ScrollPage from "../../components/buttons/scrollPage";
 import Loader from "../../components/loader/loader";
 import textContent from "../../data/pagesTextContent/homePage.json";
-import { useLanguage } from "../../utils/contexts/reactContext/language/useLang.js";
 
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
 /* Component manges the states needed to trigger and time CSS 
 animations and avoid having them every time you visit the page. */
 function Home({ aboutRef, skillsRef, homeRef }) {
-  const { language } = useLanguage();
   /* firstVisit: reflects the first visit per session.
   Controls the welcome + img animation
    */

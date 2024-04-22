@@ -4,8 +4,12 @@ import LinkList from "../../components/linkList/linkList";
 import SocialLink from "../../components/buttons/socialLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import legalNotice from "../../assets/documents/legalNotice_portfolio_BW.pdf";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang";
+import textContent from "../../data/moreTextContent/footer.json";
 
 function Footer() {
+  const { language } = useLanguage();
+  const { persDetails, legal, copywrighte } = textContent[language];
   return (
     <footer id="footer" data-testid="footer-testid" className="footer">
       <div className="footer__info">
@@ -30,18 +34,18 @@ function Footer() {
         {/* TODO: Copyright and Privacy Policy ?
         <a href="/">Privacy Policy</a> */}
         <div className="footer__info__address">
-          <PersonalDetails />
+          <PersonalDetails textContent={persDetails} />
         </div>
       </div>
       <p className="footer__legal">
-        <span>Copyright 2023 Barthélémy Werlé</span>
+        <span>{copywrighte}</span>
         <a
           className="legal-notice"
           href={legalNotice}
           target="_blank"
           rel="noreferrer"
         >
-          Legal Notice
+          {legal}
         </a>
       </p>
     </footer>

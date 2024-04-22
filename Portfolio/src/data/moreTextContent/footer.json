@@ -1,0 +1,29 @@
+{
+  "fr": {
+    "legal": "Mentions légales",
+    "copywrighte": "© 2024 - Tous droits réservés",
+    "persDetails": {
+      "contact": "Contactez-moi",
+      "addressCountry": "France",
+      "phone": "Tél."
+    }
+  },
+  "en": {
+    "legal": "Legal notice",
+    "copywrighte": "© 2024 - All rights reserved",
+    "persDetails": {
+      "contact": "Contact me",
+      "addressCountry": "France",
+      "phone": "Tel."
+    }
+  },
+  "de": {
+    "legal": "Impressum",
+    "copywrighte": "© 2024 - Alle Rechte vorbehalten",
+    "persDetails": {
+      "contact": "Kontakt",
+      "addressCountry": "Frankreich",
+      "phone": "Tel."
+    }
+  }
+}

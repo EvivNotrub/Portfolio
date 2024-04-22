@@ -1,6 +1,7 @@
 {
   "pageTitle": { "fr": "Projets", "en": "My Work", "de": "Projekte" },
   "banner": "Portfolio",
+  "cards": { "fr": "Détails de", "en": "More about", "de": "Mehr über" },
   "information": {
     "title": {
       "fr": "Informations",

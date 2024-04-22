@@ -79,7 +79,12 @@ function Portfolio() {
         </div>
         <div className="projects__portfolio">
           {filteredProjects.map((project, index) => (
-            <ProjectCard project={project} key={project.id} index={index} />
+            <ProjectCard
+              project={project}
+              key={project.id}
+              index={index}
+              textContent={textContent.cards[language]}
+            />
           ))}
         </div>
       </section>

@@ -10,6 +10,7 @@ import Welcome from "../../containers/welcome/welcome";
 import ScrollPage from "../../components/buttons/scrollPage";
 import Loader from "../../components/loader/loader";
 import textContent from "../../data/pagesTextContent/homePage.json";
+import { useLanguage } from "../../utils/contexts/reactContext/language/useLang.js";
 
 // function Home({ pPreviewRef, aboutRef, skillsRef }) {
 /* Component manges the states needed to trigger and time CSS 
@@ -29,6 +30,7 @@ function Home({ aboutRef, skillsRef, homeRef }) {
   //welcomeLoaded: controls the img animation class to match the welcome animation
   const [welcomeLoaded, setWelcomeLoaded] = useState(false);
   const location = useLocation();
+  const { language } = useLanguage();
 
   // focus on ref after a delay in order to avoid trying focus on ref before it is rendered:
   function focusOnRef(ref) {
@@ -97,7 +99,10 @@ function Home({ aboutRef, skillsRef, homeRef }) {
             firstVisit={firstVisit}
             textContent={textContent.welcome}
           />
-          <ScrollPage path="/#about" ariaLabel="next section: About" />
+          <ScrollPage
+            path="/#about"
+            ariaLabel={textContent.welcome.next[language]}
+          />
         </>
       </section>
       <section

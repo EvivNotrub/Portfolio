@@ -39,7 +39,7 @@ const About = memo(function About({ textContent }) {
           </SocialLink>
         </LinkList>
       </div>
-      <ScrollPage path="/#skills" ariaLabel="next section: Skills" />
+      <ScrollPage path="/#skills" ariaLabel={textContent.next[language]} />
     </div>
   );
 });

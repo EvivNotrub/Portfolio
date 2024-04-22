@@ -9,6 +9,10 @@
         "en": "Make yourself at home and feel free to browse.",
         "fr": "Faites comme chez vous et naviguez à votre guise."
       }
+    },
+    "next": {
+      "fr": "prochaine section: À propos",
+      "en": "next section: About"
     }
   },
   "about": {
@@ -26,6 +30,10 @@
         " Fresh out of a web-developer education program at OpenClassrooms, my site is, as of now, advertising some projects that are part of the degree. They are made for the sole purpose of learning new skills and technologies, each one with a specific topic. A description of the project provides context and the goals we had, since not all of them were made from scratch. This allows you to understand what was implemented by myself or not.",
         "Additional links to my resume, GitHub and others will provide more information."
       ]
+    },
+    "next": {
+      "fr": "prochaine section: Skills",
+      "en": "next section: Skills"
     }
   },
   "skills": {

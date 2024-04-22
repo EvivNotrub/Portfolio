@@ -7,7 +7,7 @@ import imageRenderSizes from "../../data/imageRenderSizes.json";
 
 const ProgressiveImg = lazy(() => import("../imageRender/progressiveImg"));
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, textContent }) {
   const [srcset, setSrcset] = useState(null);
   const [src, setSrc] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -70,7 +70,7 @@ function ProjectCard({ project }) {
                 smallSrc={smallSrc ? smallSrc : null}
                 className="project-card__link__progImg"
                 alt={project.pictures[0].alt}
-                title={"Lien vers " + project.name}
+                title={textContent + " " + project.name}
               />
             ) : null
           }
@@ -88,6 +88,7 @@ function ProjectCard({ project }) {
 ProjectCard.propTypes = {
   index: PropTypes.number,
   project: PropTypes.object,
+  textContent: PropTypes.string,
 };
 
 export default ProjectCard;
